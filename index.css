@@ -1,0 +1,98 @@
+body {
+
+    font-family: 'Arial', sans-serif;
+
+    background-color: #f4f4f4;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+.profile-container {
+
+    text-align: center;
+
+    padding: 20px;
+
+    background-color: #fff;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.profile-container img {
+
+    border-radius: 50%;
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: cover;
+
+}
+
+.links-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+}
+
+.links-container a {
+
+    text-decoration: none;
+
+    color: #333;
+
+    background-color: #fff;
+
+    padding: 10px 20px;
+
+    margin: 5px;
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.links-container a:hover {
+
+    background-color: #f0f0f0;
+
+}
+
+.links-container a.full-width-button {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    padding: 15px; /* Adjust padding as needed */
+
+    margin: 10px 0; /* Adjust margin as needed */
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.links-container a.full-width-button .icon {
+
+    margin-right: 8px; /* Adjust margin as needed */
+
+}
