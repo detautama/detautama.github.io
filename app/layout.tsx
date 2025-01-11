@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,60 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="max-w-4xl mx-auto">
+          <div id="header" className="flex justify-between items-center py-5">
+            <div id="header-left" className="flex items-center gap-4">
+              <Image
+                src="/deta.png"
+                alt="profile image"
+                width={70}
+                height={70}
+              />
+              <div id="tagline">
+                <Link href="/" className="text-xl font-bold">
+                  I Putu Deta Utama Putra
+                </Link>
+                <p>A blog on JavaScript, web and more</p>
+              </div>
+            </div>
+            <div id="header-right" className="flex gap-4">
+              <a href="#docs">Docs</a>
+              <a href="#github">GitHub</a>
+              <div>Search</div>
+            </div>
+          </div>
+          <div id="divider" className="mb-5">
+            <div className="default_bg w-full rounded-md flex justify-center gap-11 py-1 text-xs font-bold">
+              <Link href="#">JavaScript</Link>
+              <Link href="#">Web Dev</Link>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="w-3/4">{children}</div>
+            <div id="sidebar" className="w-1/4">
+              <div className="border-2 border-lime-400 rounded-md p-4">
+                <h2>Top Categories</h2>
+                <ul>
+                  <li>
+                    <Link href="#">JavaScript</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Web Dev</Link>
+                  </li>
+                  <li>
+                    <Link href="#">React</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Next.js</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Tailwind CSS</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );

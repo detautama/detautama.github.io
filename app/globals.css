@@ -2,20 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.default_bg {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  box-shadow:
+    0 4px 6px rgba(50, 50, 93, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.default_bg:hover {
+  background-color: #fffb7d;
+  background-image: linear-gradient(45deg, #fffb7d 0%, #85ffbd 100%);
+  scale: 1.03;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.post_shadow {
+  box-shadow:
+    0 2.8px 0px rgba(0, 0, 0, 0.034),
+    3px 2px 6px rgba(0, 0, 0, 0.048),
+    3px 8px 4px rgba(0, 0, 0, 0.06),
+    2px 1px 17px 2px rgba(0, 0, 0, 0.12);
+}
+
+.post_shadow:hover {
+  box-shadow:
+    0 2.8px 0px rgba(0, 0, 0, 0.034),
+    3px 2px 6px rgba(0, 0, 0, 0.048),
+    3px 8px 4px rgba(0, 0, 0, 0.06),
+    2px 1px 17px 2px rgba(0, 0, 0, 0.12);
+  scale: 1.03;
 }
