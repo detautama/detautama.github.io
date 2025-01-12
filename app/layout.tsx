@@ -29,8 +29,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="max-w-4xl mx-auto">
-          <div id="header" className="flex justify-between items-center py-5">
+        <div className="mx-auto max-w-4xl">
+          <div id="header" className="flex items-center justify-between py-5">
             <div id="header-left" className="flex items-center gap-4">
               <Image
                 src="/deta.png"
@@ -57,37 +57,37 @@ export default function RootLayout({
             </div>
           </div>
           <div id="divider" className="mb-6">
-            <div className="default_bg w-full rounded-md flex justify-center gap-11 py-1 text-xs font-bold">
+            <div className="default_bg flex w-full justify-center gap-11 rounded-md py-1 text-xs font-bold">
               <Link href="#">JavaScript</Link>
               <Link href="#">Web Dev</Link>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-3/4">{children}</div>
-            <div id="sidebar" className="w-1/4 flex flex-col gap-4">
-              <div className="border-4 border-lime-800 rounded-md">
-                <div className="bg-lime-800 text-white p-2">
+            <div id="sidebar" className="flex w-1/4 flex-col gap-4">
+              <div className="rounded-md border-4 border-lime-800">
+                <div className="bg-lime-800 p-2 text-white">
                   <h2 className="font-bold">Top Categories</h2>
                 </div>
-                <ul className="p-2 flex flex-wrap gap-1">
-                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
+                <ul className="flex flex-wrap gap-1 p-2">
+                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
                     <Link href="#">JavaScript</Link>
                   </li>
-                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
+                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
                     <Link href="#">Web Dev</Link>
                   </li>
-                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
+                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
                     <Link href="#">React</Link>
                   </li>
-                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
+                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
                     <Link href="#">Next.js</Link>
                   </li>
-                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
+                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
                     <Link href="#">Tailwind CSS</Link>
                   </li>
                 </ul>
               </div>
-              <div className="h-48 border-4 border-lime-800 rounded-md">
+              <div className="h-48 rounded-md border-4 border-lime-800">
                 Other things to promote
               </div>
             </div>

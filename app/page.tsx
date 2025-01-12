@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedPostsData, PostData } from "@/app/lib/posts";
+import Markdown from "react-markdown";
 
 export default async function Home() {
   const allPostsData = getSortedPostsData();
@@ -19,18 +20,18 @@ export default async function Home() {
 const FeaturedArticles = () => {
   return (
     <div>
-      <div className="flex items-center justify-center mb-4 gap-2">
+      <div className="mb-4 flex items-center justify-center gap-2">
         <Image
           src="/images/favorite-featured.svg"
           alt="profile image"
           width={25}
           height={25}
         />
-        <h3 className="font-bold text-2xl text-center">Featured Articles</h3>
+        <h3 className="text-center text-2xl font-bold">Featured Articles</h3>
       </div>
       <div id="featured-article" className="grid grid-cols-3 gap-4">
         <Link href="/article/1">
-          <div className="default_bg text-center h-28 rounded-lg p-4 flex items-center justify-center font-bold">
+          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>
               Learn how to build a blog with Next.js, Tailwind CSS and
               TypeScript
@@ -38,22 +39,22 @@ const FeaturedArticles = () => {
           </div>
         </Link>
         <Link href="/article/2">
-          <div className="default_bg text-center h-28 rounded-lg p-4 flex items-center justify-center font-bold">
+          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>What is React?</article>
           </div>
         </Link>
         <Link href="/article/3">
-          <div className="default_bg text-center h-28 rounded-lg p-4 flex items-center justify-center font-bold">
+          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>How to build a blog with Next.js</article>
           </div>
         </Link>
         <Link href="/article/1">
-          <div className="default_bg text-center h-28 rounded-lg p-4 flex items-center justify-center font-bold">
+          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>How to build a blog with Next.js</article>
           </div>
         </Link>
         <Link href="/article/2">
-          <div className="default_bg text-center h-28 rounded-lg p-4 flex items-center justify-center font-bold">
+          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>
               Performant, flexible and extensible JavaScript library for
               building
@@ -61,7 +62,7 @@ const FeaturedArticles = () => {
           </div>
         </Link>
         <Link href="/article/3">
-          <div className="default_bg text-center h-28 rounded-lg p-4 flex items-center justify-center font-bold">
+          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>
               What is React? React is a JavaScript library for building user
             </article>
@@ -76,22 +77,22 @@ const AdditionalLinks = () => {
   return (
     <div id="additional-links" className="grid grid-cols-4 gap-4">
       <Link href="/categories">
-        <div className="default_bg text-xs h-9 text-center rounded-lg flex items-center justify-center font-bold">
+        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
           Categories
         </div>
       </Link>
       <Link href="/get-in-touch">
-        <div className="default_bg text-xs h-9 text-center rounded-lg flex items-center justify-center font-bold">
+        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
           Get in Touch
         </div>
       </Link>
       <Link href="/links">
-        <div className="default_bg text-xs h-9 text-center rounded-lg flex items-center justify-center font-bold">
+        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
           Links
         </div>
       </Link>
       <Link href="/youtube">
-        <div className="default_bg text-xs h-9 text-center rounded-lg flex items-center justify-center font-bold">
+        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
           YouTube
         </div>
       </Link>
@@ -102,11 +103,11 @@ const AdditionalLinks = () => {
 const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
   return (
     <div id="articles">
-      {allPostsData.map(({ id, date, title, category }, i) => (
-        <div className="rounded-lg post_shadow p-4 mb-4 relative" key={id}>
+      {allPostsData.map(({ id, date, title, category, description }, i) => (
+        <div className="post_shadow relative mb-4 rounded-lg p-4" key={id}>
           {i === 0 && (
             <Image
-              className="absolute -top-3 -left-3"
+              className="absolute -left-3 -top-3"
               src="/images/new-post.svg"
               alt="new post"
               width={40}
@@ -115,21 +116,18 @@ const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
           )}
           <article>
             <Link href={`/article/${id}`}>
-              <h1 className="font-bold text-center text-2xl hover:text-lime-600 mb-2">
+              <h1 className="mb-2 text-center text-2xl font-bold hover:text-lime-600">
                 {title}
               </h1>
             </Link>
-            <p className="text-left">
-              <span className="font-bold">{date} — </span>
-              PHP is one of the most popular programming languages in the world.
-              It’s been around for a long time and has a huge community of
-              developers. It’s used for everything from simple websites to
-              complex web applications. If you’re learning PHP, you need a good
-              development environment to practice.
-            </p>
+            <p className="font-bold">{date} </p>
+            <Markdown>{description}</Markdown>
             <div className="mb-4" />
             <div className="flex justify-between">
-              <Link href={`/article/${id}`} className="text-lime-600">
+              <Link
+                href={`/article/${id}`}
+                className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 p-1 text-xs font-bold text-white"
+              >
                 Read more
               </Link>
               <Link href={`/category/${category}`} className="text-lime-600">
