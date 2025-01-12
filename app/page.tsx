@@ -5,8 +5,6 @@ import { getSortedPostsData, PostData } from "@/app/lib/posts";
 export default async function Home() {
   const allPostsData = getSortedPostsData();
 
-  console.log("allPostsData", allPostsData);
-
   return (
     <div>
       <FeaturedArticles />
@@ -117,7 +115,7 @@ const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
           )}
           <article>
             <Link href={`/article/${id}`}>
-              <h1 className="font-bold text-center text-xl hover:text-lime-600">
+              <h1 className="font-bold text-center text-2xl hover:text-lime-600 mb-2">
                 {title}
               </h1>
             </Link>
