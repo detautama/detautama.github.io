@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getSortedPostsData, PostData } from "@/app/lib/posts";
+import { getSortedArticlesData, ArticleData } from "@/app/lib/articles";
 import Markdown from "react-markdown";
 
 export default async function Home() {
-  const allPostsData = getSortedPostsData();
+  const allArticlesData = getSortedArticlesData();
 
   return (
     <div>
@@ -12,7 +12,7 @@ export default async function Home() {
       <div className="mb-5" />
       <AdditionalLinks />
       <div className="mb-5" />
-      <Articles allPostsData={allPostsData} />
+      <Articles allArticlesData={allArticlesData} />
     </div>
   );
 }
@@ -30,7 +30,7 @@ const FeaturedArticles = () => {
         <h3 className="text-center text-2xl font-bold">Featured Articles</h3>
       </div>
       <div id="featured-article" className="grid grid-cols-3 gap-4">
-        <Link href="/article/1">
+        <Link href="/articles/1">
           <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>
               Learn how to build a blog with Next.js, Tailwind CSS and
@@ -38,22 +38,22 @@ const FeaturedArticles = () => {
             </article>
           </div>
         </Link>
-        <Link href="/article/2">
+        <Link href="/articles/2">
           <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>What is React?</article>
           </div>
         </Link>
-        <Link href="/article/3">
+        <Link href="/articles/3">
           <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>How to build a blog with Next.js</article>
           </div>
         </Link>
-        <Link href="/article/1">
+        <Link href="/articles/1">
           <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>How to build a blog with Next.js</article>
           </div>
         </Link>
-        <Link href="/article/2">
+        <Link href="/articles/2">
           <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>
               Performant, flexible and extensible JavaScript library for
@@ -61,7 +61,7 @@ const FeaturedArticles = () => {
             </article>
           </div>
         </Link>
-        <Link href="/article/3">
+        <Link href="/articles/3">
           <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
             <article>
               What is React? React is a JavaScript library for building user
@@ -100,10 +100,12 @@ const AdditionalLinks = () => {
   );
 };
 
-const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
+const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
+  allArticlesData,
+}) => {
   return (
     <div id="articles">
-      {allPostsData.map(({ id, date, title, description, tags }, i) => (
+      {allArticlesData.map(({ id, date, title, description, tags }, i) => (
         <div className="post_shadow relative mb-4 rounded-lg p-4" key={id}>
           {i === 0 && (
             <Image
@@ -115,7 +117,7 @@ const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
             />
           )}
           <article>
-            <Link href={`/article/${id}`}>
+            <Link href={`/articles/${id}`}>
               <h1 className="mb-2 text-center text-2xl font-bold hover:text-lime-600">
                 {title}
               </h1>
@@ -125,7 +127,7 @@ const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
             <div className="mb-4" />
             <div className="flex justify-between">
               <Link
-                href={`/article/${id}`}
+                href={`/articles/${id}`}
                 className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 px-2 py-1 text-xs font-bold tracking-wide text-white"
               >
                 Read more →
