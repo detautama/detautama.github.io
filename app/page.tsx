@@ -1,14 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getSortedPostsData, PostData } from "@/app/lib/posts";
 
-export default function Home() {
+export default async function Home() {
+  const allPostsData = getSortedPostsData();
+
+  console.log("allPostsData", allPostsData);
+
   return (
     <div>
       <FeaturedArticles />
       <div className="mb-5" />
       <AdditionalLinks />
       <div className="mb-5" />
-      <Articles />
+      <Articles allPostsData={allPostsData} />
     </div>
   );
 }
@@ -96,11 +101,11 @@ const AdditionalLinks = () => {
   );
 };
 
-const Articles = () => {
+const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
   return (
     <div id="articles">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <div className="rounded-lg post_shadow p-4 mb-4 relative" key={i}>
+      {allPostsData.map(({ id, date, title, category }, i) => (
+        <div className="rounded-lg post_shadow p-4 mb-4 relative" key={id}>
           {i === 0 && (
             <Image
               className="absolute -top-3 -left-3"
@@ -111,13 +116,13 @@ const Articles = () => {
             />
           )}
           <article>
-            <Link href="/article/1">
+            <Link href={`/article/${id}`}>
               <h1 className="font-bold text-center text-xl hover:text-lime-600">
-                How to build a blog with Next.js
+                {title}
               </h1>
             </Link>
             <p className="text-left">
-              <span className="font-bold">Jan 1, 2022 — </span>
+              <span className="font-bold">{date} — </span>
               PHP is one of the most popular programming languages in the world.
               It’s been around for a long time and has a huge community of
               developers. It’s used for everything from simple websites to
@@ -126,11 +131,11 @@ const Articles = () => {
             </p>
             <div className="mb-4" />
             <div className="flex justify-between">
-              <Link href="/article/1" className="text-lime-600">
+              <Link href={`/article/${id}`} className="text-lime-600">
                 Read more
               </Link>
-              <Link href="/article/1" className="text-lime-600">
-                JavaScript
+              <Link href={`/category/${category}`} className="text-lime-600">
+                {category}
               </Link>
             </div>
           </article>
