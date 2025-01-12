@@ -48,10 +48,15 @@ export default function RootLayout({
             <div id="header-right" className="flex gap-4">
               <a href="#docs">Docs</a>
               <a href="#github">GitHub</a>
-              <div>Search</div>
+              <Image
+                src="images/search.svg"
+                alt="search icon"
+                width={20}
+                height={20}
+              />
             </div>
           </div>
-          <div id="divider" className="mb-5">
+          <div id="divider" className="mb-6">
             <div className="default_bg w-full rounded-md flex justify-center gap-11 py-1 text-xs font-bold">
               <Link href="#">JavaScript</Link>
               <Link href="#">Web Dev</Link>
@@ -59,26 +64,31 @@ export default function RootLayout({
           </div>
           <div className="flex gap-4">
             <div className="w-3/4">{children}</div>
-            <div id="sidebar" className="w-1/4">
-              <div className="border-2 border-lime-400 rounded-md p-4">
-                <h2>Top Categories</h2>
-                <ul>
-                  <li>
+            <div id="sidebar" className="w-1/4 flex flex-col gap-4">
+              <div className="border-4 border-lime-800 rounded-md">
+                <div className="bg-lime-800 text-white p-2">
+                  <h2 className="font-bold">Top Categories</h2>
+                </div>
+                <ul className="p-2 flex flex-wrap gap-1">
+                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
                     <Link href="#">JavaScript</Link>
                   </li>
-                  <li>
+                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
                     <Link href="#">Web Dev</Link>
                   </li>
-                  <li>
+                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
                     <Link href="#">React</Link>
                   </li>
-                  <li>
+                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
                     <Link href="#">Next.js</Link>
                   </li>
-                  <li>
+                  <li className="bg-lime-700 p-1 rounded-md text-white text-xs font-bold">
                     <Link href="#">Tailwind CSS</Link>
                   </li>
                 </ul>
+              </div>
+              <div className="h-48 border-4 border-lime-800 rounded-md">
+                Other things to promote
               </div>
             </div>
           </div>
