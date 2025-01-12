@@ -7,6 +7,7 @@ export interface PostData {
   date: string;
   description: string;
   content: string;
+  tags: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any; // For other frontmatter fields
 }
@@ -25,7 +26,6 @@ export function getSortedPostsData(): PostData[] {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     // Extract the markdown content
     const content = matter(fileContents).content;
-    console.log("content", content);
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
@@ -33,9 +33,13 @@ export function getSortedPostsData(): PostData[] {
     return {
       id,
       date: matterResult.data.date,
-      ...(matterResult.data as Omit<PostData, "id" | "date">),
       description: matterResult.data.description,
       content,
+      tags: matterResult.data.tags,
+      ...(matterResult.data as Omit<
+        PostData,
+        "id" | "date" | "description" | "content" | "tags"
+      >),
     };
   });
 

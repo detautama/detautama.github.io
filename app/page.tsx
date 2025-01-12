@@ -103,7 +103,7 @@ const AdditionalLinks = () => {
 const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
   return (
     <div id="articles">
-      {allPostsData.map(({ id, date, title, category, description }, i) => (
+      {allPostsData.map(({ id, date, title, description, tags }, i) => (
         <div className="post_shadow relative mb-4 rounded-lg p-4" key={id}>
           {i === 0 && (
             <Image
@@ -126,13 +126,30 @@ const Articles: React.FC<{ allPostsData: PostData[] }> = ({ allPostsData }) => {
             <div className="flex justify-between">
               <Link
                 href={`/article/${id}`}
-                className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 p-1 text-xs font-bold text-white"
+                className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 px-2 py-1 text-xs font-bold tracking-wide text-white"
               >
-                Read more
+                Read more →
               </Link>
-              <Link href={`/category/${category}`} className="text-lime-600">
-                {category}
-              </Link>
+              <div className="flex gap-2">
+                {tags
+                  .split(",")
+                  .map((string) => string.trim())
+                  .map((tag) => (
+                    <Link
+                      key={tag}
+                      href={`/tag/${tag}`}
+                      className="flex gap-1 rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
+                    >
+                      <Image
+                        src="/images/tag.svg"
+                        alt="tag"
+                        width={16}
+                        height={16}
+                      />
+                      {tag}
+                    </Link>
+                  ))}
+              </div>
             </div>
           </article>
         </div>
