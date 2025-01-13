@@ -59,12 +59,7 @@ export default function RootLayout({
               />
             </div>
           </div>
-          <div id="divider" className="mb-6">
-            <div className="default_bg flex w-full justify-center gap-11 rounded-md py-1 text-xs font-bold">
-              <Link href="#">JavaScript</Link>
-              <Link href="#">Web Dev</Link>
-            </div>
-          </div>
+          <div className="default_bg mb-6 h-2 w-full rounded-md"></div>
           <div className="flex gap-4">
             <div className="w-3/4">{children}</div>
             <div id="sidebar" className="flex w-1/4 flex-col gap-4">

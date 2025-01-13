@@ -50,22 +50,36 @@ const AdditionalLinks = () => {
   return (
     <div id="additional-links" className="grid grid-cols-4 gap-4">
       <Link href="/tag">
-        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
+        <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
+          <Image
+            src="/images/tags-white.svg"
+            alt="tag"
+            width={16}
+            height={16}
+          />
           Tags
         </div>
       </Link>
-      <Link href="/get-in-touch">
-        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
+      <Link href="/contact">
+        <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
+          <Image src="/images/mail.svg" alt="mail" width={16} height={16} />
           Get in Touch
         </div>
       </Link>
       <Link href="/links">
-        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
+        <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
+          <Image src="/images/link.svg" alt="link" width={16} height={16} />
           Links
         </div>
       </Link>
-      <Link href="/youtube">
-        <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
+      <Link href="https://www.youtube.com/@detautama9899">
+        <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
+          <Image
+            src="/images/youtube.svg"
+            alt="youtube"
+            width={16}
+            height={16}
+          />
           YouTube
         </div>
       </Link>
