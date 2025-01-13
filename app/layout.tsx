@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
+import { getTopTags } from "./lib/articles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const topTags = getTopTags({
+    limit: 5,
+  });
   return (
     <html lang="en">
       <body
@@ -63,28 +67,7 @@ export default function RootLayout({
           <div className="flex gap-4">
             <div className="w-3/4">{children}</div>
             <div id="sidebar" className="flex w-1/4 flex-col gap-4">
-              <div className="rounded-md border-4 border-lime-800">
-                <div className="bg-lime-800 p-2 text-white">
-                  <h2 className="font-bold">Top Categories</h2>
-                </div>
-                <ul className="flex flex-wrap gap-1 p-2">
-                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
-                    <Link href="#">JavaScript</Link>
-                  </li>
-                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
-                    <Link href="#">Web Dev</Link>
-                  </li>
-                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
-                    <Link href="#">React</Link>
-                  </li>
-                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
-                    <Link href="#">Next.js</Link>
-                  </li>
-                  <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
-                    <Link href="#">Tailwind CSS</Link>
-                  </li>
-                </ul>
-              </div>
+              <TopCategories topTags={topTags} />
               <div className="h-48 rounded-md border-4 border-lime-800">
                 Other things to promote
               </div>
@@ -101,3 +84,27 @@ export default function RootLayout({
     </html>
   );
 }
+
+const TopCategories: React.FC<{ topTags: string[] }> = ({ topTags }) => {
+  return (
+    <div className="rounded-md border-4 border-lime-800">
+      <div className="bg-lime-800 p-2 text-white">
+        <h2 className="font-bold">Top Categories</h2>
+      </div>
+      <ul className="flex flex-wrap gap-1 p-2">
+        {topTags.map((tag) => (
+          <Link href={`/tag/#${tag}`} key={tag}>
+            <li className="rounded-md bg-lime-700 p-1 text-xs font-bold text-white">
+              {tag}
+            </li>
+          </Link>
+        ))}
+        <Link href={`/tag`}>
+          <li className="rounded-md bg-lime-700 px-3 py-1 text-xs font-bold text-white">
+            →
+          </li>
+        </Link>
+      </ul>
+    </div>
+  );
+};

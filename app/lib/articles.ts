@@ -83,3 +83,20 @@ export function getArticleData(id: string): ArticleData {
     >),
   };
 }
+
+export function getTopTags({ limit = 5 }): string[] {
+  const allArticlesData = getSortedArticlesData();
+  const tags = allArticlesData.reduce(
+    (acc, article) => {
+      if (article.tag) {
+        acc[article.tag] = acc[article.tag] ? acc[article.tag] + 1 : 1;
+      }
+      return acc;
+    },
+    {} as Record<string, number>
+  );
+
+  return Object.keys(tags)
+    .sort((a, b) => tags[b] - tags[a])
+    .slice(0, limit);
+}
