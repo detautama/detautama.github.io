@@ -32,14 +32,17 @@ export default function RootLayout({
         <div className="mx-auto max-w-4xl">
           <div id="header" className="flex items-center justify-between py-5">
             <div id="header-left" className="flex items-center gap-4">
-              <Image
-                src="/deta.png"
-                alt="profile image"
-                width={70}
-                height={70}
-              />
+              <Link href="/">
+                <Image
+                  className="shimmer"
+                  src="/deta.png"
+                  alt="profile image"
+                  width={70}
+                  height={70}
+                />
+              </Link>
               <div id="tagline">
-                <Link href="/" className="text-xl font-bold">
+                <Link href="/" className="text-xl font-bold hover:underline">
                   I Putu Deta Utama Putra
                 </Link>
                 <p>A blog on JavaScript, web and more</p>
