@@ -2,7 +2,7 @@
 title: "When to Use Static Generation v.s. Server-side Rendering"
 date: "2020-01-02"
 description: "Next.js gives you the best of both worlds: Server-side Rendering and Static Generation. What's the difference between them and when should you use each?"
-tag: "nextjs"
+tag: "Nextjs"
 featured: true
 ---
 

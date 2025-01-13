@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedArticlesData, ArticleData } from "@/app/lib/articles";
-import Markdown from "react-markdown";
 
 export default async function Home() {
   const allArticlesData = getSortedArticlesData();
@@ -97,9 +96,9 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
               </h1>
             </Link>
             <p className="mb-4 text-center text-xs font-bold text-gray-600">
-              {date}{" "}
+              {date}
             </p>
-            <Markdown>{description}</Markdown>
+            <p>{description}</p>
             <div className="mb-4" />
             <div className="flex justify-between">
               <Link

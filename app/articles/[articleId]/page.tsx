@@ -2,6 +2,7 @@ import { getAllArticleIds, getArticleData } from "@/app/lib/articles";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import Image from "next/image";
+import remarkGfm from "remark-gfm";
 
 export default async function Page({
   params,
@@ -20,7 +21,9 @@ export default async function Page({
       <div className="text-center text-gray-500">{artileData.description}</div>
       <div className="mb-5" />
       <article>
-        <Markdown>{artileData.content}</Markdown>
+        <Markdown className={"prose"} remarkPlugins={[remarkGfm]}>
+          {artileData.content}
+        </Markdown>
       </article>
       <div className="mb-5" />
       <div className="flex items-center justify-between">
