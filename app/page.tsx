@@ -5,10 +5,13 @@ import Markdown from "react-markdown";
 
 export default async function Home() {
   const allArticlesData = getSortedArticlesData();
+  const featuredArticles = allArticlesData.filter(
+    (article) => article.featured
+  );
 
   return (
     <div>
-      <FeaturedArticles />
+      <FeaturedArticles featuredArticles={featuredArticles} />
       <div className="mb-5" />
       <AdditionalLinks />
       <div className="mb-5" />
@@ -17,7 +20,9 @@ export default async function Home() {
   );
 }
 
-const FeaturedArticles = () => {
+const FeaturedArticles: React.FC<{ featuredArticles: ArticleData[] }> = ({
+  featuredArticles,
+}) => {
   return (
     <div>
       <div className="mb-4 flex items-center justify-center gap-2">
@@ -30,44 +35,13 @@ const FeaturedArticles = () => {
         <h3 className="text-center text-2xl font-bold">Featured Articles</h3>
       </div>
       <div id="featured-article" className="grid grid-cols-3 gap-4">
-        <Link href="/articles/1">
-          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-            <article>
-              Learn how to build a blog with Next.js, Tailwind CSS and
-              TypeScript
-            </article>
-          </div>
-        </Link>
-        <Link href="/articles/2">
-          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-            <article>What is React?</article>
-          </div>
-        </Link>
-        <Link href="/articles/3">
-          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-            <article>How to build a blog with Next.js</article>
-          </div>
-        </Link>
-        <Link href="/articles/1">
-          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-            <article>How to build a blog with Next.js</article>
-          </div>
-        </Link>
-        <Link href="/articles/2">
-          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-            <article>
-              Performant, flexible and extensible JavaScript library for
-              building
-            </article>
-          </div>
-        </Link>
-        <Link href="/articles/3">
-          <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-            <article>
-              What is React? React is a JavaScript library for building user
-            </article>
-          </div>
-        </Link>
+        {featuredArticles.map(({ id, title }) => (
+          <Link href={`/articles/${id}`} key={id} className="hover:scale-110">
+            <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
+              <article>{title}</article>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
@@ -122,7 +96,9 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
                 {title}
               </h1>
             </Link>
-            <p className="font-bold">{date} </p>
+            <p className="mb-4 text-center text-xs font-bold text-gray-600">
+              {date}{" "}
+            </p>
             <Markdown>{description}</Markdown>
             <div className="mb-4" />
             <div className="flex justify-between">

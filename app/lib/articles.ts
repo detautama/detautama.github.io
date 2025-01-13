@@ -9,6 +9,7 @@ export interface ArticleData {
   description: string;
   content: string;
   tags: string;
+  featured: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any; // For other frontmatter fields
 }
@@ -40,9 +41,16 @@ export function getSortedArticlesData(): ArticleData[] {
       description: matterResult.data.description,
       content,
       tags: matterResult.data.tags,
+      featured: matterResult.data.featured,
       ...(matterResult.data as Omit<
         ArticleData,
-        "id" | "date" | "description" | "content" | "tags" | "title"
+        | "id"
+        | "date"
+        | "description"
+        | "content"
+        | "tags"
+        | "title"
+        | "featured"
       >),
     };
   });
@@ -74,9 +82,10 @@ export function getArticleData(id: string): ArticleData {
     description: matterResult.data.description,
     content: matterResult.content,
     tags: matterResult.data.tags,
+    featured: matterResult.data.featured,
     ...(matterResult.data as Omit<
       ArticleData,
-      "id" | "date" | "description" | "content" | "tags" | "title"
+      "id" | "date" | "description" | "content" | "tags" | "title" | "featured"
     >),
   };
 }
