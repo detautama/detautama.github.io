@@ -30,7 +30,7 @@ export const Search: React.FC<{
         <input
           type="text"
           placeholder="Search..."
-          className="w-full rounded-md border border-gray-300 p-2 focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-200"
+          className="w-full rounded-md border border-gray-300 p-2 focus:border-green-300 focus:outline-none focus:ring focus:ring-green-200"
           onChange={search}
         />
       </form>
