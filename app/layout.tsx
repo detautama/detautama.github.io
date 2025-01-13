@@ -67,10 +67,8 @@ export default function RootLayout({
           <div className="flex gap-4">
             <div className="w-3/4">{children}</div>
             <div id="sidebar" className="flex w-1/4 flex-col gap-4">
+              <PintarKredit />
               <TopCategories topTags={topTags} />
-              <div className="h-48 rounded-md border-4 border-lime-800">
-                Other things to promote
-              </div>
             </div>
           </div>
           <footer
@@ -105,6 +103,27 @@ const TopCategories: React.FC<{ topTags: string[] }> = ({ topTags }) => {
           </li>
         </Link>
       </ul>
+    </div>
+  );
+};
+
+const PintarKredit = () => {
+  return (
+    <div className="rounded-md border-4 border-lime-800 p-4">
+      <Image
+        src="/images/promote/pintar-kredit.jpg"
+        alt="pintar kredit"
+        width={100}
+        height={172}
+        className="m-auto"
+      />
+      <p className="text-center">
+        Try my app! <br />{" "}
+        <Link href={"https://pintar-kredit.detautama.me/"}>
+          {" "}
+          <strong>Pintar Kredit</strong>
+        </Link>
+      </p>
     </div>
   );
 };
