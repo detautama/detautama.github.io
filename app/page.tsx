@@ -79,7 +79,7 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
 }) => {
   return (
     <div id="articles">
-      {allArticlesData.map(({ id, date, title, description, tags }, i) => (
+      {allArticlesData.map(({ id, date, title, description, tag }, i) => (
         <div className="post_shadow relative mb-4 rounded-lg p-4" key={id}>
           {i === 0 && (
             <Image
@@ -109,24 +109,18 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
                 Read more →
               </Link>
               <div className="flex gap-2">
-                {tags
-                  .split(",")
-                  .map((string) => string.trim())
-                  .map((tag) => (
-                    <Link
-                      key={tag}
-                      href={`/tag/${tag}`}
-                      className="flex gap-1 rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
-                    >
-                      <Image
-                        src="/images/tag.svg"
-                        alt="tag"
-                        width={16}
-                        height={16}
-                      />
-                      {tag}
-                    </Link>
-                  ))}
+                <Link
+                  href={`/tag/#${tag}`}
+                  className="flex gap-1 rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
+                >
+                  <Image
+                    src="/images/tag.svg"
+                    alt="tag"
+                    width={16}
+                    height={16}
+                  />
+                  {tag}
+                </Link>
               </div>
             </div>
           </article>

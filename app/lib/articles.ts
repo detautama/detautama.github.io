@@ -8,7 +8,7 @@ export interface ArticleData {
   title: string;
   description: string;
   content: string;
-  tags: string;
+  tag: string;
   featured: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any; // For other frontmatter fields
@@ -40,17 +40,11 @@ export function getSortedArticlesData(): ArticleData[] {
       date: matterResult.data.date,
       description: matterResult.data.description,
       content,
-      tags: matterResult.data.tags,
+      tag: matterResult.data.tag,
       featured: matterResult.data.featured,
       ...(matterResult.data as Omit<
         ArticleData,
-        | "id"
-        | "date"
-        | "description"
-        | "content"
-        | "tags"
-        | "title"
-        | "featured"
+        "id" | "date" | "description" | "content" | "tag" | "title" | "featured"
       >),
     };
   });
@@ -81,11 +75,11 @@ export function getArticleData(id: string): ArticleData {
     date: matterResult.data.date,
     description: matterResult.data.description,
     content: matterResult.content,
-    tags: matterResult.data.tags,
+    tag: matterResult.data.tag,
     featured: matterResult.data.featured,
     ...(matterResult.data as Omit<
       ArticleData,
-      "id" | "date" | "description" | "content" | "tags" | "title" | "featured"
+      "id" | "date" | "description" | "content" | "tag" | "title" | "featured"
     >),
   };
 }

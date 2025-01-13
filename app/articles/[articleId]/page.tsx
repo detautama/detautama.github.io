@@ -1,6 +1,7 @@
 import { getAllArticleIds, getArticleData } from "@/app/lib/articles";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import Image from "next/image";
 
 export default async function Page({
   params,
@@ -25,18 +26,13 @@ export default async function Page({
       <div className="flex items-center justify-between">
         <time className="text-gray-500">{artileData.date}</time>
         <div className="flex items-center justify-center gap-2 text-center">
-          {artileData.tags
-            .split(",")
-            .map((string) => string.trim())
-            .map((tag) => (
-              <Link
-                href={`/tag/${tag}`}
-                key={tag}
-                className="rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
-              >
-                {tag}
-              </Link>
-            ))}
+          <Link
+            href={`/tag/#${artileData.tag}`}
+            className="flex gap-1 rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
+          >
+            <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
+            {artileData.tag}
+          </Link>
         </div>
       </div>
     </div>
