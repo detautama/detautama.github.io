@@ -97,7 +97,7 @@ export default function RootLayout({
           </div>
           <footer
             id="footer"
-            className="default_bg mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
+            className="mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
           >
             © 2021 I Putu Deta Utama Putra. All rights reserved.
           </footer>

@@ -49,9 +49,9 @@ const FeaturedArticles: React.FC<{ featuredArticles: ArticleData[] }> = ({
 const AdditionalLinks = () => {
   return (
     <div id="additional-links" className="grid grid-cols-4 gap-4">
-      <Link href="/categories">
+      <Link href="/tag">
         <div className="default_bg flex h-9 items-center justify-center rounded-lg text-center text-xs font-bold">
-          Categories
+          Tags
         </div>
       </Link>
       <Link href="/get-in-touch">

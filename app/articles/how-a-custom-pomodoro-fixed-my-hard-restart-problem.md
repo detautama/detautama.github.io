@@ -1,6 +1,6 @@
 ---
 title: "How a Custom Pomodoro Fixed My 'Hard Restart' Problem"
-date: "2024-01-01"
+date: "2024-12-27"
 description: "Struggled to get back into focus after breaks? I customized the Pomodoro technique to include a quick review phase, and it’s been a game-changer for my productivity. Here’s how it works!"
 tag: "Productivity"
 featured: true
