@@ -53,14 +53,16 @@ export default function RootLayout({
               </div>
             </div>
             <div id="header-right" className="flex gap-4">
-              <a href="#docs">Docs</a>
-              <a href="#github">GitHub</a>
-              <Image
-                src="images/search.svg"
-                alt="search icon"
-                width={20}
-                height={20}
-              />
+              <Link href="#docs">Docs</Link>
+              <Link href="#github">GitHub</Link>
+              <Link href={"/search"}>
+                <Image
+                  src="images/search.svg"
+                  alt="search icon"
+                  width={20}
+                  height={20}
+                />
+              </Link>
             </div>
           </div>
           <div className="default_bg mb-6 h-2 w-full rounded-md"></div>
@@ -75,7 +77,7 @@ export default function RootLayout({
             id="footer"
             className="mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
           >
-            © 2021 I Putu Deta Utama Putra. All rights reserved.
+            Thanks for visiting! - I Putu Deta Utama Putra
           </footer>
         </div>
       </body>
