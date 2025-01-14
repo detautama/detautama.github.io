@@ -33,7 +33,10 @@ const FeaturedArticles: React.FC<{ featuredArticles: ArticleData[] }> = ({
         />
         <h3 className="text-center text-2xl font-bold">Featured Articles</h3>
       </div>
-      <div id="featured-article" className="grid grid-cols-3 gap-4">
+      <div
+        id="featured-article"
+        className="grid grid-cols-2 gap-4 md:grid-cols-3"
+      >
         {featuredArticles.map(({ id, title }) => (
           <Link href={`/articles/${id}`} key={id} className="hover:scale-110">
             <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
@@ -48,7 +51,10 @@ const FeaturedArticles: React.FC<{ featuredArticles: ArticleData[] }> = ({
 
 const AdditionalLinks = () => {
   return (
-    <div id="additional-links" className="grid grid-cols-4 gap-4">
+    <div
+      id="additional-links"
+      className="grid grid-cols-2 gap-4 md:grid-cols-5"
+    >
       <Link href="/tag">
         <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
           <Image

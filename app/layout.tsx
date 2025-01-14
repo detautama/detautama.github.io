@@ -33,9 +33,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="mx-auto max-w-4xl">
-          <div id="header" className="flex items-center justify-between py-5">
-            <div id="header-left" className="flex items-center gap-4">
+        <div className="mx-auto max-w-4xl px-4">
+          <div
+            id="header"
+            className="flex flex-col items-center justify-between gap-4 py-5 md:flex-row"
+          >
+            <div
+              id="header-left"
+              className="flex flex-col items-center gap-4 md:flex-row"
+            >
               <Link href="/">
                 <Image
                   className="shimmer"
@@ -45,7 +51,7 @@ export default function RootLayout({
                   height={70}
                 />
               </Link>
-              <div id="tagline">
+              <div id="tagline" className="text-center md:text-left">
                 <Link href="/" className="text-xl font-bold hover:underline">
                   I Putu Deta Utama Putra
                 </Link>
@@ -66,9 +72,9 @@ export default function RootLayout({
             </div>
           </div>
           <div className="default_bg mb-6 h-2 w-full rounded-md"></div>
-          <div className="flex gap-4">
-            <div className="w-3/4">{children}</div>
-            <div id="sidebar" className="flex w-1/4 flex-col gap-4">
+          <div className="flex flex-col gap-4 md:flex-row">
+            <div className="w-full md:w-3/4">{children}</div>
+            <div id="sidebar" className="flex w-full flex-col gap-4 md:w-1/4">
               <PintarKredit />
               <TopCategories topTags={topTags} />
             </div>
@@ -111,21 +117,19 @@ const TopCategories: React.FC<{ topTags: string[] }> = ({ topTags }) => {
 
 const PintarKredit = () => {
   return (
-    <div className="rounded-md border-4 border-lime-800 p-4">
-      <Image
-        src="/images/promote/pintar-kredit.jpg"
-        alt="pintar kredit"
-        width={100}
-        height={172}
-        className="m-auto"
-      />
-      <p className="text-center">
-        Try my app! <br />{" "}
-        <Link href={"https://pintar-kredit.detautama.me/"}>
-          {" "}
-          <strong>Pintar Kredit</strong>
-        </Link>
-      </p>
-    </div>
+    <Link href={"https://pintar-kredit.detautama.me/"}>
+      <div className="rounded-md border-4 border-lime-800 p-4">
+        <Image
+          src="/images/promote/pintar-kredit.jpg"
+          alt="pintar kredit"
+          width={100}
+          height={172}
+          className="m-auto"
+        />
+        <p className="text-center">
+          Try my app! <br /> <strong>Pintar Kredit</strong>
+        </p>
+      </div>
+    </Link>
   );
 };
