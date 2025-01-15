@@ -131,8 +131,8 @@ const PintarKredit = () => {
           height={172}
           className="m-auto"
         />
-        <p className="text-center">
-          Try my app! <br /> <strong>Pintar Kredit</strong>
+        <p className="mt-4 text-center">
+          Try my web app! <br /> <strong>Pintar Kredit</strong>
         </p>
       </div>
     </Link>

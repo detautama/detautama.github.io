@@ -8,7 +8,7 @@ export default async function Page() {
         Collection of useful links
       </h1>
       <div className="mb-5" />
-      <p>
+      <p className="text-center md:text-left">
         Here’s a collection of links that I absolutely like. I’ll keep updating
         this page from time to time.
       </p>
@@ -18,7 +18,9 @@ export default async function Page() {
           <Link href={link.href} className="text-blue-500">
             {link.title}
           </Link>
-          <div className="text-gray-500">{link.description}</div>
+          <div className="text-gray-500 dark:text-gray-300">
+            {link.description}
+          </div>
         </div>
       ))}
     </div>
