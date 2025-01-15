@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Image from "next/image";
 import { Project, projects } from "./project";
+import Link from "next/link";
 
 export default function Page() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -19,7 +20,7 @@ export default function Page() {
       <div className="mb-5" />
       <div className="grid grid-cols-2 gap-4">
         {projects.map((project) => (
-          <div
+          <button
             key={project.title}
             className="flex cursor-pointer flex-col gap-4 rounded-md p-4 shadow-md transition-shadow hover:shadow-lg dark:border dark:border-gray-500"
             onClick={() => setSelectedProject(project)}
@@ -32,7 +33,7 @@ export default function Page() {
             />
             <h2 className="text-center font-bold">{project.title}</h2>
             <p className="line-clamp-4">{project.description}</p>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -59,14 +60,14 @@ export default function Page() {
             />
             <p className="mb-4">{selectedProject.description}</p>
             {selectedProject.link && (
-              <a
+              <Link
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 Visit Project →
-              </a>
+              </Link>
             )}
           </div>
         </div>
