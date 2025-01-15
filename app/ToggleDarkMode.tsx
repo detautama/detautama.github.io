@@ -11,6 +11,15 @@ export function ToggleDarkMode() {
     setMounted(true);
   }, []);
 
+  // use prefers-color-scheme as the default theme
+  useEffect(() => {
+    if (!mounted) return;
+    if (theme === "system") {
+      const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      setTheme(darkQuery.matches ? "dark" : "light");
+    }
+  }, [mounted, theme, setTheme]);
+
   if (!mounted) {
     return (
       <button

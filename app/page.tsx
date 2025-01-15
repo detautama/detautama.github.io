@@ -40,7 +40,7 @@ const FeaturedArticles: React.FC<{ featuredArticles: ArticleData[] }> = ({
         {featuredArticles.map(({ id, title }) => (
           <Link href={`/articles/${id}`} key={id} className="hover:scale-110">
             <div className="default_bg flex h-28 items-center justify-center rounded-lg p-4 text-center font-bold">
-              <article>{title}</article>
+              <article className="line-clamp-3">{title}</article>
             </div>
           </Link>
         ))}
