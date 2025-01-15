@@ -62,8 +62,8 @@ export default function RootLayout({
                 </div>
               </div>
               <div id="header-right" className="flex gap-4">
-                <Link href="#docs">Docs</Link>
-                <Link href="#github">GitHub</Link>
+                <Link href="/">Articles</Link>
+                <Link href="/projects">Projects</Link>
                 <Link href={"/search"}>
                   <Image
                     src="/images/search.svg"
