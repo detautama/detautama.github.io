@@ -82,7 +82,7 @@ const AdditionalLinks = () => {
         <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
           <Image
             src="/images/youtube.svg"
-            alt="youtube"
+            alt="YouTube icon"
             width={16}
             height={16}
           />
@@ -118,7 +118,7 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
                 {title}
               </h1>
             </Link>
-            <p className="mb-4 text-center text-xs font-bold text-gray-600 dark:text-gray-300">
+            <p className="mb-4 text-center text-xs font-bold text-gray-600 dark:text-white">
               {date}
             </p>
             <p>{description}</p>
