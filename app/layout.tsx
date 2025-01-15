@@ -4,6 +4,8 @@ import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
 import { getTopTags } from "./lib/articles";
+import { ThemeProvider } from "next-themes";
+import { ToggleDarkMode } from "./ToggleDarkMode";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,63 +31,66 @@ export default function RootLayout({
     limit: 5,
   });
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="mx-auto max-w-4xl px-4">
-          <div
-            id="header"
-            className="flex flex-col items-center justify-between gap-4 py-5 md:flex-row"
-          >
+        <ThemeProvider attribute={"class"}>
+          <div className="mx-auto max-w-4xl px-4">
             <div
-              id="header-left"
-              className="flex flex-col items-center gap-4 md:flex-row"
+              id="header"
+              className="flex flex-col items-center justify-between gap-4 py-5 md:flex-row"
             >
-              <Link href="/">
-                <Image
-                  className="shimmer"
-                  src="/deta.png"
-                  alt="profile image"
-                  width={70}
-                  height={70}
-                />
-              </Link>
-              <div id="tagline" className="text-center md:text-left">
-                <Link href="/" className="text-xl font-bold hover:underline">
-                  I Putu Deta Utama Putra
+              <div
+                id="header-left"
+                className="flex flex-col items-center gap-4 md:flex-row"
+              >
+                <Link href="/">
+                  <Image
+                    className="shimmer"
+                    src="/deta.png"
+                    alt="profile image"
+                    width={70}
+                    height={70}
+                  />
                 </Link>
-                <p>A blog on JavaScript, web and more</p>
+                <div id="tagline" className="text-center md:text-left">
+                  <Link href="/" className="text-xl font-bold hover:underline">
+                    I Putu Deta Utama Putra
+                  </Link>
+                  <p>A blog on JavaScript, web and more</p>
+                </div>
+              </div>
+              <div id="header-right" className="flex gap-4">
+                <Link href="#docs">Docs</Link>
+                <Link href="#github">GitHub</Link>
+                <Link href={"/search"}>
+                  <Image
+                    src="/images/search.svg"
+                    alt="search icon"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <ToggleDarkMode />
               </div>
             </div>
-            <div id="header-right" className="flex gap-4">
-              <Link href="#docs">Docs</Link>
-              <Link href="#github">GitHub</Link>
-              <Link href={"/search"}>
-                <Image
-                  src="images/search.svg"
-                  alt="search icon"
-                  width={20}
-                  height={20}
-                />
-              </Link>
+            <div className="default_bg mb-6 h-2 w-full rounded-md"></div>
+            <div className="flex flex-col gap-4 md:flex-row">
+              <div className="w-full md:w-3/4">{children}</div>
+              <div id="sidebar" className="flex w-full flex-col gap-4 md:w-1/4">
+                <PintarKredit />
+                <TopCategories topTags={topTags} />
+              </div>
             </div>
+            <footer
+              id="footer"
+              className="mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
+            >
+              Thanks for visiting! - I Putu Deta Utama Putra
+            </footer>
           </div>
-          <div className="default_bg mb-6 h-2 w-full rounded-md"></div>
-          <div className="flex flex-col gap-4 md:flex-row">
-            <div className="w-full md:w-3/4">{children}</div>
-            <div id="sidebar" className="flex w-full flex-col gap-4 md:w-1/4">
-              <PintarKredit />
-              <TopCategories topTags={topTags} />
-            </div>
-          </div>
-          <footer
-            id="footer"
-            className="mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
-          >
-            Thanks for visiting! - I Putu Deta Utama Putra
-          </footer>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );

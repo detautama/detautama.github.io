@@ -18,16 +18,18 @@ export default async function Page({
       <h1 className="text-center text-2xl font-bold">{artileData.title}</h1>
       <div className="mb-5" />
       <div className="mb-5" />
-      <div className="text-center text-gray-500">{artileData.description}</div>
+      <div className="text-center italic text-stone-500 dark:text-stone-400">
+        {artileData.description}
+      </div>
       <div className="mb-5" />
-      <article>
-        <Markdown className={"prose"} remarkPlugins={[remarkGfm]}>
-          {artileData.content}
-        </Markdown>
+      <article className="prose dark:prose-invert">
+        <Markdown remarkPlugins={[remarkGfm]}>{artileData.content}</Markdown>
       </article>
       <div className="mb-5" />
       <div className="flex items-center justify-between">
-        <time className="text-gray-500">{artileData.date}</time>
+        <time className="text-gray-500 dark:text-gray-300">
+          {artileData.date}
+        </time>
         <div className="flex items-center justify-center gap-2 text-center">
           <Link
             href={`/tag/#${artileData.tag}`}

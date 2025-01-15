@@ -23,7 +23,7 @@ export default async function Page() {
         ))}
       </div>
       <div className="mb-5" />
-      <hr />
+      <hr className="pb-4" />
       {uniqueTags.map((tag, i) => (
         <div key={i}>
           <p className="text-2xl font-bold" id={tag}>
@@ -34,8 +34,8 @@ export default async function Page() {
           <div className="flex flex-wrap gap-4">
             {allArticlesData
               .filter((article) => article.tag === tag)
-              .map((article, i) => (
-                <div key={i}>
+              .map((article) => (
+                <div key={article.id}>
                   <article>
                     <Link href={`/articles/${article.id}`}>
                       <h1 className="mb-2text-2xl font-bold hover:text-lime-600">

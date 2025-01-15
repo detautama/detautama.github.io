@@ -53,7 +53,7 @@ const AdditionalLinks = () => {
   return (
     <div
       id="additional-links"
-      className="grid grid-cols-2 gap-4 md:grid-cols-5"
+      className="grid grid-cols-2 gap-4 md:grid-cols-4"
     >
       <Link href="/tag">
         <div className="flex h-9 items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-violet-700 to-lime-800 text-center text-xs font-bold text-white">
@@ -99,10 +99,13 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
   return (
     <div id="articles">
       {allArticlesData.map(({ id, date, title, description, tag }, i) => (
-        <div className="post_shadow relative mb-4 rounded-lg p-4" key={id}>
+        <div
+          className="post_shadow relative mb-4 rounded-lg p-4 dark:border dark:border-white"
+          key={id}
+        >
           {i === 0 && (
             <Image
-              className="absolute -left-3 -top-3"
+              className="absolute -left-2 -top-2"
               src="/images/new-post.svg"
               alt="new post"
               width={40}
@@ -115,7 +118,7 @@ const Articles: React.FC<{ allArticlesData: ArticleData[] }> = ({
                 {title}
               </h1>
             </Link>
-            <p className="mb-4 text-center text-xs font-bold text-gray-600">
+            <p className="mb-4 text-center text-xs font-bold text-gray-600 dark:text-gray-300">
               {date}
             </p>
             <p>{description}</p>
