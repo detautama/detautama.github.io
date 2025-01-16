@@ -22,7 +22,7 @@ export default function Page() {
         {projects.map((project) => (
           <button
             key={project.title}
-            className="flex cursor-pointer flex-col gap-4 rounded-md p-4 shadow-md transition-shadow hover:shadow-lg dark:border dark:border-gray-500"
+            className="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-md p-4 shadow-md transition-shadow hover:shadow-lg dark:border dark:border-gray-500"
             onClick={() => setSelectedProject(project)}
           >
             <Image
@@ -32,7 +32,7 @@ export default function Page() {
               width={300}
             />
             <h2 className="text-center font-bold">{project.title}</h2>
-            <p className="line-clamp-4">{project.description}</p>
+            <p className="line-clamp-4 text-center">{project.description}</p>
           </button>
         ))}
       </div>
