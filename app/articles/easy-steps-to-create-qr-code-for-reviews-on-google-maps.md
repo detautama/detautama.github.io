@@ -29,9 +29,15 @@ Before creating a QR Code, you need to find your business's "Place ID". Follow t
 
 After getting the “Place ID,” create a URL for your Google review page with the following format:
 
-`https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID`
+```text
+https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+```
 
-Example URL: `https://search.google.com/local/writereview?placeid=ChIJpe5hQz4-0i0RvsbXvzbr9Ds`
+Example URL:
+
+```text
+https://search.google.com/local/writereview?placeid=ChIJpe5hQz4-0i0RvsbXvzbr9Ds
+```
 
 ### 3. Use QR Code Generator
 
