@@ -31,7 +31,7 @@ Instead of diving straight into a break, I now take 5 minutes to review what I j
 Transition to Rest (5 Minutes):
 Once I’ve captured my progress and set myself up for the next session, I feel more at ease taking a genuine break. Whether it’s stretching, grabbing a quick snack, or simply resting my eyes, I know exactly what I’ll do when I return.
 
-### The Difference It Made
+## The Difference It Made
 
 Adding this review phase was a game-changer for me. Not only did it eliminate the hard restart problem, but it also gave me a sense of closure for each work session. I didn’t feel like I was leaving tasks unfinished or losing track of what I was doing. Now, when I come back from a break, I’m able to jump right into the next task with clarity and confidence. The sense of continuity this approach provides has made my work sessions more productive and far less stressful.
 
