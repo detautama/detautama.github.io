@@ -6,6 +6,8 @@ tag: "Productivity"
 featured: true
 ---
 
+<img src="/images/blog/How-I-Improved-My-Productivity-and-Well-Being-with-Time-Blocking.jpg" alt="Time Blocking" />
+
 As a programmer, time is one of my most valuable resources. I've often found myself stuck on tasks for hours, chasing perfection or trying to solve a problem beyond the limits of my focus. That changed when I discovered the power of time blocking, dedicating a fixed amount of time to a task, no matter the outcome.
 
 This approach has not only boosted my productivity but also improved my mental and physical well-being. Here's why it works and how you can make it work for you.
