@@ -6,7 +6,7 @@ tag: "Productivity"
 featured: true
 ---
 
-<img src="/images/blog/How-a-Custom-Pomodoro-Technique-Helped-Me-Overcome-the-Hard-Restart-Problem.jpg" />
+<img src="/images/blog/How-a-Custom-Pomodoro-Technique-Helped-Me-Overcome-the-Hard-Restart-Problem.jpg" alt="Custom Pomodoro Technique" />
 
 As someone who has tried the traditional Pomodoro Technique, I quickly ran into an issue that felt like a major roadblock to my productivity. After completing a 25-minute work session, I would immediately transition to a 5-minute break as prescribed. But when the break was over, I found it incredibly challenging to get back into the flow of work. My focus would feel fragmented, and it would take several minutes—sometimes even longer—just to figure out where I left off or regain the rhythm I had before the break.
 
@@ -18,7 +18,7 @@ After reflecting on why this was happening, I realized the issue was the abrupt 
 
 To tackle this problem, I decided to experiment with adding a short review and recap phase between work and rest. Here's what I did:
 
-### 1. Pause and Reflect (5 Minutes):
+### 1. Pause and Reflect (5 Minutes)
 
 Instead of diving straight into a break, I now take 5 minutes to review what I just worked on. This includes:
 
@@ -26,7 +26,7 @@ Instead of diving straight into a break, I now take 5 minutes to review what I j
 
 - Writing down any key thoughts or unresolved ideas that I need to revisit later.
 
-### 2. Updating my to-do list to make sure my next steps are clear.
+### 2. Updating my to-do list to make sure my next steps are clear
 
 Transition to Rest (5 Minutes):
 Once I’ve captured my progress and set myself up for the next session, I feel more at ease taking a genuine break. Whether it’s stretching, grabbing a quick snack, or simply resting my eyes, I know exactly what I’ll do when I return.
