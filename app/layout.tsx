@@ -62,8 +62,6 @@ export default function RootLayout({
                 </div>
               </div>
               <div id="header-right" className="flex gap-4">
-                <Link href="/">Articles</Link>
-                <Link href="/projects">Projects</Link>
                 <Link href={"/search"}>
                   <Image
                     src="/images/search.svg"
@@ -75,7 +73,11 @@ export default function RootLayout({
                 <ToggleDarkMode />
               </div>
             </div>
-            <div className="default_bg mb-6 h-2 w-full rounded-md"></div>
+            <div className="default_bg mb-6 flex w-full justify-center gap-6 rounded-md p-0.5 font-bold">
+              <Link href="/">Articles</Link>
+              <Link href="/projects">Projects</Link>
+              <Link href="/about">About</Link>
+            </div>
             <div className="flex flex-col gap-4 md:flex-row">
               <div className="w-full md:w-3/4">{children}</div>
               <div id="sidebar" className="flex w-full flex-col gap-4 md:w-1/4">
@@ -87,7 +89,7 @@ export default function RootLayout({
               id="footer"
               className="mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
             >
-              Thanks for visiting! - I Putu Deta Utama Putra
+              Thank you for visiting! - I Putu Deta Utama Putra
             </footer>
           </div>
         </ThemeProvider>
