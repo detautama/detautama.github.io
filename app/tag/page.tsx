@@ -1,6 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedArticlesData } from "../lib/articles";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tags - I Putu Deta Utama Putra",
+  description:
+    "A collection of tags used in articles written by I Putu Deta Utama Putra",
+};
 
 export default async function Page() {
   const allArticlesData = getSortedArticlesData();
@@ -8,7 +15,9 @@ export default async function Page() {
   const uniqueTags = [...new Set(tags)];
   return (
     <div>
-      <h1 className="text-center text-2xl font-bold">Categories</h1>
+      <h1 className="text-center text-2xl font-bold">
+        Tags ({uniqueTags.length})
+      </h1>
       <div className="mb-5" />
       <div className="flex flex-wrap gap-2">
         {uniqueTags.map((tag, i) => (

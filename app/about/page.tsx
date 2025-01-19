@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About - I Putu Deta Utama Putra",
+  description: "About I Putu Deta Utama Putra",
+};
 
 export default async function Page() {
   return (
@@ -33,7 +39,14 @@ export default async function Page() {
 				`}
       </p>
       <p className="mb-4">
-        {`I’m a food enthusiast! I enjoy trying traditional dishes, and my favorite is *lawar*, a Balinese delicacy made from a mixture of vegetables, grated coconut, and minced meat. I especially love red pork *lawar*, which is uniquely flavored with fresh blood for an authentic taste.
+        {`I’m a food enthusiast! I enjoy trying traditional dishes, and my favorite is `}
+        <Link
+          href="https://id.wikipedia.org/wiki/Lawar"
+          className="text-blue-500"
+        >
+          lawar
+        </Link>
+        {`, a Balinese delicacy made from a mixture of vegetables, grated coconut, and minced meat. I especially love red pork *lawar*, which is uniquely flavored with fresh blood for an authentic taste.
 				`}
       </p>
       <p className="mb-4">

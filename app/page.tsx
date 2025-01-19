@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedArticlesData, ArticleData } from "@/app/lib/articles";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Articles - I Putu Deta Utama Putra",
+  description: "A collection of articles written by I Putu Deta Utama Putra",
+};
 
 export default async function Home() {
   const allArticlesData = getSortedArticlesData();

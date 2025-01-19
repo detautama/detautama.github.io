@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { linkCollection } from "./link-collection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Links - I Putu Deta Utama Putra",
+  description: "A collection of useful links",
+};
 
 export default async function Page() {
   return (
