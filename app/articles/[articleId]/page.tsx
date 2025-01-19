@@ -2,6 +2,20 @@ import { getAllArticleIds, getArticleData } from "@/app/lib/articles";
 import Link from "next/link";
 import Image from "next/image";
 import { MarkdownRenderer } from "@/app/MarkdownRenderer";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ articleId: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const articleId = (await params).articleId;
+  const articleData = getArticleData(articleId);
+  return {
+    title: articleData.title,
+    description: articleData.description,
+  };
+}
 
 export default async function Page({
   params,
