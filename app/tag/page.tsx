@@ -7,6 +7,30 @@ export const metadata: Metadata = {
   title: "Tags - I Putu Deta Utama Putra",
   description:
     "A collection of tags used in articles written by I Putu Deta Utama Putra",
+  twitter: {
+    card: "summary_large_image",
+    site: "detautama.me",
+    creator: "I Putu Deta Utama Putra",
+    title: "Tags - I Putu Deta Utama Putra",
+    description:
+      "A collection of tags used in articles written by I Putu Deta Utama Putra",
+    images: ["/og/home.png"],
+  },
+  openGraph: {
+    type: "website",
+    url: "https://detautama.me/tags",
+    title: "Tags - I Putu Deta Utama Putra",
+    description:
+      "A collection of tags used in articles written by I Putu Deta Utama Putra",
+    images: [
+      {
+        url: "/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Tags - I Putu Deta Utama Putra",
+      },
+    ],
+  },
 };
 
 export default async function Page() {
