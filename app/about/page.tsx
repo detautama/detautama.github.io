@@ -15,8 +15,8 @@ export default async function Page() {
         className="mb-4 rounded"
         src="/about.jpg"
         alt="About"
-        width={800}
-        height={400}
+        width={900}
+        height={324}
       />
       <p className="mb-4 text-2xl font-bold">
         {
