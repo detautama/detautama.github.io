@@ -19,20 +19,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "I Putu Deta Utama Putra",
-  description: "A blog on JavaScript, web and more",
+  description: "A blog on JavaScript, web, and more",
   twitter: {
     card: "summary_large_image",
     site: "detautama.me",
     creator: "I Putu Deta Utama Putra",
     title: "I Putu Deta Utama Putra",
-    description: "A blog on JavaScript, web and more",
+    description: "A blog on JavaScript, web, and more",
     images: ["/og/home.png"],
   },
   openGraph: {
     type: "website",
     url: "https://detautama.me",
     title: "I Putu Deta Utama Putra",
-    description: "A blog on JavaScript, web and more",
+    description: "A blog on JavaScript, web, and more",
     images: [
       {
         url: "/og/home.png",
@@ -80,7 +80,7 @@ export default function RootLayout({
                   <Link href="/" className="text-xl font-bold hover:underline">
                     I Putu Deta Utama Putra
                   </Link>
-                  <p>A blog on JavaScript, web and more</p>
+                  <p>A blog on JavaScript, web, and more</p>
                 </div>
               </div>
               <div id="header-right" className="flex gap-4">
