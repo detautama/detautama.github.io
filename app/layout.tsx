@@ -26,21 +26,12 @@ export const metadata: Metadata = {
     creator: "I Putu Deta Utama Putra",
     title: "I Putu Deta Utama Putra",
     description: "A blog on JavaScript, web, and more",
-    images: ["/og/home.png"],
   },
   openGraph: {
     type: "website",
     url: "https://detautama.me",
     title: "I Putu Deta Utama Putra",
     description: "A blog on JavaScript, web, and more",
-    images: [
-      {
-        url: "/og/home.png",
-        width: 1200,
-        height: 630,
-        alt: "I Putu Deta Utama Putra",
-      },
-    ],
   },
 };
 
