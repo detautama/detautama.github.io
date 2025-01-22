@@ -20,19 +20,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "I Putu Deta Utama Putra",
   description: "A blog on JavaScript, web, and more",
-  twitter: {
-    card: "summary_large_image",
-    site: "detautama.me",
-    creator: "I Putu Deta Utama Putra",
-    title: "I Putu Deta Utama Putra",
-    description: "A blog on JavaScript, web, and more",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://detautama.me",
-    title: "I Putu Deta Utama Putra",
-    description: "A blog on JavaScript, web, and more",
-  },
 };
 
 export default function RootLayout({
