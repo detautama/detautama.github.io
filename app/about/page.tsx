@@ -49,14 +49,14 @@ export default async function Page() {
         {`, a Balinese delicacy made from a mixture of vegetables, grated coconut, and minced meat. I especially love red pork *lawar*, which is uniquely flavored with fresh blood for an authentic taste.
 				`}
       </p>
-      <p className="mb-4">
+      {/* <p className="mb-4">
         {`This blog serves as a place to brain-dump everything I learn daily. It’s built using Next.js with static export and hosted on GitHub Pages. The theme is heavily inspired by
 				`}
         <Link
           className="text-blue-500"
           href="https://www.amitmerchant.com/"
         >{`Amit Merchant's blog`}</Link>
-      </p>
+      </p> */}
       <p>
         {`You can shoot me an email at detautama11@gmail.com if you’d like to discuss something or just want to say “Hi!”. For business inquiries or collaboration opportunities, feel free to check out the `}
         <Link className="text-blue-500" href="/contact">
