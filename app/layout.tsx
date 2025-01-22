@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://detautama.me/"),
   title: "I Putu Deta Utama Putra",
   description: "A blog on JavaScript, web, and more",
 };
