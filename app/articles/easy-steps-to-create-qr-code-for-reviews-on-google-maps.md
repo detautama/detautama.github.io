@@ -1,6 +1,5 @@
 ---
-title: "Easy Steps to Create QR Code for Reviews on Google Maps
-"
+title: "Easy Steps to Create QR Code for Reviews on Google Maps"
 date: "2025-01-02"
 description: "QR Code is a practical solution that can be used to directly direct users to your business's Google Maps review page. In this post, I will show you how to easily and quickly create a QR Code that you can use to increase the number of reviews on Google Maps."
 tag: "Marketing"
