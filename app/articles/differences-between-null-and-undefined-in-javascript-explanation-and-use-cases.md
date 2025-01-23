@@ -22,7 +22,7 @@ JavaScript is a highly flexible programming language but can be perplexing for n
 
 2. **Data Type:**  
    - **`undefined`**: Its type is `undefined`.  
-   - **`null`**: Its type is `object`, a legacy bug in JavaScript.
+   - **`null`**: Its type is `object`, [a legacy bug in JavaScript](https://2ality.com/2013/10/typeof-null.html).
 
 3. **Usage:**  
    - **`undefined`**: Commonly used by JavaScript for uninitialized variables or missing object properties.  
