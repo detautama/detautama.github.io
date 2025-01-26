@@ -3,7 +3,7 @@ title: "Wash My Face, Feel Fresh, Start the Work Fresher"
 date: "2024-12-31"
 description: "When feeling stuck, exhausted, or overwhelmed, a simple splash of water can make all the difference. Washing my face helps me reset, refresh, and push through, even on the toughest days."
 tag: "Productivity"
-featured: true
+featured: false
 ---
 
 <img src="/images/blog/wash-my-face-feel-fresh-start-the-work-fresher.jpg" alt="Wash My Face, Feel Fresh, Start the Work Fresher" />
