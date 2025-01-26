@@ -134,4 +134,5 @@ console.log(products);
 ## Conclusion  
 The `Partial` utility type in TypeScript is a versatile tool for creating flexible and maintainable code. Whether you’re updating objects, handling configurations, or managing forms, `Partial` enables you to work with optional properties safely and efficiently. By understanding its use cases and limitations, you can make the most of this powerful feature in your TypeScript projects.  
 
-Start integrating `Partial` into your workflow and experience the benefits of streamlined type management!
+### **References:**  
+1. TypeScript Documentation - [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype) 
