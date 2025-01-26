@@ -12,7 +12,7 @@ Getting positive reviews on Google is one of the best ways to increase your busi
 
 Here are simple steps to create a QR Code for Google Reviews:
 
-### 1. Find your Business "Place ID"
+## 1. Find your Business "Place ID"
 
 Before creating a QR Code, you need to find your business's "Place ID". Follow these steps:
 
@@ -24,7 +24,7 @@ Before creating a QR Code, you need to find your business's "Place ID". Follow t
 
 <img src="/images/blog/easy-steps-to-create-qr-code-for-reviews-on-google-maps/step-1.jpg" alt="Step 1" />
 
-### 2. Create Your Google Reviews Page URL
+## 2. Create Your Google Reviews Page URL
 
 After getting the “Place ID,” create a URL for your Google review page with the following format:
 
@@ -38,7 +38,7 @@ Example URL:
 https://search.google.com/local/writereview?placeid=ChIJpe5hQz4-0i0RvsbXvzbr9Ds
 ```
 
-### 3. Use QR Code Generator
+## 3. Use QR Code Generator
 
 Once the URL is created, you can create a QR Code using an easily accessible tool. Here's how:
 
@@ -52,7 +52,7 @@ Once the URL is created, you can create a QR Code using an easily accessible too
 
 <img src="/images/blog/easy-steps-to-create-qr-code-for-reviews-on-google-maps/step-3.jpg" alt="Step 3" />
 
-### 4. Use your QR Code
+## 4. Use your QR Code
 
 Once you have created your QR Code, use it strategically to make it easy for customers to leave reviews. Here are some ideas for how to do it:
 
@@ -64,7 +64,7 @@ Once you have created your QR Code, use it strategically to make it easy for cus
 
 - Put on Website: Add a QR Code to your website pages to make it easy for visitors to leave reviews.
 
-### Tips for Maximizing Reviews
+## Tips for Maximizing Reviews
 
 - Provide Incentives: You can provide incentives such as discounts or small gifts to encourage customers to leave reviews.
 
