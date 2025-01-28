@@ -2,7 +2,7 @@
 title: Understanding CSS Flexbox Height Behavior with flex-grow
 date: "2025-01-29"
 description: "This article explores the complex interaction between CSS Flexbox's `flex-grow` property and explicit height settings, particularly focusing on how `height: 0px` affects element behavior within flex containers. Understanding this relationship is crucial for web developers working with responsive layouts and scrollable content areas."
-tag: "npm"
+tag: "CSS"
 featured: true
 ---
 
