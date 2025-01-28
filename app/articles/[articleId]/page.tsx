@@ -30,11 +30,6 @@ export default async function Page({
     <div>
       <h1 className="text-center text-2xl font-bold">{artileData.title}</h1>
       <div className="mb-5" />
-      <div className="mb-5" />
-      <div className="text-center italic text-stone-500 dark:text-stone-400">
-        {artileData.description}
-      </div>
-      <div className="mb-5" />
       <article className="prose dark:prose-invert">
         <MarkdownRenderer>{artileData.content}</MarkdownRenderer>
       </article>
