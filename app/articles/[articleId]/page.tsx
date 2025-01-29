@@ -28,8 +28,8 @@ export default async function Page({
   const artileData = getArticleData(articleId);
   return (
     <div>
-      <h1 className="text-center text-2xl font-bold">{artileData.title}</h1>
-      <div className="mb-5" />
+      <h1 className="text-center text-3xl font-bold">{artileData.title}</h1>
+      <div className="mb-10" />
       <article className="prose dark:prose-invert">
         <MarkdownRenderer>{artileData.content}</MarkdownRenderer>
       </article>
