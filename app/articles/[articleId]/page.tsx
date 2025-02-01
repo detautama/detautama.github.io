@@ -30,6 +30,8 @@ export default async function Page({
     <div>
       <h1 className="text-center text-3xl font-bold">{artileData.title}</h1>
       <div className="mb-10" />
+      <WarningIfArticleIsOld date={artileData.date} />
+      <div className="mb-10" />
       <article className="prose dark:prose-invert">
         <MarkdownRenderer>{artileData.content}</MarkdownRenderer>
       </article>
@@ -58,3 +60,22 @@ export async function generateStaticParams() {
     articleId: articleId,
   }));
 }
+
+const WarningIfArticleIsOld = ({ date }: { date: string }) => {
+  const now = new Date();
+  const articleDate = new Date(date);
+  const diff = now.getTime() - articleDate.getTime();
+  const diffDays = diff / (1000 * 60 * 60 * 24);
+  if (diffDays > 365) {
+    return (
+      <div className="rounded-md border-l-4 border-yellow-500 bg-yellow-100 p-4 text-yellow-700">
+        <p className="font-bold">This article is old</p>
+        <p>
+          This article was written more than a year ago. Some of the information
+          might be outdated.
+        </p>
+      </div>
+    );
+  }
+  return null;
+};
