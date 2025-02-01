@@ -3,7 +3,7 @@ title: "JavaScript flatMap(): Transforming and Flattening Data Efficiently"
 date: "2025-01-31"
 description: "Handling structured data efficiently is a critical task in JavaScript, especially when working with nested arrays or transforming API responses. The `flatMap()` function provides an elegant solution by combining mapping and flattening into a single step. This article explores how `flatMap()` simplifies data conversion, particularly when working with nested data structures such as API responses."
 tag: "JavaScript"
-featured: true
+featured: false
 ---
 
 ## **Abstract**
