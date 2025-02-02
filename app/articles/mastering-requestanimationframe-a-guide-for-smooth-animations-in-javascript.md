@@ -3,7 +3,7 @@ title: "Mastering requestAnimationFrame: A Guide for Smooth Animations in JavaSc
 date: "2025-01-17"
 description: "Learn how to create smooth, efficient animations in JavaScript with requestAnimationFrame. Discover its benefits, practical examples, and tips to optimize your animations for performance and a seamless user experience!"
 tag: "JavaScript"
-featured: true
+featured: false
 ---
 
 Animations are a cornerstone of modern web experiences, and as a developer, you’ve likely faced the challenge of creating smooth, performant animations. Enter `requestAnimationFrame`, a browser API that has revolutionized how we handle animations in JavaScript.
