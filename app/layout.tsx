@@ -78,6 +78,7 @@ export default function RootLayout({
               <Link href="/">Articles</Link>
               <Link href="/projects">Projects</Link>
               <Link href="/about">About</Link>
+              <Link href="/glossary">Glossary</Link>
             </div>
             <div className="flex flex-col gap-4 md:flex-row">
               <div className="w-full md:w-3/4">{children}</div>
