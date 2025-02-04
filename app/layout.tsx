@@ -59,6 +59,7 @@ export default function RootLayout({
                   <Link href="/" className="text-xl font-bold hover:underline">
                     I Putu Deta Utama Putra
                   </Link>
+                  <small className="mb-3 block">ᬇ​ᬧᬸᬢᬸ​ᬤᬾᬢ​ᬉᬢᬫ​ᬧᬸᬢ᭄ᬭ</small>
                   <p>A blog on JavaScript, web, and more</p>
                 </div>
               </div>
