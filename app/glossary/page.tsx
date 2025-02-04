@@ -166,6 +166,15 @@ export default async function Page() {
         <br />
         <em>A technique that generates static HTML pages at build time.</em>
       </p>
+      <div className="mb-10" />
+      <p>
+        <strong>SSR</strong>: Server-Side Rendering
+        <br />
+        <em>
+          A technique that renders web pages on the server instead of in the
+          browser, improving performance and SEO.
+        </em>
+      </p>
     </div>
   );
 }
