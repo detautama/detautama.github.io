@@ -175,6 +175,56 @@ export default async function Page() {
           browser, improving performance and SEO.
         </em>
       </p>
+      <div className="mb-10" />
+      <p>
+        <strong>GraphQL</strong>: A query language for your API.
+        <br />
+        <em>
+          GraphQL provides a complete and understandable description of the data
+          in your API, gives clients the power to ask for exactly what they
+          need, and nothing more.
+        </em>
+      </p>
+      <div className="mb-10" />
+      <p>
+        <strong>REST</strong>: Representational State Transfer
+        <br />
+        <em>
+          REST is an architectural style for designing networked applications,
+          relying on a stateless, client-server, cacheable communications
+          protocol -- the HTTP.
+        </em>
+      </p>
+      <div className="mb-10" />
+      <p>
+        <strong>Redux</strong>: A predictable state container for JavaScript
+        apps.
+        <br />
+        <em>
+          Redux helps you write applications that behave consistently, run in
+          different environments, and are easy to test.
+        </em>
+      </p>
+      <div className="mb-10" />
+      <p>
+        <strong>Webpack</strong>: A static module bundler for modern JavaScript
+        applications.
+        <br />
+        <em>
+          Webpack takes modules with dependencies and generates static assets
+          representing those modules.
+        </em>
+      </p>
+      <div className="mb-10" />
+      <p>
+        <strong>Babel</strong>: A JavaScript compiler.
+        <br />
+        <em>
+          Babel is a toolchain that is mainly used to convert ECMAScript 2015+
+          code into a backwards compatible version of JavaScript in current and
+          older browsers or environments.
+        </em>
+      </p>
     </div>
   );
 }
