@@ -1,5 +1,6 @@
 "use client";
 
+import Blog from "./images/blog.jpg";
 import WeddingInvitationImage from "./images/wedding-invitation.jpg";
 import rkb from "./images/rkb.jpg";
 import wmc from "./images/wmc.jpg";
@@ -22,6 +23,13 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Blog",
+    description:
+      "My blog is a space where I share my thoughts, experiences, and insights on various topics, including web development, design, and technology. I write about my projects, tutorials, and personal reflections, offering a glimpse into my journey as a developer and creator.",
+    link: "https://detautama.me",
+    image: Blog,
+  },
   {
     title: "Custom Wedding Invitation",
     description:
