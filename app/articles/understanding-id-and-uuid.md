@@ -1,14 +1,14 @@
 ---
-title: "Understanding ID, id, and UUID: What’s the Difference?"
-date: "2025-02-01"
-description: "Unique identifiers play a crucial role in software development. This article explores the differences between ID, id, and UUID, their use cases, and best practices for choosing the right identifier."
+title: "Understanding ID, and UUID: What’s the Difference?"
+date: "2025-02-07"
+description: "Unique identifiers play a crucial role in software development. This article explores the differences between ID, and UUID, their use cases, and best practices for choosing the right identifier."
 tag: "Database, Identifiers"
 featured: false
 ---
 
 ## Abstract
 
-In the world of software development, unique identifiers play a crucial role in managing data efficiently. The terms **ID**, **id**, and **UUID** often come up in databases, APIs, and distributed systems, but they are not interchangeable. This article explores their differences, use cases, and why UUIDs are sometimes preferred over traditional IDs, using real-world analogies to make understanding them easier.
+In the world of software development, unique identifiers play a crucial role in managing data efficiently. The terms **ID**, and **UUID** often come up in databases, APIs, and distributed systems, but they are not interchangeable. This article explores their differences, use cases, and why UUIDs are sometimes preferred over traditional IDs, using real-world analogies to make understanding them easier.
 
 ## Introduction
 
@@ -18,22 +18,22 @@ To make it interesting, let’s use an analogy. Imagine you’re at a **concert*
 
 ## The Concert Analogy: ID vs. UUID
 
-### **ID: Like a Ticket Number 🎟️**
+### ID: Like a Ticket Number 🎟️
 
 - When you buy a ticket, you get a **sequential number** (e.g., **001, 002, 003...**).
 - This is **unique within the concert**, but if another concert happens, there could be another **"Ticket #001"** for that event.
 - It works **perfectly inside a single system** (like a database).
 
-### **UUID: Like a Passport Number 🌍**
+### UUID: Like a Passport Number 🌍
 
 - A passport is **globally unique**—no two people in the world have the same passport number.
 - Even if you travel to different countries, your passport remains **unique everywhere**.
 - It’s generated in a way that **doesn’t rely on order or a central system**.
 - UUIDs work similarly, ensuring uniqueness across different databases, servers, or even companies.
 
-## Breaking Down the Terms: ID, id, and UUID
+## Breaking Down the Terms: ID, and UUID
 
-### **ID (Identifier)**
+### ID (Identifier)
 
 - The term **ID** generally refers to a unique value assigned to an entity.
 - Often used in databases as a **primary key** (e.g., `id = 12345`).
@@ -47,17 +47,7 @@ To make it interesting, let’s use an analogy. Imagine you’re at a **concert*
   );
   ```
 
-### **id (Lowercase id)**
-
-- In some programming languages, **`id`** is a reserved keyword or variable name.
-- For example, in Python, `id()` is a built-in function that returns a unique identifier for an object.
-- In HTML, `id` is an attribute used for unique element identification.
-
-  ```html
-  <div id="header">Welcome!</div>
-  ```
-
-### **UUID (Universally Unique Identifier)**
+### UUID (Universally Unique Identifier)
 
 - A **128-bit** identifier that is designed to be globally unique.
 - Represented as a string like:
@@ -83,11 +73,10 @@ To make it interesting, let’s use an analogy. Imagine you’re at a **concert*
 | Performance       | ✅ Faster (index-friendly) | ❌ Slightly slower        |
 | Use Case          | Databases, local systems   | Distributed systems, APIs |
 
-### **Best Practices for Choosing the Right Identifier**
+### Best Practices for Choosing the Right Identifier
 
 - **Use sequential IDs** if your data is confined to a single database and you need fast lookups.
 - **Use UUIDs** if you need unique IDs across multiple systems or databases without conflicts.
-- **Use lowercase `id` carefully** in programming contexts where it's a reserved keyword.
 
 ## Conclusion
 
@@ -96,5 +85,4 @@ Both **ID** and **UUID** have their places in software development, and the choi
 ## References
 
 - "Universally Unique Identifier" - [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-- "Database Primary Keys: Sequential vs. UUIDs" - [Medium Blog](https://medium.com/@developer/database-primary-keys-sequential-vs-uuids)
-- Python Documentation: [id() function](https://docs.python.org/3/library/functions.html#id)
+- "UUID or SEQUENCE for primary key?" - [Stackoverflow](https://stackoverflow.com/questions/33274291/uuid-or-sequence-for-primary-key)
