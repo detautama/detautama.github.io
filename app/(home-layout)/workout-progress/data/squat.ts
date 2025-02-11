@@ -23,4 +23,8 @@ export const repsData = [
     date: "2025-02-08",
     reps: 60,
   },
+  {
+    date: "2025-02-12",
+    reps: 70,
+  },
 ];
