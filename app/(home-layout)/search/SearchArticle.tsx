@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArticleData } from "../lib/articles";
+import { ArticleData } from "../../lib/articles";
 import Link from "next/link";
 
 export const Search: React.FC<{
