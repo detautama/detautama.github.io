@@ -4,19 +4,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Links - I Putu Deta Utama Putra",
-  description: "A collection of useful links",
+  description: "Other links that you might be interested in.",
 };
 
 export default async function Page() {
   return (
     <div>
-      <h1 className="text-center text-2xl font-bold">
-        Collection of useful links
-      </h1>
+      <h1 className="text-center text-2xl font-bold">Other links</h1>
       <div className="mb-5" />
       <p className="text-center md:text-left">
-        Here’s a collection of links that I absolutely like. I’ll keep updating
-        this page from time to time.
+        Here are some other links that you might be interested in.
       </p>
       <div className="mb-5" />
 
@@ -25,7 +22,7 @@ export default async function Page() {
           Workout Progress
         </Link>
         <div className="text-gray-500 dark:text-gray-300">
-          Track my workout progress
+          See the progress of my workout.
         </div>
       </div>
 
