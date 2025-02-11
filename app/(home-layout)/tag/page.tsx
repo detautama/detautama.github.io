@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getSortedArticlesData } from "../lib/articles";
+import { getSortedArticlesData } from "../../lib/articles";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

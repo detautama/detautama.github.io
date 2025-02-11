@@ -1,4 +1,4 @@
-import { getSortedArticlesData } from "../lib/articles";
+import { getSortedArticlesData } from "../../lib/articles";
 import { Search } from "./SearchArticle";
 
 export default function Page() {
