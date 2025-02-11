@@ -150,7 +150,7 @@ Use tools to make this process more manageable:
 
 So, next time you’re maintaining your Node.js project, remember: don’t just stop at `npm update`. Always start with `npm outdated`. It’s the first step toward robust dependency management. Happy coding!
 
-### References:\*\*
+### References
 
 1. npm docs - [npm-outdated](https://docs.npmjs.com/cli/v10/commands/npm-outdated)
 2. [Renovate](https://github.com/renovatebot/renovate)

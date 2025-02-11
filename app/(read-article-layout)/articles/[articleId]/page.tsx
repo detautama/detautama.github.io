@@ -29,14 +29,8 @@ export default async function Page({
   return (
     <div>
       <h1 className="text-center text-3xl font-bold">{artileData.title}</h1>
-      <div className="mb-10" />
-      <WarningIfArticleIsOld date={artileData.date} />
-      <div className="mb-10" />
-      <article className="prose dark:prose-invert">
-        <MarkdownRenderer>{artileData.content}</MarkdownRenderer>
-      </article>
       <div className="mb-5" />
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-center gap-2 md:flex-row">
         <time className="text-gray-500 dark:text-gray-300">
           {artileData.date}
         </time>
@@ -50,6 +44,12 @@ export default async function Page({
           </Link>
         </div>
       </div>
+      <div className="mb-5" />
+      <WarningIfArticleIsOld date={artileData.date} />
+      <div className="mb-10" />
+      <article className="prose dark:prose-invert">
+        <MarkdownRenderer>{artileData.content}</MarkdownRenderer>
+      </article>
     </div>
   );
 }
@@ -77,5 +77,4 @@ const WarningIfArticleIsOld = ({ date }: { date: string }) => {
       </div>
     );
   }
-  return null;
 };

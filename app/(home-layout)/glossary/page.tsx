@@ -11,9 +11,7 @@ export default async function Page() {
       <h1 className="text-center text-2xl font-bold">Glossary</h1>
       <div className="mb-10" />
       <p className="text-center">
-        Some times I visit this page just to refresh my memory on some terms. I
-        hope you find it useful too. If you have any suggestions, feel free to
-        reach out to me.
+        A glossary of terms that I use in my articles.
       </p>
       <div className="mb-10" />
       <p>
