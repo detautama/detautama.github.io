@@ -49,5 +49,5 @@ const data = {
 };
 
 export const Squat = () => {
-  return <Bar options={options} data={data} />;
+  return <Bar options={options} data={data} height={200} />;
 };
