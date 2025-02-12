@@ -7,7 +7,6 @@ import Link from "next/link";
 export const Search: React.FC<{
   articles: ArticleData[];
 }> = (props) => {
-  console.log(props.articles);
   const [result, setResult] = React.useState<ArticleData[]>([]);
 
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -15,6 +15,15 @@ export default async function Page() {
       </p>
       <div className="mb-10" />
       <p>
+        <strong>Analogy</strong>: A comparison between two things.
+        <br />
+        <em>
+          An analogy is a comparison in which an idea or a thing is compared to
+          another thing that is quite different from it.
+        </em>
+      </p>
+      <div className="mb-10" />
+      <p>
         <strong>UI</strong>: User Interface
         <br />
         <em>
