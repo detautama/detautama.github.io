@@ -7,8 +7,8 @@ export default function Page() {
     <div>
       <h3 className="text-center text-2xl font-bold">Workout Progress</h3>
       <div className="mb-5" />
-      <ChestPull />;
-      <Squat />;
+      <ChestPull />
+      <Squat />
       <KneelingPushup />
     </div>
   );
