@@ -3,7 +3,7 @@ title: "Not Just npm update, But Also npm outdated: A Comprehensive Guide with E
 date: "2025-01-28"
 description: "Discover why running npm outdated is just as important as npm update for managing your Node.js project dependencies. This comprehensive guide explains how npm outdated provides critical insights into outdated packages, helping you stay secure, efficient, and up-to-date. Learn with a detailed example, practical steps, and tips for incorporating this command into your workflow."
 tag: "npm"
-featured: true
+featured: false
 ---
 
 ## Abstract
