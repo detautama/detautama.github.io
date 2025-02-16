@@ -14,6 +14,14 @@ export default async function Page() {
         A glossary of terms that I use in my articles.
       </p>
       <div className="mb-10" />
+<p>
+        <strong>Visual testing</strong>: Automated UI Validation
+        <br />
+        <em>
+          A process that ensures a user interface appears correctly by detecting visual regressions, inconsistencies, or unintended changes across different screens, browsers, and devices.
+        </em>
+      </p>
+      <div className="mb-10" />
       <p>
         <strong>Analogy</strong>: A comparison between two things.
         <br />
