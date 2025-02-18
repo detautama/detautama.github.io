@@ -1,12 +1,16 @@
 ---
 title: "React Grid Layout Widget DnD and Resizable Example"
 date: "2025-02-17"
-description: "This article demonstrates how to create a React grid layout widget with draggable and resizable components using the react-grid-layout library. We will build a simple dashboard with draggable and resizable widgets that can be rearranged by the user."
+description: "This post demonstrates how to create a React grid layout widget with draggable and resizable components using the react-grid-layout library. We will build a simple dashboard with draggable and resizable widgets that can be rearranged by the user."
 tag: "React"
 featured: true
 ---
 
 <img src="/images/blog/react-grid-layout-widget-dnd-resizeable-example.gif" alt="React Grid Layout Widget DnD and Resizable Example" />
+
+This post demonstrates how to create a React grid layout widget with draggable and resizable components using the `react-grid-layout` library. We will build a simple dashboard with draggable and resizable widgets that can be rearranged by the user.
+
+Demo: [CodeSandbox](https://codesandbox.io/p/devbox/react-dnd-tailwind-yngc8r)
 
 ## package.json
 
@@ -83,202 +87,222 @@ featured: true
 }
 ```
 
+## types.ts
+
+```ts
+import { JSX } from "react";
+import { Layout } from "react-grid-layout";
+
+export interface Widget {
+  id: string;
+  title: string;
+  component: JSX.Element;
+}
+
+export interface WidgetOnLayout {
+  position: Layout;
+  widget: Widget;
+}
+
+export interface UseResizeReturn {
+  wrapperWidth: number;
+  height: number;
+}
+
+export interface WidgetCardProps {
+  children: React.ReactNode;
+  className?: string;
+  draggable?: boolean;
+  onDragStart?: (e: React.DragEvent) => void;
+}
+```
+
 ## App.tsx
 
 ```ts
-// Import necessary modules and components
-import { JSX, useEffect, useState } from "react";
-import GridLayout from "react-grid-layout";
+import { useCallback, useEffect, useState } from "react";
+import GridLayout, { Layout } from "react-grid-layout";
+
 import "react-grid-layout/css/styles.css";
 import "./ReportsGridResizeHandle.css";
+import {
+  UseResizeReturn,
+  Widget,
+  WidgetCardProps,
+  WidgetOnLayout,
+} from "./types";
 
-// Custom hook to handle resize events
-const useResize = () => {
-  const [wrapperWidth, setWrapperWidth] = useState(0);
-  const [wrapperHeight, setWrapperHeight] = useState(0);
-  const rows = 3;
-  const gap = 20;
-  const totalGapHeight = (rows - 1) * gap;
-  const availableHeight = wrapperHeight - totalGapHeight;
-  const boxHeight = availableHeight / rows;
+// Custom hook to handle responsive resizing of the grid container
+const useResize = (): UseResizeReturn => {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const controller = new AbortController();
-    const handleResize = () => {
-      setWrapperWidth(document.getElementById("reports")?.offsetWidth ?? 0);
-      setWrapperHeight(document.getElementById("reports")?.offsetHeight ?? 0);
-    };
-    window.addEventListener("resize", handleResize, {
-      signal: controller.signal,
-    });
-    requestAnimationFrame(handleResize);
+    // Get the main container element
+    const reportsElement = document.getElementById("reports");
 
-    return () => controller.abort();
+    // Update dimensions when container size changes
+    const handleResize = () => {
+      if (!reportsElement) return;
+      setDimensions({
+        width: reportsElement.offsetWidth,
+        height: reportsElement.offsetHeight,
+      });
+    };
+
+    // Use ResizeObserver to watch for container size changes
+    const resizeObserver = new ResizeObserver(handleResize);
+    if (reportsElement) {
+      resizeObserver.observe(reportsElement);
+    }
+
+    // Cleanup observer on unmount
+    return () => resizeObserver.disconnect();
   }, []);
 
-  return {
-    wrapperWidth: wrapperWidth,
-    height: boxHeight,
-  };
+  // Calculate the height of each grid box accounting for gaps
+  const totalGapHeight = (GRID_CONFIG.MAX_ROWS - 1) * GRID_CONFIG.GAP;
+  const boxHeight = (dimensions.height - totalGapHeight) / GRID_CONFIG.MAX_ROWS;
+
+  return { wrapperWidth: dimensions.width, height: boxHeight };
 };
 
-// Main App component
+// Header component for each widget with drag handle
+const HeaderItem = ({ title }: { title: string }) => (
+  <div className="px-4 py-2 flex cursor-grab items-center justify-between border-b border-silver">
+    <div className="draggable-handle text-back font-semibold flex-1">
+      {title}
+    </div>
+  </div>
+);
+
+// Sample widget content component showing a large number
+const BigNumber = () => (
+  <div className="flex h-full flex-col items-center justify-center">
+    <div className="text-7xl font-bold">123</div>
+    <div className="text-sm">Bottom text</div>
+  </div>
+);
+
+// Container component for widgets with drag functionality
+const WidgetCard = ({
+  children,
+  className = "",
+  draggable,
+  onDragStart,
+}: WidgetCardProps) => (
+  <div
+    className={`rounded-sm flex flex-col border border-silver bg-yellow-500 ${className}`}
+    draggable={draggable}
+    onDragStart={onDragStart}
+  >
+    {children}
+  </div>
+);
+
+// Grid configuration constants
+const GRID_CONFIG = {
+  COLS: 4,
+  MAX_ROWS: 3,
+  GAP: 20,
+} as const;
+
+// Initial available widgets data
+const INITIAL_WIDGETS: Widget[] = [
+  {
+    id: "1",
+    title: "Work orders",
+    component: <BigNumber />,
+  },
+  {
+    id: "2",
+    title: "Pie Chart",
+    component: <BigNumber />,
+  },
+  {
+    id: "3",
+    title: "Big Number",
+    component: <BigNumber />,
+  },
+  {
+    id: "4",
+    title: "Metrics Table",
+    component: <BigNumber />,
+  },
+];
+
+// Initial layout configuration
+const INITIAL_LAYOUT: WidgetOnLayout[] = [
+  {
+    position: { i: "0", x: 0, y: 0, w: 1, h: 1 },
+    widget: { id: "0", title: "Line Chart", component: <BigNumber /> },
+  },
+  {
+    position: { i: "2", x: 1, y: 0, w: 1, h: 1 },
+    widget: { id: "2", title: "Work orders", component: <BigNumber /> },
+  },
+];
+
 export default function App() {
+  // Get responsive dimensions from custom hook
   const { wrapperWidth, height } = useResize();
-  const [widgetsOnLayout, setWidgetsOnLayout] = useState<
-    {
-      position: GridLayout.Layout;
-      component: JSX.Element;
-    }[]
-  >([
-    // Initial widgets on layout
-    {
-      position: {
-        i: "0",
-        x: 0,
-        y: 0,
-        w: 1,
-        h: 1,
-      },
-      component: (
-        <>
-          <HeaderItem title="Line Chart" />
-          <div className="p-4 flex-1 overflow-auto">
-            <BigNumber />
-          </div>
-        </>
-      ),
-    },
-    {
-      position: {
-        i: "2",
-        x: 1,
-        y: 0,
-        w: 1,
-        h: 1,
-      },
-      component: (
-        <>
-          <HeaderItem title="Work orders" />
-          <div className="p-4 flex-1 overflow-auto">
-            <BigNumber />
-          </div>
-        </>
-      ),
-    },
-  ]);
 
-  const [widgets, setWidgets] = useState([
-    // Available widgets
-    {
-      id: "1",
-      component: (
-        <>
-          <HeaderItem title="Work orders" />
-          <div className="p-4 flex-1 overflow-auto">
-            <BigNumber />
-          </div>
-        </>
-      ),
-    },
-    {
-      id: "2",
-      component: (
-        <>
-          <HeaderItem title="Pie Chart" />
-          <div className="p-4 flex-1 overflow-auto">
-            <BigNumber />
-          </div>
-        </>
-      ),
-    },
-    {
-      id: "3",
-      component: (
-        <>
-          <HeaderItem title="Big Number" />
-          <div className="p-4 flex-1 overflow-auto">
-            <BigNumber />
-          </div>
-        </>
-      ),
-    },
-    {
-      id: "4",
-      component: (
-        <>
-          <HeaderItem title="Metrics Table" />
-          <div className="p-4 flex-1 overflow-auto">
-            <BigNumber />
-          </div>
-        </>
-      ),
-    },
-  ]);
+  // State for tracking widgets in the grid and available widgets
+  const [widgetsOnLayout, setWidgetsOnLayout] =
+    useState<WidgetOnLayout[]>(INITIAL_LAYOUT);
+  const [availableWidgets, setAvailableWidgets] =
+    useState<Widget[]>(INITIAL_WIDGETS);
 
-  const cols = 4;
-  const maxRows = 3;
-
-  // Handle drop event to add widget to layout
+  // Handle dropping a widget from the sidebar onto the grid
   const handleOndrop = (
-    l: GridLayout.Layout[],
+    _l: GridLayout.Layout[],
     i: GridLayout.Layout,
     e: Event
   ) => {
     const id = (e as DragEvent).dataTransfer?.getData("text/plain");
-
     if (!id) throw new Error("Invalid widget id");
 
-    const draggedWidget = widgets.find((widget) => widget.id === id);
-
+    // Find the dragged widget from available widgets
+    const draggedWidget = availableWidgets.find((widget) => widget.id === id);
     if (draggedWidget === undefined) throw new Error("Widget not found");
 
+    // Add widget to grid and remove from available widgets
     setWidgetsOnLayout((prev) => [
       ...prev,
       {
         position: { i: crypto.randomUUID(), x: i.x, y: i.y, w: 1, h: 1 },
-        component: draggedWidget.component,
+        widget: draggedWidget,
       },
     ]);
-    setWidgets((prev) => prev.filter((widget) => widget.id !== id));
+    setAvailableWidgets((prev) => prev.filter((widget) => widget.id !== id));
   };
 
-  // Find widget by ID
-  const findWidgetById = (
-    prevWidgetsOnLayout: typeof widgetsOnLayout,
-    layout: GridLayout.Layout
-  ) => {
-    const widget = prevWidgetsOnLayout.find(
-      (widget) => widget.position.i === layout.i
+  // Update layout state when widgets are moved or resized
+  const handleLayoutChange = useCallback((newLayout: Layout[]) => {
+    setWidgetsOnLayout((prev) =>
+      newLayout.map((layout) => {
+        const widget = prev.find((w) => w.position.i === layout.i)?.widget;
+        if (!widget) throw new Error(`Widget not found for layout ${layout.i}`);
+        return { position: layout, widget };
+      })
     );
-    if (widget === undefined) throw new Error("Widget not found");
-    return {
-      position: layout,
-      component: widget.component,
-    };
-  };
+  }, []);
 
-  // Handle resize or drag stop event
-  const handleOnResizeStopOrDragStop = (gridLayout: GridLayout.Layout[]) => {
-    setWidgetsOnLayout((prevWidgetsOnLayout) =>
-      gridLayout.map((layout) => findWidgetById(prevWidgetsOnLayout, layout))
-    );
-  };
-
-  // Placeholder layout for grid
-  const placeholderLayout = Array.from({ length: cols * maxRows }).map(
-    (_, index) => ({
-      i: index.toString(),
-      x: index % cols,
-      y: Math.floor(index / cols),
-      w: 1,
-      h: 1,
-    })
-  );
+  // Create placeholder grid layout
+  const placeholderLayout = Array.from({
+    length: GRID_CONFIG.COLS * GRID_CONFIG.MAX_ROWS,
+  }).map((_, index) => ({
+    i: index.toString(),
+    x: index % GRID_CONFIG.COLS,
+    y: Math.floor(index / GRID_CONFIG.COLS),
+    w: 1,
+    h: 1,
+  }));
 
   return (
     <div className="gap-2 flex h-full w-full flex-1 bg-red-900">
+      {/* Main grid container */}
       <div className="relative h-auto w-full bg-blue-900" id="reports">
+        {/* Placeholder grid showing empty spaces */}
         <div className="top-0 left-0 absolute h-full w-full">
           <GridLayout
             layout={placeholderLayout}
@@ -294,67 +318,51 @@ export default function App() {
             ))}
           </GridLayout>
         </div>
+
+        {/* Active grid with widgets */}
         <GridLayout
           layout={widgetsOnLayout.map((widget) => widget.position)}
-          cols={cols}
+          cols={GRID_CONFIG.COLS}
           rowHeight={height}
           width={wrapperWidth}
-          maxRows={maxRows}
+          maxRows={GRID_CONFIG.MAX_ROWS}
           isDroppable={true}
-          onDrop={(l, i, e) => handleOndrop(l, i, e)}
+          onDrop={handleOndrop}
           resizeHandles={["s", "e", "w"]}
-          onResizeStop={handleOnResizeStopOrDragStop}
-          onDragStop={handleOnResizeStopOrDragStop}
+          onResizeStop={handleLayoutChange}
+          onDragStop={handleLayoutChange}
           preventCollision={true}
           compactType={"vertical"}
           draggableHandle=".draggable-handle"
         >
           {widgetsOnLayout.map((widget) => (
-            <div
-              key={widget.position.i}
-              className="rounded-sm flex flex-col border border-silver bg-yellow-500"
-            >
-              {widget.component}
+            <div key={widget.position.i}>
+              <WidgetCard className="h-full">
+                <HeaderItem title={widget.widget.title} />
+                {widget.widget.component}
+              </WidgetCard>
             </div>
           ))}
         </GridLayout>
       </div>
-      <div className="w-96 p-4 h-screen overflow-auto bg-green-500">
-        <div className="text-back font-semibold">Available Widgets</div>
-        {widgets.map((widget) => (
-          <div
+
+      {/* Sidebar with available widgets */}
+      <aside className="w-96 p-4 bg-green-600 h-screen overflow-auto">
+        <h2 className="font-semibold">Available Widgets</h2>
+        {availableWidgets.map((widget) => (
+          <WidgetCard
             key={widget.id}
-            className="mt-2 rounded-sm flex flex-col border border-silver bg-yellow-500"
-            draggable
-            onDragStart={(e) => {
+            className="mt-2"
+            draggable={true}
+            onDragStart={(e: React.DragEvent) => {
               e.dataTransfer.setData("text/plain", widget.id);
             }}
           >
-            {widget.component}
-          </div>
+            <HeaderItem title={widget.title} />
+            <div className="p-4 flex-1 overflow-auto">{widget.component}</div>
+          </WidgetCard>
         ))}
-      </div>
-    </div>
-  );
-}
-
-// HeaderItem component for widget headers
-function HeaderItem({ title }: { readonly title: string }) {
-  return (
-    <div className="px-4 py-2 flex cursor-grab items-center justify-between border-b border-silver">
-      <div className="draggable-handle text-back font-semibold flex-1">
-        {title}
-      </div>
-    </div>
-  );
-}
-
-// BigNumber component for displaying large numbers
-function BigNumber() {
-  return (
-    <div className="flex h-full flex-col items-center justify-center">
-      <div className="text-7xl font-bold">123</div>
-      <div className="text-sm">Bottom text</div>
+      </aside>
     </div>
   );
 }
