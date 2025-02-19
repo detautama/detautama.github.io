@@ -41,7 +41,7 @@ const FeaturedArticles: React.FC<{ featuredArticles: ArticleData[] }> = ({
       </div>
       <div
         id="featured-article"
-        className="grid grid-cols-2 gap-4 md:grid-cols-3"
+        className="grid grid-cols-1 gap-4 md:grid-cols-3"
       >
         {featuredArticles.map(({ id, title }) => (
           <Link href={`/articles/${id}`} key={id} className="hover:scale-110">

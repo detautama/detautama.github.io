@@ -3,7 +3,7 @@ title: "The Difference Between Functional Testing and Visual Testing"
 date: "2025-02-13"
 description: "Functional testing checks if an app works as expected, while visual testing ensures the UI looks right. Combining both keeps the app functional and visually consistent."
 tag: "Testing"
-featured: true
+featured: false
 ---
 
 Imagine you’re opening a new restaurant. You want to make sure that not only does the food taste great, but also that the restaurant looks welcoming. This is where Functional Testing and Visual Testing come in—just like ensuring the restaurant runs smoothly and looks appealing to customers.
