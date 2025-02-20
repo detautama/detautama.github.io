@@ -3,7 +3,7 @@ title: "TypeScript 5.8 and the --erasableSyntaxOnly Flag: Enhancing JavaScript C
 date: "2025-02-03"
 description: "TypeScript 5.8 introduces the --erasableSyntaxOnly compiler flag, designed to enhance compatibility with JavaScript's evolving type systems. This flag restricts the use of non-erasable syntax elements—such as enums, namespaces, and parameter properties—that require runtime transformations, promoting a cleaner separation between type annotations and executable code. This article delves into the implications of this feature, its alignment with current JavaScript proposals, and its potential impact on TypeScript development practices."
 tag: "TypeScript"
-featured: true
+featured: false
 ---
 
 ## Abstract

@@ -28,7 +28,9 @@ export default async function Page({
   const artileData = getArticleData(articleId);
   return (
     <div>
-      <h1 className="text-center text-3xl font-bold">{artileData.title}</h1>
+      <h1 className="text-center text-2xl font-bold md:text-3xl">
+        {artileData.title}
+      </h1>
       <div className="mb-5" />
       <div className="flex flex-col items-center justify-center gap-2 md:flex-row">
         <time className="text-gray-500 dark:text-gray-300">
