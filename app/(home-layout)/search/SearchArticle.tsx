@@ -3,22 +3,14 @@
 import React from "react";
 import { ArticleData } from "../../lib/articles";
 import Link from "next/link";
+import { useSearch } from "./useSearch";
 
 export const Search: React.FC<{
   articles: ArticleData[];
 }> = (props) => {
-  const [result, setResult] = React.useState<ArticleData[]>([]);
-
-  const search = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value;
-    const searchResult = props.articles.filter((article) => {
-      return article.title.toLowerCase().includes(query.toLowerCase());
-    });
-    if (query === "") {
-      return setResult([]);
-    }
-    setResult(searchResult);
-  };
+  const { result, highlightedText, search, highlightText } = useSearch(
+    props.articles
+  );
 
   return (
     <div>
@@ -34,10 +26,15 @@ export const Search: React.FC<{
         />
       </form>
       <div className="mb-5" />
-      {result.map(({ id, title, date }) => (
+      {result.map(({ id, title, content, date, tag }) => (
         <Link href={`/articles/${id}`} key={id} className="mb-4 block">
-          <h3>{title}</h3>
-          <p>{date}</p>
+          <h3 className="text-xl font-bold hover:text-green-700">
+            {highlightText(title, highlightedText)}
+          </h3>
+          <p>{highlightText(content, highlightedText)}</p>
+          <p className="text-sm text-gray-500">
+            {date} - <span className="text-purple-700">{tag}</span>
+          </p>
         </Link>
       ))}
     </div>
