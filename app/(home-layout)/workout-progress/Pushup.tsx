@@ -29,12 +29,12 @@ const options = {
     },
     title: {
       display: true,
-      text: "Kneeling Pushup Progress",
+      text: "Pushup Progress",
     },
   },
 };
 
-const repsData = [80, 81, 82, 83, 85, 86, 87, 90, 10, 50];
+const repsData = [30, 40];
 
 const data = {
   labels: repsData.map((_, index) => `${index + 1}`),
@@ -42,11 +42,11 @@ const data = {
     {
       label: "Reps",
       data: repsData,
-      backgroundColor: "rgb(53, 71, 71)",
+      backgroundColor: "rgb(39, 33, 67)",
     },
   ],
 };
 
-export const KneelingPushup = () => {
+export const Pushup = () => {
   return <Bar options={options} data={data} height={200} />;
 };

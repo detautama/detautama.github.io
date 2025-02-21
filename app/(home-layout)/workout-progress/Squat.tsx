@@ -11,7 +11,6 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { repsData } from "./data/squat";
 
 ChartJS.register(
   CategoryScale,
@@ -35,14 +34,14 @@ const options = {
   },
 };
 
-const labels = repsData.map((data) => data.date);
+const repsData = [50, 55, 56, 57, 58, 60, 70, 20, 70];
 
 const data = {
-  labels,
+  labels: repsData.map((_, index) => `${index + 1}`),
   datasets: [
     {
       label: "Reps",
-      data: repsData.map((data) => data.reps),
+      data: repsData,
       backgroundColor: "rgb(59, 87, 72)",
     },
   ],
