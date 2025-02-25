@@ -14,6 +14,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: articleData.title,
     description: articleData.description,
+    openGraph: {
+      images: `/og-images/${articleId}.png`,
+    },
   };
 }
 
@@ -25,6 +28,7 @@ export default async function Page({
   }>;
 }) {
   const { articleId } = await params;
+  console.log("articleId", articleId);
   const artileData = getArticleData(articleId);
   return (
     <div>
