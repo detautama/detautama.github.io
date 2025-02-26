@@ -4,6 +4,7 @@ import "../globals.css";
 import Link from "next/link";
 import { getTopTags } from "../lib/articles";
 import { ToggleDarkMode } from "../ToggleDarkMode";
+import TranslateButton from "../components/TranslateButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://detautama.me/"),
@@ -47,6 +48,7 @@ export default function RootLayout({
           </div>
         </div>
         <div id="header-right" className="flex gap-4">
+          <TranslateButton />
           <Link href={"/search"}>
             <Image
               src="/images/search.svg"
