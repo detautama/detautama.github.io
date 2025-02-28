@@ -2,7 +2,7 @@
 title: "Simulating Time in Cypress with cy.clock and cy.tick"
 date: "2025-03-01"
 description: "When writing Cypress tests, there are scenarios where you need to manipulate time. For example, testing session expiration or scheduled UI updates requires control over time progression. This is where `cy.clock()` and `cy.tick()` come in handy."
-tag: "Cypress"
+tag: "Testing"
 featured: false
 ---
 
