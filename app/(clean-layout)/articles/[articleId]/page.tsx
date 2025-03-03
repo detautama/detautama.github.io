@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MarkdownRenderer } from "@/app/MarkdownRenderer";
 import { Metadata } from "next";
+import Comment from "./Comment";
 
 type Props = {
   params: Promise<{ articleId: string }>;
@@ -56,6 +57,7 @@ export default async function Page({
       <article className="prose dark:prose-invert">
         <MarkdownRenderer>{artileData.content}</MarkdownRenderer>
       </article>
+      <Comment />
     </div>
   );
 }
