@@ -26,15 +26,6 @@ export default async function Page() {
         </div>
       </div>
 
-      <div className="mb-5">
-        <Link href={"/glossary"} className="text-blue-500">
-          Glossary
-        </Link>
-        <div className="text-gray-500 dark:text-gray-300">
-          A glossary of terms that I use in my articles.
-        </div>
-      </div>
-
       {linkCollection.map((link) => (
         <div key={link.href} className="mb-5">
           <Link href={link.href} className="text-blue-500">
