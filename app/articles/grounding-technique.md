@@ -3,7 +3,7 @@ title: "The 5-4-3-2-1 Grounding Technique: Debugging Anxiety Like a Programmer"
 date: "2025-02-16"
 description: "Learn how the 5-4-3-2-1 grounding technique can help you debug anxiety like a programmer. This mental reset uses sensory input to break the cycle of overthinking and bring focus back to the present moment."
 tag: "Productivity"
-featured: true
+featured: false
 ---
 
 As a programmer, I know what it's like to be stuck in an endless loop of stress. Whether it’s a stubborn bug, a looming deadline, or imposter syndrome whispering in my ear, anxiety can feel like an infinite recursion with no base case.
