@@ -18,6 +18,15 @@ export default async function Page() {
       <div className="mb-5" />
 
       <div className="mb-5">
+        <Link href={"/achievements"} className="text-blue-500">
+          Achievements
+        </Link>
+        <div className="text-gray-500 dark:text-gray-300">
+          {`List of my achievements that I've done in the past.`}
+        </div>
+      </div>
+
+      <div className="mb-5">
         <Link href={"/workout-progress"} className="text-blue-500">
           Workout Progress
         </Link>
