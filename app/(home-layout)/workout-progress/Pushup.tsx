@@ -34,7 +34,7 @@ const options = {
   },
 };
 
-const repsData = [30, 40, 40, 42, 47, 48];
+const repsData = [30, 40, 40, 42, 47, 48, 55];
 
 const data = {
   labels: repsData.map((_, index) => `${index + 1}`),
