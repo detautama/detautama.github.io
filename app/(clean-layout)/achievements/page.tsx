@@ -15,14 +15,14 @@ const achievements = [
   {
     title: "Speaker at Google I/O extended - Bali 2024",
     image: "/images/achievements/sagioeb2024.jpg",
-    desc: "Shared insights on new Transition API in web development",
+    desc: "Shared insights on new Transition API in web development.",
     year: "2024",
     tags: ["Speaking", "Tech", "Google I/O", "Community"],
   },
   {
     title: "Setup blueprint POS printer for local store",
     image: "/images/achievements/bp-setup.jpg",
-    desc: "Helped local store to setup POS printer for their daily sales",
+    desc: "Helped local store to setup POS printer for their daily sales.",
     year: "2025",
     tags: ["Tech", "Community"],
   },
@@ -33,6 +33,13 @@ const achievements = [
     desc: "Ensured financial transparency, compliance, and efficiency through audits and recommendations.",
     year: "2025",
     tags: ["Community", "Teamwork"],
+  },
+  {
+    title: "Bachelor's Degree in Information Technology",
+    image: "/images/achievements/it-graduation.jpg",
+    desc: "Earned a Bachelor's Degree in Information Technology from STIKI Indonesia, graduating as the top student in 2019 with a GPA of 3.94.",
+    year: "2019",
+    tags: ["Education, Tech"],
   },
 ].sort((a, b) => b.year.localeCompare(a.year));
 
