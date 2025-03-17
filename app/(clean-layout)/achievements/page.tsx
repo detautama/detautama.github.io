@@ -42,11 +42,18 @@ const achievements = [
     tags: ["Teamwork"],
   },
   {
+    title: "Interviewed Senior Developer Candidates at Oddbit",
+    image: "/images/achievements/interview-snr-dev.png",
+    desc: "Conducted technical interviews for Senior Developer candidates to ensure alignment with team and project needs.",
+    year: "2025",
+    tags: ["Tech", "Teamwork", "Hiring"],
+  },
+  {
     title: "Bachelor's Degree in Information Technology",
     image: "/images/achievements/it-graduation.jpg",
     desc: "Earned a Bachelor's Degree in Information Technology from STIKI Indonesia, graduating as the top student in 2019 with a GPA of 3.94.",
     year: "2019",
-    tags: ["Education, Tech"],
+    tags: ["Education", "Tech"],
   },
 ].sort((a, b) => b.year.localeCompare(a.year));
 
