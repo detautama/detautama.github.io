@@ -35,6 +35,13 @@ const achievements = [
     tags: ["Community", "Teamwork"],
   },
   {
+    title: "Onboarding Senior Developer at Oddbit",
+    image: "/images/achievements/onboarding-snr-dev.jpg",
+    desc: "Helped onboard a new Senior Developer at Oddbit, ensuring they were comfortable with the team and the project.",
+    year: "2025",
+    tags: ["Teamwork"],
+  },
+  {
     title: "Bachelor's Degree in Information Technology",
     image: "/images/achievements/it-graduation.jpg",
     desc: "Earned a Bachelor's Degree in Information Technology from STIKI Indonesia, graduating as the top student in 2019 with a GPA of 3.94.",
