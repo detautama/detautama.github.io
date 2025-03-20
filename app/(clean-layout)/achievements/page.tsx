@@ -13,6 +13,14 @@ const achievements = [
     tags: ["Tech", "Speaking", "Community"],
   },
   {
+    title:
+      "Led an internal session on 'The Difference Between Functional Testing and Visual Testing' at Oddbit.",
+    image: "/images/achievements/dbfv.jpg",
+    desc: "Shared insights on the differences between functional testing and visual testing.",
+    year: "2025",
+    tags: ["Tech", "Speaking", "Community"],
+  },
+  {
     title: "Speaker at Google I/O extended - Bali 2024",
     image: "/images/achievements/sagioeb2024.jpg",
     desc: "Shared insights on new Transition API in web development.",
