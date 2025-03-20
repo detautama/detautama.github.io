@@ -34,8 +34,8 @@ export const useSearch = (articles: ArticleData[]) => {
     debounceTimeout.current = setTimeout(() => {
       const searchResult = articles.filter((article) => {
         return (
-          article.title.toLowerCase().includes(query) ||
-          article.content.toLowerCase().includes(query)
+          (article.title ?? "").toLowerCase().includes(query) ||
+          (article.content ?? "").toLowerCase().includes(query)
         );
       });
       if (query === "") {
