@@ -28,6 +28,13 @@ const achievements = [
     tags: ["Speaking", "Tech", "Google I/O", "Community"],
   },
   {
+    title: "Speaker at Google I/O extended - Bali 2022",
+    image: "/images/achievements/intro-zustand.jpg",
+    desc: "Shared insights on Introduction to Zustand.",
+    year: "2022",
+    tags: ["Speaking", "Tech", "Google I/O", "Community"],
+  },
+  {
     title: "Setup blueprint POS printer for local store",
     image: "/images/achievements/bp-setup.jpg",
     desc: "Helped local store to setup POS printer for their daily sales.",
