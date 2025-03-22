@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { linkCollection } from "./link-collection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,16 +34,14 @@ export default async function Page() {
         </div>
       </div>
 
-      {linkCollection.map((link) => (
-        <div key={link.href} className="mb-5">
-          <Link href={link.href} className="text-blue-500">
-            {link.title}
-          </Link>
-          <div className="text-gray-500 dark:text-gray-300">
-            {link.description}
-          </div>
+      <div className="mb-5">
+        <Link href={"/gallery"} className="text-blue-500">
+          Gallery
+        </Link>
+        <div className="text-gray-500 dark:text-gray-300">
+          Gallery of Celuk, a village in Bali, Indonesia.
         </div>
-      ))}
+      </div>
     </div>
   );
 }

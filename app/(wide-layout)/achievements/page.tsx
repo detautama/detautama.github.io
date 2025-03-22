@@ -131,7 +131,7 @@ export default function AchievementsPage() {
             className="flex flex-col justify-between rounded-2xl border border-white p-4 shadow-lg"
           >
             <div>
-              <div className="relative h-40 w-full">
+              <div className="relative h-52 w-full">
                 <Image
                   src={ach.image}
                   alt={ach.title}
