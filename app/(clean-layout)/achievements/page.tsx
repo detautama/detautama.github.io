@@ -70,6 +70,13 @@ const achievements = [
     year: "2019",
     tags: ["Education", "Tech"],
   },
+  {
+    title: "Speaker at Tahu Tech - Bali 2019",
+    image: "/images/achievements/angular-tahu-tech-2019.jpg",
+    desc: "Shared insights on Building SEO friendly SPA website using Angular.",
+    year: "2019",
+    tags: ["Speaking", "Tech", "Community"],
+  },
 ].sort((a, b) => b.year.localeCompare(a.year));
 
 export default function AchievementsPage() {
