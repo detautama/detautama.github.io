@@ -7,6 +7,10 @@ const galleryData = [
     year: 2025,
     images: ["/images/gallery/feb-2025.jpg"],
   },
+  {
+    year: 2020,
+    images: ["/images/gallery/jan-2020.jpg"],
+  },
 ];
 
 export default function GalleryPage() {
