@@ -9,7 +9,7 @@ const galleryData = [
   },
   {
     year: 2020,
-    images: ["/images/gallery/jan-2020.jpg"],
+    images: ["/images/gallery/jan-2020.jpg", "/images/gallery/mei-2020.jpg"],
   },
 ];
 
@@ -60,10 +60,6 @@ export default function GalleryPage() {
           />
         </button>
       )}
-
-      <footer className="py-4 text-center text-sm text-gray-500">
-        &copy; 2025 detautama.me - Galeri Celuk
-      </footer>
     </div>
   );
 }
