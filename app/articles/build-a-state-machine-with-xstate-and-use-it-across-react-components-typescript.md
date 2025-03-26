@@ -2,7 +2,7 @@
 title: "Build a State Machine with XState and Use It Across React Components (TypeScript)"
 date: "2025-03-24"
 description: "Learn how to build a state machine with XState and use it across React components in TypeScript."
-tag: "xstate"
+tag: "XState"
 featured: false
 ---
 
