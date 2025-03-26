@@ -33,7 +33,7 @@ That’s it. Once installed, it starts working immediately—no setup required.
 
 You'll start seeing a number in gray next to each function or method. For example:
 
-<img src="/public/images/blog/improve-your-code-quality-with-codemetrics/img-codemetric-1.jpg" alt="CodeMetrics in action" />
+<img src="/images/blog/improve-your-code-quality-with-codemetrics/img-codemetric-1.jpg" alt="CodeMetrics in action" />
 
 The number `3` represents the cyclomatic complexity of this function.
 
