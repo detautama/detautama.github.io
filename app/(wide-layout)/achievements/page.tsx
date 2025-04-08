@@ -77,6 +77,13 @@ const achievements = [
     year: "2019",
     tags: ["Speaking", "Tech", "Community"],
   },
+  {
+  title: "Contributor to pnpm - Azure Pipelines Docs",
+  image: "/images/achievements/pnpm-azure-docs.jpg",
+  desc: "Created official documentation for integrating pnpm with Azure Pipelines, simplifying CI/CD setup for developers with clear guidance and practical examples.",
+  year: "2023",
+  tags: ["Open Source", "Documentation", "DevOps"],
+}
 ].sort((a, b) => b.year.localeCompare(a.year));
 
 export default function AchievementsPage() {
