@@ -11,6 +11,7 @@ import xvd from "./images/xvd.jpg";
 import zustand from "./images/zustand.jpg";
 import prapen from "./images/prapen.jpg";
 import bamboo from "./images/bamboo.jpg";
+import pintarKredit from "./images/pintar-kredit.jpg";
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -99,6 +100,13 @@ const projects: Project[] = [
       "The Panda Bamboo Wood website functions as a business profile or company profile. It showcases the company's sustainable bamboo products and services, providing information about its offerings, mission, and eco-friendly approach for potential clients interested in bamboo flooring, decking, and cladding solutions. In this project, I met with the client to gather requirements for building a website that effectively showcases their products.",
     link: "https://panda-bamboowood.com/",
     image: bamboo,
+  },
+  {
+    title: "Pintar Kredit",
+    description:
+      "An application that helps users independently analyze their credit applications before submitting them to financial institutions.",
+    link: "https://pintar-kredit.detautama.me/",
+    image: pintarKredit,
   },
 ];
 
