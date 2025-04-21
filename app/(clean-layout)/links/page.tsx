@@ -26,15 +26,6 @@ export default async function Page() {
       </div>
 
       <div className="mb-5">
-        <Link href={"/workout-progress"} className="text-blue-500">
-          Workout Progress
-        </Link>
-        <div className="text-gray-500 dark:text-gray-300">
-          See the progress of my workout.
-        </div>
-      </div>
-
-      <div className="mb-5">
         <Link href={"/gallery"} className="text-blue-500">
           Gallery
         </Link>
