@@ -103,8 +103,3 @@ Logical fallacy bukan cuma kesalahan kecil. Dalam skala tim atau organisasi, itu
 
 **Q: Apa logical fallacy bisa dihindari 100%?**  
 **A:** Sulit. Tapi dengan kesadaran dan kebiasaan berpikir kritis, kita bisa meminimalkan dampaknya dan mendorong budaya diskusi yang sehat.
-
-## 🔗 Ingin Tim IT Kamu Bebas Fallacy?
-
-Share artikel ini ke tim kamu, atau jadikan topik diskusi di weekly meeting.  
-Butuh materi training atau infografis versi presentasi? [Hubungi saya di sini.]
