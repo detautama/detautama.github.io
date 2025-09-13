@@ -14,14 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="mx-auto max-w-4xl px-4">
+    <div>
       <Header />
-      <div>{children}</div>
-      <footer
-        id="footer"
-        className="mt-10 w-full rounded-md py-2 text-center text-xs font-bold"
-      >
-        Thank you for visiting! - I Putu Deta Utama Putra
+      <main className="claude-container min-h-screen py-8 pb-32 md:pb-8">
+        {children}
+      </main>
+      <footer className="claude-container py-8 pb-28 md:pb-8 text-center">
+        <p className="text-sm text-claude-text-secondary dark:text-claude-dark-text/70">
+          Thank you for visiting! - I Putu Deta Utama Putra
+        </p>
       </footer>
     </div>
   );

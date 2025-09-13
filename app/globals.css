@@ -2,38 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-.default_bg {
-  background: rgb(39, 32, 69);
-  background: linear-gradient(
-    90deg,
-    rgba(39, 32, 69, 1) 0%,
-    rgba(54, 124, 71, 1) 65%
-  );
-  box-shadow:
-    0 4px 6px rgba(50, 50, 93, 0.11),
-    0 1px 3px rgba(0, 0, 0, 0.08);
-  color: white;
-}
+@layer base {
+  :root {
+    --background: #FBF7F0;
+    --foreground: #1A1A1A;
+    --card: #FFFFFF;
+    --card-foreground: #1A1A1A;
+    --border: #E5E5E5;
+    --accent: #D97757;
+    --muted: #F5EDE2;
+    --muted-foreground: #6B6B6B;
+  }
 
-.shimmer:hover {
-  color: grey;
-  display: inline-block;
-  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
-  animation: shimmer 1s;
-  font-size: 50px;
-  max-width: 200px;
-}
+  .dark {
+    --background: #1E1E1E;
+    --foreground: #E5E5E5;
+    --card: #2D2D2D;
+    --card-foreground: #E5E5E5;
+    --border: #404040;
+    --accent: #F5A583;
+    --muted: #2D2D2D;
+    --muted-foreground: #9CA3AF;
+  }
 
-@keyframes shimmer {
-  100% {
-    mask-position: left;
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-.post_shadow {
-  box-shadow:
-    0 2.8px 0px rgba(0, 0, 0, 0.034),
-    3px 2px 6px rgba(0, 0, 0, 0.048),
-    3px 8px 4px rgba(0, 0, 0, 0.06),
-    2px 1px 17px 2px rgba(0, 0, 0, 0.12);
+@layer components {
+  .claude-container {
+    @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .claude-card {
+    @apply bg-white dark:bg-claude-dark-surface rounded-xl border border-claude-tan dark:border-claude-dark-border transition-all duration-200 hover:shadow-lg;
+  }
+
+  .claude-button {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .claude-button-primary {
+    @apply claude-button bg-claude-accent text-white hover:bg-opacity-90 focus:ring-claude-accent;
+  }
+
+  .claude-button-secondary {
+    @apply claude-button bg-claude-tan dark:bg-claude-dark-surface text-claude-text-primary dark:text-claude-dark-text hover:bg-claude-brown hover:text-white dark:hover:bg-claude-dark-border;
+  }
+
+  .claude-nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-claude-text-secondary dark:text-claude-dark-text hover:text-claude-text-primary dark:hover:text-white transition-colors duration-200;
+  }
+
+  .claude-nav-link-active {
+    @apply text-claude-accent dark:text-claude-accent;
+  }
+
+  .claude-nav-link::after {
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-claude-accent scale-x-0 transition-transform duration-200;
+    content: '';
+  }
+
+  .claude-nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .claude-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-claude-tan dark:bg-claude-dark-surface text-claude-brown dark:text-claude-dark-text;
+  }
+
+  .claude-article-card {
+    @apply claude-card p-6 hover:translate-y-[-2px];
+  }
+
+  .claude-featured-card {
+    @apply relative overflow-hidden bg-gradient-to-br from-claude-tan to-claude-cream dark:from-claude-dark-surface dark:to-claude-dark-bg p-6 rounded-xl border border-claude-brown/20 dark:border-claude-dark-border;
+  }
+
+  .claude-text-gradient {
+    @apply bg-gradient-to-r from-claude-brown to-claude-accent bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
