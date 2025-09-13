@@ -50,7 +50,7 @@ const ShareButton = () => {
         {isShareSupported && (
           <button
             onClick={handleShare}
-            className="flex transform gap-2 rounded-md bg-gradient-to-r from-teal-700 to-purple-700 px-4 py-1.5 text-sm font-medium text-white shadow-md transition-transform hover:scale-105 active:scale-95"
+            className="claude-button-primary flex items-center gap-2"
           >
             Share
             <Image
@@ -64,7 +64,7 @@ const ShareButton = () => {
 
         <button
           onClick={handleCopy}
-          className="flex transform gap-2 rounded-md bg-gradient-to-r from-teal-700 to-purple-700 px-4 py-1.5 text-sm font-medium text-white shadow-md transition-transform hover:scale-105 active:scale-95"
+          className="claude-button-primary flex items-center gap-2"
         >
           {copied ? "Copied!" : "Copy"}
           <Image src="/images/copy.svg" alt="copy" width={16} height={16} />
