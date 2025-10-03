@@ -3,7 +3,7 @@ title: "vscodeCusotmTheme: A Fresh, Rounded Feel for Visual Studio Code"
 date: "2025-04-26"
 description: "Transform your Visual Studio Code with a fresh, rounded UI using vscodeCusotmTheme by mahmoud-asdf. A simple yet effective customization package that makes coding feel modern and clean."
 tag: "VS Code"
-featured: true
+featured: false
 ---
 
 If you’ve been feeling like your **Visual Studio Code** looks a little... stale, then **vscodeCusotmTheme** by [mahmoud-asdf](https://github.com/mahmoud-asdf/vscodeCusotmTheme) is exactly what you need.
