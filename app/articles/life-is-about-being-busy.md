@@ -12,7 +12,7 @@ Then a different thought came to me: **life is about being busy**.
 
 At first, it sounded shallow, but it wasn't about chasing work or filling every second with tasks. It was about movement, staying active so life doesn't feel stagnant. When I'm busy, the weight on my shoulders feels lighter. Somehow, motion itself gives meaning, even when I don't know exactly where it's leading.
 
-I've noticed that when I overthink my workouts or try to track my lifts, I end up procrastinating. But when I just start, mindlessly, without worrying about numbers, I actually do it. The same thing happens with work. When things get complicated, the best way forward isn't to plan harder—it's simply to start moving.
+I've noticed that when I overthink my workouts or try to track my lifts, I end up procrastinating. But when I just start, mindlessly, without worrying about numbers, I actually do it. The same thing happens with work. When things get complicated, the best way forward isn't to plan harder, it's simply to start moving.
 
 Sometimes, I still feel less satisfied because I don't have a record of what I've done. But I remind myself that being alive isn't about measuring everything. It's about showing up, doing what you can, and letting go when it's done.
 
