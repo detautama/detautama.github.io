@@ -50,20 +50,6 @@ const achievements = [
     tags: ["Community", "Teamwork"],
   },
   {
-    title: "Onboarding Senior Developer at Oddbit",
-    image: "/images/achievements/onboarding-snr-dev.jpg",
-    desc: "Helped onboard a new Senior Developer at Oddbit, ensuring they were comfortable with the team and the project.",
-    year: "2025",
-    tags: ["Teamwork"],
-  },
-  {
-    title: "Interviewed Senior Developer Candidates at Oddbit",
-    image: "/images/achievements/interview-snr-dev.png",
-    desc: "Conducted technical interviews for Senior Developer candidates to ensure alignment with team and project needs.",
-    year: "2025",
-    tags: ["Tech", "Teamwork", "Hiring"],
-  },
-  {
     title: "Bachelor's Degree in Information Technology",
     image: "/images/achievements/it-graduation.jpg",
     desc: "Earned a Bachelor's Degree in Information Technology from STIKI Indonesia, graduating as the top student in 2019 with a GPA of 3.94.",
@@ -77,13 +63,6 @@ const achievements = [
     year: "2019",
     tags: ["Speaking", "Tech", "Community"],
   },
-  {
-  title: "Contributor to pnpm - Azure Pipelines Docs",
-  image: "/images/achievements/pnpm-azure-docs.jpg",
-  desc: "Created official documentation for integrating pnpm with Azure Pipelines, simplifying CI/CD setup for developers with clear guidance and practical examples.",
-  year: "2023",
-  tags: ["Open Source", "Documentation", "DevOps"],
-}
 ].sort((a, b) => b.year.localeCompare(a.year));
 
 export default function AchievementsPage() {
