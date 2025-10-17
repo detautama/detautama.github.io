@@ -2,6 +2,6 @@
 title: ""
 date: "YYYY-MM-DD"
 description: ""
-tag: ""
+tag: "" // Only one tag allowed
 featured: false
 ---
