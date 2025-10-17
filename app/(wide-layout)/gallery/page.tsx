@@ -21,7 +21,7 @@ export default function GalleryPage() {
       <h1 className="text-center text-2xl font-bold md:text-3xl">Gallery</h1>
       <div className="mb-5" />
       <p className="text-center md:text-left">
-        {`Welcome to Celuk, a village in Bali renowned for its traditional silver craftsmanship and vibrant community life. This gallery showcases yearly snapshots from my hometown — capturing local events, cultural moments, and the everyday beauty that makes Celuk special.`}
+        {`This is Celuk, my home. A small village in Bali that I love dearly. These photos are moments I've captured over the years. The people, the celebrations, the quiet mornings. Just everyday life in a place that means everything to me.`}
       </p>
       <div className="mb-5" />
 
