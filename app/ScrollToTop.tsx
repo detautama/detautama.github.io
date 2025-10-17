@@ -27,7 +27,7 @@ export function ScrollToTop() {
     window.addEventListener("scroll", toggleVisibility, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", toggleVisibility, { passive: true });
+      window.removeEventListener("scroll", toggleVisibility);
       if (throttleTimeout !== null) {
         clearTimeout(throttleTimeout);
       }
