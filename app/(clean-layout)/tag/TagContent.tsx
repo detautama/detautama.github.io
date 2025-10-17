@@ -87,9 +87,9 @@ export function TagContent({ allArticlesData, uniqueTags }: TagContentProps) {
                 <div key={article.id}>
                   <article>
                     <Link href={`/articles/${article.id}`}>
-                      <h1 className="mb-2 text-2xl font-bold hover:text-claude-accent dark:hover:text-claude-accent">
+                      <h3 className="mb-1 text-base hover:text-claude-accent dark:hover:text-claude-accent">
                         {article.title}
-                      </h1>
+                      </h3>
                     </Link>
                   </article>
                 </div>
