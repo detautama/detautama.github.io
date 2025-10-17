@@ -1,17 +1,12 @@
 "use client";
 
-import Blog from "./images/blog.jpg";
-import WeddingInvitationImage from "./images/wedding-invitation.jpg";
-import rkb from "./images/rkb.jpg";
-import wmc from "./images/wmc.jpg";
 import tanam from "./images/tanam.jpg";
 import pnpm from "./images/pnpm.jpg";
 import cg from "./images/CG.jpg";
+import ayuna from "./images/ayuna.jpg";
 import xvd from "./images/xvd.jpg";
 import zustand from "./images/zustand.jpg";
 import prapen from "./images/prapen.jpg";
-import bamboo from "./images/bamboo.jpg";
-import pintarKredit from "./images/pintar-kredit.jpg";
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -24,34 +19,6 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    title: "Blog",
-    description:
-      "My blog is a space where I share my thoughts, experiences, and insights on various topics, including web development, design, and technology. I write about my projects, tutorials, and personal reflections, offering a glimpse into my journey as a developer and creator.",
-    link: "https://detautama.me",
-    image: Blog,
-  },
-  {
-    title: "Custom Wedding Invitation",
-    description:
-      "My bespoke digital invitation service creates unique and memorable designs for your special day. I offer elegant e-invites, traditional Balinese-inspired designs, and modern templates with customized graphics, calligraphy, and interactive RSVP features.",
-    link: undefined,
-    image: WeddingInvitationImage,
-  },
-  {
-    title: "Ralline Konveksi Bali",
-    description:
-      "The Ralline Konveksi Bali website offers made-to-order clothing services in Bali, specializing in custom apparel for both individual and corporate clients. Their offerings include uniforms, t-shirts, traditional Balinese wear, and more, with options for embroidery, screen printing, and custom tailoring. For this project, I collaborated with the client to gather requirements for designing a website that highlights their services and craftsmanship, providing an easy experience for customers to explore and order custom apparel.",
-    link: "https://rallinekonveksibali.com/",
-    image: rkb,
-  },
-  {
-    title: "Wellnesse Massage on Call",
-    description:
-      "The Wellness Massage On Call website offers on-demand mobile massage services in Bali. Their services are available 24/7 and include options like Balinese, deep tissue, aromatherapy, pregnancy, and hot stone massages. In this project, I met with the client to gather requirements for building a website that effectively showcases their services.",
-    link: "https://wellnessmassageoncall.com/",
-    image: wmc,
-  },
   {
     title: "Tanam",
     description:
@@ -95,18 +62,11 @@ const projects: Project[] = [
     image: prapen,
   },
   {
-    title: "Panda Bamboo Wood",
+    title: "Ayuna Silver",
     description:
-      "The Panda Bamboo Wood website functions as a business profile or company profile. It showcases the company's sustainable bamboo products and services, providing information about its offerings, mission, and eco-friendly approach for potential clients interested in bamboo flooring, decking, and cladding solutions. In this project, I met with the client to gather requirements for building a website that effectively showcases their products.",
-    link: "https://panda-bamboowood.com/",
-    image: bamboo,
-  },
-  {
-    title: "Pintar Kredit",
-    description:
-      "An application that helps users independently analyze their credit applications before submitting them to financial institutions.",
-    link: "https://pintar-kredit.detautama.me/",
-    image: pintarKredit,
+      "Ayuna Silver is a Balinese jewelry business website that showcases the finest quality handcrafted silver jewelry. The site represents a family business that has grown since 1986, combining traditional craftsmanship with modern e-commerce. I worked on this project to create a website that effectively presents their artisanal jewelry collection and tells their story.",
+    link: "https://ayunasilver.com/",
+    image: ayuna,
   },
 ];
 
