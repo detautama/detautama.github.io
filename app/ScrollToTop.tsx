@@ -6,19 +6,31 @@ export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null;
+
     const toggleVisibility = () => {
-      // Show button when user scrolls down more than one screen height
-      if (window.scrollY > window.innerHeight) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      // Throttle scroll events for better performance
+      if (timeoutId) return;
+
+      timeoutId = setTimeout(() => {
+        // Show button when user scrolls down more than one screen height (100vh)
+        const scrollThreshold = window.innerHeight;
+        if (window.scrollY > scrollThreshold) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+        timeoutId = null;
+      }, 100);
     };
 
     window.addEventListener("scroll", toggleVisibility);
 
     return () => {
       window.removeEventListener("scroll", toggleVisibility);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
     };
   }, []);
 
