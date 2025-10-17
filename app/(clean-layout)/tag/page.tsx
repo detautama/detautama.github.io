@@ -10,8 +10,10 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const allArticlesData = getSortedArticlesData();
-  const tags = allArticlesData.map((article) => article.tag);
-  const uniqueTags = [...new Set(tags)];
+  // Flatten all tags from all articles
+  const allTags = allArticlesData.flatMap((article) => article.tags);
+  const uniqueTags = [...new Set(allTags)].sort();
+
   return (
     <div>
       <h1 className="text-center text-2xl font-bold">
@@ -19,11 +21,11 @@ export default async function Page() {
       </h1>
       <div className="mb-5" />
       <div className="flex flex-wrap gap-2">
-        {uniqueTags.map((tag, i) => (
+        {uniqueTags.map((tag) => (
           <Link
-            key={i}
+            key={tag}
             href={`/tag/#${tag}`}
-            className="flex gap-1 rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
+            className="claude-badge flex gap-1 transition-colors hover:bg-claude-brown hover:text-white"
           >
             <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
             {tag}
@@ -32,16 +34,20 @@ export default async function Page() {
       </div>
       <div className="mb-5" />
       <hr className="pb-4" />
-      {uniqueTags.map((tag, i) => (
-        <div key={i}>
+      {uniqueTags.map((tag) => (
+        <div key={tag}>
           <p className="text-2xl font-bold" id={tag}>
             {tag} (
-            {allArticlesData.filter((article) => article.tag === tag).length})
+            {
+              allArticlesData.filter((article) => article.tags.includes(tag))
+                .length
+            }
+            )
           </p>
           <div className="mb-5" />
           <div className="flex flex-wrap gap-4">
             {allArticlesData
-              .filter((article) => article.tag === tag)
+              .filter((article) => article.tags.includes(tag))
               .map((article) => (
                 <div key={article.id}>
                   <article>

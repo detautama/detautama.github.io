@@ -2,7 +2,7 @@
 title: "Improve Your Code Quality with CodeMetrics in VS Code"
 date: "2025-03-27"
 description: "Measure code complexity in real-time using CodeMetrics, a lightweight VS Code extension that helps you write cleaner, more maintainable code."
-tag: "Clean Code"
+tags: ["Clean Code", "VS Code", "Code Quality"]
 featured: false
 ---
 

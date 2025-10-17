@@ -2,7 +2,7 @@
 title: "Automating Commands with VS Code Tasks"
 date: "2025-02-01"
 description: "VS Code provides a task system that helps automate repetitive commands such as running scripts, installing dependencies, and executing tests. By using `tasks.json`, developers can define and execute common commands efficiently. This article explores the basics of configuring and running tasks in VS Code."
-tag: "VS Code"
+tags: ["VS Code", "Automation", "Productivity", "DevTools"]
 featured: false
 ---
 

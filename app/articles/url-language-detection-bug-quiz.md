@@ -2,7 +2,7 @@
 title: "🐞 Quiz: Spot the Bug – URL Language Detection"
 date: "2025-06-24"
 description: "A quiz-style article exploring a common bug in URL-based language detection and how to fix it."
-tag: "JavaScript"
+tags: ["JavaScript", "Debugging", "Internationalization"]
 featured: false
 ---
 

@@ -2,7 +2,7 @@
 title: "The Stoic Programmer"
 date: "2025-04-10"
 description: "How Stoic philosophy can help you stay calm and effective in the ever-changing world of software development."
-tag: "Stoicism"
+tags: ["Stoicism", "Philosophy", "Mindset", "Personal Development"]
 featured: false
 ---
 

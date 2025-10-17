@@ -2,7 +2,7 @@
 title: "Optimizing User Input Handling with `useDebounce` in React"
 date: "2025-02-05"
 description: "Handling user input efficiently is crucial in modern web applications. In React, rapid state updates can lead to performance issues and unnecessary API calls. The `useDebounce` hook provides a way to delay function execution until a user stops typing or interacting. In this article, we explore `useDebounce` using a simple analogy: a traffic light system. We will cover its implementation, use cases, and best practices."
-tag: "React"
+tags: ["React", "Performance", "Hooks", "User Input"]
 featured: false
 ---
 

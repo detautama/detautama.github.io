@@ -2,7 +2,7 @@
 title: "Capturing and Storing Request Headers in a Chrome Extension"
 date: "2025-02-25"
 description: "Learn how to capture and store request headers in a Chrome extension using webRequest API."
-tag: "Chrome Extension"
+tags: ["Chrome Extension", "JavaScript", "Web APIs"]
 featured: false
 ---
 

@@ -2,7 +2,7 @@
 title: "Conditional Rendering: Keep It Inside the Component"
 date: "2025-05-11"
 description: "Best practice for placing conditional rendering logic within React components using context or internal state."
-tag: "React"
+tags: ["React", "Best Practices", "Clean Code"]
 featured: false
 ---
 

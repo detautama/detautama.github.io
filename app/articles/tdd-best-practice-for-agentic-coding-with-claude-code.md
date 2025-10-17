@@ -2,7 +2,7 @@
 title: "TDD: The Key to Autonomous AI Coding with Claude Code"
 date: "2025-01-13"
 description: "Learn how Test-Driven Development enables Claude Code to work more autonomously, self-verify changes, and deliver working code with minimal human intervention"
-tag: "AI Development"
+tags: ["AI Development", "TDD", "Best Practices", "Testing"]
 featured: false
 ---
 
@@ -50,20 +50,20 @@ Instead of describing what code you want, describe what behavior you expect:
 Claude Code can translate your specifications into comprehensive test cases:
 
 ```javascript
-describe('validateEmail', () => {
-  test('returns true for valid email', () => {
-    expect(validateEmail('valid@email.com')).toBe(true);
+describe("validateEmail", () => {
+  test("returns true for valid email", () => {
+    expect(validateEmail("valid@email.com")).toBe(true);
   });
 
-  test('returns false for invalid format', () => {
-    expect(validateEmail('invalid-email')).toBe(false);
+  test("returns false for invalid format", () => {
+    expect(validateEmail("invalid-email")).toBe(false);
   });
 
-  test('returns false for empty string', () => {
-    expect(validateEmail('')).toBe(false);
+  test("returns false for empty string", () => {
+    expect(validateEmail("")).toBe(false);
   });
 
-  test('handles null input', () => {
+  test("handles null input", () => {
     expect(validateEmail(null)).toBe(false);
   });
 });
@@ -102,49 +102,63 @@ The entire process was autonomous. I only needed to review the final, working so
 ## Key Benefits of TDD with Claude Code
 
 ### 1. True Autonomy
+
 Claude Code can work independently, using test results as its feedback mechanism rather than waiting for human validation.
 
 ### 2. Faster Development
+
 No more iterative "try this, did it work?" cycles. The AI knows immediately if its changes are correct.
 
 ### 3. Higher Quality Code
+
 Tests force Claude to consider edge cases and error handling upfront, resulting in more robust solutions.
 
 ### 4. Clear Success Criteria
+
 Tests provide unambiguous completion criteria. When tests pass, the task is done - no ambiguity.
 
 ### 5. Regression Prevention
+
 As Claude makes changes, existing tests ensure nothing breaks, maintaining code stability throughout development.
 
 ## Best Practices for TDD with Claude Code
 
 ### 1. Be Specific with Test Requirements
+
 Don't just say "add tests." Specify the behaviors and edge cases you care about.
 
 ### 2. Include Performance Tests
+
 If performance matters, include benchmark tests. Claude will optimize until they pass.
 
 ### 3. Use Test Coverage as a Guide
+
 Ask Claude to achieve specific coverage percentages to ensure comprehensive testing.
 
 ### 4. Leverage Continuous Testing
+
 Set up test watchers so Claude gets immediate feedback on every change.
 
 ### 5. Test Error Scenarios
+
 Don't just test happy paths. Include error handling and edge cases in your test specifications.
 
 ## Common Pitfalls to Avoid
 
 ### 1. Writing Tests After Implementation
+
 This defeats the purpose. Tests should drive the implementation, not validate it after the fact.
 
 ### 2. Vague Test Specifications
+
 "Make it work correctly" isn't helpful. Be specific about what "correctly" means.
 
 ### 3. Ignoring Test Failures
+
 If Claude can't make tests pass, there might be conflicting requirements. Review and clarify.
 
 ### 4. Over-Testing
+
 Not everything needs extensive tests. Focus on critical business logic and complex algorithms.
 
 ## The Future of Autonomous Coding

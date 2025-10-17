@@ -2,7 +2,7 @@
 title: "Fixing the 'Ghost Changes' Bug in Bulk Edit Tables"
 date: "2025-10-17"
 description: "Deep dive into debugging a tricky state management issue where the system detected changes that didn't actually exist, and how comparing with original values solved the problem."
-tag: "Debugging"
+tags: ["Debugging", "React", "Problem Solving"]
 featured: false
 ---
 

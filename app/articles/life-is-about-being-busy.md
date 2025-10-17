@@ -2,7 +2,7 @@
 title: "Life Is About Being Busy"
 date: "2025-10-07"
 description: "Sometimes the best way to find meaning isn't through perfect planning, but through simple motion, staying alive through doing, through being part of life's rhythm."
-tag: "Life"
+tags: ["Life", "Philosophy", "Personal Development"]
 featured: false
 ---
 

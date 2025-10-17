@@ -2,7 +2,7 @@
 title: "Checking if a Point is Inside a Polygon with Turf.js"
 date: "2025-02-21"
 description: "Need to determine if a point is inside a polygon in JavaScript? The turf.booleanPointInPolygon function makes it easy!"
-tag: "Turf.js"
+tags: ["Turf.js", "JavaScript", "GIS", "Geospatial"]
 featured: false
 ---
 

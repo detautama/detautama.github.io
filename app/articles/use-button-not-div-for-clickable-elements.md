@@ -2,7 +2,7 @@
 title: "Use <button>, Not <div>, for Clickable Elements"
 date: "2025-03-14"
 description: "Using <button> instead of <div> for interactive elements improves accessibility, keyboard navigation, and screen reader support. Buttons are natively focusable, respond to Enter and Space, and require less extra code. Avoid unnecessary complexity—use the right semantic element for better usability and compliance with web accessibility standards."
-tag: "Accessibility"
+tags: ["Accessibility", "HTML", "Best Practices", "UX"]
 featured: true
 ---
 

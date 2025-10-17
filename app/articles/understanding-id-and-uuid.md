@@ -2,7 +2,7 @@
 title: "Understanding ID, and UUID: What’s the Difference?"
 date: "2025-02-07"
 description: "Unique identifiers play a crucial role in software development. This article explores the differences between ID, and UUID, their use cases, and best practices for choosing the right identifier."
-tag: "Database"
+tags: ["Database", "Data Modeling", "System Design"]
 featured: false
 ---
 

@@ -2,7 +2,7 @@
 title: "Ketika Stuck dan Menunggu Bantuan, Coba Rapikan Kodemu, Siapa Tahu…"
 date: "2025-06-24"
 description: "Refactoring kode saat buntu bisa jadi kunci menemukan bug dan membantu proses debugging."
-tag: "Productivity"
+tags: ["Productivity", "Clean Code", "Problem Solving"]
 featured: false
 ---
 

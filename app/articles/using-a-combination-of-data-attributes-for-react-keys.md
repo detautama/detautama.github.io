@@ -2,7 +2,7 @@
 title: "Using a Combination of Data Attributes for React Keys"
 date: "2025-01-30"
 description: "In React, assigning a unique `key` prop to elements in a list is crucial for performance and UI consistency. When natural unique identifiers like `id` are unavailable, developers often default to using array indices, which can lead to UI inconsistencies. A better approach is to generate a unique key by combining multiple data attributes. This article explores how to effectively use data attributes as keys in React lists."
-tag: "React"
+tags: ["React", "Best Practices", "Performance"]
 featured: true
 ---
 

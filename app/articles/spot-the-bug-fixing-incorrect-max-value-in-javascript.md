@@ -2,7 +2,7 @@
 title: "Spot the Bug: Fixing Incorrect Max Value in JavaScript"
 date: "2025-02-23"
 description: "A deep dive into a common JavaScript bug when finding the maximum value in an array and how to fix it."
-tag: "JavaScript"
+tags: ["JavaScript", "Debugging", "Problem Solving"]
 featured: false
 ---
 

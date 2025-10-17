@@ -2,7 +2,7 @@
 title: "Work-Life Balance vs Work-Life Integrity: Memahami Dua Pendekatan Hidup Modern"
 date: "2025-06-27"
 description: "Dalam dunia kerja modern, konsep work-life balance dan work-life integrity sering kali menjadi perdebatan. Artikel ini membahas perbedaan antara kedua pendekatan ini dan bagaimana masing-masing dapat diterapkan dalam kehidupan sehari-hari."
-tag: "Productivity"
+tags: ["Productivity", "Work-Life Balance", "Wellness"]
 featured: false
 ---
 

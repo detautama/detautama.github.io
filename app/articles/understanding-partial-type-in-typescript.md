@@ -2,7 +2,7 @@
 title: "Understanding Partial Type in TypeScript"
 date: "2025-01-26"
 description: "This article examines the `Partial` utility type in TypeScript, focusing on its functionality, use cases, and practical applications for managing optional properties efficiently in various scenarios."
-tag: "TypeScript"
+tags: ["TypeScript", "Type System", "Utility Types"]
 featured: false
 ---
 

@@ -2,7 +2,7 @@
 title: "Growth Mindset untuk Programmer: Cara Bertumbuh dan Sisi Negatif yang Perlu Diwaspadai"
 date: "2025-03-26"
 description: "Mengenal growth mindset secara sederhana, penerapannya dalam dunia kerja sebagai programmer, serta potensi sisi negatifnya yang perlu kamu tahu."
-tag: "Productivity"
+tags: ["Productivity", "Personal Development", "Mindset"]
 featured: false
 ---
 

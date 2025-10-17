@@ -2,7 +2,7 @@
 title: "Managing ClassName with clsx in React"
 date: "2025-03-21"
 description: "Learn how to use clsx to manage className dynamically in React more cleanly and efficiently."
-tag: "clsx"
+tags: ["clsx", "React", "CSS"]
 featured: false
 ---
 

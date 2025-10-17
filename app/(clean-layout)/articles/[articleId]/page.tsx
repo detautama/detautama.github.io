@@ -42,14 +42,17 @@ export default async function Page({
         <time className="text-gray-500 dark:text-gray-300">
           {artileData.date}
         </time>
-        <div className="flex items-center justify-center gap-2 text-center">
-          <Link
-            href={`/tag/#${artileData.tag}`}
-            className="flex gap-1 rounded-md bg-gradient-to-r from-lime-800 to-indigo-800 px-2 py-1 text-xs font-bold tracking-wide text-white"
-          >
-            <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
-            {artileData.tag}
-          </Link>
+        <div className="flex flex-wrap items-center justify-center gap-2 text-center">
+          {artileData.tags.map((tag) => (
+            <Link
+              key={tag}
+              href={`/tag/#${tag}`}
+              className="claude-badge flex gap-1 transition-colors hover:bg-claude-brown hover:text-white"
+            >
+              <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
+              {tag}
+            </Link>
+          ))}
         </div>
       </div>
       <div className="mb-5" />

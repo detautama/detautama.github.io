@@ -2,7 +2,7 @@
 title: "How I Improved My Productivity and Well-Being with Time Blocking"
 date: "2024-12-28"
 description: "I’ve found that using time blocking has helped me manage my time and energy more effectively. It’s a simple approach that’s improved my productivity and well-being."
-tag: "Productivity"
+tags: ["Productivity", "Time Management", "Personal Development"]
 featured: false
 ---
 

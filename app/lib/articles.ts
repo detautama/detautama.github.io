@@ -8,7 +8,7 @@ export interface ArticleData {
   title: string;
   description: string;
   content: string;
-  tag: string;
+  tags: string[];
   featured: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any; // For other frontmatter fields
@@ -33,6 +33,14 @@ export function getSortedArticlesData(): ArticleData[] {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
 
+    // Handle both old 'tag' field and new 'tags' field for backward compatibility
+    let tags: string[] = [];
+    if (matterResult.data.tags && Array.isArray(matterResult.data.tags)) {
+      tags = matterResult.data.tags;
+    } else if (matterResult.data.tag) {
+      tags = [matterResult.data.tag];
+    }
+
     // Combine the data with the id
     return {
       id,
@@ -40,11 +48,17 @@ export function getSortedArticlesData(): ArticleData[] {
       date: matterResult.data.date,
       description: matterResult.data.description,
       content,
-      tag: matterResult.data.tag,
+      tags,
       featured: matterResult.data.featured,
       ...(matterResult.data as Omit<
         ArticleData,
-        "id" | "date" | "description" | "content" | "tag" | "title" | "featured"
+        | "id"
+        | "date"
+        | "description"
+        | "content"
+        | "tags"
+        | "title"
+        | "featured"
       >),
     };
   });
@@ -68,6 +82,14 @@ export function getArticleData(id: string): ArticleData {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
+  // Handle both old 'tag' field and new 'tags' field for backward compatibility
+  let tags: string[] = [];
+  if (matterResult.data.tags && Array.isArray(matterResult.data.tags)) {
+    tags = matterResult.data.tags;
+  } else if (matterResult.data.tag) {
+    tags = [matterResult.data.tag];
+  }
+
   // Combine the data with the id
   return {
     id,
@@ -75,11 +97,11 @@ export function getArticleData(id: string): ArticleData {
     date: matterResult.data.date,
     description: matterResult.data.description,
     content: matterResult.content,
-    tag: matterResult.data.tag,
+    tags,
     featured: matterResult.data.featured,
     ...(matterResult.data as Omit<
       ArticleData,
-      "id" | "date" | "description" | "content" | "tag" | "title" | "featured"
+      "id" | "date" | "description" | "content" | "tags" | "title" | "featured"
     >),
   };
 }
@@ -88,8 +110,10 @@ export function getTopTags({ limit = 5 }): string[] {
   const allArticlesData = getSortedArticlesData();
   const tags = allArticlesData.reduce(
     (acc, article) => {
-      if (article.tag) {
-        acc[article.tag] = acc[article.tag] ? acc[article.tag] + 1 : 1;
+      if (article.tags && Array.isArray(article.tags)) {
+        for (const tag of article.tags) {
+          acc[tag] = acc[tag] ? acc[tag] + 1 : 1;
+        }
       }
       return acc;
     },

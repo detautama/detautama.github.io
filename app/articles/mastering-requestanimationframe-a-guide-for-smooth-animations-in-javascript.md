@@ -2,7 +2,7 @@
 title: "Mastering requestAnimationFrame: A Guide for Smooth Animations in JavaScript"
 date: "2025-01-17"
 description: "Learn how to create smooth, efficient animations in JavaScript with requestAnimationFrame. Discover its benefits, practical examples, and tips to optimize your animations for performance and a seamless user experience!"
-tag: "JavaScript"
+tags: ["JavaScript", "Performance", "Animation", "Web APIs"]
 featured: false
 ---
 

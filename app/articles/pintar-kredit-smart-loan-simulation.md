@@ -2,7 +2,7 @@
 title: "Pintar Kredit: Smart Loan Simulation"
 date: "2025-02-28"
 description: "Pintar Kredit is a web-based application that helps users simulate loans, analyze eligibility, and receive AI-powered financial advice before applying for credit. Built with React, Vite, and OpenAI, it ensures informed decision-making without storing user data."
-tag: "AI"
+tags: ["AI", "Finance", "Simulation"]
 featured: false
 ---
 

@@ -2,7 +2,7 @@
 title: "GitHub Copilot + VS Code + Marp = Slide Presentations in Minutes"
 date: "2025-10-05"
 description: "Learn how to create slide presentations quickly using GitHub Copilot, VS Code, and Marp. This guide walks you through setting up the tools and leveraging AI to generate content, allowing you to focus on delivering ideas without the hassle of traditional slide design."
-tag: "Copilot"
+tags: ["Copilot", "AI", "VS Code", "Productivity"]
 featured: true
 ---
 

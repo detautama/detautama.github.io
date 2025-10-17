@@ -2,7 +2,7 @@
 title: "One Branch per-ticket Best Practice"
 date: "2025-04-30"
 description: "Why one Git branch per Jira ticket is a best practice, and how to work efficiently when tickets depend on each other."
-tag: "Jira"
+tags: ["Jira", "Git", "Version Control", "Best Practices"]
 featured: false
 ---
 

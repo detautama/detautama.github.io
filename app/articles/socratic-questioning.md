@@ -2,7 +2,7 @@
 title: "Socratic Questioning"
 date: "2025-04-03"
 description: "Socratic questioning is a powerful way to dig deeper, think clearer, and uncover assumptions. Learn how to apply this ancient method in modern life."
-tag: "Critical Thinking"
+tags: ["Critical Thinking", "Learning", "Communication"]
 featured: false
 ---
 

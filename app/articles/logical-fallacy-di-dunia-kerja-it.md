@@ -2,7 +2,7 @@
 title: "6 Logical Fallacy yang Sering Terjadi di Dunia Kerja IT (dan Cara Menghindarinya)"
 date: "2025-05-09"
 description: "Logical fallacy seperti appeal to authority dan false dilemma bisa bikin keputusan IT jadi keliru. Pelajari contohnya & cara menghindarinya di artikel ini."
-tag: "Critical Thinking"
+tags: ["Critical Thinking", "Workplace", "Communication"]
 featured: true
 ---
 

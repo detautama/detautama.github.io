@@ -2,7 +2,7 @@
 title: "Event-Driven Programming"
 date: "2025-02-11"
 description: "Event-driven programming is a programming paradigm in which the flow of the program is determined by events such as user actions, sensor outputs, or messages from other programs/threads."
-tag: "Software Development"
+tags: ["Software Development", "Architecture", "Design Patterns"]
 featured: false
 ---
 

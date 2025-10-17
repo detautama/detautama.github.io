@@ -2,7 +2,7 @@
 title: "Saya Ingin Menggendong Anak Saya — Bukan Karena Terpaksa, Tapi Karena Pilihan"
 date: "2025-05-20"
 description: "Bahasa yang kita gunakan membentuk cara kita memandang dunia. Menggendong anak bukan beban, tapi pilihan yang penuh makna."
-tag: "Communication"
+tags: ["Communication", "Parenting", "Personal Development"]
 featured: false
 ---
 

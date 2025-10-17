@@ -2,7 +2,7 @@
 title: "Pentingnya Test Case Manual: Saat Kode Tak Bisa Bicara, Skenario Harus Bekerja"
 date: "2025-05-25"
 description: "Mengapa test case manual tetap penting meski automated testing sudah jadi standar, lengkap dengan template praktis untuk tim pengembangan."
-tag: "Testing"
+tags: ["Testing", "QA", "Documentation"]
 featured: false
 ---
 

@@ -2,7 +2,7 @@
 title: "Differences Between `null` and `undefined` in JavaScript: Explanation and Use Cases"
 date: "2025-01-23"
 description: "Explore the key differences between `null` and `undefined` in JavaScript, including their definitions, use cases, and best practices for when and how to use each. Gain a deeper understanding of these fundamental concepts to write cleaner, more effective code."
-tag: "JavaScript"
+tags: ["JavaScript", "Programming Fundamentals"]
 featured: false
 ---
 

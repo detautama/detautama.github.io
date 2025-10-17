@@ -2,7 +2,7 @@
 title: "The EU Cyber Resilience Act (CRA): Enhancing Cybersecurity of Digital Products"
 date: "2025-03-20"
 description: "The EU Cyber Resilience Act (CRA) aims to enhance the cybersecurity of digital products by establishing a common framework for security requirements, incident reporting, and certification. Learn about the key provisions, implications for businesses, and how the CRA aligns with the EU's broader cybersecurity strategy."
-tag: "Cybersecurity"
+tags: ["Cybersecurity", "Regulation", "Security", "Compliance"]
 featured: false
 ---
 

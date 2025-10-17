@@ -2,7 +2,7 @@
 title: "The Trap of Instant Expectations"
 date: "2025-10-06"
 description: "How the demand for instant results fuels self-doubt and how patient, consistent effort builds lasting growth."
-tag: "Productivity"
+tags: ["Productivity", "Mindset", "Personal Development"]
 featured: false
 ---
 
