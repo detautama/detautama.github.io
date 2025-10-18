@@ -1,4 +1,4 @@
-import { getSortedBeritaData, getFeaturedBerita, getTopKategoriBerita } from "../../lib/berita";
+import { getSortedBeritaData, getFeaturedBerita, getTopKategoriBerita, BeritaData } from "../../lib/berita";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -16,7 +16,7 @@ function formatDate(dateString: string): string {
   });
 }
 
-function BeritaCard({ berita }: { berita: any }) {
+function BeritaCard({ berita }: { berita: BeritaData }) {
   return (
     <article className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-md transition-shadow">
       <div className="p-6">

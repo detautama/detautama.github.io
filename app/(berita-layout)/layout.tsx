@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -27,12 +28,12 @@ export default function BeritaLayout({
               </p>
             </div>
             <nav className="flex items-center space-x-4">
-              <a 
+              <Link 
                 href="/" 
                 className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
               >
                 Kembali ke Blog Utama
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
