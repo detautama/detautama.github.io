@@ -47,6 +47,7 @@ If you prefer to compress manually:
 ## 📊 Target Image Specifications
 
 Based on existing gallery images:
+
 - **Format**: JPEG
 - **Max Dimension**: 800-1200px (width or height)
 - **File Size**: 48-92KB (current range)
@@ -77,11 +78,12 @@ After replacing the placeholder, verify:
 
 - **Placeholder Image**: `public/images/gallery/temple-2025.jpg` (40KB)
 - **Gallery Page**: `app/(wide-layout)/gallery/page.tsx` (updated)
-- **Compression Script**: Available in repository root or `/tmp/compress_temple_image.py`
+- **Compression Script**: `compress_temple_image.py` (repository root)
 
 ## 💡 Technical Details
 
 The compression script (`compress_temple_image.py`):
+
 - Automatically resizes images to max 1200px dimension
 - Converts RGBA to RGB if needed
 - Tries multiple quality levels (85, 80, 75, 70, 65, 60, 55, 50)
@@ -99,7 +101,7 @@ const galleryData = [
     year: 2025,
     images: [
       "/images/gallery/feb-2025.jpg",
-      "/images/gallery/temple-2025.jpg",  // ← New image
+      "/images/gallery/temple-2025.jpg", // ← New image
     ],
   },
   // ... other years

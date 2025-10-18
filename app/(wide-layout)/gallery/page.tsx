@@ -5,10 +5,7 @@ import Image from "next/image";
 const galleryData = [
   {
     year: 2025,
-    images: [
-      "/images/gallery/feb-2025.jpg",
-      "/images/gallery/temple-2025.jpg",
-    ],
+    images: ["/images/gallery/feb-2025.jpg", "/images/gallery/temple-2025.jpg"],
   },
   {
     year: 2020,

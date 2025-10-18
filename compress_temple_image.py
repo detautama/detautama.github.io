@@ -42,8 +42,15 @@ def compress_image_for_gallery(input_path, output_path=None, target_size_kb=90, 
     if img.mode in ('RGBA', 'LA', 'P'):
         background = Image.new('RGB', img.size, (255, 255, 255))
         if img.mode == 'P':
-            img = img.convert('RGBA')
-        background.paste(img, mask=img.split()[-1] if img.mode in ('RGBA', 'LA') else None)
+            # Check if palette mode has transparency
+            if 'transparency' in img.info:
+                img = img.convert('RGBA')
+            else:
+                img = img.convert('RGB')
+        if img.mode in ('RGBA', 'LA'):
+            background.paste(img, mask=img.split()[-1])
+        else:
+            background.paste(img)
         img = background
     
     # Calculate new dimensions maintaining aspect ratio
