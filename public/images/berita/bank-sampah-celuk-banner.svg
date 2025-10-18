@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bgGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.95" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGreen)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="150" cy="100" r="60" fill="#34d399" opacity="0.3"/>
+  <circle cx="1050" cy="500" r="80" fill="#6ee7b7" opacity="0.2"/>
+  <circle cx="200" cy="450" r="40" fill="#a7f3d0" opacity="0.4"/>
+  <circle cx="950" cy="150" r="50" fill="#34d399" opacity="0.25"/>
+  
+  <!-- Recycling symbols scattered -->
+  <g opacity="0.1">
+    <path d="M100 200 L110 220 L90 220 Z M130 220 L140 240 L120 240 Z M70 220 L80 240 L60 240 Z" fill="#ffffff"/>
+    <path d="M1000 300 L1010 320 L990 320 Z M1030 320 L1040 340 L1020 340 Z M970 320 L980 340 L960 340 Z" fill="#ffffff"/>
+  </g>
+  
+  <!-- Main content card -->
+  <rect x="200" y="120" width="800" height="360" rx="20" fill="url(#cardBg)" filter="url(#shadow)"/>
+  
+  <!-- Header section -->
+  <rect x="220" y="140" width="760" height="80" rx="10" fill="#10b981"/>
+  <text x="600" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">
+    BANK SAMPAH
+  </text>
+  <text x="600" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" opacity="0.9">
+    CELUK - SUKAWATI
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-style="italic" fill="#059669">
+    Jaha Pura Dalam Celuk
+  </text>
+  
+  <!-- Event details -->
+  <rect x="300" y="290" width="600" height="120" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  
+  <!-- Date and time -->
+  <text x="600" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#15803d">
+    Minggu, 19 Oktober 2025
+  </text>
+  <text x="600" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#16a34a">
+    Pukul 08.00 - 11.00 WITA
+  </text>
+  <text x="600" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#15803d">
+    📍 Parkir Aura Dalam Celuk
+  </text>
+  
+  <!-- Call to action -->
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626">
+    TUKARKAN SAMPAH ANORGANIK/PLASTIK ANDA!
+  </text>
+  
+  <!-- Icons -->
+  <g transform="translate(250, 440)">
+    <!-- Recycle icon -->
+    <circle cx="0" cy="0" r="25" fill="#10b981"/>
+    <path d="M-10 -15 L-5 -5 L-15 -5 Z M5 -5 L10 5 L0 5 Z M-15 -5 L-10 5 L-20 5 Z" fill="#ffffff"/>
+  </g>
+  
+  <g transform="translate(350, 440)">
+    <!-- Plastic bottle icon -->
+    <rect x="-8" y="-20" width="16" height="30" rx="8" fill="#3b82f6"/>
+    <rect x="-5" y="-25" width="10" height="8" rx="2" fill="#1d4ed8"/>
+  </g>
+  
+  <g transform="translate(450, 440)">
+    <!-- Money/benefit icon -->
+    <circle cx="0" cy="0" r="15" fill="#eab308"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">$</text>
+  </g>
+  
+  <!-- Logos placeholder areas -->
+  <circle cx="850" cy="440" r="20" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="850" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">LOGO</text>
+  
+  <circle cx="900" cy="440" r="20" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="900" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">LOGO</text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#047857">
+    Pilah - Serah - Berkah
+  </text>
+</svg>
