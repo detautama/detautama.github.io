@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Photos Direct Link Extractor</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+        }
+        .step {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4285f4;
+            border-radius: 4px;
+        }
+        .step-number {
+            font-weight: bold;
+            color: #4285f4;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #357ae8;
+        }
+        .result {
+            background: #e8f5e9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            word-break: break-all;
+            display: none;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Google Photos Direct Link Helper</h1>
+        
+        <div class="step">
+            <span class="step-number">Step 1:</span> Open your Google Photos shared link in a new browser tab
+        </div>
+        
+        <div class="step">
+            <span class="step-number">Step 2:</span> Once the image loads, right-click on it and select "Inspect" or "Inspect Element"
+        </div>
+        
+        <div class="step">
+            <span class="step-number">Step 3:</span> In the DevTools, find the <code>&lt;img&gt;</code> tag for the photo
+        </div>
+        
+        <div class="step">
+            <span class="step-number">Step 4:</span> Look for the <code>src</code> attribute - it will contain a URL like:<br>
+            <code>https://lh3.googleusercontent.com/...</code>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">Step 5:</span> Copy that entire URL and paste it below:
+            <input type="text" id="imageUrl" placeholder="Paste the image URL here (should start with https://lh3.googleusercontent.com/...)">
+        </div>
+        
+        <div class="step">
+            <span class="step-number">Step 6:</span> Click the button to get the download-ready URL:
+            <button onclick="extractDirectLink()">Get Direct Download Link</button>
+        </div>
+        
+        <div id="result" class="result"></div>
+        
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+        
+        <h2>Alternative Method (Easier)</h2>
+        
+        <div class="step">
+            <span class="step-number">Simple approach:</span> 
+            <ol style="margin: 10px 0;">
+                <li>Open the Google Photos link in your browser</li>
+                <li>Right-click on the image</li>
+                <li>Select "Open image in new tab"</li>
+                <li>In the new tab, right-click and select "Save image as..."</li>
+                <li>Save to your computer</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            Then use the compression script:
+            <code style="display: block; margin-top: 10px; padding: 10px; background: #263238; color: #aed581;">
+                python3 scripts/compress-gallery-image.py ~/Downloads/your-photo.jpg output-name.jpg 80
+            </code>
+        </div>
+    </div>
+
+    <script>
+        function extractDirectLink() {
+            const url = document.getElementById('imageUrl').value.trim();
+            const resultDiv = document.getElementById('result');
+            
+            if (!url) {
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = '<strong>Error:</strong> Please paste a URL';
+                return;
+            }
+            
+            if (!url.includes('googleusercontent.com') && !url.includes('google')) {
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = '<strong>Warning:</strong> This doesn\'t look like a Google Photos URL. Make sure you copied the image src URL from the browser inspector.';
+                return;
+            }
+            
+            // If the URL already has size parameters, show it
+            // Otherwise, add size parameters for full quality
+            let directUrl = url;
+            
+            // Remove any existing size parameters
+            directUrl = directUrl.split('=')[0];
+            
+            // Add high quality parameters
+            const fullSizeUrl = directUrl + '=w4000-h4000';
+            const mediumSizeUrl = directUrl + '=w2000-h2000';
+            
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
+            resultDiv.innerHTML = `
+                <strong>✓ Direct Download URLs:</strong><br><br>
+                <strong>Full Size (recommended):</strong><br>
+                <input type="text" value="${fullSizeUrl}" readonly onclick="this.select()" style="font-size: 12px;">
+                <br><br>
+                <strong>Medium Size (2000px):</strong><br>
+                <input type="text" value="${mediumSizeUrl}" readonly onclick="this.select()" style="font-size: 12px;">
+                <br><br>
+                <small>Click on the URL to select it, then Ctrl+C (Cmd+C) to copy. Open it in a new tab to download.</small>
+            `;
+        }
+        
+        // Allow pressing Enter in the input
+        document.getElementById('imageUrl').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                extractDirectLink();
+            }
+        });
+    </script>
+</body>
+</html>
