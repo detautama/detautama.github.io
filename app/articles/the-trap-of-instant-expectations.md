@@ -23,7 +23,7 @@ The highlight reels of other people’s achievements distort our sense of time. 
 This mismatch between expectation and reality creates a cycle:
 
 1. You set an aggressive timeline to match the pace you see online.
-2. Reality refuses to cooperate—bugs appear, research takes longer, life intervenes.
+2. Reality refuses to cooperate, bugs appear, research takes longer, life intervenes.
 3. Doubt shows up. If it is this hard, maybe you are the problem.
 4. To protect yourself, you stall, convincing yourself you will start once you “feel ready.”
 
@@ -52,4 +52,4 @@ You cannot opt out of a fast world, but you can set kinder expectations for your
 
 Instant expectations promise relief but deliver anxiety. They tell you that every delay is a red flag, every unanswered question a sign you are behind. The counterintuitive truth is that patience gives you back your agency.
 
-Stay slow enough to stay present. Keep showing up, building, asking, and learning. Let the world chase instant; you can choose deliberate. Slow progress is still progress—and in the end, it outpaces the rush every time.
+Stay slow enough to stay present. Keep showing up, building, asking, and learning. Let the world chase instant; you can choose deliberate. Slow progress is still progress, and in the end, it outpaces the rush every time.

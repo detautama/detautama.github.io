@@ -8,7 +8,7 @@ featured: false
 
 <img src="/images/blog/How-a-Custom-Pomodoro-Technique-Helped-Me-Overcome-the-Hard-Restart-Problem.jpg" alt="Custom Pomodoro Technique" />
 
-As someone who has tried the traditional Pomodoro Technique, I quickly ran into an issue that felt like a major roadblock to my productivity. After completing a 25-minute work session, I would immediately transition to a 5-minute break as prescribed. But when the break was over, I found it incredibly challenging to get back into the flow of work. My focus would feel fragmented, and it would take several minutes—sometimes even longer—just to figure out where I left off or regain the rhythm I had before the break.
+As someone who has tried the traditional Pomodoro Technique, I quickly ran into an issue that felt like a major roadblock to my productivity. After completing a 25-minute work session, I would immediately transition to a 5-minute break as prescribed. But when the break was over, I found it incredibly challenging to get back into the flow of work. My focus would feel fragmented, and it would take several minutes, sometimes even longer, just to figure out where I left off or regain the rhythm I had before the break.
 
 This "hard restart" problem was frustrating. Instead of feeling refreshed, I often felt like I was starting from scratch after every break. It made me dread the stop-and-go nature of the Pomodoro routine, and I started questioning whether it was even helping my productivity.
 

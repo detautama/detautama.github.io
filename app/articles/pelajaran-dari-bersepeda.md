@@ -16,7 +16,7 @@ Dalam kehidupan, kita sering terburu-buru mengejar hasil. Tapi bersepeda mengaja
 
 ## 2. Lebih Sadar Akan Sekitar
 
-Saat bersepeda di sekitar desa, aku lebih mudah tersenyum dan menyapa orang-orang. Dulu, waktu naik motor, aku sering tidak memperhatikan sekitar—seolah dunia bergerak terlalu cepat untuk sekadar menyapa.
+Saat bersepeda di sekitar desa, aku lebih mudah tersenyum dan menyapa orang-orang. Dulu, waktu naik motor, aku sering tidak memperhatikan sekitar, seolah dunia bergerak terlalu cepat untuk sekadar menyapa.
 
 Kecepatan bersepeda yang lebih lambat membuat aku bisa benar-benar _hadir_ di sekitar. Aku melihat wajah tetangga, mendengar suara alam, merasakan angin yang menyejukkan. Ini bukan hanya tentang transportasi, tapi tentang _menghidupi_ perjalanan itu sendiri.
 
@@ -28,7 +28,7 @@ Bersepeda memberikan latihan kardio yang cukup tanpa membuat tubuh terlalu lelah
 
 ## 4. Mimpi Kecil: Desa yang Tenang
 
-Setiap kali gowes ke kafe, aku merasa seperti di Eropa—bayangan desa yang tenang, bebas bising mesin. Mungkin itu mimpi besar, tapi setiap mimpi dimulai dari satu langkah kecil. Mungkin dari aku.
+Setiap kali gowes ke kafe, aku merasa seperti di Eropa, bayangan desa yang tenang, bebas bising mesin. Mungkin itu mimpi besar, tapi setiap mimpi dimulai dari satu langkah kecil. Mungkin dari aku.
 
 Membayangkan desa yang dipenuhi pesepeda alih-alih kendaraan bermotor mungkin terdengar naif. Tapi setiap perubahan besar dimulai dari tindakan kecil seseorang yang percaya bahwa hal itu mungkin. Kalau bukan aku yang mulai, siapa lagi?
 
@@ -36,8 +36,8 @@ Membayangkan desa yang dipenuhi pesepeda alih-alih kendaraan bermotor mungkin te
 
 Kadang aku bonceng anak, sekadar berkeliling desa. Sederhana, tapi baginya itu petualangan kecil. Dan bagiku, itu kebahagiaan besar.
 
-Bersepeda sambil membonceng anak bukan sekadar olahraga, tapi juga cara memperkenalkannya pada keindahan desa yang kami cintai. Dalam setiap putaran roda, aku tidak hanya mengayuh sepeda—aku juga membangun kenangan berharga bersamanya.
+Bersepeda sambil membonceng anak bukan sekadar olahraga, tapi juga cara memperkenalkannya pada keindahan desa yang kami cintai. Dalam setiap putaran roda, aku tidak hanya mengayuh sepeda, aku juga membangun kenangan berharga bersamanya.
 
 ---
 
-Bersepeda bukan hanya tentang bergerak dari satu titik ke titik lain. Ini tentang menikmati prosesnya, hadir di setiap momen, dan berbagi kebahagiaan sederhana dengan orang-orang yang kita sayangi. Mungkin hal terkecil dalam hidup—seperti kayuhan sepeda—justru yang paling bermakna.
+Bersepeda bukan hanya tentang bergerak dari satu titik ke titik lain. Ini tentang menikmati prosesnya, hadir di setiap momen, dan berbagi kebahagiaan sederhana dengan orang-orang yang kita sayangi. Mungkin hal terkecil dalam hidup, seperti kayuhan sepeda, justru yang paling bermakna.

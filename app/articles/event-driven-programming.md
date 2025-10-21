@@ -16,7 +16,7 @@ Software development encompasses multiple paradigms, each offering distinct ways
 
 ## What is Event-Driven Programming?
 
-Event-driven programming is a programming paradigm where the flow of execution is determined by events—such as user actions, sensor outputs, or messages from other programs—rather than a predetermined sequence of instructions. Instead of continuously polling for changes, an event-driven system responds dynamically when an event occurs.
+Event-driven programming is a programming paradigm where the flow of execution is determined by events, such as user actions, sensor outputs, or messages from other programs, rather than a predetermined sequence of instructions. Instead of continuously polling for changes, an event-driven system responds dynamically when an event occurs.
 
 At its core, event-driven programming consists of three primary components:
 

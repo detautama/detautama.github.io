@@ -15,7 +15,7 @@ Let’s break it down 👇
 ## ✅ Why One Branch per Ticket Works
 
 - 🔗 **Clear Traceability**  
-  Each ticket has its own branch and commit history — easy to track and audit.
+  Each ticket has its own branch and commit history , easy to track and audit.
 
 - 📦 **Focused Pull Requests**  
   PRs are smaller, more readable, and easier to review.
@@ -79,7 +79,7 @@ feature/main-feature
 You merge A and B into `main-feature`, and then merge that to `main`.
 
 ✅ **Use this for large epics or multiple related PRs.**  
-⚠️ Adds complexity — not always worth it.
+⚠️ Adds complexity , not always worth it.
 
 ---
 

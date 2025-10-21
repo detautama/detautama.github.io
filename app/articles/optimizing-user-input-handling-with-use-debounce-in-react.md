@@ -14,7 +14,7 @@ Handling user input efficiently is crucial in modern web applications. In React,
 
 ## Introduction
 
-Imagine a busy intersection with no traffic lights—cars would move erratically, leading to chaos and congestion. Now, picture a traffic light system that regulates movement, ensuring smooth traffic flow. In the world of React, user input can be just as chaotic as unregulated traffic. When users type quickly into a search box, React re-renders the component with every keystroke, potentially causing performance bottlenecks and unnecessary API calls.
+Imagine a busy intersection with no traffic lights, cars would move erratically, leading to chaos and congestion. Now, picture a traffic light system that regulates movement, ensuring smooth traffic flow. In the world of React, user input can be just as chaotic as unregulated traffic. When users type quickly into a search box, React re-renders the component with every keystroke, potentially causing performance bottlenecks and unnecessary API calls.
 
 This is where `useDebounce` comes in. Just like a traffic light prevents congestion by regulating the flow of vehicles, `useDebounce` controls how often a function executes in response to rapid state changes.
 

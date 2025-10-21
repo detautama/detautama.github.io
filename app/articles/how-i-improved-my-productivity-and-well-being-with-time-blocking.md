@@ -26,7 +26,7 @@ It became clear that I needed a strategy to break free from this cycle. That’s
 
 ## Why Fixed Time Blocks?
 
-Time blocking involves dedicating a set amount of time to focus exclusively on a task. For me, a fixed block of time—whether it’s 60, 90, or even 120 minutes works. Here’s why:
+Time blocking involves dedicating a set amount of time to focus exclusively on a task. For me, a fixed block of time, whether it’s 60, 90, or even 120 minutes works. Here’s why:
 
 1. Optimal Focus Window: Research suggests that most people can sustain peak focus for a limited time before needing a break.
 

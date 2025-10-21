@@ -14,7 +14,7 @@ Pernyataan ini bukan cuma masuk akal, tapi sangat krusial. Mari kita bahas kenap
 
 ## 1. Tidak Semua Pengujian Bisa Diotomatisasi
 
-Ada skenario yang sulit—kalau bukan mustahil—diotomatisasi. Misalnya:
+Ada skenario yang sulit, kalau bukan mustahil, diotomatisasi. Misalnya:
 
 - Tes antarmuka pengguna yang melibatkan gesture atau drag-drop.
 - Validasi visual (warna, layout, dll) yang membutuhkan persepsi manusia.
@@ -34,7 +34,7 @@ Tanpa dokumentasi, QA hanya jadi ritual informal. Dan itu berbahaya.
 
 ## 3. Lebih Baik Manual Daripada Tidak Ada Sama Sekali
 
-Kita tidak selalu punya waktu atau resource untuk menulis automated test—terutama di fase awal proyek, atau saat sedang ngejar deadline. Tapi bukan berarti kita bisa jalan tanpa pengujian sama sekali.
+Kita tidak selalu punya waktu atau resource untuk menulis automated test, terutama di fase awal proyek, atau saat sedang ngejar deadline. Tapi bukan berarti kita bisa jalan tanpa pengujian sama sekali.
 
 Dengan test case manual:
 
@@ -52,6 +52,6 @@ Pikirkan test case manual seperti checklist keamanan sebelum pesawat terbang. Ia
 
 ## Kesimpulan
 
-Automated testing itu hebat. Tapi bukan satu-satunya jalan. Ketika kode tidak bisa bicara, test case manual yang akan bersuara. Jangan anggap remeh file sederhana berisi langkah-langkah pengujian—karena di dalamnya tersimpan kejelasan, konsistensi, dan kualitas.
+Automated testing itu hebat. Tapi bukan satu-satunya jalan. Ketika kode tidak bisa bicara, test case manual yang akan bersuara. Jangan anggap remeh file sederhana berisi langkah-langkah pengujian, karena di dalamnya tersimpan kejelasan, konsistensi, dan kualitas.
 
 Kalau belum bisa automate, ya dokumentasikan dulu. Karena produk yang baik bukan hanya soal fitur, tapi juga tentang seberapa serius kita mengujinya.

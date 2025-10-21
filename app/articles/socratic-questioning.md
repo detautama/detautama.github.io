@@ -6,13 +6,13 @@ tags: ["Critical Thinking", "Learning", "Communication"]
 featured: false
 ---
 
-Have you ever found yourself stuck in surface-level thinking, accepting assumptions without questioning them? Whether you're solving a complex problem, mentoring someone, or just trying to understand yourself better—**Socratic questioning** is a powerful tool to push beyond the obvious and uncover deeper truths.
+Have you ever found yourself stuck in surface-level thinking, accepting assumptions without questioning them? Whether you're solving a complex problem, mentoring someone, or just trying to understand yourself better, **Socratic questioning** is a powerful tool to push beyond the obvious and uncover deeper truths.
 
 ### What Is Socratic Questioning?
 
-Socratic questioning is a disciplined, thoughtful dialogue that digs beneath the surface of our beliefs, assumptions, and reasoning. Named after the ancient Greek philosopher Socrates, this method isn’t about arguing—it's about exploring ideas critically and collaboratively.
+Socratic questioning is a disciplined, thoughtful dialogue that digs beneath the surface of our beliefs, assumptions, and reasoning. Named after the ancient Greek philosopher Socrates, this method isn’t about arguing, it's about exploring ideas critically and collaboratively.
 
-Socrates believed that through structured inquiry, we can arrive at clearer, more meaningful insights. Instead of giving answers, he asked probing questions—guiding others to reflect, challenge their assumptions, and think for themselves.
+Socrates believed that through structured inquiry, we can arrive at clearer, more meaningful insights. Instead of giving answers, he asked probing questions, guiding others to reflect, challenge their assumptions, and think for themselves.
 
 ### Why It Matters Today
 
@@ -100,4 +100,4 @@ You don't need to be a philosopher to start. Try this:
 
 ### Closing Thoughts
 
-Socratic questioning is less about answers, and more about the journey of asking better questions. In a world full of noise, it can help us listen better, think clearer, and connect deeper—with others and ourselves.
+Socratic questioning is less about answers, and more about the journey of asking better questions. In a world full of noise, it can help us listen better, think clearer, and connect deeper, with others and ourselves.

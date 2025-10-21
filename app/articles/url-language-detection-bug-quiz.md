@@ -26,7 +26,7 @@ Imagine your website has URLs structured like this:
 - `https://example.com/sv/about` (Swedish page)
 - `https://example.com/customer-cases/vattenfall` (case study without language prefix)
 
-At first glance, the condition looks fine — if the URL contains `"en"`, treat it as English. Otherwise, use Swedish.
+At first glance, the condition looks fine , if the URL contains `"en"`, treat it as English. Otherwise, use Swedish.
 
 ### 🕵️‍♂️ Can you spot the bug?
 
@@ -43,7 +43,7 @@ The bug lies in the way the URL is checked with `.includes("en")`. This check lo
 
 ### How to fix it?
 
-Instead of searching for `"en"` anywhere in the URL, restrict the check to the part of the URL that actually specifies the language — usually the first path segment.
+Instead of searching for `"en"` anywhere in the URL, restrict the check to the part of the URL that actually specifies the language , usually the first path segment.
 
 Here’s an improved approach:
 

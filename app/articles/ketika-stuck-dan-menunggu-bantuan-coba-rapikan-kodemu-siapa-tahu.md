@@ -6,7 +6,7 @@ tags: ["Productivity", "Clean Code", "Problem Solving"]
 featured: false
 ---
 
-Kita semua pernah ada di titik itu—tengah malam, bug misterius, otak mentok, dan Stack Overflow belum ada jawaban. Chat GPT pun belum bisa bantu karena kamu bahkan belum tahu harus nanya apa.
+Kita semua pernah ada di titik itu, tengah malam, bug misterius, otak mentok, dan Stack Overflow belum ada jawaban. Chat GPT pun belum bisa bantu karena kamu bahkan belum tahu harus nanya apa.
 
 Saat seperti itu, ada satu trik sederhana yang sering diremehkan: **rapikan kode.** Bukan sekadar indah-indahan. Tapi benar-benar struktur ulang, beri nama variabel yang lebih jelas, pecah fungsi panjang jadi kecil-kecil, hilangkan baris mati.
 
@@ -18,7 +18,7 @@ Sering kali bug tersembunyi di balik spaghetti code. Begitu kamu rapikan alur lo
 
 ## 2. Pahami Ulang Apa yang Kamu Tulis
 
-Dengan merapikan, kamu dipaksa baca ulang baris demi baris. Ini kayak ngajak otak kamu ‘rewind’ dari awal—dan bisa jadi kamu menemukan kesalahan sendiri sebelum bantuan datang.
+Dengan merapikan, kamu dipaksa baca ulang baris demi baris. Ini kayak ngajak otak kamu ‘rewind’ dari awal, dan bisa jadi kamu menemukan kesalahan sendiri sebelum bantuan datang.
 
 ## 3. Bantu Temanmu Bantu Kamu
 
@@ -34,6 +34,6 @@ Dan ini sering kejadian: setelah rapikan sana-sini, bug-nya hilang. Ternyata mas
 
 ---
 
-Jadi, lain kali saat kamu buntu dan belum tahu harus ngapain, jangan langsung lempar laptop atau kirim pesan “bang tolong”. Coba refactor dulu. Mungkin kamu nggak perlu bantuan—cukup butuh versi dirimu yang lebih terorganisir.
+Jadi, lain kali saat kamu buntu dan belum tahu harus ngapain, jangan langsung lempar laptop atau kirim pesan “bang tolong”. Coba refactor dulu. Mungkin kamu nggak perlu bantuan, cukup butuh versi dirimu yang lebih terorganisir.
 
 **Siapa tahu, kan?**

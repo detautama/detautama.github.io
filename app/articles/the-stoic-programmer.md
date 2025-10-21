@@ -6,11 +6,11 @@ tags: ["Stoicism", "Philosophy", "Mindset", "Personal Development"]
 featured: false
 ---
 
-In a world of constant deadlines, breaking builds, and shifting requirements, staying calm is a superpower. Enter _Stoicism_—an ancient philosophy with timeless relevance, especially for programmers.
+In a world of constant deadlines, breaking builds, and shifting requirements, staying calm is a superpower. Enter _Stoicism_, an ancient philosophy with timeless relevance, especially for programmers.
 
 ## 1. Focus on What You Can Control
 
-> _“You have power over your mind — not outside events. Realize this, and you will find strength.”_ — Marcus Aurelius
+> _“You have power over your mind , not outside events. Realize this, and you will find strength.”_ , Marcus Aurelius
 
 You can't control client requests, random bugs, or your internet going down. But you can control how you approach the problem, how you write your code, and how you take care of your mind.
 
@@ -24,7 +24,7 @@ When a feature is dropped or the server crashes, remind yourself: _“This is ou
 
 ## 2. Practice Negative Visualization
 
-> _"He robs present ills of their power who has perceived their coming beforehand."_ — Seneca
+> _"He robs present ills of their power who has perceived their coming beforehand."_ , Seneca
 
 This Stoic habit, _premeditatio malorum_ (premeditation of evils), is about imagining worst-case scenarios to be mentally prepared.
 
@@ -34,13 +34,13 @@ In code, this means:
 - Handling unexpected input.
 - Coding for failures: API timeouts, null responses, broken images.
 
-Instead of assuming everything works perfectly, ask: _“What if this fails?”_ Thinking this way creates resilience—in your system and in your mindset.
+Instead of assuming everything works perfectly, ask: _“What if this fails?”_ Thinking this way creates resilience, in your system and in your mindset.
 
 ## 3. Amor Fati – Love the Process
 
-> _“Not merely bear what is necessary, still less conceal it… but love it.”_ — Nietzsche
+> _“Not merely bear what is necessary, still less conceal it… but love it.”_ , Nietzsche
 
-_Amor Fati_ means "love of fate." It’s about embracing everything that happens—even the hard or frustrating parts.
+_Amor Fati_ means "love of fate." It’s about embracing everything that happens, even the hard or frustrating parts.
 
 As a developer, that could mean:
 
@@ -60,7 +60,7 @@ This perspective helps you:
 - Ship value, not just beautiful abstractions.
 - Prioritize clarity and results.
 
-Don't wait for the “perfect” version. Write clean, functional code—and move forward.
+Don't wait for the “perfect” version. Write clean, functional code, and move forward.
 
 ## 5. The Daily Standup as a Stoic Reflection
 

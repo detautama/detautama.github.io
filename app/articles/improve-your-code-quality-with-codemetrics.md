@@ -6,15 +6,15 @@ tags: ["Clean Code", "VS Code", "Code Quality"]
 featured: false
 ---
 
-As developers, we’re often chasing clean, maintainable code. But how do you _measure_ clean code? Enter [**CodeMetrics**](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics), a handy Visual Studio Code extension that helps you keep track of the complexity of your functions and methods—right inside your editor.
+As developers, we’re often chasing clean, maintainable code. But how do you _measure_ clean code? Enter [**CodeMetrics**](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics), a handy Visual Studio Code extension that helps you keep track of the complexity of your functions and methods, right inside your editor.
 
 ---
 
 ### 🧠 What is CodeMetrics?
 
-CodeMetrics is a VS Code extension that provides a real-time metric next to your functions or methods, showing how complex your code is. It supports languages like **JavaScript**, **TypeScript**, **PHP**, **C#,** and more.
+CodeMetrics is a VS Code extension that provides a real-time metric next to your functions or methods, showing how complex your code is. It supports languages like **JavaScript**, **TypeScript**, **PHP**, **C#, ** and more.
 
-The metric shown is a **cyclomatic complexity score**—a number that represents how many independent paths your function can take. In simpler terms: the higher the number, the more decisions (like `if`, `for`, `while`, `switch`) your code is making, and the more complex (and harder to test/maintain) it becomes.
+The metric shown is a **cyclomatic complexity score**, a number that represents how many independent paths your function can take. In simpler terms: the higher the number, the more decisions (like `if`, `for`, `while`, `switch`) your code is making, and the more complex (and harder to test/maintain) it becomes.
 
 ---
 
@@ -25,7 +25,7 @@ The metric shown is a **cyclomatic complexity score**—a number that represents
 3. Search for `codemetrics`
 4. Click **Install** on "CodeMetrics" by kisstkondoros
 
-That’s it. Once installed, it starts working immediately—no setup required.
+That’s it. Once installed, it starts working immediately, no setup required.
 
 ---
 
@@ -43,10 +43,10 @@ The number `3` represents the cyclomatic complexity of this function.
 
 Here’s a rough guide:
 
-- **1–5:** Low complexity — great!
-- **6–10:** Moderate — still manageable
-- **11–20:** High — could benefit from refactoring
-- **20+**: Danger zone — time to break things down
+- **1–5:** Low complexity , great!
+- **6–10:** Moderate , still manageable
+- **11–20:** High , could benefit from refactoring
+- **20+**: Danger zone , time to break things down
 
 ---
 
@@ -66,6 +66,6 @@ Use CodeMetrics as a fun motivator to reduce complexity across your codebase. Re
 
 ### Final Thoughts
 
-CodeMetrics doesn’t replace good code reviews or testing—but it’s a powerful sidekick. It makes complexity visible, helping you make better decisions as you code. If you care about writing clean, maintainable software, give this extension a spin.
+CodeMetrics doesn’t replace good code reviews or testing, but it’s a powerful sidekick. It makes complexity visible, helping you make better decisions as you code. If you care about writing clean, maintainable software, give this extension a spin.
 
 🔗 [Get CodeMetrics on the VS Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics)

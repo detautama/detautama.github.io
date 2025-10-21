@@ -6,7 +6,7 @@ tag: "Apps"
 featured: false
 ---
 
-Beberapa waktu lalu, saya mencari aplikasi kasir sederhana yang bisa dipakai untuk keperluan bisnis kecil—tanpa ribet, tanpa login, tanpa koneksi internet, dan tentu saja bisa cetak struk. Setelah coba-coba beberapa aplikasi, akhirnya saya ketemu **KasPOS** di Play Store. Yang bikin saya tertarik? Simpel, ringan, dan gak perlu langganan bulanan. Cocok banget buat kebutuhan saya.
+Beberapa waktu lalu, saya mencari aplikasi kasir sederhana yang bisa dipakai untuk keperluan bisnis kecil, tanpa ribet, tanpa login, tanpa koneksi internet, dan tentu saja bisa cetak struk. Setelah coba-coba beberapa aplikasi, akhirnya saya ketemu **KasPOS** di Play Store. Yang bikin saya tertarik? Simpel, ringan, dan gak perlu langganan bulanan. Cocok banget buat kebutuhan saya.
 
 ## Awalnya Coba yang Gratis Dulu
 

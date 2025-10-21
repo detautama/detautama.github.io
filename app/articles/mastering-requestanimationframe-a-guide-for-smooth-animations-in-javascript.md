@@ -138,4 +138,4 @@ While `requestAnimationFrame` is excellent for most animations, there are cases 
 
 `requestAnimationFrame` is a powerful tool for crafting smooth, efficient animations in JavaScript. By aligning updates with the browser's rendering cycles, it ensures optimal performance and an enhanced user experience.
 
-So the next time you need an animation, ditch `setInterval` and embrace `requestAnimationFrame`—your users (and their devices) will thank you!
+So the next time you need an animation, ditch `setInterval` and embrace `requestAnimationFrame`, your users (and their devices) will thank you!

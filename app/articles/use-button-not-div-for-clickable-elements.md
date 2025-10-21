@@ -1,12 +1,12 @@
 ---
 title: "Use <button>, Not <div>, for Clickable Elements"
 date: "2025-03-14"
-description: "Using <button> instead of <div> for interactive elements improves accessibility, keyboard navigation, and screen reader support. Buttons are natively focusable, respond to Enter and Space, and require less extra code. Avoid unnecessary complexity—use the right semantic element for better usability and compliance with web accessibility standards."
+description: "Using <button> instead of <div> for interactive elements improves accessibility, keyboard navigation, and screen reader support. Buttons are natively focusable, respond to Enter and Space, and require less extra code. Avoid unnecessary complexity, use the right semantic element for better usability and compliance with web accessibility standards."
 tags: ["Accessibility", "HTML", "Best Practices", "UX"]
 featured: true
 ---
 
-Using `<button>` instead of `<div>` for interactive elements improves accessibility, keyboard navigation, and screen reader support. Buttons are natively focusable, respond to Enter and Space, and require less extra code. Avoid unnecessary complexity—use the right semantic element for better usability and compliance with web accessibility standards.
+Using `<button>` instead of `<div>` for interactive elements improves accessibility, keyboard navigation, and screen reader support. Buttons are natively focusable, respond to Enter and Space, and require less extra code. Avoid unnecessary complexity, use the right semantic element for better usability and compliance with web accessibility standards.
 
 ## 1. Accessibility Benefits
 
@@ -46,6 +46,6 @@ Browsers and operating systems optimize interactions based on semantics. For exa
 
 ## Conclusion
 
-Using proper semantic tags is not just a best practice—it’s essential for accessibility, usability, and maintainability. By using `<button>` instead of `<div>` for interactive elements, you create a more inclusive, user-friendly, and efficient web experience.
+Using proper semantic tags is not just a best practice, it’s essential for accessibility, usability, and maintainability. By using `<button>` instead of `<div>` for interactive elements, you create a more inclusive, user-friendly, and efficient web experience.
 
 So next time you’re tempted to use a `<div>` for an interactive element, ask yourself: Would a `<button>` or another semantic element be a better choice?

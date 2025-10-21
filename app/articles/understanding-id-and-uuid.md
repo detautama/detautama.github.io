@@ -12,7 +12,7 @@ In the world of software development, unique identifiers play a crucial role in 
 
 ## Introduction
 
-Whenever we store data—whether it's users in a database, orders in an e-commerce system, or posts on a blog—each item needs a unique way to be identified. Traditionally, databases have used **IDs** (often numeric and sequential), but with the rise of distributed applications and global systems, **UUIDs (Universally Unique Identifiers)** have become more common. But what exactly are these terms, and when should you use one over the other?
+Whenever we store data, whether it's users in a database, orders in an e-commerce system, or posts on a blog, each item needs a unique way to be identified. Traditionally, databases have used **IDs** (often numeric and sequential), but with the rise of distributed applications and global systems, **UUIDs (Universally Unique Identifiers)** have become more common. But what exactly are these terms, and when should you use one over the other?
 
 To make it interesting, let’s use an analogy. Imagine you’re at a **concert** with thousands of people. The event organizers need a way to identify each attendee uniquely. Here’s how UUID and ID work in this situation:
 
@@ -26,7 +26,7 @@ To make it interesting, let’s use an analogy. Imagine you’re at a **concert*
 
 ### UUID: Like a Passport Number 🌍
 
-- A passport is **globally unique**—no two people in the world have the same passport number.
+- A passport is **globally unique**, no two people in the world have the same passport number.
 - Even if you travel to different countries, your passport remains **unique everywhere**.
 - It’s generated in a way that **doesn’t rely on order or a central system**.
 - UUIDs work similarly, ensuring uniqueness across different databases, servers, or even companies.

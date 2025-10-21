@@ -16,7 +16,7 @@ Through my experience, I’ve found POCs particularly helpful in a few situation
 
 ## How to Approach a POC Without Overthinking It
 
-Creating a POC doesn’t have to be time-consuming. Start by defining the key question—what exactly do you need to validate? Focus on the simplest way to test your idea. Write quick, disposable code that prioritizes proving feasibility over clean architecture. Run experiments, make changes, and document findings. If the POC is successful, refine it into a real implementation. If not, pivot as needed.
+Creating a POC doesn’t have to be time-consuming. Start by defining the key question, what exactly do you need to validate? Focus on the simplest way to test your idea. Write quick, disposable code that prioritizes proving feasibility over clean architecture. Run experiments, make changes, and document findings. If the POC is successful, refine it into a real implementation. If not, pivot as needed.
 
 ## Example: Payment Gateway Integration
 
@@ -24,4 +24,4 @@ One time, I had to integrate a payment gateway into an application, but I wasn�
 
 ## Conclusion: Embrace the Small Wins
 
-When faced with a tough challenge, resist the temptation to go all in from the start. Instead, start small with a POC. It helps validate assumptions, uncover potential roadblocks early, and leads to more efficient solutions. Some of my best projects began with tiny, imperfect experiments that later evolved into something much bigger. In software development—and in life—sometimes the best progress comes from taking that small first step.
+When faced with a tough challenge, resist the temptation to go all in from the start. Instead, start small with a POC. It helps validate assumptions, uncover potential roadblocks early, and leads to more efficient solutions. Some of my best projects began with tiny, imperfect experiments that later evolved into something much bigger. In software development, and in life, sometimes the best progress comes from taking that small first step.

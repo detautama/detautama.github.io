@@ -8,8 +8,8 @@ featured: false
 
 If you’ve been feeling like your **Visual Studio Code** looks a little... stale, then **vscodeCusotmTheme** by [mahmoud-asdf](https://github.com/mahmoud-asdf/vscodeCusotmTheme) is exactly what you need.
 
-This repo isn’t just another random theme — it’s a full **customization package** using **custom CSS and JavaScript**.  
-When I tried it, it honestly made VS Code feel **fresh and modern**, especially with the **rounded UI** touches that make everything look smoother and more polished — like using a brand-new editor.
+This repo isn’t just another random theme , it’s a full **customization package** using **custom CSS and JavaScript**.  
+When I tried it, it honestly made VS Code feel **fresh and modern**, especially with the **rounded UI** touches that make everything look smoother and more polished , like using a brand-new editor.
 
 ## ✨ Highlights
 
@@ -26,7 +26,7 @@ When I tried it, it honestly made VS Code feel **fresh and modern**, especially 
    - Custom CSS and JS Loader
 2. Copy the repo’s `settings.json` into your settings.
 3. Update paths to match your local files if needed.
-4. Enable the extension — and boom, your editor feels brand new.
+4. Enable the extension , and boom, your editor feels brand new.
 
 ## 📸 Previews
 
@@ -35,5 +35,5 @@ When I tried it, it honestly made VS Code feel **fresh and modern**, especially 
 
 ## 🎯 Why I Recommend It
 
-Because after using this, VS Code didn't just look different — it felt **revitalized and modern**.  
+Because after using this, VS Code didn't just look different , it felt **revitalized and modern**.  
 It's a simple, beautiful way to breathe life back into your coding experience, with that soft, rounded UI vibe that's just satisfying to look at every day.

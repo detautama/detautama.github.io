@@ -8,7 +8,7 @@ featured: true
 
 ## Introduction
 
-Creating slide decks often feels time-consuming—choosing a template, writing bullet points, and adjusting layouts. But if the goal is simply to **deliver ideas quickly**, there’s a faster way: combine **GitHub Copilot + VS Code + Marp**.
+Creating slide decks often feels time-consuming, choosing a template, writing bullet points, and adjusting layouts. But if the goal is simply to **deliver ideas quickly**, there’s a faster way: combine **GitHub Copilot + VS Code + Marp**.
 
 With this setup, you can write slides directly in Markdown while letting **Copilot** handle auto-completions or even generate entire outlines through its agent. The result? Quick slides, focused on content, without the hassle of opening PowerPoint.
 

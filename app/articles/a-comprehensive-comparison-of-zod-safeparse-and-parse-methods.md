@@ -6,7 +6,7 @@ tags: ["Zod", "TypeScript", "Data Validation"]
 featured: false
 ---
 
-Zod is a popular TypeScript-first schema validation library that helps developers enforce runtime type safety. When working with Zod, two commonly used methods for validation are `parse` and `safeParse`. While both serve the same purpose—validating input data against a Zod schema—their behavior and use cases differ significantly. In this article, we'll break down these differences and help you determine when to use each method.
+Zod is a popular TypeScript-first schema validation library that helps developers enforce runtime type safety. When working with Zod, two commonly used methods for validation are `parse` and `safeParse`. While both serve the same purpose, validating input data against a Zod schema, their behavior and use cases differ significantly. In this article, we'll break down these differences and help you determine when to use each method.
 
 ## Understanding `parse`
 
