@@ -23,7 +23,7 @@ Demo: [CodeSandbox](https://codesandbox.io/p/devbox/react-dnd-tailwind-yngc8r)
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext ts, tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
