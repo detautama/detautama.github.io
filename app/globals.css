@@ -87,6 +87,12 @@
   .claude-text-gradient {
     @apply bg-gradient-to-r from-claude-brown to-claude-accent bg-clip-text text-transparent;
   }
+
+  .liquid-glass {
+    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-900/70;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
 }
 
 @layer utilities {
