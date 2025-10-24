@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { getSortedArticlesData } from "@/app/lib/articles";
+import { getSortedArticlesData, getAllArticleIds } from "@/app/lib/articles";
 import { Metadata } from "next";
+import FeelingLuckyButton from "@/app/components/FeelingLuckyButton";
 
 export const metadata: Metadata = {
   title: "Articles - I Putu Deta Utama Putra",
@@ -12,6 +13,7 @@ export default async function Home() {
   const featuredArticles = allArticlesData.filter(
     (article) => article.featured
   );
+  const articleIds = getAllArticleIds();
 
   return (
     <div className="claude-container animate-in py-8">
@@ -53,7 +55,7 @@ export default async function Home() {
         </section>
       )}
 
-      <QuickLinks />
+      <QuickLinks articleIds={articleIds} />
 
       <section className="mb-12">
         <h2 className="mb-6 text-xl font-semibold text-claude-text-primary dark:text-claude-dark-text">
@@ -123,7 +125,7 @@ export default async function Home() {
   );
 }
 
-const QuickLinks = () => {
+const QuickLinks = ({ articleIds }: { articleIds: string[] }) => {
   const links = [
     { href: "/tag", label: "Browse Tags", icon: "tag" },
     { href: "/contact", label: "Get in Touch", icon: "mail" },
@@ -211,6 +213,9 @@ const QuickLinks = () => {
             <span>{label}</span>
           </Link>
         ))}
+      </div>
+      <div className="mt-3 flex justify-center">
+        <FeelingLuckyButton articleIds={articleIds} />
       </div>
     </section>
   );
