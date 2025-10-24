@@ -59,6 +59,7 @@ After smoke tests and documentation are in place, here's how I prioritize additi
 Why? Because they validate that user journeys work as intended, catching integration issues that unit tests miss. In AI-assisted development, where different parts of the system might be generated separately, E2E tests ensure everything actually works together.
 
 For this blog, an E2E test might verify:
+
 - Article pages render correctly
 - Navigation works across layout groups
 - Dark mode toggles properly
@@ -71,6 +72,7 @@ For this blog, an E2E test might verify:
 These are particularly valuable when AI generates UI components. A component might look right in isolation but behave incorrectly under specific conditions.
 
 Good candidates for component tests:
+
 - Custom hooks with complex state logic
 - Interactive widgets (like the dark mode toggle)
 - Markdown rendering with special handling
@@ -111,28 +113,33 @@ Let's be honest: testing takes time. By prioritizing smoke tests and documentati
 For `detautama.github.io`, here's what the testing priorities look like:
 
 ### ✅ Smoke Test (Implemented)
+
 ```bash
 npm run build
 # If this succeeds, basic markdown parsing, routing, and static export work
 ```
 
 ### ✅ Documentation (Implemented)
+
 - `.github/copilot-instructions.md` guides AI agents
 - Article utilities are well-commented in `app/lib/articles.ts`
 - Build commands documented in `package.json`
 
 ### 🎯 E2E Tests (Would Add Next)
+
 - Verify article pages render correctly
 - Test navigation between layouts
 - Validate tag filtering
 - Check theme switching
 
 ### 🎯 Component Tests (Would Add After E2E)
+
 - MarkdownRenderer with various markdown features
 - Dark mode toggle behavior
 - Article list filtering and sorting
 
 ### 🎯 Unit Tests (Would Add Last)
+
 - Article metadata parsing logic
 - Date sorting functions
 - Tag aggregation utilities
@@ -142,6 +149,7 @@ npm run build
 ### "But the testing pyramid says unit tests first!"
 
 The traditional testing pyramid was designed for a different era. When AI can generate and modify code at unprecedented speed, we need tests that:
+
 1. Catch catastrophic failures immediately (smoke tests)
 2. Validate user-facing functionality (E2E)
 3. Enable confident refactoring (all of the above)

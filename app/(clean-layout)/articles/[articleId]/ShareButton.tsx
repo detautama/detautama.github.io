@@ -23,7 +23,7 @@ const ShareButton = () => {
           url: articleUrl,
         });
       } catch (error) {
-        console.warn("Wwarning sharing", error);
+        console.warn("Warning sharing", error);
       }
     }
   };
