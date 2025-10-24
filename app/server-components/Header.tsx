@@ -104,8 +104,8 @@ export const Header = () => {
       </header>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-claude-cream/95 dark:bg-claude-dark-bg/95 backdrop-blur-md border-t border-claude-tan dark:border-claude-dark-border">
-        <div className="flex items-center justify-around py-2">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-claude-cream/80 dark:bg-claude-dark-bg/70 backdrop-blur-xl border-t border-white/20 dark:border-white/10 shadow-[0_-4px_16px_rgba(0,0,0,0.1)] dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
+        <div className="flex items-center justify-around py-2 bg-gradient-to-t from-claude-cream/10 to-transparent dark:from-white/5 dark:to-transparent">
           <Link 
             href="/" 
             className={`flex flex-col items-center py-1 px-3 transition-colors ${
