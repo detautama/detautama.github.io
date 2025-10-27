@@ -8,7 +8,7 @@ featured: false
 
 Have you ever felt lost without a plan? In today's fast-paced world, many people rush into action without thinking, only to find themselves exhausted halfway through. But here's a truth I've learned: **Planning is everything**. And with AI as your forge, continuously tempering your plans like a sword, the path ahead becomes clear.
 
-## 🪞 Planning Is Everything
+## 🗺️ Planning Is Everything
 
 Without a roadmap, we easily lose direction. I've been there—diving headfirst into projects, driven by enthusiasm but lacking structure. The result? Burnout, missed deadlines, and a gnawing sense that I could have done better.
 
@@ -64,7 +64,7 @@ There's no shortcut to meaningful achievement. AI makes the planning process mor
 
 The beauty is in the process itself. Each cycle of planning, acting, and refining builds not just better outcomes, but a better you—more skilled at strategic thinking, more resilient in the face of setbacks, more aware of your patterns and potential.
 
-## 🌅 When the Sword Is Sharp, the Path Becomes Clear
+## ⚔️ When the Sword Is Sharp, the Path Becomes Clear
 
 After consistent forging, something magical happens: **clarity emerges**.
 
