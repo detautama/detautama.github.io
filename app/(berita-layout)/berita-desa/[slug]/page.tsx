@@ -1,4 +1,8 @@
-import { getBeritaData, getAllBeritaIds, getSortedBeritaData } from "../../../lib/berita";
+import {
+  getBeritaData,
+  getAllBeritaIds,
+  getSortedBeritaData,
+} from "../../../lib/berita";
 import { MarkdownRenderer } from "../../../MarkdownRenderer";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -19,7 +23,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  
+
   try {
     const berita = getBeritaData(slug);
     return {
@@ -53,7 +57,7 @@ function formatDate(dateString: string): string {
 
 export default async function BeritaDetailPage({ params }: Params) {
   const { slug } = await params;
-  
+
   let berita;
   try {
     berita = getBeritaData(slug);
@@ -68,38 +72,43 @@ export default async function BeritaDetailPage({ params }: Params) {
     .slice(0, 3);
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="mx-auto max-w-4xl">
       {/* Breadcrumb */}
-      <nav className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400 mb-8">
-        <Link href="/berita-desa" className="hover:text-slate-800 dark:hover:text-slate-200">
+      <nav className="mb-8 flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
+        <Link
+          href="/berita-desa"
+          className="hover:text-slate-800 dark:hover:text-slate-200"
+        >
           Berita Desa
         </Link>
         <span>→</span>
-        <span className="text-slate-800 dark:text-slate-200">{berita.title}</span>
+        <span className="text-slate-800 dark:text-slate-200">
+          {berita.title}
+        </span>
       </nav>
 
-      <article className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+      <article className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
         {/* Article Header */}
-        <header className="p-8 border-b border-slate-200 dark:border-slate-700">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 text-sm font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">
+        <header className="border-b border-slate-200 p-8 dark:border-slate-700">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200">
               {berita.kategori}
             </span>
             {berita.featured && (
-              <span className="px-3 py-1 text-sm font-medium bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full">
+              <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-200">
                 ⭐ Unggulan
               </span>
             )}
           </div>
-          
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
+
+          <h1 className="mb-4 text-3xl font-bold text-slate-800 md:text-4xl dark:text-white">
             {berita.title}
           </h1>
-          
-          <p className="text-xl text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+
+          <p className="mb-6 text-xl leading-relaxed text-slate-600 dark:text-slate-300">
             {berita.description}
           </p>
-          
+
           <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
             <div className="flex items-center gap-2">
               <span>👤</span>
@@ -114,13 +123,13 @@ export default async function BeritaDetailPage({ params }: Params) {
               <span>{berita.kategori}</span>
             </div>
           </div>
-          
+
           {berita.tags && berita.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-6">
+            <div className="mt-6 flex flex-wrap gap-2">
               {berita.tags.map((tag: string) => (
-                <span 
+                <span
                   key={tag}
-                  className="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full"
+                  className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-600 dark:bg-slate-700 dark:text-slate-300"
                 >
                   #{tag}
                 </span>
@@ -131,7 +140,7 @@ export default async function BeritaDetailPage({ params }: Params) {
 
         {/* Article Content */}
         <div className="p-8">
-          <div className="prose prose-slate dark:prose-invert max-w-none">
+          <div className="prose prose-slate max-w-none dark:prose-invert">
             <MarkdownRenderer>{berita.content}</MarkdownRenderer>
           </div>
         </div>
@@ -140,32 +149,35 @@ export default async function BeritaDetailPage({ params }: Params) {
       {/* Related Articles */}
       {relatedBerita.length > 0 && (
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">
+          <h2 className="mb-6 text-2xl font-bold text-slate-800 dark:text-white">
             Berita Terkait
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid gap-6 md:grid-cols-3">
             {relatedBerita.map((related) => (
-              <article key={related.id} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <article
+                key={related.id}
+                className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800"
+              >
                 <div className="p-6">
-                  <span className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">
+                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                     {related.kategori}
                   </span>
-                  
-                  <h3 className="text-lg font-semibold text-slate-800 dark:text-white mt-3 mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+
+                  <h3 className="mb-2 mt-3 text-lg font-semibold text-slate-800 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400">
                     <Link href={`/berita-desa/${related.id}`}>
                       {related.title}
                     </Link>
                   </h3>
-                  
-                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 line-clamp-3">
+
+                  <p className="mb-4 line-clamp-3 text-sm text-slate-600 dark:text-slate-300">
                     {related.description}
                   </p>
-                  
+
                   <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>{formatDate(related.date)}</span>
-                    <Link 
+                    <Link
                       href={`/berita-desa/${related.id}`}
-                      className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                      className="font-medium text-blue-600 hover:underline dark:text-blue-400"
                     >
                       Baca →
                     </Link>
@@ -179,9 +191,9 @@ export default async function BeritaDetailPage({ params }: Params) {
 
       {/* Back to Berita */}
       <div className="mt-12 text-center">
-        <Link 
+        <Link
           href="/berita-desa"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
         >
           ← Kembali ke Berita Desa
         </Link>

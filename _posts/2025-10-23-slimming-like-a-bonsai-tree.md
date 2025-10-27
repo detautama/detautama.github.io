@@ -30,18 +30,22 @@ Life: We collect obligations and commitments. We sign up for more goals, events,
 How to practice slimming
 
 1. Audit regularly
+
    - List features, projects, or commitments.
    - Ask: What brings value? What creates friction? What could we stop?
 
 2. Prioritize deliberately
+
    - Keep what aligns with long-term goals.
    - If something doesn't serve your core purpose, consider removing it.
 
 3. Prune gently and iterate
+
    - Remove incrementally; observe effects.
    - Reintroduce or adjust if needed. Pruning is reversible if done thoughtfully.
 
 4. Create guardrails
+
    - Make rules that prevent accidental growth (e.g., feature approval processes, “one in, one out” rules for commitments).
 
 5. Celebrate the space you create
