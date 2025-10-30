@@ -22,23 +22,23 @@ export function ToggleDarkMode() {
   if (!mounted) {
     return (
       <button
-        className="p-2 rounded-lg bg-claude-tan dark:bg-claude-dark-surface"
+        className="rounded-lg bg-claude-tan p-2 dark:bg-claude-dark-surface"
         aria-label="Toggle Dark Mode"
       >
-        <div className="w-5 h-5" />
+        <div className="h-5 w-5" />
       </button>
     );
   }
 
   return (
     <button
-      className="p-2 rounded-lg bg-claude-tan dark:bg-claude-dark-surface hover:bg-claude-brown hover:text-white dark:hover:bg-claude-dark-border transition-all duration-200 group"
+      className="group rounded-lg bg-claude-tan p-2 transition-all duration-200 hover:bg-claude-brown hover:text-white dark:bg-claude-dark-surface dark:hover:bg-claude-dark-border"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle Dark Mode"
     >
       {theme === "dark" ? (
         <svg
-          className="w-5 h-5 text-claude-text-secondary dark:text-claude-dark-text group-hover:text-white transition-colors"
+          className="h-5 w-5 text-claude-text-secondary transition-colors group-hover:text-white dark:text-claude-dark-text"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ export function ToggleDarkMode() {
         </svg>
       ) : (
         <svg
-          className="w-5 h-5 text-claude-text-secondary dark:text-claude-dark-text group-hover:text-white transition-colors"
+          className="h-5 w-5 text-claude-text-secondary transition-colors group-hover:text-white dark:text-claude-dark-text"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

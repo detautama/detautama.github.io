@@ -2,16 +2,16 @@
 title: "Portfolio improvement ideas & content plan"
 date: "2025-10-18"
 description: "Practical, prioritized suggestions and content templates to improve a developer portfolio site."
-tags: ["portfolio","content","guide"]
+tags: ["portfolio", "content", "guide"]
 featured: false
 ---
 
-TL;DR
------
+## TL;DR
+
 Short, prioritized actions to improve your portfolio: add a clear value proposition, a narrative About page, 2–3 project case studies, and a content schedule (tutorials + postmortems). Add social proof, deployment links, SEO metadata, and monitor performance.
 
-Priority improvements
----------------------
+## Priority improvements
+
 1. Clear hero + value proposition: one sentence who you are and what you do, with a CTA (Hire / Projects / Contact).
 2. About page: narrative (background, strengths, roles), timeline, measurable impact (numbers).
 3. Project case studies: problem, your role, approach, architecture, code snippets, results, lessons learned.
@@ -23,8 +23,8 @@ Priority improvements
 9. Accessibility & performance: Lighthouse checks, alt text, semantic markup, fast images.
 10. Analytics & error monitoring: GA/Plausible, Sentry or similar.
 
-Content ideas (pick a few to start)
------------------------------------
+## Content ideas (pick a few to start)
+
 - 2–3 detailed project case studies (use the case study template below).
 - 1 tutorial series: how you built a project (split into parts).
 - Tooling & infra writeup: CI/CD, deployment, testing, linting.
@@ -32,11 +32,11 @@ Content ideas (pick a few to start)
 - Short update posts: "What I worked on this month".
 - Curated resources: recommended tools and why you like them.
 
-Article / case study template
------------------------------
-Use as frontmatter + structure for articles in app/articles/*.md.
+## Article / case study template
 
-```markdown
+Use as frontmatter + structure for articles in app/articles/\*.md.
+
+````markdown
 ---
 title: "How I built Project X"
 date: "2025-10-18"
@@ -44,19 +44,25 @@ description: "Project X: problem, approach, architecture, results."
 tags: ["project", "nextjs", "case-study"]
 featured: true
 ---
+
 ## TL;DR
+
 One-paragraph summary: problem, your role, and outcome (numbers).
 
 ## Problem
+
 Describe the problem and constraints.
 
 ## Role & Responsibilities
+
 What you did (design, infra, code, PM).
 
 ## Approach & Architecture
+
 Explain architecture, include diagrams/screenshots.
 
 ## Key Technical Decisions
+
 - Decision 1 + why
 - Decision 2 + tradeoffs
 
@@ -66,13 +72,17 @@ function example() {
   return "small runnable example";
 }
 ```
+````
 
 ## Results
+
 Quantitative outcomes, metrics, screenshots.
 
 ## Lessons learned
+
 Bullet list of takeaways and next steps.
-```
+
+````
 
 Where to add pages (repo conventions)
 ------------------------------------
@@ -108,24 +118,25 @@ export default function Page() {
     </main>
   );
 }
-```
+````
 
-Quick checklist to validate changes
------------------------------------
+## Quick checklist to validate changes
+
 - npm run dev -> visually check About / Projects / article pages
 - npm run build -> catch build-time/type issues
 - npm run lint and npm run format
 - When you want to open the local site in the host browser:
   - "$BROWSER" http://localhost:3000
 
-Suggested next steps (pick one)
--------------------------------
+## Suggested next steps (pick one)
+
 - I can scaffold an About page under app/(clean-layout)/about/page.tsx.
 - Or create 1 project case-study file in app/articles/ using the template above.
 - Or generate 3 starter article files from the template.
 
 If you want a scaffold, tell me which option and provide a short bio + one project to include.
-```// filepath: /workspaces/detautama.github.io/app/articles/2025-10-18-portfolio-improvement-ideas.md
+
+````// filepath: /workspaces/detautama.github.io/app/articles/2025-10-18-portfolio-improvement-ideas.md
 ---
 title: "Portfolio improvement ideas & content plan"
 date: "2025-10-18"
@@ -193,14 +204,17 @@ Explain architecture, include diagrams/screenshots.
 function example() {
   return "small runnable example";
 }
-```
+````
 
 ## Results
+
 Quantitative outcomes, metrics, screenshots.
 
 ## Lessons learned
+
 Bullet list of takeaways and next steps.
-```
+
+````
 
 Where to add pages (repo conventions)
 ------------------------------------
@@ -236,18 +250,18 @@ export default function Page() {
     </main>
   );
 }
-```
+````
 
-Quick checklist to validate changes
------------------------------------
+## Quick checklist to validate changes
+
 - npm run dev -> visually check About / Projects / article pages
 - npm run build -> catch build-time/type issues
 - npm run lint and npm run format
 - When you want to open the local site in the host browser:
   - "$BROWSER" http://localhost:3000
 
-Suggested next steps (pick one)
--------------------------------
+## Suggested next steps (pick one)
+
 - I can scaffold an About page under app/(clean-layout)/about/page.tsx.
 - Or create 1 project case-study file in app/articles/ using the template above.
 - Or generate 3 starter article files from the template.
