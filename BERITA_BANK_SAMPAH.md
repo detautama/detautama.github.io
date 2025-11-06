@@ -9,17 +9,14 @@
 ## Cara Mengakses
 
 ### 1. Melalui Portal Berita Desa
-
-- URL: `/berita-desa`
+- URL: `/berita-desa` 
 - Menampilkan semua berita desa termasuk berita Bank Sampah ini
 
 ### 2. Langsung ke Artikel
-
 - URL: `/berita-desa/bank-sampah-celuk-sukawati-oktober-2025`
 - Mengakses berita secara langsung
 
 ### 3. Halaman Akses Cepat
-
 - URL: `/berita-terbaru`
 - Halaman khusus untuk mengakses berita terbaru ini
 
@@ -56,7 +53,6 @@ location: "Banjar Celuk, Sukawati, Gianyar"
 ## Layout yang Digunakan
 
 Berita menggunakan **berita-layout** yang memiliki:
-
 - Header khusus untuk portal berita desa
 - Navigation yang user-friendly
 - Footer dengan informasi desa
@@ -65,7 +61,6 @@ Berita menggunakan **berita-layout** yang memiliki:
 ## Development Server
 
 Untuk melihat hasil berita, jalankan:
-
 ```bash
 npm run dev
 ```

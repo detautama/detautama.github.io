@@ -127,9 +127,7 @@ export function getTopKategoriBerita({ limit = 5 }): string[] {
   const categories = allBeritaData.reduce(
     (acc, berita) => {
       if (berita.kategori) {
-        acc[berita.kategori] = acc[berita.kategori]
-          ? acc[berita.kategori] + 1
-          : 1;
+        acc[berita.kategori] = acc[berita.kategori] ? acc[berita.kategori] + 1 : 1;
       }
       return acc;
     },
@@ -143,8 +141,8 @@ export function getTopKategoriBerita({ limit = 5 }): string[] {
 
 export function getBeritaByKategori(kategori: string): BeritaData[] {
   const allBeritaData = getSortedBeritaData();
-  return allBeritaData.filter(
-    (berita) => berita.kategori.toLowerCase() === kategori.toLowerCase()
+  return allBeritaData.filter((berita) => 
+    berita.kategori.toLowerCase() === kategori.toLowerCase()
   );
 }
 

@@ -5,8 +5,7 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://detautama.me/"),
   title: "Berita Desa Celuk | I Putu Deta Utama Putra",
-  description:
-    "Portal berita dan informasi terkini Desa Celuk, Sukawati, Gianyar, Bali",
+  description: "Portal berita dan informasi terkini Desa Celuk, Sukawati, Gianyar, Bali",
 };
 
 export default function BeritaLayout({
@@ -17,7 +16,7 @@ export default function BeritaLayout({
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Header khusus untuk berita desa */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80">
+      <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 sticky top-0 z-50">
         <div className="claude-container py-4">
           <div className="flex items-center justify-between">
             <div>
@@ -29,9 +28,9 @@ export default function BeritaLayout({
               </p>
             </div>
             <nav className="flex items-center space-x-4">
-              <Link
-                href="/"
-                className="text-sm text-slate-600 transition-colors hover:text-slate-800 dark:text-slate-400 dark:hover:text-white"
+              <Link 
+                href="/" 
+                className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
               >
                 Kembali ke Blog Utama
               </Link>
@@ -42,42 +41,40 @@ export default function BeritaLayout({
 
       {/* Main content */}
       <main className="claude-container py-8">
-        <div className="mx-auto max-w-4xl">{children}</div>
+        <div className="mx-auto max-w-4xl">
+          {children}
+        </div>
       </main>
 
       {/* Footer khusus untuk berita desa */}
-      <footer className="mt-16 bg-slate-800 py-12 text-white dark:bg-slate-950">
+      <footer className="bg-slate-800 dark:bg-slate-950 text-white py-12 mt-16">
         <div className="claude-container">
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Desa Celuk</h3>
-              <p className="text-sm text-slate-300">
-                Desa wisata kerajinan perak yang terkenal di Sukawati, Gianyar,
-                Bali.
+              <h3 className="text-lg font-semibold mb-4">Desa Celuk</h3>
+              <p className="text-slate-300 text-sm">
+                Desa wisata kerajinan perak yang terkenal di Sukawati, Gianyar, Bali.
               </p>
             </div>
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Kontak</h3>
-              <p className="text-sm text-slate-300">
-                Kantor Desa Celuk
-                <br />
-                Sukawati, Gianyar, Bali
-                <br />
+              <h3 className="text-lg font-semibold mb-4">Kontak</h3>
+              <p className="text-slate-300 text-sm">
+                Kantor Desa Celuk<br />
+                Sukawati, Gianyar, Bali<br />
                 Indonesia
               </p>
             </div>
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Informasi</h3>
-              <p className="text-sm text-slate-300">
-                Portal berita ini dikelola untuk memberikan informasi terkini
+              <h3 className="text-lg font-semibold mb-4">Informasi</h3>
+              <p className="text-slate-300 text-sm">
+                Portal berita ini dikelola untuk memberikan informasi terkini 
                 tentang kegiatan dan perkembangan Desa Celuk.
               </p>
             </div>
           </div>
-          <div className="mt-8 border-t border-slate-700 pt-8 text-center">
-            <p className="text-sm text-slate-400">
-              © 2024 Berita Desa Celuk - Dikembangkan oleh I Putu Deta Utama
-              Putra
+          <div className="border-t border-slate-700 mt-8 pt-8 text-center">
+            <p className="text-slate-400 text-sm">
+              © 2024 Berita Desa Celuk - Dikembangkan oleh I Putu Deta Utama Putra
             </p>
           </div>
         </div>

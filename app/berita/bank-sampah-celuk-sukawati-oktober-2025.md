@@ -24,8 +24,7 @@ Program ini merupakan bagian dari inisiatif berkelanjutan untuk mengelola sampah
 Bank Sampah Celuk - Sukawati beroperasi dengan konsep "Jaha Pura Dalam Celuk" yang mengedepankan gotong royong dan kepedulian bersama terhadap lingkungan. Kegiatan ini tidak hanya sebatas tukar sampah, tetapi juga menjadi wadah sosialisasi program-program desa lainnya.
 
 ### Detail Kegiatan:
-
-- **Hari**: Setiap Minggu
+- **Hari**: Setiap Minggu  
 - **Waktu**: 08.00 - 11.00 WITA
 - **Lokasi**: Area Parkir Aura Dalam Celuk
 - **Jenis Sampah**: Anorganik dan Plastik
@@ -47,4 +46,4 @@ Program seperti ini diharapkan dapat menjadi inspirasi bagi banjar-banjar lain d
 
 ---
 
-_Untuk informasi lebih lanjut tentang Bank Sampah Celuk - Sukawati, warga dapat mengikuti grup Facebook Warga Banjar Celuk atau menghubungi pengurus setempat._
+*Untuk informasi lebih lanjut tentang Bank Sampah Celuk - Sukawati, warga dapat mengikuti grup Facebook Warga Banjar Celuk atau menghubungi pengurus setempat.*

@@ -16,8 +16,10 @@ export default function RootLayout({
   return (
     <div>
       <Header />
-      <main className="min-h-screen pb-24 md:pb-0">{children}</main>
-      <footer className="claude-container py-8 pb-28 text-center md:pb-8">
+      <main className="min-h-screen pb-24 md:pb-0">
+        {children}
+      </main>
+      <footer className="claude-container py-8 pb-28 md:pb-8 text-center">
         <p className="text-sm text-claude-text-secondary dark:text-claude-dark-text/70">
           Thank you for visiting! - I Putu Deta Utama Putra
         </p>
