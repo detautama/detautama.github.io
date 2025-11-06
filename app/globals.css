@@ -89,7 +89,7 @@
   }
 
   .liquid-glass {
-    @apply bg-white/80 backdrop-blur-xl dark:bg-gray-900/70;
+    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-900/70;
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
   }

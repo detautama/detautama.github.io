@@ -30,7 +30,6 @@ export default async function Page({
   }>;
 }) {
   const { articleId } = await params;
-  console.log("articleId", articleId);
   const artileData = getArticleData(articleId);
   return (
     <div>
