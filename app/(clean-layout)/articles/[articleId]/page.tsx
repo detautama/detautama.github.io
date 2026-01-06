@@ -54,7 +54,17 @@ export default async function Page({
           ))}
         </div>
       </div>
-      <div className="mb-5" />
+      <div className="mb-6" />
+      <div className="mb-6">
+        <Image
+          src={`/og-images/${articleId}.png`}
+          alt={artileData.title}
+          width={1200}
+          height={630}
+          className="h-auto w-full rounded-md"
+          priority
+        />
+      </div>
       <WarningIfArticleIsOld date={artileData.date} />
       <div className="mb-10" />
       <article className="prose dark:prose-invert">
