@@ -1,4 +1,6 @@
 import { getAllArticleIds, getArticleData } from "@/app/lib/articles";
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import Image from "next/image";
 import { MarkdownRenderer } from "@/app/MarkdownRenderer";
@@ -31,6 +33,7 @@ export default async function Page({
 }) {
   const { articleId } = await params;
   const artileData = getArticleData(articleId);
+  const hasImage = fs.existsSync(path.join(process.cwd(), "public", "og-images", `${articleId}.png`));
   return (
     <div>
       <h1 className="text-center text-2xl font-bold md:text-3xl">
@@ -54,17 +57,18 @@ export default async function Page({
           ))}
         </div>
       </div>
-      <div className="mb-6" />
-      <div className="mb-6">
-        <Image
-          src={`/og-images/${articleId}.png`}
-          alt={artileData.title}
-          width={1200}
-          height={630}
-          className="h-auto w-full rounded-md"
-          priority
-        />
-      </div>
+      {hasImage && (
+        <div className="mb-6">
+          <Image
+            src={`/og-images/${articleId}.png`}
+            alt={artileData.title}
+            width={1200}
+            height={630}
+            className="h-auto w-full rounded-md"
+            priority
+          />
+        </div>
+      )}
       <WarningIfArticleIsOld date={artileData.date} />
       <div className="mb-10" />
       <article className="prose dark:prose-invert">
