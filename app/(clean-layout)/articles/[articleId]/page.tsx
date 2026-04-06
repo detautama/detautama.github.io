@@ -1,6 +1,6 @@
 import { getAllArticleIds, getArticleData } from "@/app/lib/articles";
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import Image from "next/image";
 import { MarkdownRenderer } from "@/app/MarkdownRenderer";
