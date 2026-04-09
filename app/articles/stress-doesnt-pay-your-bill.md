@@ -1,10 +1,10 @@
------
+---
 title: “Stress Doesn’t Pay Your Bills”
 date: “2026-04-09”
 description: “Stress is a mental state, not a strategy. Whether you’re stressed or not, the problem stays the same size — what matters is the action you take. And stress will impair exactly that.”
 tags: [“Mental Health”, “Mindset”, “Productivity”, “Personal Development”]
 featured: false
------
+---
 
 > *“Being stressed has never once paid a bill, healed a wound, or solved a problem — but it has made every one of them harder to face.”*
 
