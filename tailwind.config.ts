@@ -12,28 +12,29 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        claude: {
-          cream: "#FBF7F0",
-          tan: "#F5EDE2",
-          brown: "#8B7355",
-          darkbrown: "#5C4B3A",
-          accent: "#D97757",
+        brand: {
+          cream: "#F5F3EE",
+          tan: "#E4E0D8",
+          forest: "#3B7A57",
+          darkforest: "#2A523E",
+          accent: "#3B7A57", // Forest Green
           text: {
-            primary: "#1A1A1A",
-            secondary: "#6B6B6B",
-            muted: "#9CA3AF",
+            primary: "#1C1C1C",
+            secondary: "#5A5E52",
+            muted: "#8A8E82",
           },
           dark: {
-            bg: "#1E1E1E",
-            surface: "#2D2D2D",
-            border: "#404040",
-            text: "#E5E5E5",
+            bg: "#1C1E1A",
+            surface: "#252820",
+            border: "#363830",
+            text: "#E8E6E1",
           },
         },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
-        display: ['"Söhne"', "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-lora)", "Lora", "serif"],
+        serif: ["var(--font-lora)", "Lora", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

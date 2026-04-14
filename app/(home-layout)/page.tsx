@@ -16,14 +16,15 @@ export default async function Home() {
   const articleIds = getAllArticleIds();
 
   return (
-    <div className="claude-container animate-in py-8">
-      <div className="mb-12">
-        <h1 className="mb-4 font-display text-3xl font-bold text-claude-text-primary dark:text-claude-dark-text">
-          Welcome
+    <div className="brand-container animate-in py-8">
+      <div className="mb-12 border-b border-brand-tan pb-12">
+        <h1 className="mb-4 font-display text-4xl font-bold text-brand-text-primary dark:text-brand-dark-text">
+          Halo, aku Deta.
         </h1>
-        <p className="max-w-2xl text-lg text-claude-text-secondary dark:text-claude-dark-text/80">
-          Exploring JavaScript, web development, and modern software engineering
-          through thoughtful articles and insights.
+        <p className="max-w-2xl font-serif text-xl leading-relaxed text-brand-text-secondary dark:text-brand-dark-text/80">
+          Developer asal Bali yang mencoba waras di antara baris kode, 
+          kesibukan sebagai ayah, dan obsesi kecil pada sepeda serta stoikisme. 
+          Di sini aku mencatat apa pun yang layak dipikirkan dua kali.
         </p>
       </div>
 
@@ -31,21 +32,21 @@ export default async function Home() {
         <section className="mb-12">
           <div className="mb-6 flex items-center gap-2">
             <svg
-              className="h-5 w-5 text-claude-accent"
+              className="h-5 w-5 text-brand-accent"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
             </svg>
-            <h2 className="text-xl font-semibold text-claude-text-primary dark:text-claude-dark-text">
-              Featured Articles
+            <h2 className="font-display text-xl font-semibold text-brand-text-primary dark:text-brand-dark-text">
+              Pilihan
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {featuredArticles.map(({ id, title }) => (
               <Link href={`/articles/${id}`} key={id} className="group">
-                <div className="claude-featured-card flex h-32 items-center justify-center transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl">
-                  <h3 className="line-clamp-3 px-4 text-center font-medium text-claude-text-primary dark:text-claude-dark-text">
+                <div className="brand-featured-card flex h-32 items-center justify-center transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl">
+                  <h3 className="line-clamp-3 px-4 text-center font-display font-medium text-brand-text-primary dark:text-brand-dark-text">
                     {title}
                   </h3>
                 </div>
@@ -58,32 +59,32 @@ export default async function Home() {
       <QuickLinks articleIds={articleIds} />
 
       <section className="mb-12">
-        <h2 className="mb-6 text-xl font-semibold text-claude-text-primary dark:text-claude-dark-text">
-          Recent Articles
+        <h2 className="mb-6 font-display text-xl font-semibold text-brand-text-primary dark:text-brand-dark-text">
+          Tulisan Terbaru
         </h2>
         <div className="space-y-4">
           {allArticlesData.map(({ id, date, title, description, tags }, i) => (
             <article
               key={id}
-              className="claude-article-card animate-in group"
+              className="brand-article-card animate-in group"
               style={{ animationDelay: `${i * 50}ms` }}
             >
               <div className="mb-2 flex items-center gap-3">
                 {i === 0 && (
-                  <span className="claude-badge bg-claude-accent text-white">
-                    New
+                  <span className="brand-badge bg-brand-accent text-white">
+                    Baru
                   </span>
                 )}
-                <time className="text-sm text-claude-text-secondary dark:text-claude-dark-text/70">
+                <time className="text-sm text-brand-text-secondary dark:text-brand-dark-text/70">
                   {date}
                 </time>
               </div>
               <Link href={`/articles/${id}`}>
-                <h3 className="mb-2 text-lg font-semibold text-claude-text-primary transition-colors group-hover:text-claude-accent dark:text-claude-dark-text">
+                <h3 className="mb-2 font-display text-xl font-bold text-brand-text-primary transition-colors group-hover:text-brand-accent dark:text-brand-dark-text">
                   {title}
                 </h3>
               </Link>
-              <p className="mb-3 line-clamp-2 text-claude-text-secondary dark:text-claude-dark-text/80">
+              <p className="mb-3 line-clamp-2 font-serif text-brand-text-secondary dark:text-brand-dark-text/80">
                 {description}
               </p>
               <div className="flex items-center justify-between gap-3">
@@ -92,7 +93,7 @@ export default async function Home() {
                     <Link
                       key={tag}
                       href={`/tag/#${tag}`}
-                      className="claude-badge transition-colors hover:bg-claude-brown hover:text-white"
+                      className="brand-badge transition-colors hover:bg-brand-forest hover:text-white"
                     >
                       {tag}
                     </Link>
@@ -100,7 +101,7 @@ export default async function Home() {
                 </div>
                 <Link
                   href={`/articles/${id}`}
-                  className="shrink-0 text-claude-accent transition-colors hover:text-claude-brown dark:hover:text-claude-accent/80"
+                  className="shrink-0 text-brand-accent transition-colors hover:text-brand-forest dark:hover:text-brand-accent/80"
                 >
                   <svg
                     className="h-5 w-5"
@@ -207,7 +208,7 @@ const QuickLinks = ({ articleIds }: { articleIds: string[] }) => {
           <Link
             key={href}
             href={href}
-            className="claude-button-secondary group"
+            className="brand-button-secondary group"
           >
             <span className="mr-2">{icons[icon as keyof typeof icons]}</span>
             <span>{label}</span>

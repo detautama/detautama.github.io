@@ -50,7 +50,7 @@ const ShareButton = () => {
         {isShareSupported && (
           <button
             onClick={handleShare}
-            className="claude-button-primary flex items-center gap-2"
+            className="brand-button-primary flex items-center gap-2"
           >
             Share
             <Image
@@ -64,7 +64,7 @@ const ShareButton = () => {
 
         <button
           onClick={handleCopy}
-          className="claude-button-primary flex items-center gap-2"
+          className="brand-button-primary flex items-center gap-2"
         >
           {copied ? "Copied!" : "Copy"}
           <Image src="/images/copy.svg" alt="copy" width={16} height={16} />

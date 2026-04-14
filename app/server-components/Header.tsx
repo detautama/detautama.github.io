@@ -17,8 +17,8 @@ export const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-claude-tan bg-claude-cream/95 backdrop-blur-md dark:border-claude-dark-border dark:bg-claude-dark-bg/95">
-        <div className="claude-container">
+      <header className="sticky top-0 z-50 border-b border-brand-tan bg-brand-cream/95 backdrop-blur-md dark:border-brand-dark-border dark:bg-brand-dark-bg/95">
+        <div className="brand-container">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center space-x-8">
               <Link href="/" className="group flex items-center space-x-3">
@@ -30,14 +30,14 @@ export const Header = () => {
                     width={40}
                     height={40}
                   />
-                  <div className="absolute inset-0 rounded-full bg-claude-accent opacity-0 transition-opacity duration-200 group-hover:opacity-20" />
+                  <div className="absolute inset-0 rounded-full bg-brand-accent opacity-0 transition-opacity duration-200 group-hover:opacity-20" />
                 </div>
                 <div className="block">
-                  <h1 className="text-sm font-semibold text-claude-text-primary dark:text-claude-dark-text">
+                  <h1 className="text-sm font-semibold text-brand-text-primary dark:text-brand-dark-text">
                     I Putu Deta Utama Putra
                   </h1>
-                  <p className="hidden text-xs text-claude-text-secondary sm:block dark:text-claude-dark-text/70">
-                    JavaScript, Web & More
+                  <p className="hidden text-xs text-brand-text-secondary sm:block dark:text-brand-dark-text/70">
+                    Life, Code & Everything in between
                   </p>
                 </div>
               </Link>
@@ -45,32 +45,32 @@ export const Header = () => {
               <nav className="hidden items-center space-x-1 md:flex">
                 <Link
                   href="/"
-                  className={`claude-nav-link ${
-                    isActive("/") ? "text-claude-accent" : ""
+                  className={`brand-nav-link ${
+                    isActive("/") ? "text-brand-accent" : ""
                   }`}
                 >
                   Articles
                 </Link>
                 <Link
                   href="/projects"
-                  className={`claude-nav-link ${
-                    isActive("/projects") ? "text-claude-accent" : ""
+                  className={`brand-nav-link ${
+                    isActive("/projects") ? "text-brand-accent" : ""
                   }`}
                 >
                   Projects
                 </Link>
                 <Link
                   href="/about"
-                  className={`claude-nav-link ${
-                    isActive("/about") ? "text-claude-accent" : ""
+                  className={`brand-nav-link ${
+                    isActive("/about") ? "text-brand-accent" : ""
                   }`}
                 >
                   About
                 </Link>
                 <Link
                   href="/tag"
-                  className={`claude-nav-link ${
-                    isActive("/tag") ? "text-claude-accent" : ""
+                  className={`brand-nav-link ${
+                    isActive("/tag") ? "text-brand-accent" : ""
                   }`}
                 >
                   Tags
@@ -81,10 +81,10 @@ export const Header = () => {
             <div className="flex items-center space-x-4">
               <Link
                 href="/search"
-                className="rounded-lg p-2 transition-colors duration-200 hover:bg-claude-tan dark:hover:bg-claude-dark-surface"
+                className="rounded-lg p-2 transition-colors duration-200 hover:bg-brand-tan dark:hover:bg-brand-dark-surface"
               >
                 <svg
-                  className="h-5 w-5 text-claude-text-secondary dark:text-claude-dark-text"
+                  className="h-5 w-5 text-brand-text-secondary dark:text-brand-dark-text"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -104,14 +104,14 @@ export const Header = () => {
       </header>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/20 bg-claude-cream/80 shadow-[0_-4px_16px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-claude-dark-bg/70 dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
-        <div className="flex items-center justify-around bg-gradient-to-t from-claude-cream/10 to-transparent py-2 dark:from-white/5 dark:to-transparent">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/20 bg-brand-cream/80 shadow-[0_-4px_16px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-brand-dark-bg/70 dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
+        <div className="flex items-center justify-around bg-gradient-to-t from-brand-cream/10 to-transparent py-2 dark:from-white/5 dark:to-transparent">
           <Link
             href="/"
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/")
-                ? "text-claude-accent"
-                : "text-claude-text-secondary hover:text-claude-accent dark:text-claude-dark-text"
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
           >
             <svg
@@ -133,8 +133,8 @@ export const Header = () => {
             href="/projects"
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/projects")
-                ? "text-claude-accent"
-                : "text-claude-text-secondary hover:text-claude-accent dark:text-claude-dark-text"
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
           >
             <svg
@@ -156,8 +156,8 @@ export const Header = () => {
             href="/about"
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/about")
-                ? "text-claude-accent"
-                : "text-claude-text-secondary hover:text-claude-accent dark:text-claude-dark-text"
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
           >
             <svg
@@ -179,8 +179,8 @@ export const Header = () => {
             href="/tag"
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/tag")
-                ? "text-claude-accent"
-                : "text-claude-text-secondary hover:text-claude-accent dark:text-claude-dark-text"
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
           >
             <svg

@@ -5,7 +5,7 @@ import { Header } from "../server-components/Header";
 export const metadata: Metadata = {
   metadataBase: new URL("https://detautama.me/"),
   title: "I Putu Deta Utama Putra",
-  description: "A blog on JavaScript, web, and more",
+  description: "Thoughts on life, code, and everything in between",
 };
 
 export default function RootLayout({
@@ -17,9 +17,9 @@ export default function RootLayout({
     <div>
       <Header />
       <main className="min-h-screen pb-24 md:pb-0">{children}</main>
-      <footer className="claude-container py-8 pb-28 text-center md:pb-8">
-        <p className="text-sm text-claude-text-secondary dark:text-claude-dark-text/70">
-          Thank you for visiting! - I Putu Deta Utama Putra
+      <footer className="brand-container py-8 pb-28 text-center md:pb-8">
+        <p className="text-sm text-brand-text-secondary dark:text-brand-dark-text/70">
+          Matur Suksma! Terima kasih sudah mampir.
         </p>
       </footer>
     </div>

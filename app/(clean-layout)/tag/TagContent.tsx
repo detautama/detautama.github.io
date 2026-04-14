@@ -52,7 +52,7 @@ export function TagContent({ allArticlesData, uniqueTags }: TagContentProps) {
             key={tag}
             href={`/tag/#${tag}`}
             onClick={() => handleTagClick(tag)}
-            className="claude-badge flex gap-1 transition-colors hover:bg-claude-brown hover:text-white"
+            className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
           >
             <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
             {tag}
@@ -67,7 +67,7 @@ export function TagContent({ allArticlesData, uniqueTags }: TagContentProps) {
           id={tag}
           className={`-mx-4 rounded-lg p-4 transition-all duration-500 ${
             activeTag === tag
-              ? "bg-claude-accent/15 dark:bg-claude-accent/10"
+              ? "bg-brand-accent/15 dark:bg-brand-accent/10"
               : ""
           }`}
         >
@@ -87,7 +87,7 @@ export function TagContent({ allArticlesData, uniqueTags }: TagContentProps) {
                 <div key={article.id}>
                   <article>
                     <Link href={`/articles/${article.id}`}>
-                      <h3 className="mb-1 text-base hover:text-claude-accent dark:hover:text-claude-accent">
+                      <h3 className="mb-1 text-base hover:text-brand-accent dark:hover:text-brand-accent">
                         {article.title}
                       </h3>
                     </Link>

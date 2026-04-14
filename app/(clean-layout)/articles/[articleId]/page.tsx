@@ -49,7 +49,7 @@ export default async function Page({
             <Link
               key={tag}
               href={`/tag/#${tag}`}
-              className="claude-badge flex gap-1 transition-colors hover:bg-claude-brown hover:text-white"
+              className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
             >
               <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
               {tag}

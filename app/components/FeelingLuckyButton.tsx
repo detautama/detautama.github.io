@@ -22,7 +22,7 @@ export default function FeelingLuckyButton({
   return (
     <button
       onClick={handleClick}
-      className="claude-button inline-flex items-center justify-center rounded-lg border-2 border-claude-accent bg-transparent px-4 py-2 text-sm font-medium text-claude-accent transition-all duration-200 hover:bg-claude-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-claude-accent focus:ring-offset-2 dark:border-claude-accent dark:text-claude-accent dark:hover:bg-claude-accent dark:hover:text-white"
+      className="brand-button inline-flex items-center justify-center rounded-lg border-2 border-brand-accent bg-transparent px-4 py-2 text-sm font-medium text-brand-accent transition-all duration-200 hover:bg-brand-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 dark:border-brand-accent dark:text-brand-accent dark:hover:bg-brand-accent dark:hover:text-white"
     >
       <svg
         className="mr-2 h-4 w-4"

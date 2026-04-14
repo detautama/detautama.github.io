@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function BeritaAccessPage() {
   return (
-    <div className="claude-container py-16">
+    <div className="brand-container py-16">
       <div className="mx-auto max-w-4xl text-center">
         <h1 className="mb-8 text-4xl font-bold text-slate-800 dark:text-white">
           📰 Berita Terbaru

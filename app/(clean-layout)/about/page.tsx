@@ -3,67 +3,82 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About - I Putu Deta Utama Putra",
-  description: "About I Putu Deta Utama Putra",
+  title: "Tentang - I Putu Deta Utama Putra",
+  description: "Mengenal Deta — seorang developer, ayah, dan pemikir dari Bali.",
 };
 
 export default async function Page() {
   return (
-    <div>
-      <h1 className="mb-4 text-center text-2xl font-bold">About</h1>
-      <Image
-        className="mb-4 rounded"
-        src="/about.jpg"
-        alt="About"
-        width={900}
-        height={324}
-      />
-      <p className="mb-4 text-2xl font-bold">
-        {
-          "Hi! Thank you for visiting my blog. I'm Deta - a web developer and a blogger - from Bali, Indonesia."
-        }
-      </p>
-      <p className="mb-4">
-        {`I obtained my undergraduate degree as the top graduate from STIKI Indonesia, majoring in Information Technology - Informatics Engineering Management, in 2019 with a GPA of 3.94.`}
-      </p>
-      <p className="mb-4">
-        {
-          "My first introduction to programming was in high school, during the third grade, when I created a Pac-Man game using Game Maker Studio."
-        }
-      </p>
-      <p className="mb-4">
-        {`During university, I developed a strong interest in web programming. I began my professional career in web development in my 7th semester while still studying.`}
-      </p>
-      <p className="mb-4">
-        {`In my spare time, I try to contribute to the community by creating this blog. I am deeply interested in topics related to productivity and health at work. I also enjoy photography.
-				`}
-      </p>
-      <p className="mb-4">
-        {`I’m a food enthusiast! I enjoy trying traditional dishes, and my favorite is `}
-        <Link
-          href="https://id.wikipedia.org/wiki/Lawar"
-          className="text-blue-500"
-        >
-          lawar
-        </Link>
-        {`, a Balinese delicacy made from a mixture of vegetables, grated coconut, and minced meat. I especially love red pork *lawar*, which is uniquely flavored with fresh blood for an authentic taste.
-				`}
-      </p>
-      {/* <p className="mb-4">
-        {`This blog serves as a place to brain-dump everything I learn daily. It’s built using Next.js with static export and hosted on GitHub Pages. The theme is heavily inspired by
-				`}
-        <Link
-          className="text-blue-500"
-          href="https://www.amitmerchant.com/"
-        >{`Amit Merchant's blog`}</Link>
-      </p> */}
-      <p>
-        {`You can shoot me an email at detautama11@gmail.com if you’d like to discuss something or just want to say “Hi!”. For business inquiries or collaboration opportunities, feel free to check out the `}
-        <Link className="text-blue-500" href="/contact">
-          /contact
-        </Link>
-        {` page for more details.`}
-      </p>
+    <div className="animate-in font-serif text-lg leading-relaxed text-brand-text-primary dark:text-brand-dark-text">
+      <h1 className="mb-8 font-display text-4xl font-bold text-brand-text-primary dark:text-brand-dark-text sm:text-5xl">
+        Halo, aku Deta.
+      </h1>
+      
+      <div className="mb-10 overflow-hidden rounded-2xl shadow-xl">
+        <Image
+          className="w-full transition-transform duration-500 hover:scale-105"
+          src="/about.jpg"
+          alt="Deta in Bali"
+          width={900}
+          height={450}
+          priority
+        />
+      </div>
+
+      <div className="space-y-6">
+        <p className="text-xl font-medium leading-normal sm:text-2xl">
+          Aku adalah seorang web developer, seorang ayah, dan seseorang yang mencoba menemukan keseimbangan di Bali, Indonesia.
+        </p>
+
+        <p>
+          Blog ini lahir dari kebutuhan sederhana: tempat untuk menata pikiran. 
+          Bagi sebagian orang, menulis adalah cara berbagi. Bagiku, menulis adalah cara untuk 
+          <em> memahami</em>. Entah itu tentang baris kode yang rumit, seni menjadi orang tua, 
+          atau sekadar refleksi dari kayuhan sepeda di pagi hari.
+        </p>
+
+        <h2 className="pt-4 font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text">
+          Di Luar Kode
+        </h2>
+
+        <p>
+          Meskipun aku menghabiskan sebagian besar hariku dengan TypeScript dan React, 
+          pikiranku sering berkelana jauh dari terminal. Aku sangat tertarik pada topik 
+          <strong> produktivitas yang sehat</strong>, <strong>kesehatan mental di lingkungan kerja</strong>, 
+          serta filosofi <strong>Stoikisme</strong> yang membantuku tetap tenang di tengah 
+          hiruk-pikuk dunia IT.
+        </p>
+
+        <p>
+          Dua tahun terakhir hidupku didominasi oleh peran paling menantang sekaligus 
+          paling membahagiakan: menjadi seorang ayah. Pengalaman ini mengubah caraku 
+          melihat <em>work-life integrity</em> dan pentingnya benar-benar &quot;hadir&quot; untuk keluarga.
+        </p>
+
+        <h2 className="pt-4 font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text">
+          Latar Belakang
+        </h2>
+
+        <p>
+          Aku lulus sebagai lulusan terbaik dari STIKI Indonesia tahun 2019. Ketertarikanku 
+          pada pemrograman dimulai sejak SMA saat mencoba membuat game Pac-Man sederhana. 
+          Sejak saat itu, rasa penasaranku tidak pernah benar-benar berhenti.
+        </p>
+
+        <p>
+          Oh, dan aku adalah seorang <em>food enthusiast</em>! Jika kamu ke Bali, 
+          aku sangat merekomendasikan <Link href="https://id.wikipedia.org/wiki/Lawar" className="text-brand-accent hover:underline">lawar</Link> — 
+          kuliner khas Bali yang menggunakan campuran sayuran, kelapa, dan bumbu rempah yang autentik.
+        </p>
+
+        <div className="mt-12 border-t border-brand-tan pt-8">
+          <p className="text-sm text-brand-text-secondary">
+            Ingin berdiskusi atau sekadar menyapa? 
+            Silakan kirim email ke <a href="mailto:detautama11@gmail.com" className="text-brand-accent hover:underline">detautama11@gmail.com</a>. 
+            Atau cek halaman <Link href="/contact" className="text-brand-accent hover:underline">/contact</Link> untuk detail lebih lanjut.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

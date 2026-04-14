@@ -18,7 +18,7 @@ export default function BeritaLayout({
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Header khusus untuk berita desa */}
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80">
-        <div className="claude-container py-4">
+        <div className="brand-container py-4">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-slate-800 dark:text-white">
@@ -41,13 +41,13 @@ export default function BeritaLayout({
       </header>
 
       {/* Main content */}
-      <main className="claude-container py-8">
+      <main className="brand-container py-8">
         <div className="mx-auto max-w-4xl">{children}</div>
       </main>
 
       {/* Footer khusus untuk berita desa */}
       <footer className="mt-16 bg-slate-800 py-12 text-white dark:bg-slate-950">
-        <div className="claude-container">
+        <div className="brand-container">
           <div className="grid gap-8 md:grid-cols-3">
             <div>
               <h3 className="mb-4 text-lg font-semibold">Desa Celuk</h3>

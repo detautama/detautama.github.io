@@ -5,25 +5,25 @@
 @layer base {
   :root {
     scroll-padding-top: 100px;
-    --background: #fbf7f0;
-    --foreground: #1a1a1a;
+    --background: #f5f3ee;
+    --foreground: #1c1c1c;
     --card: #ffffff;
-    --card-foreground: #1a1a1a;
-    --border: #e5e5e5;
-    --accent: #d97757;
-    --muted: #f5ede2;
-    --muted-foreground: #6b6b6b;
+    --card-foreground: #1c1c1c;
+    --border: #e4e0d8;
+    --accent: #3b7a57;
+    --muted: #f0ede6;
+    --muted-foreground: #5a5e52;
   }
 
   .dark {
-    --background: #1e1e1e;
-    --foreground: #e5e5e5;
-    --card: #2d2d2d;
-    --card-foreground: #e5e5e5;
-    --border: #404040;
-    --accent: #f5a583;
-    --muted: #2d2d2d;
-    --muted-foreground: #9ca3af;
+    --background: #1c1e1a;
+    --foreground: #e8e6e1;
+    --card: #252820;
+    --card-foreground: #e8e6e1;
+    --border: #363830;
+    --accent: #56a87a;
+    --muted: #252820;
+    --muted-foreground: #8a8e82;
   }
 
   body {
@@ -35,57 +35,57 @@
 }
 
 @layer components {
-  .claude-container {
+  .brand-container {
     @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
   }
 
-  .claude-card {
-    @apply rounded-xl border border-claude-tan bg-white transition-all duration-200 hover:shadow-lg dark:border-claude-dark-border dark:bg-claude-dark-surface;
+  .brand-card {
+    @apply rounded-xl border border-brand-tan bg-white transition-all duration-200 hover:shadow-lg dark:border-brand-dark-border dark:bg-brand-dark-surface;
   }
 
-  .claude-button {
+  .brand-button {
     @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
 
-  .claude-button-primary {
-    @apply claude-button bg-claude-accent text-white hover:bg-opacity-90 focus:ring-claude-accent;
+  .brand-button-primary {
+    @apply brand-button bg-brand-accent text-white hover:bg-opacity-90 focus:ring-brand-accent;
   }
 
-  .claude-button-secondary {
-    @apply claude-button bg-claude-tan text-claude-text-primary hover:bg-claude-brown hover:text-white dark:bg-claude-dark-surface dark:text-claude-dark-text dark:hover:bg-claude-dark-border;
+  .brand-button-secondary {
+    @apply brand-button bg-brand-tan text-brand-text-primary hover:bg-brand-forest hover:text-white dark:bg-brand-dark-surface dark:text-brand-dark-text dark:hover:bg-brand-dark-border;
   }
 
-  .claude-nav-link {
-    @apply relative px-3 py-2 text-sm font-medium text-claude-text-secondary transition-colors duration-200 hover:text-claude-text-primary dark:text-claude-dark-text dark:hover:text-white;
+  .brand-nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-brand-text-secondary transition-colors duration-200 hover:text-brand-text-primary dark:text-brand-dark-text dark:hover:text-white;
   }
 
-  .claude-nav-link-active {
-    @apply text-claude-accent dark:text-claude-accent;
+  .brand-nav-link-active {
+    @apply text-brand-accent dark:text-brand-accent;
   }
 
-  .claude-nav-link::after {
-    @apply absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 bg-claude-accent transition-transform duration-200;
+  .brand-nav-link::after {
+    @apply absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 bg-brand-accent transition-transform duration-200;
     content: "";
   }
 
-  .claude-nav-link:hover::after {
+  .brand-nav-link:hover::after {
     @apply scale-x-100;
   }
 
-  .claude-badge {
-    @apply inline-flex items-center rounded-full bg-claude-tan px-2.5 py-0.5 text-xs font-medium text-claude-brown dark:bg-claude-dark-surface dark:text-claude-dark-text;
+  .brand-badge {
+    @apply inline-flex items-center rounded-full bg-brand-tan px-2.5 py-0.5 text-xs font-medium text-brand-forest dark:bg-brand-dark-surface dark:text-brand-dark-text;
   }
 
-  .claude-article-card {
-    @apply claude-card p-6 hover:translate-y-[-2px];
+  .brand-article-card {
+    @apply brand-card p-6 hover:translate-y-[-2px];
   }
 
-  .claude-featured-card {
-    @apply relative overflow-hidden rounded-xl border border-claude-brown/20 bg-gradient-to-br from-claude-tan to-claude-cream p-6 dark:border-claude-dark-border dark:from-claude-dark-surface dark:to-claude-dark-bg;
+  .brand-featured-card {
+    @apply relative overflow-hidden rounded-xl border border-brand-forest/20 bg-gradient-to-br from-brand-tan to-brand-cream p-6 dark:border-brand-dark-border dark:from-brand-dark-surface dark:to-brand-dark-bg;
   }
 
-  .claude-text-gradient {
-    @apply bg-gradient-to-r from-claude-brown to-claude-accent bg-clip-text text-transparent;
+  .brand-text-gradient {
+    @apply bg-gradient-to-r from-brand-forest to-brand-accent bg-clip-text text-transparent;
   }
 
   .liquid-glass {
