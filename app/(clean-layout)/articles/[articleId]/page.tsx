@@ -49,20 +49,4 @@ export async function generateStaticParams() {
   return allArticlesId.map((articleId) => ({
     articleId: articleId,
   }));
-const WarningIfArticleIsOld = ({ date }: { date: string }) => {
-  const now = new Date();
-  const articleDate = new Date(date);
-  const diff = now.getTime() - articleDate.getTime();
-  const diffDays = diff / (1000 * 60 * 60 * 24);
-  if (diffDays > 365) {
-    return (
-      <div className="rounded-md border-l-4 border-yellow-500 bg-yellow-100 p-4 text-yellow-700">
-        <p className="font-bold">This article is old</p>
-        <p>
-          This article was written more than a year ago. Some of the information
-          might be outdated.
-        </p>
-      </div>
-    );
-  }
-};
+}
