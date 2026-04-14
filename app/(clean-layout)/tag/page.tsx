@@ -8,14 +8,12 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const allArticlesData = getSortedArticlesData();
-  // Flatten all tags from all articles
-  const allTags = allArticlesData.flatMap((article) => article.tags);
-  const uniqueTags = [...new Set(allTags)].sort();
+  const articlesId = getSortedArticlesData("id");
+  const articlesEn = getSortedArticlesData("en");
 
   return (
     <div>
-      <TagContent allArticlesData={allArticlesData} uniqueTags={uniqueTags} />
+      <TagContent articlesByLocale={{ id: articlesId, en: articlesEn }} />
     </div>
   );
 }

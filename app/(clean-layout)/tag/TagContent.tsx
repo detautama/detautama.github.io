@@ -4,13 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArticleData } from "../../lib/articles";
+import { useLocale } from "../../lib/LocaleContext";
 
 interface TagContentProps {
-  allArticlesData: ArticleData[];
-  uniqueTags: string[];
+  articlesByLocale: {
+    id: ArticleData[];
+    en: ArticleData[];
+  };
 }
 
-export function TagContent({ allArticlesData, uniqueTags }: TagContentProps) {
+export function TagContent({ articlesByLocale }: TagContentProps) {
+  const { locale, t } = useLocale();
+  const allArticlesData = articlesByLocale[locale as keyof typeof articlesByLocale];
+  
+  // Flatten all tags from current locale articles
+  const allTags = allArticlesData.flatMap((article) => article.tags);
+  const uniqueTags = [...new Set(allTags)].sort();
+
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   useEffect(() => {

@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useLocale } from "@/app/lib/LocaleContext";
 
 const ShareButton = () => {
+  const { t } = useLocale();
   const [isShareSupported, setIsShareSupported] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -42,7 +44,7 @@ const ShareButton = () => {
     <div className="mt-6">
       {/* Text Above Buttons */}
       <p className="mb-2 text-center text-sm text-gray-700 md:text-left md:text-right dark:text-gray-300">
-        Like the article? Share it with others or copy the link!
+        {t.article.share}
       </p>
 
       {/* Buttons */}
@@ -52,7 +54,7 @@ const ShareButton = () => {
             onClick={handleShare}
             className="brand-button-primary flex items-center gap-2"
           >
-            Share
+            {t.article.share_button}
             <Image
               src="/images/share-nodes.svg"
               alt="share"

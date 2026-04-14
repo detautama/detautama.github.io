@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { Header } from "../server-components/Header";
+import { TranslatedFooter } from "../components/TranslatedFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://detautama.me/"),
@@ -17,11 +18,7 @@ export default function RootLayout({
     <div>
       <Header />
       <main className="min-h-screen pb-24 md:pb-0">{children}</main>
-      <footer className="brand-container py-8 pb-28 text-center md:pb-8">
-        <p className="text-sm text-brand-text-secondary dark:text-brand-dark-text/70">
-          Matur Suksma! Terima kasih sudah mampir.
-        </p>
-      </footer>
+      <TranslatedFooter />
     </div>
   );
 }

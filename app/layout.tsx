@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ScrollToTop } from "./ScrollToTop";
+import { LocaleProvider } from "./lib/LocaleContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,8 +40,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased`}
       >
         <ThemeProvider attribute={"class"}>
-          {children}
-          <ScrollToTop />
+          <LocaleProvider>
+            {children}
+            <ScrollToTop />
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>

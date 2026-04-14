@@ -4,27 +4,39 @@ import React from "react";
 import { ArticleData } from "../../lib/articles";
 import Link from "next/link";
 import { useSearch } from "./useSearch";
+import { useLocale } from "../../lib/LocaleContext";
 
 export const Search: React.FC<{
-  articles: ArticleData[];
+  articlesByLocale: {
+    id: ArticleData[];
+    en: ArticleData[];
+  };
 }> = (props) => {
+  const { locale, t } = useLocale();
+  const articles = props.articlesByLocale[locale as keyof typeof props.articlesByLocale];
+
   const { result, highlightedText, search, highlightText } = useSearch(
-    props.articles
+    articles
   );
 
   return (
     <div className="brand-container animate-in py-8">
       <h1 className="mb-8 text-center font-display text-3xl font-bold text-brand-text-primary dark:text-brand-dark-text">
-        Search Articles
+        {t.search.title}
       </h1>
       <form className="mb-8">
         <input
           type="text"
-          placeholder="Search articles..."
+          placeholder={t.search.placeholder}
           className="border-brand-border w-full rounded-lg border bg-white p-3 text-brand-text-primary placeholder-brand-text-secondary transition-all focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20 dark:border-brand-dark-border dark:bg-brand-dark-bg dark:text-brand-dark-text dark:placeholder-brand-dark-text/50"
           onChange={search}
         />
       </form>
+      <div className="mb-4">
+        <p className="text-brand-text-secondary dark:text-brand-dark-text/70">
+          {result.length > 0 ? t.search.result(result.length) : t.search.noResult}
+        </p>
+      </div>
       <div className="space-y-6">
         {result.map(({ id, title, content, date, tags }) => (
           <Link href={`/articles/${id}`} key={id} className="group block">

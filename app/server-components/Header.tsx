@@ -4,9 +4,12 @@ import Link from "next/link";
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useLocale } from "../lib/LocaleContext";
+import { LanguageToggle } from "../components/LanguageToggle";
 
 export const Header = () => {
   const pathname = usePathname();
+  const { t } = useLocale();
 
   const isActive = (path: string) => {
     if (path === "/" && pathname === "/") return true;
@@ -37,7 +40,7 @@ export const Header = () => {
                     I Putu Deta Utama Putra
                   </h1>
                   <p className="hidden text-xs text-brand-text-secondary sm:block dark:text-brand-dark-text/70">
-                    Life, Code & Everything in between
+                    {t.nav.subtitle}
                   </p>
                 </div>
               </Link>
@@ -49,7 +52,7 @@ export const Header = () => {
                     isActive("/") ? "text-brand-accent" : ""
                   }`}
                 >
-                  Articles
+                  {t.nav.articles}
                 </Link>
                 <Link
                   href="/projects"
@@ -57,7 +60,7 @@ export const Header = () => {
                     isActive("/projects") ? "text-brand-accent" : ""
                   }`}
                 >
-                  Projects
+                  {t.nav.projects}
                 </Link>
                 <Link
                   href="/about"
@@ -65,7 +68,7 @@ export const Header = () => {
                     isActive("/about") ? "text-brand-accent" : ""
                   }`}
                 >
-                  About
+                  {t.nav.about}
                 </Link>
                 <Link
                   href="/tag"
@@ -73,7 +76,7 @@ export const Header = () => {
                     isActive("/tag") ? "text-brand-accent" : ""
                   }`}
                 >
-                  Tags
+                  {t.nav.tags}
                 </Link>
               </nav>
             </div>
@@ -97,6 +100,7 @@ export const Header = () => {
                   />
                 </svg>
               </Link>
+              <LanguageToggle />
               <ToggleDarkMode />
             </div>
           </div>
@@ -127,7 +131,7 @@ export const Header = () => {
                 d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
               />
             </svg>
-            <span className="text-xs font-medium">Articles</span>
+            <span className="text-xs font-medium">{t.nav.articles}</span>
           </Link>
           <Link
             href="/projects"
@@ -150,7 +154,7 @@ export const Header = () => {
                 d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
               />
             </svg>
-            <span className="text-xs font-medium">Projects</span>
+            <span className="text-xs font-medium">{t.nav.projects}</span>
           </Link>
           <Link
             href="/about"
@@ -173,7 +177,7 @@ export const Header = () => {
                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               />
             </svg>
-            <span className="text-xs font-medium">About</span>
+            <span className="text-xs font-medium">{t.nav.about}</span>
           </Link>
           <Link
             href="/tag"
@@ -196,8 +200,12 @@ export const Header = () => {
                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
               />
             </svg>
-            <span className="text-xs font-medium">Tags</span>
+            <span className="text-xs font-medium">{t.nav.tags}</span>
           </Link>
+          <div className="flex items-center space-x-2 border-l border-brand-tan pl-2 dark:border-brand-dark-border">
+            <LanguageToggle />
+            <ToggleDarkMode />
+          </div>
         </div>
       </nav>
     </>
