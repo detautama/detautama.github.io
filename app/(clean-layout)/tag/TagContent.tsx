@@ -14,7 +14,7 @@ interface TagContentProps {
 }
 
 export function TagContent({ articlesByLocale }: TagContentProps) {
-  const { locale, t } = useLocale();
+  const { locale } = useLocale();
   const allArticlesData = articlesByLocale[locale as keyof typeof articlesByLocale];
   
   // Flatten all tags from current locale articles

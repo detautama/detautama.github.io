@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
+import { Translations } from "../lib/i18n";
 import { MarkdownRenderer } from "../MarkdownRenderer";
 import Comment from "../(clean-layout)/articles/[articleId]/Comment";
 import ShareButton from "../(clean-layout)/articles/[articleId]/ShareButton";
@@ -85,7 +86,7 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage }
   );
 }
 
-const WarningIfArticleIsOld = ({ date, t }: { date: string, t: any }) => {
+const WarningIfArticleIsOld = ({ date, t }: { date: string, t: Translations }) => {
   const now = new Date();
   const articleDate = new Date(date);
   const diff = now.getTime() - articleDate.getTime();

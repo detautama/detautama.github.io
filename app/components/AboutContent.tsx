@@ -11,7 +11,7 @@ export default function AboutContent() {
     return (
       <div className="animate-in font-serif text-lg leading-relaxed text-brand-text-primary dark:text-brand-dark-text">
         <h1 className="mb-8 font-display text-4xl font-bold text-brand-text-primary dark:text-brand-dark-text sm:text-5xl">
-          Hi, I'm Deta.
+          Hi, I&apos;m Deta.
         </h1>
 
         <div className="mb-10 overflow-hidden rounded-2xl shadow-xl">
@@ -27,13 +27,13 @@ export default function AboutContent() {
 
         <div className="space-y-6">
           <p className="text-xl font-medium leading-normal sm:text-2xl">
-            I'm a web developer, a father, and someone trying to find balance in Bali, Indonesia.
+            I&apos;m a web developer, a father, and someone trying to find balance in Bali, Indonesia.
           </p>
 
           <p>
             This blog was born from a simple need: a place to organize my thoughts. 
-            For some, writing is a way to share. For me, writing is a way to 
-            <em> understand</em>. Whether it's about complex lines of code, the art of being a parent, 
+            For some, writing is a way to share. For me, writing is a way to
+            <em> understand</em>. Whether it&apos;s about complex lines of code, the art of being a parent,
             or just reflections from a morning bike ride.
           </p>
 
@@ -65,7 +65,7 @@ export default function AboutContent() {
           </p>
 
           <p>
-            Oh, and I'm a <em>food enthusiast</em>! If you come to Bali, 
+            Oh, and I&apos;m a <em>food enthusiast</em>! If you come to Bali, 
             I highly recommend <Link href="https://en.wikipedia.org/wiki/Lawar" className="text-brand-accent hover:underline">lawar</Link> — 
             a traditional Balinese dish made from a mixture of vegetables, coconut, and authentic spices.
           </p>
