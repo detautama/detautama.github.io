@@ -53,6 +53,7 @@ export const translations = {
       about: "About",
       tags: "Tags",
       projects: "Projects",
+      subtitle: "Life, Code & Everything in between",
     },
     home: {
       greeting: "Hi, I'm Deta.",
@@ -74,6 +75,7 @@ export const translations = {
         "This article was written more than a year ago. Some of the information might be outdated.",
       readMore: "Read more",
       share: "Like the article? Share it with others or copy the link!",
+      share_button: "Share",
       copy: "Copy",
       copied: "Copied!",
       onlyAvailable: "This article is only available in",
@@ -84,6 +86,8 @@ export const translations = {
     search: {
       placeholder: "Search articles...",
       title: "Search Articles",
+      result: (n: number) => `Found ${n} article${n === 1 ? "" : "s"}`,
+      noResult: "No articles found.",
     },
     tag: {
       count: (n: number) => `Tags (${n})`,
