@@ -202,10 +202,6 @@ export const Header = () => {
             </svg>
             <span className="text-xs font-medium">{t.nav.tags}</span>
           </Link>
-          <div className="flex items-center space-x-2 border-l border-brand-tan pl-2 dark:border-brand-dark-border">
-            <LanguageToggle />
-            <ToggleDarkMode />
-          </div>
         </div>
       </nav>
     </>
