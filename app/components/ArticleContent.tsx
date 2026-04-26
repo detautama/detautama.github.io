@@ -65,7 +65,7 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage }
       {isLanguageMissing && (
         <div className="my-6 rounded-md border-l-4 border-brand-accent bg-brand-tan p-4 text-brand-text-primary dark:bg-brand-dark-surface dark:text-brand-dark-text">
           <p className="font-bold">
-            {t.article.onlyAvailable} {articleData.currentLocale === "id" ? "Bahasa Indonesia" : "English"}
+            {t.article.onlyAvailable} {locale === "id" ? "English" : "Bahasa Indonesia"}
           </p>
         </div>
       )}
