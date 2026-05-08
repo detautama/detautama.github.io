@@ -78,6 +78,14 @@ export const Header = () => {
                 >
                   {t.nav.tags}
                 </Link>
+                <Link
+                  href="/activity"
+                  className={`brand-nav-link ${
+                    isActive("/activity") ? "text-brand-accent" : ""
+                  }`}
+                >
+                  {t.nav.activity}
+                </Link>
               </nav>
             </div>
 
@@ -201,6 +209,29 @@ export const Header = () => {
               />
             </svg>
             <span className="text-xs font-medium">{t.nav.tags}</span>
+          </Link>
+          <Link
+            href="/activity"
+            className={`flex flex-col items-center px-3 py-1 transition-colors ${
+              isActive("/activity")
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
+            }`}
+          >
+            <svg
+              className="mb-1 h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+              />
+            </svg>
+            <span className="text-xs font-medium">{t.nav.activity}</span>
           </Link>
         </div>
       </nav>
