@@ -7,6 +7,7 @@ export const translations = {
       about: "Tentang",
       tags: "Tag",
       projects: "Proyek",
+      activity: "Aktivitas",
       subtitle: "Life, Code & Everything in between",
     },
     home: {
@@ -53,6 +54,7 @@ export const translations = {
       about: "About",
       tags: "Tags",
       projects: "Projects",
+      activity: "Activity",
       subtitle: "Life, Code & Everything in between",
     },
     home: {
