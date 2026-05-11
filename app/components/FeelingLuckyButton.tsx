@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useLocale } from "../lib/LocaleContext";
 
 interface FeelingLuckyButtonProps {
   articleIds: string[];
@@ -10,13 +11,14 @@ export default function FeelingLuckyButton({
   articleIds,
 }: FeelingLuckyButtonProps) {
   const router = useRouter();
+  const { localePath } = useLocale();
 
   const handleClick = () => {
     if (articleIds.length === 0) return;
 
     const randomIndex = Math.floor(Math.random() * articleIds.length);
     const randomArticleId = articleIds[randomIndex];
-    router.push(`/articles/${randomArticleId}`);
+    router.push(localePath(`/articles/${randomArticleId}`));
   };
 
   return (

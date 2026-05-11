@@ -20,7 +20,7 @@ interface ArticleContentProps {
 }
 
 export default function ArticleContent({ articleId, articlesByLocale, hasImage }: ArticleContentProps) {
-  const { locale, t } = useLocale();
+  const { locale, t, localePath } = useLocale();
 
   const articleData = articlesByLocale[locale];
   const isLanguageMissing = !articleData.availableLocales.includes(locale);
@@ -39,7 +39,7 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage }
           {articleData.tags.map((tag) => (
             <Link
               key={tag}
-              href={`/tag/#${tag}`}
+              href={localePath(`/tag/#${tag}`)}
               className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
             >
               <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
