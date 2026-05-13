@@ -9,12 +9,16 @@ import { LanguageToggle } from "../components/LanguageToggle";
 
 export const Header = () => {
   const pathname = usePathname();
-  const { t } = useLocale();
+  const { t, localePath } = useLocale();
+
+  const basePath = pathname.startsWith("/en")
+    ? pathname.slice(3) || "/"
+    : pathname;
 
   const isActive = (path: string) => {
-    if (path === "/" && pathname === "/") return true;
-    if (path === "/" && pathname.startsWith("/articles")) return true;
-    if (path !== "/" && pathname.startsWith(path)) return true;
+    if (path === "/" && (basePath === "/" || basePath.startsWith("/articles")))
+      return true;
+    if (path !== "/" && basePath.startsWith(path)) return true;
     return false;
   };
 
@@ -24,7 +28,7 @@ export const Header = () => {
         <div className="brand-container">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href="/" className="group flex items-center space-x-3">
+              <Link href={localePath("/")} className="group flex items-center space-x-3">
                 <div className="relative">
                   <Image
                     className="rounded-full transition-transform duration-200 group-hover:scale-105"
@@ -47,7 +51,7 @@ export const Header = () => {
 
               <nav className="hidden items-center space-x-1 md:flex">
                 <Link
-                  href="/"
+                  href={localePath("/")}
                   className={`brand-nav-link ${
                     isActive("/") ? "text-brand-accent" : ""
                   }`}
@@ -55,7 +59,7 @@ export const Header = () => {
                   {t.nav.articles}
                 </Link>
                 <Link
-                  href="/projects"
+                  href={localePath("/projects")}
                   className={`brand-nav-link ${
                     isActive("/projects") ? "text-brand-accent" : ""
                   }`}
@@ -63,7 +67,7 @@ export const Header = () => {
                   {t.nav.projects}
                 </Link>
                 <Link
-                  href="/about"
+                  href={localePath("/about")}
                   className={`brand-nav-link ${
                     isActive("/about") ? "text-brand-accent" : ""
                   }`}
@@ -71,19 +75,27 @@ export const Header = () => {
                   {t.nav.about}
                 </Link>
                 <Link
-                  href="/tag"
+                  href={localePath("/tag")}
                   className={`brand-nav-link ${
                     isActive("/tag") ? "text-brand-accent" : ""
                   }`}
                 >
                   {t.nav.tags}
                 </Link>
+                <Link
+                  href={localePath("/activity")}
+                  className={`brand-nav-link ${
+                    isActive("/activity") ? "text-brand-accent" : ""
+                  }`}
+                >
+                  {t.nav.activity}
+                </Link>
               </nav>
             </div>
 
             <div className="flex items-center space-x-4">
               <Link
-                href="/search"
+                href={localePath("/search")}
                 className="rounded-lg p-2 transition-colors duration-200 hover:bg-brand-tan dark:hover:bg-brand-dark-surface"
               >
                 <svg
@@ -111,7 +123,7 @@ export const Header = () => {
       <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/20 bg-brand-cream/80 shadow-[0_-4px_16px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-brand-dark-bg/70 dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
         <div className="flex items-center justify-around bg-gradient-to-t from-brand-cream/10 to-transparent py-2 dark:from-white/5 dark:to-transparent">
           <Link
-            href="/"
+            href={localePath("/")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/")
                 ? "text-brand-accent"
@@ -134,7 +146,7 @@ export const Header = () => {
             <span className="text-xs font-medium">{t.nav.articles}</span>
           </Link>
           <Link
-            href="/projects"
+            href={localePath("/projects")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/projects")
                 ? "text-brand-accent"
@@ -157,7 +169,7 @@ export const Header = () => {
             <span className="text-xs font-medium">{t.nav.projects}</span>
           </Link>
           <Link
-            href="/about"
+            href={localePath("/about")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/about")
                 ? "text-brand-accent"
@@ -180,7 +192,7 @@ export const Header = () => {
             <span className="text-xs font-medium">{t.nav.about}</span>
           </Link>
           <Link
-            href="/tag"
+            href={localePath("/tag")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/tag")
                 ? "text-brand-accent"
@@ -201,6 +213,29 @@ export const Header = () => {
               />
             </svg>
             <span className="text-xs font-medium">{t.nav.tags}</span>
+          </Link>
+          <Link
+            href={localePath("/activity")}
+            className={`flex flex-col items-center px-3 py-1 transition-colors ${
+              isActive("/activity")
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
+            }`}
+          >
+            <svg
+              className="mb-1 h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+              />
+            </svg>
+            <span className="text-xs font-medium">{t.nav.activity}</span>
           </Link>
         </div>
       </nav>

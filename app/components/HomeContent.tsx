@@ -15,19 +15,19 @@ interface HomeContentProps {
 }
 
 export default function HomeContent({ articlesByLocale, articleIds }: HomeContentProps) {
-  const { locale, t } = useLocale();
+  const { locale, t, localePath } = useLocale();
 
   const allArticlesData = articlesByLocale[locale];
-  
-  const featuredArticles = useMemo(() => 
+
+  const featuredArticles = useMemo(() =>
     allArticlesData.filter((article) => article.featured),
     [allArticlesData]
   );
 
   const links = [
-    { href: "/tag", label: t.home.quickLinks.browse, icon: "tag" },
-    { href: "/contact", label: t.home.quickLinks.contact, icon: "mail" },
-    { href: "/links", label: t.home.quickLinks.links, icon: "link" },
+    { href: localePath("/tag"), label: t.home.quickLinks.browse, icon: "tag" },
+    { href: localePath("/contact"), label: t.home.quickLinks.contact, icon: "mail" },
+    { href: localePath("/links"), label: t.home.quickLinks.links, icon: "link" },
     {
       href: "https://www.youtube.com/@detautama9899",
       label: "YouTube",
@@ -81,7 +81,7 @@ export default function HomeContent({ articlesByLocale, articleIds }: HomeConten
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {featuredArticles.map(({ id, title }) => (
-              <Link href={`/articles/${id}`} key={id} className="group">
+              <Link href={localePath(`/articles/${id}`)} key={id} className="group">
                 <div className="brand-featured-card flex h-32 items-center justify-center transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl">
                   <h3 className="line-clamp-3 px-4 text-center font-display font-medium text-brand-text-primary dark:text-brand-dark-text">
                     {title}
@@ -129,7 +129,7 @@ export default function HomeContent({ articlesByLocale, articleIds }: HomeConten
                   {date}
                 </time>
               </div>
-              <Link href={`/articles/${id}`}>
+              <Link href={localePath(`/articles/${id}`)}>
                 <h3 className="mb-2 font-display text-xl font-bold text-brand-text-primary transition-colors group-hover:text-brand-accent dark:text-brand-dark-text">
                   {title}
                 </h3>
@@ -142,14 +142,14 @@ export default function HomeContent({ articlesByLocale, articleIds }: HomeConten
                   {tags.map((tag) => (
                     <Link
                       key={tag}
-                      href={`/tag/#${tag}`}
+                      href={localePath(`/tag/#${tag}`)}
                       className="brand-badge transition-colors hover:bg-brand-forest hover:text-white"
                     >
                       {tag}
                     </Link>
                   ))}
                 </div>
-                <Link href={`/articles/${id}`} className="shrink-0 text-brand-accent transition-colors hover:text-brand-forest dark:hover:text-brand-accent/80">
+                <Link href={localePath(`/articles/${id}`)} className="shrink-0 text-brand-accent transition-colors hover:text-brand-forest dark:hover:text-brand-accent/80">
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

@@ -14,7 +14,7 @@ interface TagContentProps {
 }
 
 export function TagContent({ articlesByLocale }: TagContentProps) {
-  const { locale } = useLocale();
+  const { locale, localePath } = useLocale();
   const allArticlesData = articlesByLocale[locale as keyof typeof articlesByLocale];
   
   // Flatten all tags from current locale articles
@@ -60,7 +60,7 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
         {uniqueTags.map((tag) => (
           <Link
             key={tag}
-            href={`/tag/#${tag}`}
+            href={localePath(`/tag/#${tag}`)}
             onClick={() => handleTagClick(tag)}
             className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
           >
@@ -96,7 +96,8 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
               .map((article) => (
                 <div key={article.id}>
                   <article>
-                    <Link href={`/articles/${article.id}`}>
+                    <Link href={localePath(`/articles/${article.id}`)}>
+
                       <h3 className="mb-1 text-base hover:text-brand-accent dark:hover:text-brand-accent">
                         {article.title}
                       </h3>

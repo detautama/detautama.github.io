@@ -7,35 +7,53 @@ interface LocaleContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: Translations;
+  localePath: (path: string) => string;
 }
 
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
-export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("id");
+export function LocaleProvider({
+  children,
+  initialLocale,
+}: {
+  children: React.ReactNode;
+  initialLocale?: Locale;
+}) {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale ?? "id");
 
   useEffect(() => {
+    if (initialLocale) {
+      setLocaleState(initialLocale);
+      return;
+    }
     const savedLocale = localStorage.getItem("locale") as Locale;
     if (savedLocale && (savedLocale === "id" || savedLocale === "en")) {
       setLocaleState(savedLocale);
     } else {
-      // Try to detect browser locale
       const browserLang = navigator.language.split("-")[0];
       if (browserLang === "en") {
         setLocaleState("en");
       }
     }
-  }, []);
+  }, [initialLocale]);
 
   const setLocale = (newLocale: Locale) => {
-    setLocaleState(newLocale);
-    localStorage.setItem("locale", newLocale);
+    if (!initialLocale) {
+      setLocaleState(newLocale);
+      localStorage.setItem("locale", newLocale);
+    }
+  };
+
+  const localePath = (path: string) => {
+    if (locale === "id") return path;
+    if (path === "/") return "/en";
+    return `/en${path}`;
   };
 
   const t = translations[locale];
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale, t }}>
+    <LocaleContext.Provider value={{ locale, setLocale, t, localePath }}>
       {children}
     </LocaleContext.Provider>
   );

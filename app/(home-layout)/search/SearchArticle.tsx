@@ -12,7 +12,7 @@ export const Search: React.FC<{
     en: ArticleData[];
   };
 }> = (props) => {
-  const { locale, t } = useLocale();
+  const { locale, t, localePath } = useLocale();
   const articles = props.articlesByLocale[locale as keyof typeof props.articlesByLocale];
 
   const { result, highlightedText, search, highlightText } = useSearch(
@@ -39,7 +39,7 @@ export const Search: React.FC<{
       </div>
       <div className="space-y-6">
         {result.map(({ id, title, content, date, tags }) => (
-          <Link href={`/articles/${id}`} key={id} className="group block">
+          <Link href={localePath(`/articles/${id}`)} key={id} className="group block">
             <article className="brand-article-card">
               <h3 className="mb-2 text-lg font-semibold text-brand-text-primary transition-colors group-hover:text-brand-accent dark:text-brand-dark-text">
                 {highlightText(title, highlightedText)}
