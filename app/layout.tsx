@@ -40,7 +40,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased`}
       >
         <ThemeProvider attribute={"class"}>
-          <LocaleProvider>
+          <LocaleProvider initialLocale="id">
             {children}
             <ScrollToTop />
           </LocaleProvider>
