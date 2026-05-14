@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
 import FeelingLuckyButton from "./FeelingLuckyButton";
+import { getTagEmoji } from "../lib/tagEmoji";
 
 interface HomeContentProps {
   articlesByLocale: {
@@ -143,8 +144,9 @@ export default function HomeContent({ articlesByLocale, articleIds }: HomeConten
                     <Link
                       key={tag}
                       href={localePath(`/tag/#${tag}`)}
-                      className="brand-badge transition-colors hover:bg-brand-forest hover:text-white"
+                      className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
                     >
+                      <span>{getTagEmoji(tag)}</span>
                       {tag}
                     </Link>
                   ))}

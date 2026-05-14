@@ -9,6 +9,7 @@ import { Translations } from "../lib/i18n";
 import { MarkdownRenderer } from "../MarkdownRenderer";
 import Comment from "../(clean-layout)/articles/[articleId]/Comment";
 import ShareButton from "../(clean-layout)/articles/[articleId]/ShareButton";
+import { getTagEmoji } from "../lib/tagEmoji";
 
 interface ArticleContentProps {
   articleId: string;
@@ -17,12 +18,17 @@ interface ArticleContentProps {
     en: ArticleData;
   };
   hasImage: boolean;
+  relatedArticlesByLocale: {
+    id: ArticleData[];
+    en: ArticleData[];
+  };
 }
 
-export default function ArticleContent({ articleId, articlesByLocale, hasImage }: ArticleContentProps) {
+export default function ArticleContent({ articleId, articlesByLocale, hasImage, relatedArticlesByLocale }: Readonly<ArticleContentProps>) {
   const { locale, t, localePath } = useLocale();
 
   const articleData = articlesByLocale[locale];
+  const relatedArticles = relatedArticlesByLocale[locale];
   const isLanguageMissing = !articleData.availableLocales.includes(locale);
 
   return (
@@ -42,7 +48,7 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage }
               href={localePath(`/tag/#${tag}`)}
               className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
             >
-              <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
+              <span>{getTagEmoji(tag)}</span>
               {tag}
             </Link>
           ))}
@@ -81,6 +87,43 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage }
       <div className="mt-12">
         <ShareButton />
       </div>
+
+      {relatedArticles.length > 0 && (
+        <section className="mt-12 border-t border-brand-tan pt-10">
+          <h2 className="mb-6 font-display text-xl font-semibold text-brand-text-primary dark:text-brand-dark-text">
+            {t.article.relatedArticles}
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedArticles.map(({ id, title, description, date, tags }) => (
+              <Link
+                key={id}
+                href={localePath(`/articles/${id}`)}
+                className="group brand-article-card flex flex-col gap-2 transition-all duration-200 hover:shadow-md"
+              >
+                <time className="text-xs text-brand-text-secondary dark:text-brand-dark-text/70">
+                  {date}
+                </time>
+                <h3 className="font-display font-bold text-brand-text-primary transition-colors group-hover:text-brand-accent dark:text-brand-dark-text line-clamp-2">
+                  {title}
+                </h3>
+                <p className="line-clamp-2 font-serif text-sm text-brand-text-secondary dark:text-brand-dark-text/80">
+                  {description}
+                </p>
+                <div className="mt-auto flex flex-wrap gap-1 pt-2">
+                  {tags.map((tag) => (
+                    <span key={tag} className="brand-badge flex gap-1 text-xs">
+                      <span>{getTagEmoji(tag)}</span>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="mb-16" />
       <Comment />
     </div>
   );

@@ -118,6 +118,24 @@ export function getArticleData(id: string, locale: "id" | "en" = "id"): ArticleD
   };
 }
 
+export function getRelatedArticles(
+  currentId: string,
+  currentTags: string[],
+  locale: "id" | "en" = "id",
+  limit: number = 4
+): ArticleData[] {
+  return getSortedArticlesData(locale)
+    .filter((article) => article.id !== currentId)
+    .map((article) => ({
+      article,
+      score: article.tags.filter((tag) => currentTags.includes(tag)).length,
+    }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ article }) => article);
+}
+
 export function getTopTags({ limit = 5, locale = "id" }: { limit?: number; locale?: "id" | "en" } = {}): string[] {
   const allArticlesData = getSortedArticlesData(locale);
   const tags = allArticlesData.reduce(

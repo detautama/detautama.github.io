@@ -1,4 +1,4 @@
-import { getAllArticleIds, getArticleData } from "@/app/lib/articles";
+import { getAllArticleIds, getArticleData, getRelatedArticles } from "@/app/lib/articles";
 import fs from "node:fs";
 import path from "node:path";
 import { Metadata } from "next";
@@ -31,12 +31,15 @@ export default async function Page({
   const hasImage = fs.existsSync(
     path.join(process.cwd(), "public", "og-images", `${articleId}.png`)
   );
+  const relatedId = getRelatedArticles(articleId, articleIdData.tags, "id");
+  const relatedEn = getRelatedArticles(articleId, articleIdData.tags, "en");
 
   return (
     <ArticleContent
       articleId={articleId}
       articlesByLocale={{ id: articleIdData, en: articleEnData }}
       hasImage={hasImage}
+      relatedArticlesByLocale={{ id: relatedId, en: relatedEn }}
     />
   );
 }

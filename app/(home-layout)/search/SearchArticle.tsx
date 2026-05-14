@@ -5,6 +5,7 @@ import { ArticleData } from "../../lib/articles";
 import Link from "next/link";
 import { useSearch } from "./useSearch";
 import { useLocale } from "../../lib/LocaleContext";
+import { getTagEmoji } from "../../lib/tagEmoji";
 
 export const Search: React.FC<{
   articlesByLocale: {
@@ -53,7 +54,8 @@ export const Search: React.FC<{
                 </time>
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => (
-                    <span key={tag} className="brand-badge">
+                    <span key={tag} className="brand-badge flex gap-1">
+                      <span>{getTagEmoji(tag)}</span>
                       {tag}
                     </span>
                   ))}

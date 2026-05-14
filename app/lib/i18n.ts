@@ -34,6 +34,7 @@ export const translations = {
       copy: "Salin",
       copied: "Tersalin!",
       onlyAvailable: "Artikel ini hanya tersedia dalam bahasa",
+      relatedArticles: "Artikel Serupa",
     },
     footer: {
       text: "Matur Suksma! Terima kasih sudah mampir.",
@@ -81,6 +82,7 @@ export const translations = {
       copy: "Copy",
       copied: "Copied!",
       onlyAvailable: "This article is only available in",
+      relatedArticles: "Related Articles",
     },
     footer: {
       text: "Thank you for visiting!",

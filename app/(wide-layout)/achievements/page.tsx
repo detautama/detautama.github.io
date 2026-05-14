@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { getTagEmoji } from "../../lib/tagEmoji";
 
 const achievements = [
   {
@@ -100,12 +101,13 @@ export default function AchievementsPage() {
           <button
             key={index}
             onClick={() => toggleTag(tag)}
-            className={`rounded-full px-3 py-1 text-xs ${
+            className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs ${
               selectedTags.includes(tag)
                 ? "bg-blue-600 text-white"
                 : "bg-blue-100 text-blue-900"
             }`}
           >
+            <span>{getTagEmoji(tag)}</span>
             {tag}
           </button>
         ))}
@@ -134,8 +136,9 @@ export default function AchievementsPage() {
               {ach.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-900"
+                  className="flex items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-900"
                 >
+                  <span>{getTagEmoji(tag)}</span>
                   {tag}
                 </span>
               ))}

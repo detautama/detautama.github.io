@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArticleData } from "../../lib/articles";
 import { useLocale } from "../../lib/LocaleContext";
+import { getTagEmoji } from "../../lib/tagEmoji";
 
 interface TagContentProps {
   articlesByLocale: {
@@ -64,7 +64,7 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
             onClick={() => handleTagClick(tag)}
             className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
           >
-            <Image src="/images/tag.svg" alt="tag" width={16} height={16} />
+            <span>{getTagEmoji(tag)}</span>
             {tag}
           </Link>
         ))}
