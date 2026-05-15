@@ -93,7 +93,7 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
           <h2 className="mb-6 font-display text-xl font-semibold text-brand-text-primary dark:text-brand-dark-text">
             {t.article.relatedArticles}
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {relatedArticles.map(({ id, title, description, date, tags }) => (
               <Link
                 key={id}
