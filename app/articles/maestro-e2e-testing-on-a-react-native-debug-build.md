@@ -4,6 +4,7 @@ date: "2026-04-26"
 description: "Most Maestro guides assume you're testing against a release build. But during active development, you naturally want to test against the debug build that's already running. Here's how to handle the Metro bundler dev menu overlay that can break your tests."
 tags: ["Testing", "React Native", "E2E Testing", "Maestro"]
 featured: false
+lang: "en"
 ---
 
 Most Maestro guides assume you're testing against a **release build**. But during active development, compiling a release build for every iteration is slow. You naturally want to test against the **debug build** that's already running — Metro is live, hot reload works, and JS errors show up inline.

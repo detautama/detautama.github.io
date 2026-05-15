@@ -25,7 +25,7 @@ export function LanguageToggle() {
       aria-label="Change Language"
     >
       <span className="text-xs font-bold uppercase text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text">
-        {locale === "id" ? "EN" : "ID"}
+        {locale === "id" ? "ID" : "EN"}
       </span>
       <svg
         className="h-4 w-4 text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text"

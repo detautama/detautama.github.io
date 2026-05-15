@@ -58,9 +58,7 @@ export default async function OGImage({ params }: Props) {
             flexDirection: "column",
             marginLeft: 55,
             flex: 1,
-            height: "100%",
-            paddingTop: "60px",
-            paddingBottom: "60px",
+            gap: 20,
           }}
         >
           <div style={{ fontSize: 18, color: "#3B7A57", fontWeight: 600 }}>
@@ -72,9 +70,6 @@ export default async function OGImage({ params }: Props) {
               fontWeight: 700,
               color: "#1C1C1C",
               lineHeight: 1.25,
-              marginTop: 20,
-              flex: 1,
-              overflow: "hidden",
             }}
           >
             {articleData.title}
