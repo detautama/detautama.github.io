@@ -3,6 +3,7 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   "AI": "🤖",
   "AI Development": "🤖",
   "Copilot": "🤖",
+  "Claude Code": "🧠",
 
   // Programming Languages & Runtimes
   "JavaScript": "🟨",
@@ -51,6 +52,7 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   // Dev Tools & Practices
   "VS Code": "💻",
   "Git": "🔀",
+  "Hooks": "🪝",
   "Jira": "📋",
   "DevTools": "🔧",
   "Automation": "🤖",
@@ -62,6 +64,7 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   "Internationalization": "🌍",
 
   // Code Quality & Architecture
+  "Software Quality": "🏆",
   "Best Practices": "✨",
   "Clean Code": "🧹",
   "Code Quality": "💎",
@@ -88,8 +91,11 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   "Software Development": "💻",
   "Programming": "👨‍💻",
   "Programming Fundamentals": "📖",
+  "Vibe Coding": "🎵",
   "Documentation": "📝",
   "Project Management": "📊",
+  "Planning": "🗓️",
+  "User Input": "⌨️",
   "Skill": "⭐",
 
   // Productivity & Work
@@ -111,6 +117,7 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   "Business Tools": "💼",
 
   // Personal Development & Mindset
+  "Personal": "🌟",
   "Personal Development": "🌱",
   "Mindset": "🧠",
   "Critical Thinking": "💡",
@@ -146,7 +153,9 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   // Bahasa Indonesia / Berita
   "Opini": "💬",
   "Produktivitas": "⚡",
+  "Logika": "💡",
   "Gianyar": "🌴",
+  "Bali": "🏝️",
   "Kebijakan Publik": "🏛️",
   "berita-desa": "📰",
   "lingkungan": "🌿",
