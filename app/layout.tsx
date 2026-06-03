@@ -26,6 +26,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://detautama.me/"),
   title: "I Putu Deta Utama Putra",
   description: "Thoughts on life, code, and everything in between.",
+  openGraph: {
+    url: "https://detautama.me/",
+    type: "website",
+    title: "I Putu Deta Utama Putra",
+    description: "Thoughts on life, code, and everything in between.",
+  },
+  other: {
+    "og:logo": "https://detautama.me/deta.png",
+  },
 };
 
 export default function RootLayout({
