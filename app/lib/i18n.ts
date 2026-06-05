@@ -7,7 +7,7 @@ export const translations = {
       about: "Tentang",
       tags: "Tag",
       projects: "Proyek",
-      activity: "Aktivitas",
+      thoughts: "Pikiran",
       subtitle: "Life, Code & Everything in between",
     },
     home: {
@@ -48,6 +48,13 @@ export const translations = {
     tag: {
       count: (n: number) => `Tag (${n})`,
     },
+    thoughts: {
+      searchPlaceholder: "Cari pikiran...",
+      emptyTitle: "Belum ada pikiran di sini.",
+      emptySubtitle: "Nantikan — pikiran pertama sedang dalam perjalanan.",
+      noResult: "Tidak ada pikiran yang cocok.",
+      result: (n: number) => `Ditemukan ${n} pikiran`,
+    },
   },
   en: {
     nav: {
@@ -55,7 +62,7 @@ export const translations = {
       about: "About",
       tags: "Tags",
       projects: "Projects",
-      activity: "Activity",
+      thoughts: "Thoughts",
       subtitle: "Life, Code & Everything in between",
     },
     home: {
@@ -95,6 +102,13 @@ export const translations = {
     },
     tag: {
       count: (n: number) => `Tags (${n})`,
+    },
+    thoughts: {
+      searchPlaceholder: "Search thoughts...",
+      emptyTitle: "Nothing here yet.",
+      emptySubtitle: "Check back soon — the first thought is on its way.",
+      noResult: "No thoughts matched your search.",
+      result: (n: number) => `Found ${n} thought${n === 1 ? "" : "s"}`,
     },
   },
 };

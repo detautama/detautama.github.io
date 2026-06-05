@@ -83,12 +83,12 @@ export const Header = () => {
                   {t.nav.tags}
                 </Link>
                 <Link
-                  href={localePath("/activity")}
+                  href={localePath("/thoughts")}
                   className={`brand-nav-link ${
-                    isActive("/activity") ? "text-brand-accent" : ""
+                    isActive("/thoughts") ? "text-brand-accent" : ""
                   }`}
                 >
-                  {t.nav.activity}
+                  {t.nav.thoughts}
                 </Link>
               </nav>
             </div>
@@ -215,9 +215,9 @@ export const Header = () => {
             <span className="text-xs font-medium">{t.nav.tags}</span>
           </Link>
           <Link
-            href={localePath("/activity")}
+            href={localePath("/thoughts")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
-              isActive("/activity")
+              isActive("/thoughts")
                 ? "text-brand-accent"
                 : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
@@ -232,10 +232,10 @@ export const Header = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            <span className="text-xs font-medium">{t.nav.activity}</span>
+            <span className="text-xs font-medium">{t.nav.thoughts}</span>
           </Link>
         </div>
       </nav>
