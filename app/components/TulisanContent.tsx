@@ -90,7 +90,7 @@ export default function TulisanContent({ articlesByLocale, articleIds }: Tulisan
       )}
 
       <section className="mb-12">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-3">
           {links.map(({ href, label, icon }) => (
             <Link key={href} href={href} className="brand-button-secondary group">
               <span className="mr-2">{icons[icon as keyof typeof icons]}</span>
