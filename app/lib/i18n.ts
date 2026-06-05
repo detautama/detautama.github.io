@@ -8,7 +8,7 @@ export const translations = {
       tags: "Tag",
       projects: "Proyek",
       thoughts: "Pikiran",
-      sekarang: "Sekarang",
+      now: "Sekarang",
       subtitle: "Hidup, kode, dan segalanya",
     },
     home: {
@@ -28,7 +28,7 @@ export const translations = {
     tulisan: {
       subtitle: "Semua catatan — dari kode sampai cerita hidup.",
     },
-    sekarang: {
+    now: {
       title: "Sekarang",
       lastUpdated: "Terakhir diperbarui",
       intro: "Halaman ini berisi apa yang sedang aku jalani hari-hari ini. Terinspirasi dari gerakan",
@@ -78,7 +78,7 @@ export const translations = {
       tags: "Tags",
       projects: "Projects",
       thoughts: "Thoughts",
-      sekarang: "Now",
+      now: "Now",
       subtitle: "Life, code & everything in between",
     },
     home: {
@@ -98,7 +98,7 @@ export const translations = {
     tulisan: {
       subtitle: "All writing — from code to life.",
     },
-    sekarang: {
+    now: {
       title: "Now",
       lastUpdated: "Last updated",
       intro: "This page captures what I'm doing these days. Inspired by the",
