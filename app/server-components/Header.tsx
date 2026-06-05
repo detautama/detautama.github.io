@@ -66,12 +66,12 @@ export const Header = () => {
                   {t.nav.thoughts}
                 </Link>
                 <Link
-                  href={localePath("/sekarang")}
+                  href={localePath("/now")}
                   className={`brand-nav-link ${
-                    isActive("/sekarang") ? "text-brand-accent" : ""
+                    isActive("/now") ? "text-brand-accent" : ""
                   }`}
                 >
-                  {t.nav.sekarang}
+                  {t.nav.now}
                 </Link>
                 <Link
                   href={localePath("/about")}
@@ -206,9 +206,9 @@ export const Header = () => {
             <span className="text-xs font-medium">{t.nav.thoughts}</span>
           </Link>
           <Link
-            href={localePath("/sekarang")}
+            href={localePath("/now")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
-              isActive("/sekarang")
+              isActive("/now")
                 ? "text-brand-accent"
                 : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
@@ -226,7 +226,7 @@ export const Header = () => {
                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-xs font-medium">{t.nav.sekarang}</span>
+            <span className="text-xs font-medium">{t.nav.now}</span>
           </Link>
         </div>
       </nav>

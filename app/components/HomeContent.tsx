@@ -25,9 +25,9 @@ const sections = [
     key: "thoughts" as const,
   },
   {
-    href: "/sekarang",
+    href: "/now",
     emoji: "⏳",
-    key: "sekarang" as const,
+    key: "now" as const,
   },
   {
     href: "/about",
@@ -51,8 +51,8 @@ export default function HomeContent({ articlesByLocale }: Readonly<HomeContentPr
       label: t.nav.thoughts,
       desc: locale === "id" ? "Opini singkat. Dipikirkan, tapi tidak berlebihan." : "Short opinions. Considered, not over-thought.",
     },
-    sekarang: {
-      label: t.nav.sekarang,
+    now: {
+      label: t.nav.now,
       desc: locale === "id" ? "Apa yang sedang aku jalani hari ini." : "What I'm doing right now.",
     },
     about: {
