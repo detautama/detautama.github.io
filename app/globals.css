@@ -115,3 +115,42 @@
     transform: translateY(0);
   }
 }
+
+/* Medium-like article typography */
+.prose.prose-lg {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  letter-spacing: -0.003em;
+  font-family: var(--article-font, var(--font-lora), Georgia, serif);
+}
+
+.prose.prose-lg p {
+  margin-top: 0;
+  margin-bottom: 1.6em;
+}
+
+.prose.prose-lg h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+}
+
+.prose.prose-lg h3 {
+  font-size: 1.25rem;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prose.prose-lg blockquote {
+  border-left-width: 3px;
+  border-left-color: var(--foreground);
+  padding-left: 1.25em;
+  font-style: italic;
+  color: var(--foreground);
+  opacity: 0.75;
+}
+
+.prose.prose-lg blockquote p::before,
+.prose.prose-lg blockquote p::after {
+  content: "";
+}
