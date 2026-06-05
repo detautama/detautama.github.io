@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   other: {
     "og:logo": "https://detautama.me/deta.png",
   },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
