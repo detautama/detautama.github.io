@@ -10,6 +10,8 @@ This year I was chosen to be part of the public relations team for the Caru Nawa
 
 Sounds simple. Turns out, it wasn't.
 
+![Laptop and projector setup at the Caru Nawa Gempang ceremony venue, Desa Adat Celuk](/images/blog/caru-nawa-gempang-slideshow-setup.jpg)
+
 ---
 
 ## Why I Was Chosen for the PR Team

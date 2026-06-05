@@ -3,26 +3,35 @@ export type Locale = "id" | "en";
 export const translations = {
   id: {
     nav: {
-      articles: "Artikel",
+      articles: "Tulisan",
       about: "Tentang",
       tags: "Tag",
       projects: "Proyek",
       thoughts: "Pikiran",
-      subtitle: "Life, Code & Everything in between",
+      sekarang: "Sekarang",
+      subtitle: "Hidup, kode, dan segalanya",
     },
     home: {
       greeting: "Halo, aku Deta.",
       tagline:
-        "Developer asal Bali yang mencoba waras di antara baris kode, kesibukan sebagai ayah, dan obsesi kecil pada sepeda serta stoikisme. Di sini aku mencatat apa pun yang layak dipikirkan dua kali.",
+        "Ayah, pengendara sepeda, dan developer asal Bali yang mencoba tetap waras di antara baris kode, tangisan bayi malam hari, dan rabbithole filsafat stoikisme. Di sini aku mencatat apa pun yang layak dipikirkan dua kali.",
       latestArticles: "Tulisan Terbaru",
       featured: "Pilihan",
       new: "Baru",
       readAll: "Lihat Semua Tulisan",
+      nowLink: "Lihat apa yang sedang aku jalani",
       quickLinks: {
         browse: "Cari Tag",
-        contact: "Hubungi Saya",
         links: "Tautan",
       },
+    },
+    tulisan: {
+      subtitle: "Semua catatan — dari kode sampai cerita hidup.",
+    },
+    sekarang: {
+      title: "Sekarang",
+      lastUpdated: "Terakhir diperbarui",
+      intro: "Halaman ini berisi apa yang sedang aku jalani hari-hari ini. Terinspirasi dari gerakan",
     },
     article: {
       old: "Artikel ini sudah lama",
@@ -58,26 +67,35 @@ export const translations = {
   },
   en: {
     nav: {
-      articles: "Articles",
+      articles: "Writing",
       about: "About",
       tags: "Tags",
       projects: "Projects",
       thoughts: "Thoughts",
-      subtitle: "Life, Code & Everything in between",
+      sekarang: "Now",
+      subtitle: "Life, code & everything in between",
     },
     home: {
       greeting: "Hi, I'm Deta.",
       tagline:
-        "A developer from Bali trying to stay sane between lines of code, busy days as a father, and small obsessions with cycling and stoicism. Here I write down anything worth thinking twice about.",
+        "Father, cyclist, and developer from Bali trying to stay sane between lines of code, late-night baby cries, and Stoic philosophy rabbit holes. Here I write down anything worth thinking twice about.",
       latestArticles: "Latest Writing",
       featured: "Featured",
       new: "New",
       readAll: "View All Posts",
+      nowLink: "See what I'm up to right now",
       quickLinks: {
         browse: "Browse Tags",
-        contact: "Get in Touch",
         links: "Links",
       },
+    },
+    tulisan: {
+      subtitle: "All writing — from code to life.",
+    },
+    sekarang: {
+      title: "Now",
+      lastUpdated: "Last updated",
+      intro: "This page captures what I'm doing these days. Inspired by the",
     },
     article: {
       old: "This article is old",

@@ -10,6 +10,8 @@ Tahun ini aku terpilih jadi bagian dari seksi Humas di upacara Caru Nawa Gempang
 
 Kedengarannya simpel. Ternyata tidak.
 
+![Setup laptop dan proyektor di venue upacara Caru Nawa Gempang, Desa Adat Celuk](/images/blog/caru-nawa-gempang-slideshow-setup.jpg)
+
 ---
 
 ## Kenapa Aku yang Dipilih Jadi Seksi Humas

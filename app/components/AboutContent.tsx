@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLocale } from "../lib/LocaleContext";
 
 export default function AboutContent() {
-  const { locale, localePath } = useLocale();
+  const { locale } = useLocale();
 
   if (locale === "en") {
     return (
@@ -72,9 +72,8 @@ export default function AboutContent() {
 
           <div className="mt-12 border-t border-brand-tan pt-8">
             <p className="text-sm text-brand-text-secondary">
-              Want to discuss something or just say hi? 
-              Please send an email to <a href="mailto:detautama11@gmail.com" className="text-brand-accent hover:underline">detautama11@gmail.com</a>. 
-              Or check the <Link href={localePath("/contact")} className="text-brand-accent hover:underline">/contact</Link> page for more details.
+              Want to discuss something or just say hi?
+              Send an email to <a href="mailto:detautama11@gmail.com" className="text-brand-accent hover:underline">detautama11@gmail.com</a>.
             </p>
           </div>
         </div>
@@ -148,9 +147,8 @@ export default function AboutContent() {
 
         <div className="mt-12 border-t border-brand-tan pt-8">
           <p className="text-sm text-brand-text-secondary">
-            Ingin berdiskusi atau sekadar menyapa? 
-            Silakan kirim email ke <a href="mailto:detautama11@gmail.com" className="text-brand-accent hover:underline">detautama11@gmail.com</a>. 
-            Atau cek halaman <Link href={localePath("/contact")} className="text-brand-accent hover:underline">/contact</Link> untuk detail lebih lanjut.
+            Ingin berdiskusi atau sekadar menyapa?
+            Kirim email ke <a href="mailto:detautama11@gmail.com" className="text-brand-accent hover:underline">detautama11@gmail.com</a>.
           </p>
         </div>
       </div>

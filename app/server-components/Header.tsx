@@ -16,8 +16,7 @@ export const Header = () => {
     : pathname;
 
   const isActive = (path: string) => {
-    if (path === "/" && (basePath === "/" || basePath.startsWith("/articles")))
-      return true;
+    if (basePath === path) return true;
     if (path !== "/" && basePath.startsWith(path)) return true;
     return false;
   };
@@ -28,22 +27,22 @@ export const Header = () => {
         <div className="brand-container">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center space-x-8">
-              <Link href={localePath("/")} className="group flex items-center space-x-3">
+              <Link href={localePath("/")} className="group flex shrink-0 items-center space-x-3">
                 <div className="relative">
                   <Image
                     className="rounded-full transition-transform duration-200 group-hover:scale-105"
                     src="/deta.png"
                     alt="profile image"
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                   />
                   <div className="absolute inset-0 rounded-full bg-brand-accent opacity-0 transition-opacity duration-200 group-hover:opacity-20" />
                 </div>
-                <div className="block">
-                  <h1 className="text-sm font-semibold text-brand-text-primary dark:text-brand-dark-text">
-                    I Putu Deta Utama Putra
+                <div className="hidden lg:block">
+                  <h1 className="whitespace-nowrap text-sm font-semibold text-brand-text-primary dark:text-brand-dark-text">
+                    Deta Utama
                   </h1>
-                  <p className="hidden text-xs text-brand-text-secondary sm:block dark:text-brand-dark-text/70">
+                  <p className="text-xs text-brand-text-secondary dark:text-brand-dark-text/70">
                     {t.nav.subtitle}
                   </p>
                 </div>
@@ -51,36 +50,12 @@ export const Header = () => {
 
               <nav className="hidden items-center space-x-1 md:flex">
                 <Link
-                  href={localePath("/")}
+                  href={localePath("/articles")}
                   className={`brand-nav-link ${
-                    isActive("/") ? "text-brand-accent" : ""
+                    isActive("/articles") ? "text-brand-accent" : ""
                   }`}
                 >
                   {t.nav.articles}
-                </Link>
-                <Link
-                  href={localePath("/projects")}
-                  className={`brand-nav-link ${
-                    isActive("/projects") ? "text-brand-accent" : ""
-                  }`}
-                >
-                  {t.nav.projects}
-                </Link>
-                <Link
-                  href={localePath("/about")}
-                  className={`brand-nav-link ${
-                    isActive("/about") ? "text-brand-accent" : ""
-                  }`}
-                >
-                  {t.nav.about}
-                </Link>
-                <Link
-                  href={localePath("/tag")}
-                  className={`brand-nav-link ${
-                    isActive("/tag") ? "text-brand-accent" : ""
-                  }`}
-                >
-                  {t.nav.tags}
                 </Link>
                 <Link
                   href={localePath("/thoughts")}
@@ -89,6 +64,22 @@ export const Header = () => {
                   }`}
                 >
                   {t.nav.thoughts}
+                </Link>
+                <Link
+                  href={localePath("/sekarang")}
+                  className={`brand-nav-link ${
+                    isActive("/sekarang") ? "text-brand-accent" : ""
+                  }`}
+                >
+                  {t.nav.sekarang}
+                </Link>
+                <Link
+                  href={localePath("/about")}
+                  className={`brand-nav-link ${
+                    isActive("/about") ? "text-brand-accent" : ""
+                  }`}
+                >
+                  {t.nav.about}
                 </Link>
               </nav>
             </div>
@@ -123,9 +114,9 @@ export const Header = () => {
       <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/20 bg-brand-cream/80 shadow-[0_-4px_16px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-brand-dark-bg/70 dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
         <div className="flex items-center justify-around bg-gradient-to-t from-brand-cream/10 to-transparent py-2 dark:from-white/5 dark:to-transparent">
           <Link
-            href={localePath("/")}
+            href={localePath("/articles")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
-              isActive("/")
+              isActive("/articles")
                 ? "text-brand-accent"
                 : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
             }`}
@@ -192,29 +183,6 @@ export const Header = () => {
             <span className="text-xs font-medium">{t.nav.about}</span>
           </Link>
           <Link
-            href={localePath("/tag")}
-            className={`flex flex-col items-center px-3 py-1 transition-colors ${
-              isActive("/tag")
-                ? "text-brand-accent"
-                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
-            }`}
-          >
-            <svg
-              className="mb-1 h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-              />
-            </svg>
-            <span className="text-xs font-medium">{t.nav.tags}</span>
-          </Link>
-          <Link
             href={localePath("/thoughts")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${
               isActive("/thoughts")
@@ -236,6 +204,29 @@ export const Header = () => {
               />
             </svg>
             <span className="text-xs font-medium">{t.nav.thoughts}</span>
+          </Link>
+          <Link
+            href={localePath("/sekarang")}
+            className={`flex flex-col items-center px-3 py-1 transition-colors ${
+              isActive("/sekarang")
+                ? "text-brand-accent"
+                : "text-brand-text-secondary hover:text-brand-accent dark:text-brand-dark-text"
+            }`}
+          >
+            <svg
+              className="mb-1 h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span className="text-xs font-medium">{t.nav.sekarang}</span>
           </Link>
         </div>
       </nav>

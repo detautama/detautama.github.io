@@ -1,16 +1,15 @@
-import { getSortedArticlesData, getAllArticleIds } from "@/app/lib/articles";
+import { getSortedArticlesData } from "@/app/lib/articles";
 import { Metadata } from "next";
 import HomeContent from "@/app/components/HomeContent";
 
 export const metadata: Metadata = {
-  title: "Articles - I Putu Deta Utama Putra",
-  description: "A collection of articles written by I Putu Deta Utama Putra",
+  title: "I Putu Deta Utama Putra",
+  description: "Ayah, pengendara sepeda, dan developer asal Bali.",
 };
 
 export default async function Home() {
   const articlesId = getSortedArticlesData("id");
   const articlesEn = getSortedArticlesData("en");
-  const articleIds = getAllArticleIds();
 
   return (
     <HomeContent
@@ -18,7 +17,6 @@ export default async function Home() {
         id: articlesId,
         en: articlesEn,
       }}
-      articleIds={articleIds}
     />
   );
 }
