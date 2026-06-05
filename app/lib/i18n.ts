@@ -64,6 +64,12 @@ export const translations = {
       noResult: "Tidak ada pikiran yang cocok.",
       result: (n: number) => `Ditemukan ${n} pikiran`,
     },
+    projects: {
+      title: "Proyek",
+      description:
+        "Berikut beberapa proyek yang pernah aku kerjakan. Sebagian besar tidak bersifat open source, tapi aku dengan senang hati berbagi wawasan atau mendiskusikannya lebih lanjut jika kamu tertarik.",
+      visitProject: "Kunjungi Proyek →",
+    },
   },
   en: {
     nav: {
@@ -127,6 +133,12 @@ export const translations = {
       emptySubtitle: "Check back soon — the first thought is on its way.",
       noResult: "No thoughts matched your search.",
       result: (n: number) => `Found ${n} thought${n === 1 ? "" : "s"}`,
+    },
+    projects: {
+      title: "Projects",
+      description:
+        "These are some of the projects I've worked on in my spare time. Most of these projects are not open source. However, I'd be happy to share insights or discuss them further if you're interested.",
+      visitProject: "Visit Project →",
     },
   },
 };
