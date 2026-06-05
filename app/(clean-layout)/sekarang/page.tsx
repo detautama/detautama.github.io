@@ -34,34 +34,11 @@ export default function SekarangPage() {
           <ul className="space-y-2 text-base">
             <li className="flex gap-2">
               <span className="mt-1 shrink-0 text-brand-accent">→</span>
-              <span>Membangun fitur-fitur baru di produk yang aku kerjakan — banyak TypeScript, sedikit tidur.</span>
+              <span>React Native — aplikasi latihan vokal.</span>
             </li>
             <li className="flex gap-2">
               <span className="mt-1 shrink-0 text-brand-accent">→</span>
-              <span>Merombak website ini supaya lebih terasa seperti <em>manusia</em>, bukan portofolio developer.</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1 shrink-0 text-brand-accent">→</span>
-              <span>Mulai lebih konsisten menulis — tidak hanya soal kode, tapi soal hidup.</span>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="mb-4 font-display text-xl font-bold text-brand-text-primary dark:text-brand-dark-text">
-            Sedang membaca
-          </h2>
-          <ul className="space-y-2 text-base">
-            <li className="flex gap-2">
-              <span className="mt-1 shrink-0 text-brand-accent">→</span>
-              <span>
-                <em>Meditations</em> karya Marcus Aurelius — buku yang selalu bisa aku buka di halaman mana saja
-                dan selalu relevan.
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1 shrink-0 text-brand-accent">→</span>
-              <span>Artikel-artikel tentang parenting, produktivitas yang realistis (bukan hustle culture).</span>
+              <span>Website company dengan Next.js.</span>
             </li>
           </ul>
         </section>
