@@ -12,4 +12,10 @@ export const thoughts: Thought[] = [
     content:
       "Hari ke-8 konsisten bersepeda ke kantor. Tidur lebih lelap, otot kaki jauh lebih kuat dari sebelumnya, dan cocok untuk latihan jantung. Sebelumnya hanya latihan otot, tidak ada kardionya. Ternyata kardio yang terasa seperti rutinitas sehari-hari jauh lebih mudah dipertahankan.",
   },
+  {
+    id: "2",
+    date: "2026-07-06",
+    content:
+      "Pertama kali ganti rantai sepeda sendiri, dan sukses. Kurang dari 30 menit. Kirain bakal lama dan ribet, ternyata enggak.",
+  },
 ];
