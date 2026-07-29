@@ -30,6 +30,8 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
   const articleData = articlesByLocale[locale];
   const relatedArticles = relatedArticlesByLocale[locale];
   const isLanguageMissing = !articleData.availableLocales.includes(locale);
+  const articleImage = articleData.image ?? (hasImage ? `/og-images/${articleId}.png` : null);
+  const articleImageHeight = articleImage?.startsWith("/og-images/") ? 630 : 1200;
 
   return (
     <div>
@@ -55,14 +57,14 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
         </div>
       </div>
 
-      {hasImage && (
+      {articleImage && (
         <div className="mb-8 mt-8">
           <Image
-            src={`/og-images/${articleId}.png`}
+            src={articleImage}
             alt={articleData.title}
             width={1200}
-            height={630}
-            className="h-auto w-full"
+            height={articleImageHeight}
+            className="h-auto w-full rounded-lg"
             priority
           />
         </div>

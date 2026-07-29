@@ -27,7 +27,7 @@ export default function AboutContent() {
 
         <div className="space-y-6">
           <p className="text-xl font-medium leading-normal sm:text-2xl">
-            I&apos;m a web developer, a father, and someone trying to find balance in Bali, Indonesia.
+            I&apos;m a web developer, a husband, a father, and someone trying to find balance in Bali, Indonesia.
           </p>
 
           <p>
@@ -101,7 +101,7 @@ export default function AboutContent() {
 
       <div className="space-y-6">
         <p className="text-xl font-medium leading-normal sm:text-2xl">
-          Aku adalah seorang web developer, seorang ayah, dan seseorang yang mencoba menemukan keseimbangan di Bali, Indonesia.
+          Aku adalah seorang web developer, seorang suami, seorang ayah, dan seseorang yang mencoba menemukan keseimbangan di Bali, Indonesia.
         </p>
 
         <p>

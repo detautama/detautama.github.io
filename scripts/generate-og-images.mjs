@@ -8,8 +8,24 @@ import matter from "gray-matter";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 
-const FONT_REG = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf";
-const FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf";
+function resolveFont(candidates) {
+  const fontPath = candidates.find((candidate) => fs.existsSync(candidate));
+  if (!fontPath) {
+    throw new Error(`No usable font found. Tried: ${candidates.join(", ")}`);
+  }
+  return fontPath;
+}
+
+const FONT_REG = resolveFont([
+  "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+  "/System/Library/Fonts/Supplemental/Arial.ttf",
+  "/Library/Fonts/Arial.ttf",
+]);
+const FONT_BOLD = resolveFont([
+  "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+  "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+  "/Library/Fonts/Arial Bold.ttf",
+]);
 
 console.log("Loading fonts...");
 const fontRegular = fs.readFileSync(FONT_REG);
@@ -175,12 +191,28 @@ async function generateOG(articleId, title, tags) {
 
 async function main() {
   const files = fs.readdirSync(ARTICLES_DIR).filter(f => f.endsWith(".md"));
+  const articleIds = Array.from(
+    new Set(
+      files.map((file) => file.replace(/\.(id|en)\.md$/, "").replace(/\.md$/, ""))
+    )
+  );
   let generated = 0, skipped = 0, failed = 0;
 
-  for (const file of files) {
-    const articleId = file.replace(/\.md$/, "");
+  for (const articleId of articleIds) {
     const outputPath = path.join(OG_DIR, `${articleId}.png`);
     if (fs.existsSync(outputPath)) { skipped++; continue; }
+
+    const file =
+      files.find((f) => f === `${articleId}.id.md`) ??
+      files.find((f) => f === `${articleId}.en.md`) ??
+      files.find((f) => f === `${articleId}.md`) ??
+      files.find((f) => f.startsWith(`${articleId}.`) && f.endsWith(".md"));
+
+    if (!file) {
+      failed++;
+      console.error(`Failed: ${articleId} - markdown file not found`);
+      continue;
+    }
 
     const content = fs.readFileSync(path.join(ARTICLES_DIR, file), "utf8");
     const { data } = matter(content);

@@ -14,7 +14,7 @@ export const translations = {
     home: {
       greeting: "Halo, aku Deta.",
       tagline:
-        "Ayah, pengendara sepeda, dan developer asal Bali yang mencoba tetap waras di antara baris kode, tangisan bayi malam hari, dan rabbithole filsafat stoikisme. Di sini aku mencatat apa pun yang layak dipikirkan dua kali.",
+        "Suami, bapak, pengendara sepeda, dan developer asal Bali yang mencoba tetap waras di antara baris kode, tangisan bayi malam hari, dan rabbithole filsafat stoikisme. Di sini aku mencatat apa pun yang layak dipikirkan dua kali.",
       latestArticles: "Tulisan Terbaru",
       featured: "Pilihan",
       new: "Baru",
@@ -84,7 +84,7 @@ export const translations = {
     home: {
       greeting: "Hi, I'm Deta.",
       tagline:
-        "Father, cyclist, and developer from Bali trying to stay sane between lines of code, late-night baby cries, and Stoic philosophy rabbit holes. Here I write down anything worth thinking twice about.",
+        "Husband, father, cyclist, and developer from Bali trying to stay sane between lines of code, late-night baby cries, and Stoic philosophy rabbit holes. Here I write down anything worth thinking twice about.",
       latestArticles: "Latest Writing",
       featured: "Featured",
       new: "New",
