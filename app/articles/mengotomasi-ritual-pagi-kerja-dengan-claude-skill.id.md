@@ -90,5 +90,3 @@ Pola yang aku pakai konsisten di semua skill: ada bagian frontmatter (`name` + `
 ## Kenapa Aku Tulis Ini
 
 Ini cerita workflow personal yang mungkin relevan buat siapa saja yang punya ritual pagi berulang dan ingin mengurangi friksi di dalamnya, apapun tool stack-nya. Kalau ada yang tertarik gimana detail setup-nya atau mau coba bikin versi sendiri, boleh banget kontak aku.
-
-Filosofinya sederhana: pelan, tapi tiap hari.
