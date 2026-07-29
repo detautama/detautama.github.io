@@ -4,6 +4,7 @@ date: "2026-05-21"
 description: "Ketika kritik terhadap film Pesta Babi dijawab dengan pertanyaan soal sumber dana, kita sedang melihat contoh ad hominem: menyerang orangnya, bukan isi argumennya."
 tags: ["Critical Thinking", "Opini", "Logika"]
 featured: false
+image: "/images/home/ad-hominem-reflection-card.webp"
 ---
 
 Film dokumenter dibubarkan. Nobar di kampus-kampus dihentikan paksa. Dan respons dari pihak berwenang? Bukan bantahan atas isi filmnya -- melainkan sebuah pertanyaan: *"Dari mana duit bikin Pesta Babi!?"*
