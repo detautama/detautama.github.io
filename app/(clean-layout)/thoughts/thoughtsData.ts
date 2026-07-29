@@ -13,6 +13,12 @@ export const thoughts: Thought[] = [
       "Hari ke-8 konsisten bersepeda ke kantor. Tidur lebih lelap, otot kaki jauh lebih kuat dari sebelumnya, dan cocok untuk latihan jantung. Sebelumnya hanya latihan otot, tidak ada kardionya. Ternyata kardio yang terasa seperti rutinitas sehari-hari jauh lebih mudah dipertahankan.",
   },
   {
+    id: "3",
+    date: "2026-06-17",
+    content:
+      "Naik sepeda pas Galungan ternyata agak berbahaya. Beberapa penjor dipasang tepat di pinggir jalan, dan kadang dupanya menjorok sampai ke badan jalan. Biasanya pagi-pagi orang mebanten dan menancapkan dupa di situ.",
+  },
+  {
     id: "2",
     date: "2026-07-06",
     content:
