@@ -4,6 +4,7 @@ date: "2026-07-13"
 description: "Socratic AI menerapkan metode Socrates ke chatbot dan tutor virtual: AI tidak langsung memberi jawaban, tetapi menuntun pengguna lewat pertanyaan agar kemampuan berpikir tingkat tinggi tetap terlatih di era AI."
 tags: ["AI", "Critical Thinking", "Learning"]
 featured: false
+image: "/images/home/socratic-ai-card.webp"
 ---
 
 AI membuat jawaban menjadi sangat murah. Dulu, untuk memahami sebuah topik, kita perlu membaca, bertanya, mencoba, salah, lalu memperbaiki pemahaman pelan-pelan. Sekarang kita bisa mengetik satu pertanyaan dan mendapatkan jawaban yang rapi dalam beberapa detik.

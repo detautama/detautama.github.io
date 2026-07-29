@@ -4,6 +4,7 @@ date: "2026-06-08"
 description: "Satu minggu penuh ngantor naik sepeda sejauh 24 km PP — dari soal posisi, helm, baju, hingga insiden pisang terbang."
 tags: ["Cycling", "Life", "Personal"]
 featured: false
+image: "/images/home/bike-commuting-week-card.webp"
 ---
 
 **Posisi itu segalanya.**

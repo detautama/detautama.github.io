@@ -4,6 +4,7 @@ date: "2026-07-13"
 description: "Socratic AI applies the Socratic method to chatbots and virtual tutors: instead of giving answers immediately, AI guides users with questions so higher-order thinking remains trained in the age of AI."
 tags: ["AI", "Critical Thinking", "Learning"]
 featured: false
+image: "/images/home/socratic-ai-card.webp"
 ---
 
 AI has made answers very cheap. In the past, understanding a topic often meant reading, asking, trying, failing, and slowly correcting our understanding. Now we can type one question and receive a polished answer in seconds.

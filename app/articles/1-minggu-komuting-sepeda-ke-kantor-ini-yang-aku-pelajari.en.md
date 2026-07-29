@@ -4,6 +4,7 @@ date: "2026-06-08"
 description: "One full week of bike commuting 24 km round-trip — from saddle position and helmets to flying bananas and cargo straps."
 tags: ["Cycling", "Life", "Personal"]
 featured: false
+image: "/images/home/bike-commuting-week-card.webp"
 ---
 
 **Position is everything.**

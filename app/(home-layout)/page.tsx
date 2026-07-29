@@ -4,7 +4,7 @@ import HomeContent from "@/app/components/HomeContent";
 
 export const metadata: Metadata = {
   title: "I Putu Deta Utama Putra",
-  description: "Ayah, pengendara sepeda, dan developer asal Bali.",
+  description: "Bapak, pengendara sepeda, dan developer asal Bali.",
 };
 
 export default async function Home() {

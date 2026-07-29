@@ -4,6 +4,7 @@ date: "2026-07-03"
 description: "Catatan dari dua project company profile dwibahasa yang aku bangun pakai Sanity dan Next.js — soal localized field, revalidation via webhook, live preview, sampai kebiasaan audit schema."
 tags: ["Sanity", "CMS", "Next.js", "Headless CMS"]
 featured: false
+image: "/images/home/sanity-two-projects-card.webp"
 ---
 
 **Dua project, satu CMS yang sama.**

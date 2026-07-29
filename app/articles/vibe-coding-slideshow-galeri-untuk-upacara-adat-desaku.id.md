@@ -4,6 +4,7 @@ date: "2026-05-30"
 description: "Tahun ini aku jadi seksi Humas di upacara Caru Nawa Gempang di Desa Adat Celuk, dan salah satu tugasku adalah membuat slideshow foto untuk proyektor. Begini ceritanya."
 tags: ["Vibe Coding", "AI", "Claude Code", "Personal", "Bali"]
 featured: false
+image: "/images/home/vibe-coding-slideshow-card.webp"
 ---
 
 Tahun ini aku terpilih jadi bagian dari seksi Humas di upacara Caru Nawa Gempang di Desa Adat Celuk. Tugasku spesifik: handle sosial media. Tapi ada permintaan tambahan – membuat slideshow foto untuk ditampilkan di proyektor selama acara berlangsung.

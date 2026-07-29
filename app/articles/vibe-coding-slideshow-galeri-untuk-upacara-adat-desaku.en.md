@@ -4,6 +4,7 @@ date: "2026-05-30"
 description: "This year I joined the public relations committee for the Caru Nawa Gempang ceremony at Desa Adat Celuk, and one of my tasks was building a photo slideshow for a projector. Here's how it went."
 tags: ["Vibe Coding", "AI", "Claude Code", "Personal", "Bali"]
 featured: false
+image: "/images/home/vibe-coding-slideshow-card.webp"
 ---
 
 This year I was chosen to be part of the public relations team for the Caru Nawa Gempang ceremony at Desa Adat Celuk. My specific task: handle social media. But there was an additional request — build a photo slideshow to be displayed on a projector during the event.

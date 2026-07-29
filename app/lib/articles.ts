@@ -17,6 +17,7 @@ export interface ArticleData {
 }
 
 const postsDirectory = path.join(process.cwd(), "/app/articles");
+const ogImagesDirectory = path.join(process.cwd(), "/public/og-images");
 
 export function getSortedArticlesData(locale: "id" | "en" = "id"): ArticleData[] {
   const ids = getAllArticleIds();
@@ -100,6 +101,12 @@ export function getArticleData(id: string, locale: "id" | "en" = "id"): ArticleD
     currentLocale = matterResult.data.lang;
   }
 
+  const frontmatterImage = matterResult.data.image;
+  const ogImagePath = path.join(ogImagesDirectory, `${id}.png`);
+  const image =
+    frontmatterImage ||
+    (fs.existsSync(ogImagePath) ? `/og-images/${id}.png` : undefined);
+
   // Combine the data with the id
   return {
     id,
@@ -109,6 +116,7 @@ export function getArticleData(id: string, locale: "id" | "en" = "id"): ArticleD
     content: matterResult.content,
     tags,
     featured: matterResult.data.featured,
+    image,
     availableLocales: availableLocales.length > 0 ? availableLocales : (matterResult.data.lang ? [matterResult.data.lang] : ["id"]),
     currentLocale,
     ...(matterResult.data as Omit<

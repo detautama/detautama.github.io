@@ -4,6 +4,7 @@ date: "2026-07-09"
 description: "My day-to-day personal finance system: a global budget in Money Lover that gives me a daily spending recommendation, the habit of logging every transaction, and manual transfers into savings, time deposits, and government bonds."
 tags: ["Personal Finance", "Budgeting", "Money Management", "Life"]
 featured: false
+image: "/images/home/money-lover-card.webp"
 ---
 
 **Not because I'm good with money. Because I once wasn't good at it at all.**

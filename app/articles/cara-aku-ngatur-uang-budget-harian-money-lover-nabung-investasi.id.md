@@ -4,6 +4,7 @@ date: "2026-07-09"
 description: "Sistem keuangan personal yang aku pakai sehari-hari: anggaran global di Money Lover yang kasih rekomendasi budget harian, kebiasaan nyatet tiap transaksi, sampai transfer manual rutin ke tabungan, deposito, dan SBN."
 tags: ["Personal Finance", "Budgeting", "Money Management", "Life"]
 featured: false
+image: "/images/home/money-lover-card.webp"
 ---
 
 **Bukan karena aku jago ngatur uang. Karena aku pernah nggak jago sama sekali.**

@@ -4,6 +4,7 @@ date: "2026-07-03"
 description: "Notes from two bilingual company profile sites I built with Sanity and Next.js — localized fields, webhook-driven revalidation, live preview, and the habit of auditing your schema."
 tags: ["Sanity", "CMS", "Next.js", "Headless CMS"]
 featured: false
+image: "/images/home/sanity-two-projects-card.webp"
 ---
 
 **Two projects, one CMS.**
