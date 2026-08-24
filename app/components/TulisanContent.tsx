@@ -28,7 +28,6 @@ export default function TulisanContent({ articlesByLocale, articleIds }: Tulisan
 
   const links = [
     { href: localePath("/tag"), label: t.home.quickLinks.browse },
-    { href: localePath("/links"), label: t.home.quickLinks.links },
     { href: "https://www.youtube.com/@detautama9899", label: "YouTube" },
   ];
 
