@@ -5,43 +5,26 @@ export const translations = {
     nav: {
       articles: "Tulisan",
       about: "Tentang",
-      tags: "Tag",
       projects: "Proyek",
-      thoughts: "Pikiran",
       now: "Sekarang",
-      subtitle: "Hidup, kode, dan segalanya",
     },
     home: {
-      greeting: "Halo, aku Deta.",
-      tagline:
-        "Suami, bapak, pengendara sepeda, dan developer asal Bali yang mencoba tetap waras di antara baris kode, tangisan bayi malam hari, dan rabbithole filsafat stoikisme. Di sini aku mencatat apa pun yang layak dipikirkan dua kali.",
-      latestArticles: "Tulisan Terbaru",
       featured: "Pilihan",
       new: "Baru",
       readAll: "Lihat Semua Tulisan",
-      nowLink: "Lihat apa yang sedang aku jalani",
       quickLinks: {
         browse: "Cari Tag",
-        links: "Tautan",
       },
     },
     tulisan: {
       subtitle: "Semua catatan — dari kode sampai cerita hidup.",
     },
-    now: {
-      title: "Sekarang",
-      lastUpdated: "Terakhir diperbarui",
-      intro: "Halaman ini berisi apa yang sedang aku jalani hari-hari ini. Terinspirasi dari gerakan",
-    },
     article: {
       old: "Artikel ini sudah lama",
       oldDescription:
         "Artikel ini ditulis lebih dari setahun yang lalu. Beberapa informasi mungkin sudah usang.",
-      readMore: "Baca selengkapnya",
       share: "Suka artikel ini? Bagikan ke temanmu atau salin link-nya!",
       share_button: "Bagikan",
-      copy: "Salin",
-      copied: "Tersalin!",
       onlyAvailable: "Artikel ini hanya tersedia dalam bahasa",
       relatedArticles: "Artikel Serupa",
     },
@@ -53,9 +36,6 @@ export const translations = {
       title: "Cari Artikel",
       result: (n: number) => `Ditemukan ${n} artikel`,
       noResult: "Tidak ada artikel yang ditemukan.",
-    },
-    tag: {
-      count: (n: number) => `Tag (${n})`,
     },
     thoughts: {
       searchPlaceholder: "Cari pikiran...",
@@ -75,43 +55,26 @@ export const translations = {
     nav: {
       articles: "Writing",
       about: "About",
-      tags: "Tags",
       projects: "Projects",
-      thoughts: "Thoughts",
       now: "Now",
-      subtitle: "Life, code & everything in between",
     },
     home: {
-      greeting: "Hi, I'm Deta.",
-      tagline:
-        "Husband, father, cyclist, and developer from Bali trying to stay sane between lines of code, late-night baby cries, and Stoic philosophy rabbit holes. Here I write down anything worth thinking twice about.",
-      latestArticles: "Latest Writing",
       featured: "Featured",
       new: "New",
       readAll: "View All Posts",
-      nowLink: "See what I'm up to right now",
       quickLinks: {
         browse: "Browse Tags",
-        links: "Links",
       },
     },
     tulisan: {
       subtitle: "All writing — from code to life.",
     },
-    now: {
-      title: "Now",
-      lastUpdated: "Last updated",
-      intro: "This page captures what I'm doing these days. Inspired by the",
-    },
     article: {
       old: "This article is old",
       oldDescription:
         "This article was written more than a year ago. Some of the information might be outdated.",
-      readMore: "Read more",
       share: "Like the article? Share it with others or copy the link!",
       share_button: "Share",
-      copy: "Copy",
-      copied: "Copied!",
       onlyAvailable: "This article is only available in",
       relatedArticles: "Related Articles",
     },
@@ -123,9 +86,6 @@ export const translations = {
       title: "Search Articles",
       result: (n: number) => `Found ${n} article${n === 1 ? "" : "s"}`,
       noResult: "No articles found.",
-    },
-    tag: {
-      count: (n: number) => `Tags (${n})`,
     },
     thoughts: {
       searchPlaceholder: "Search thoughts...",

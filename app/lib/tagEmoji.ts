@@ -157,7 +157,6 @@ const TAG_EMOJI_MAP: Record<string, string> = {
   "Gianyar": "🌴",
   "Bali": "🏝️",
   "Kebijakan Publik": "🏛️",
-  "berita-desa": "📰",
   "lingkungan": "🌿",
   "bank-sampah": "♻️",
   "celuk": "📍",
