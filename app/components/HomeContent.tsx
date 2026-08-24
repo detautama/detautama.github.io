@@ -5,6 +5,7 @@ import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
+import { ToggleDarkMode } from "../ToggleDarkMode";
 
 interface HomeContentProps {
   readonly articlesByLocale: {
@@ -106,6 +107,8 @@ const placeholderImages = [
   "/images/blog/How-I-Improved-My-Productivity-and-Well-Being-with-Time-Blocking.jpg",
   "/images/achievements/sagioeb2024.jpg",
 ];
+
+const HERO_IMAGE_DARK = "/images/home/gunung-sunrise-hero-dark.webp";
 
 const directionCards = [
   {
@@ -272,12 +275,24 @@ export default function HomeContent({
 
   return (
     <div className="animate-in">
+      <div className="fixed right-4 top-4 z-50">
+        <ToggleDarkMode />
+      </div>
+
       <section className="relative isolate min-h-[calc(100vh-4rem)] overflow-hidden bg-brand-dark-bg text-white">
         <Image
           src={placeholderImages[0]}
           alt=""
           fill
-          className="object-cover object-center md:object-[center_58%]"
+          className="object-cover object-center opacity-100 transition-opacity duration-700 dark:opacity-0 md:object-[center_58%]"
+          priority
+          sizes="100vw"
+        />
+        <Image
+          src={HERO_IMAGE_DARK}
+          alt=""
+          fill
+          className="object-cover object-center opacity-0 transition-opacity duration-700 dark:opacity-100 md:object-[center_58%]"
           priority
           sizes="100vw"
         />
