@@ -312,8 +312,8 @@ export default function HomeContent({
       {latestPosts.length > 0 && (
         <section className="bg-white py-14 dark:bg-brand-dark-surface sm:py-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-6 flex items-end justify-between gap-4">
-              <h2 className="font-display text-3xl font-bold text-brand-text-primary dark:text-brand-dark-text">
+            <div className="mb-6 flex flex-col items-start gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+              <h2 className="font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text sm:text-3xl">
                 {copy.latestPostsTitle}
               </h2>
               <Link
