@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useEffect, useState } from "react";
 import { ArticleData } from "../../lib/articles";
 import { useLocale } from "../../lib/LocaleContext";

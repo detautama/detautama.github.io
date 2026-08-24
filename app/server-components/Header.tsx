@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import Image from "next/image";
 import { usePathname } from "next/navigation";

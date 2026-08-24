@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useLocale } from "../lib/LocaleContext";
 import { usePathname } from "next/navigation";
 

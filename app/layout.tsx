@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ScrollToTop } from "./ScrollToTop";
 import { LocaleProvider } from "./lib/LocaleContext";
+import { ViewTransitions } from "next-view-transitions";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,18 +54,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <GoogleAnalytics gaId="G-74BLMRKJD6" />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} ${merriweather.variable} antialiased`}
-      >
-        <ThemeProvider attribute={"class"}>
-          <LocaleProvider initialLocale="id">
-            {children}
-            <ScrollToTop />
-          </LocaleProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <GoogleAnalytics gaId="G-74BLMRKJD6" />
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} ${merriweather.variable} antialiased`}
+        >
+          <ThemeProvider attribute={"class"}>
+            <LocaleProvider initialLocale="id">
+              {children}
+              <ScrollToTop />
+            </LocaleProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

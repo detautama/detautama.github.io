@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useTransitionRouter as useRouter } from "next-view-transitions";
 import { useLocale } from "../lib/LocaleContext";
 
 interface FeelingLuckyButtonProps {

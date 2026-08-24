@@ -9,7 +9,7 @@ import zustand from "./images/zustand.jpg";
 import prapen from "./images/prapen.jpg";
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useLocale } from "@/app/lib/LocaleContext";
 
 interface Project {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ArticleData } from "../../lib/articles";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useSearch } from "./useSearch";
 import { useLocale } from "../../lib/LocaleContext";
 import { getTagEmoji } from "../../lib/tagEmoji";

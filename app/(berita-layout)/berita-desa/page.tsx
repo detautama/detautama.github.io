@@ -4,7 +4,7 @@ import {
   getTopKategoriBerita,
   BeritaData,
 } from "../../lib/berita";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
