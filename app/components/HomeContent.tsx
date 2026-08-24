@@ -143,24 +143,6 @@ const CYCLING_MILESTONE_PROGRESS = Math.round(
   (CYCLING_STREAK_DAYS / CYCLING_NEXT_MILESTONE) * 100
 );
 
-const visualJournal = [
-  {
-    image: placeholderImages[6],
-  },
-  {
-    image: placeholderImages[7],
-  },
-  {
-    image: placeholderImages[8],
-  },
-  {
-    image: placeholderImages[9],
-  },
-  {
-    image: placeholderImages[10],
-  },
-];
-
 export default function HomeContent({
   articlesByLocale,
 }: Readonly<HomeContentProps>) {
@@ -456,29 +438,6 @@ export default function HomeContent({
           </div>
         </section>
       )}
-
-      <section className="bg-white py-10 dark:bg-brand-dark-surface sm:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-            {visualJournal.map((item, index) => (
-              <div
-                key={item.image}
-                className={`group relative aspect-[3/4] overflow-hidden rounded-lg bg-brand-tan ${
-                  index === 1 || index === 3 ? "sm:translate-y-8" : ""
-                }`}
-              >
-                <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                  sizes="(min-width: 640px) 20vw, 50vw"
-                />
-                </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section
         id="bersepeda"

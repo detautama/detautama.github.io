@@ -21,80 +21,54 @@ export const Header = () => {
     return false;
   };
 
+  const navLinks = [
+    { href: localePath("/articles"), label: t.nav.articles, match: "/articles" },
+    { href: localePath("/thoughts"), label: t.nav.thoughts, match: "/thoughts" },
+    { href: localePath("/now"), label: t.nav.now, match: "/now" },
+    { href: localePath("/about"), label: t.nav.about, match: "/about" },
+  ];
+
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-brand-tan bg-brand-cream/95 backdrop-blur-md dark:border-brand-dark-border dark:bg-brand-dark-bg/95">
+      <header className="sticky top-0 z-50 border-b border-brand-tan bg-brand-cream/90 backdrop-blur-md dark:border-brand-dark-border dark:bg-brand-dark-bg/90">
         <div className="brand-container">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center space-x-8">
-              <Link href={localePath("/")} className="group flex shrink-0 items-center space-x-3">
-                <div className="relative">
-                  <Image
-                    className="rounded-full transition-transform duration-200 group-hover:scale-105"
-                    src="/deta.png"
-                    alt="profile image"
-                    width={36}
-                    height={36}
-                  />
-                  <div className="absolute inset-0 rounded-full bg-brand-accent opacity-0 transition-opacity duration-200 group-hover:opacity-20" />
-                </div>
-                <div className="hidden lg:block">
-                  <h1 className="whitespace-nowrap text-sm font-semibold text-brand-text-primary dark:text-brand-dark-text">
-                    Deta Utama
-                  </h1>
-                  <p className="text-xs text-brand-text-secondary dark:text-brand-dark-text/70">
-                    {t.nav.subtitle}
-                  </p>
-                </div>
-              </Link>
+          <div className="flex h-14 items-center justify-between gap-4">
+            <Link href={localePath("/")} className="group flex shrink-0 items-center gap-2">
+              <Image
+                className="rounded-full"
+                src="/deta.png"
+                alt="profile image"
+                width={28}
+                height={28}
+              />
+              <span className="whitespace-nowrap text-sm font-semibold text-brand-text-primary dark:text-brand-dark-text">
+                Deta Utama
+              </span>
+            </Link>
 
-              <nav className="hidden items-center space-x-1 md:flex">
+            <nav className="hidden items-center gap-1 md:flex">
+              {navLinks.map(({ href, label, match }) => (
                 <Link
-                  href={localePath("/articles")}
-                  className={`brand-nav-link ${
-                    isActive("/articles") ? "text-brand-accent" : ""
+                  key={href}
+                  href={href}
+                  className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
+                    isActive(match)
+                      ? "bg-brand-accent/10 text-brand-accent"
+                      : "text-brand-text-secondary hover:bg-brand-tan hover:text-brand-text-primary dark:text-brand-dark-text/70 dark:hover:bg-brand-dark-surface dark:hover:text-brand-dark-text"
                   }`}
                 >
-                  {t.nav.articles}
+                  {label}
                 </Link>
-                <Link
-                  href={localePath("/thoughts")}
-                  className={`brand-nav-link ${
-                    isActive("/thoughts") ? "text-brand-accent" : ""
-                  }`}
-                >
-                  {t.nav.thoughts}
-                </Link>
-                <Link
-                  href={localePath("/now")}
-                  className={`brand-nav-link ${
-                    isActive("/now") ? "text-brand-accent" : ""
-                  }`}
-                >
-                  {t.nav.now}
-                </Link>
-                <Link
-                  href={localePath("/about")}
-                  className={`brand-nav-link ${
-                    isActive("/about") ? "text-brand-accent" : ""
-                  }`}
-                >
-                  {t.nav.about}
-                </Link>
-              </nav>
-            </div>
+              ))}
+            </nav>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-2">
               <Link
                 href={localePath("/search")}
-                className="rounded-lg p-2 transition-colors duration-200 hover:bg-brand-tan dark:hover:bg-brand-dark-surface"
+                className="rounded-full p-2 text-brand-text-secondary transition-colors duration-200 hover:bg-brand-tan hover:text-brand-text-primary dark:text-brand-dark-text/70 dark:hover:bg-brand-dark-surface dark:hover:text-brand-dark-text"
+                aria-label="Search"
               >
-                <svg
-                  className="h-5 w-5 text-brand-text-secondary dark:text-brand-dark-text"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="h-4.5 w-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
