@@ -266,7 +266,7 @@ export default function HomeContent({
         </div>
 
         <div className="mt-6 max-w-2xl">
-          <h1 className="font-display text-3xl font-bold leading-tight text-brand-text-primary dark:text-brand-dark-text sm:text-4xl">
+          <h1 className="font-display text-2xl font-bold leading-tight text-brand-text-primary dark:text-brand-dark-text sm:text-3xl md:text-4xl">
             {copy.heroTitle}
           </h1>
         </div>
@@ -275,18 +275,18 @@ export default function HomeContent({
           <div className="flex flex-wrap gap-3">
             <Link
               href={localePath("/articles")}
-              className="inline-flex items-center rounded-full bg-brand-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-opacity-90"
+              className="inline-flex items-center rounded-full bg-brand-accent px-4 py-2 text-xs font-semibold text-white transition hover:bg-opacity-90 sm:px-5 sm:py-3 sm:text-sm"
             >
               {copy.startExploring}
             </Link>
             <Link
               href={localePath("/about")}
-              className="inline-flex items-center rounded-full border border-brand-tan px-5 py-3 text-sm font-semibold text-brand-text-primary transition hover:bg-brand-tan dark:border-brand-dark-border dark:text-brand-dark-text dark:hover:bg-brand-dark-surface"
+              className="inline-flex items-center rounded-full border border-brand-tan px-4 py-2 text-xs font-semibold text-brand-text-primary transition hover:bg-brand-tan dark:border-brand-dark-border dark:text-brand-dark-text dark:hover:bg-brand-dark-surface sm:px-5 sm:py-3 sm:text-sm"
             >
               {t.nav.about}
             </Link>
           </div>
-          <div className="ml-auto flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-semibold">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold sm:ml-auto sm:gap-x-6 sm:text-sm">
             <Link
               href={localePath("/articles")}
               className="text-brand-text-secondary transition hover:text-brand-accent dark:text-brand-dark-text/70"
