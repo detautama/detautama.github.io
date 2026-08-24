@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../../globals.css";
-import { Header } from "../../server-components/Header";
+import { ConditionalHeader } from "../../components/ConditionalHeader";
 import { TranslatedFooter } from "../../components/TranslatedFooter";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function HomeLocaleLayout({
 }>) {
   return (
     <div>
-      <Header />
+      <ConditionalHeader />
       <main className="min-h-screen pb-24 md:pb-0">{children}</main>
       <TranslatedFooter />
     </div>
