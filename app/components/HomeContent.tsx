@@ -114,18 +114,13 @@ const directionCards = [
     key: "articles" as const,
   },
   {
-    href: "/thoughts",
-    image: placeholderImages[2],
-    key: "thoughts" as const,
-  },
-  {
     href: "/now",
     image: placeholderImages[5],
     key: "now" as const,
   },
 ];
 
-const CYCLING_STREAK_DAYS = 50;
+const CYCLING_STREAK_DAYS = 55;
 const CYCLING_ONE_WAY_KM = 12;
 const CYCLING_DAILY_KM = CYCLING_ONE_WAY_KM * 2;
 const CYCLING_TOTAL_KM = CYCLING_STREAK_DAYS * CYCLING_DAILY_KM;
@@ -188,6 +183,7 @@ export default function HomeContent({
       milestoneLabel: `Menuju ${CYCLING_NEXT_MILESTONE} hari beruntun`,
       disclaimer:
         "Angka kalori dan CO₂ adalah estimasi kasar, bukan hasil pengukuran presisi.",
+      calcNote: `Kalori dihitung dari ${CYCLING_CALORIES_PER_KM} kkal/km, CO₂ dari ${CYCLING_CO2_GRAMS_PER_KM} g/km (rata-rata emisi motor bensin) yang tidak jadi dikeluarkan, dikali total jarak.`,
       stats: [
         {
           label: "Total Jarak",
@@ -224,6 +220,7 @@ export default function HomeContent({
       milestoneLabel: `Toward a ${CYCLING_NEXT_MILESTONE}-day streak`,
       disclaimer:
         "Calorie and CO₂ figures are rough estimates, not precise measurements.",
+      calcNote: `Calories are calculated at ${CYCLING_CALORIES_PER_KM} kcal/km, CO₂ at ${CYCLING_CO2_GRAMS_PER_KM} g/km (average gas-motorbike emissions) avoided, multiplied by total distance.`,
       stats: [
         {
           label: "Total Distance",
@@ -260,13 +257,6 @@ export default function HomeContent({
         locale === "id"
           ? "Catatan panjang tentang kode, kerja, dan hidup."
           : "Longer notes on code, work, and life.",
-    },
-    thoughts: {
-      label: t.nav.thoughts,
-      desc:
-        locale === "id"
-          ? "Fragmen pendek yang sedang kupikirkan."
-          : "Short fragments I am thinking through.",
     },
     now: {
       label: t.nav.now,
@@ -333,7 +323,7 @@ export default function HomeContent({
             </Link>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             {directionCards.map(({ href, image, key }) => {
               const { desc } = directionLabels[key];
 
@@ -517,6 +507,8 @@ export default function HomeContent({
 
           <p className="mt-8 text-center text-xs text-brand-text-secondary dark:text-brand-dark-text/50">
             {cyclingCopy.disclaimer}
+            <br />
+            {cyclingCopy.calcNote}
           </p>
         </div>
       </section>
