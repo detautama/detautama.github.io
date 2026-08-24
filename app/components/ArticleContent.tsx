@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { ArticleData } from "../lib/articles";
@@ -32,6 +32,16 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
   const isLanguageMissing = !articleData.availableLocales.includes(locale);
   const articleImage = articleData.image ?? (hasImage ? `/og-images/${articleId}.png` : null);
   const articleImageHeight = articleImage?.startsWith("/og-images/") ? 630 : 1200;
+  const [isImageOpen, setIsImageOpen] = useState(false);
+
+  React.useEffect(() => {
+    if (!isImageOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsImageOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isImageOpen]);
 
   return (
     <div>
@@ -57,19 +67,6 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
         </div>
       </div>
 
-      {articleImage && (
-        <div className="mb-8 mt-8">
-          <Image
-            src={articleImage}
-            alt={articleData.title}
-            width={1200}
-            height={articleImageHeight}
-            className="h-auto w-full rounded-lg"
-            priority
-          />
-        </div>
-      )}
-
       {isLanguageMissing && (
         <div className="my-6 rounded-md border-l-4 border-brand-accent bg-brand-tan p-4 text-brand-text-primary dark:bg-brand-dark-surface dark:text-brand-dark-text">
           <p className="font-bold">
@@ -82,6 +79,47 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
 
       <div className="mb-6" />
 
+      {articleImage && (
+        <button
+          type="button"
+          onClick={() => setIsImageOpen(true)}
+          className="float-left mb-4 mr-5 mt-1 w-28 shrink-0 cursor-zoom-in sm:w-40 md:w-52"
+          aria-label={articleData.title}
+        >
+          <Image
+            src={articleImage}
+            alt={articleData.title}
+            width={1200}
+            height={articleImageHeight}
+            className="h-auto w-full rounded-lg"
+            priority
+          />
+        </button>
+      )}
+
+      {articleImage && isImageOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setIsImageOpen(false)}
+            className="absolute right-4 top-4 text-2xl text-white/80 hover:text-white"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <Image
+            src={articleImage}
+            alt={articleData.title}
+            width={1200}
+            height={articleImageHeight}
+            className="max-h-[90vh] w-auto max-w-full rounded-lg object-contain"
+          />
+        </div>
+      )}
+
       <article
         className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:leading-[1.8] prose-a:text-brand-accent prose-a:no-underline hover:prose-a:underline"
         style={{ fontFamily: "var(--font-merriweather), Georgia, serif" }}
@@ -89,7 +127,7 @@ export default function ArticleContent({ articleId, articlesByLocale, hasImage, 
         <MarkdownRenderer>{articleData.content}</MarkdownRenderer>
       </article>
 
-      <div className="mt-12">
+      <div className="clear-both mt-12">
         <ShareButton />
       </div>
 
