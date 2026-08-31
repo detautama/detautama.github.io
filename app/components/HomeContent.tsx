@@ -110,7 +110,7 @@ const placeholderImages = [
 
 const HERO_IMAGE_DARK = "/images/home/gunung-sunrise-hero-dark.webp";
 
-const CYCLING_STREAK_DAYS = 55;
+const CYCLING_STREAK_DAYS = 60;
 const CYCLING_ONE_WAY_KM = 12;
 const CYCLING_DAILY_KM = CYCLING_ONE_WAY_KM * 2;
 const CYCLING_TOTAL_KM = CYCLING_STREAK_DAYS * CYCLING_DAILY_KM;
