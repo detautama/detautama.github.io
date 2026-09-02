@@ -8,13 +8,15 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <div>
-      <h1 className="text-center text-2xl font-bold">Other links</h1>
+      <span className="hud-label">External nodes</span>
+      <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em]">
+        Other links
+      </h1>
       <div className="mb-5" />
       <p className="text-center md:text-left">
         Here are some other links that you might be interested in.
       </p>
       <div className="mb-5" />
-
     </div>
   );
 }

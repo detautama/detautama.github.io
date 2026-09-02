@@ -13,7 +13,10 @@ function highlightContent(text: string, query: string): React.ReactNode {
       {parts.map((part, i) => {
         const key = `${i}-${part}`;
         return part.toLowerCase() === query.toLowerCase() ? (
-          <mark key={key} className="rounded bg-brand-accent/20 text-brand-accent dark:bg-brand-accent/30 dark:text-brand-accent">
+          <mark
+            key={key}
+            className="bg-brand-accent/20 dark:bg-brand-accent/30 rounded text-brand-accent dark:text-brand-accent"
+          >
             {part}
           </mark>
         ) : (
@@ -24,7 +27,9 @@ function highlightContent(text: string, query: string): React.ReactNode {
   );
 }
 
-export const ThoughtsContent: React.FC<{ thoughts: Thought[] }> = ({ thoughts }) => {
+export const ThoughtsContent: React.FC<{ thoughts: Thought[] }> = ({
+  thoughts,
+}) => {
   const { t } = useLocale();
   const [query, setQuery] = useState("");
   const [activeQuery, setActiveQuery] = useState("");
@@ -41,7 +46,9 @@ export const ThoughtsContent: React.FC<{ thoughts: Thought[] }> = ({ thoughts })
 
   const filtered = useMemo(() => {
     if (!activeQuery) return thoughts;
-    return thoughts.filter((t) => t.content.toLowerCase().includes(activeQuery));
+    return thoughts.filter((t) =>
+      t.content.toLowerCase().includes(activeQuery)
+    );
   }, [thoughts, activeQuery]);
 
   const isSearching = activeQuery.length > 0;
@@ -50,25 +57,32 @@ export const ThoughtsContent: React.FC<{ thoughts: Thought[] }> = ({ thoughts })
     <div>
       <div className="relative mb-6">
         <svg
-          className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-text-secondary dark:text-brand-dark-text/50"
+          className="dark:text-brand-dark-text/50 absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-text-secondary"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
         </svg>
         <input
           type="text"
           value={query}
           onChange={handleSearch}
           placeholder={t.thoughts.searchPlaceholder}
-          className="w-full rounded-lg border border-brand-tan bg-white py-2.5 pl-9 pr-4 text-sm text-brand-text-primary placeholder-brand-text-secondary transition-all focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20 dark:border-brand-dark-border dark:bg-brand-dark-bg dark:text-brand-dark-text dark:placeholder-brand-dark-text/50"
+          className="border-brand-accent/30 bg-brand-dark-surface/70 focus:ring-brand-accent/20 w-full border py-3 pl-9 pr-4 font-mono text-sm text-brand-text-primary placeholder-brand-text-secondary transition-all focus:border-brand-accent focus:outline-none focus:ring-2"
         />
       </div>
 
       {isSearching && (
-        <p className="mb-4 text-sm text-brand-text-secondary dark:text-brand-dark-text/60">
-          {filtered.length > 0 ? t.thoughts.result(filtered.length) : t.thoughts.noResult}
+        <p className="dark:text-brand-dark-text/60 mb-4 text-sm text-brand-text-secondary">
+          {filtered.length > 0
+            ? t.thoughts.result(filtered.length)
+            : t.thoughts.noResult}
         </p>
       )}
 
@@ -78,13 +92,13 @@ export const ThoughtsContent: React.FC<{ thoughts: Thought[] }> = ({ thoughts })
           <p className="font-display font-semibold text-brand-text-primary dark:text-brand-dark-text">
             {t.thoughts.emptyTitle}
           </p>
-          <p className="mt-1 text-sm text-brand-text-secondary dark:text-brand-dark-text/50">
+          <p className="dark:text-brand-dark-text/50 mt-1 text-sm text-brand-text-secondary">
             {t.thoughts.emptySubtitle}
           </p>
         </div>
       )}
       {thoughts.length > 0 && filtered.length === 0 && isSearching && (
-        <div className="py-16 text-center text-brand-text-secondary dark:text-brand-dark-text/50">
+        <div className="dark:text-brand-dark-text/50 py-16 text-center text-brand-text-secondary">
           <p>{t.thoughts.noResult}</p>
         </div>
       )}

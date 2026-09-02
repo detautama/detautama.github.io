@@ -15,7 +15,7 @@ export default function HomeLocaleLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="site-shell">
       <ConditionalHeader />
       <main className="min-h-screen pb-24 md:pb-0">{children}</main>
       <TranslatedFooter />

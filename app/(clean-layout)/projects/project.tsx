@@ -97,36 +97,38 @@ export const Porjects: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {projects.map((project) => (
           <button
             key={project.title}
-            className="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-md p-4 shadow-md transition-shadow hover:shadow-lg dark:border dark:border-gray-500"
+            className="brand-card hover:border-brand-accent/60 flex cursor-pointer flex-col items-center justify-center gap-4 p-4 text-left transition"
             onClick={() => setSelectedProject(project)}
           >
             <Image
               src={project.image}
               alt={project.title}
-              className="rounded-lg border"
+              className="border-brand-accent/20 border"
               width={300}
             />
             <h2 className="text-center font-bold">{project.title}</h2>
-            <p className="line-clamp-4 text-center">{getDescription(project)}</p>
+            <p className="line-clamp-4 text-center">
+              {getDescription(project)}
+            </p>
           </button>
         ))}
       </div>
 
       {/* Project Detail Dialog */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6 dark:bg-gray-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
+          <div className="sao-panel max-h-[90vh] w-full max-w-2xl overflow-y-auto p-6">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="w-full text-center text-2xl font-bold">
                 {selectedProject.title}
               </h2>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                className="text-brand-text-secondary hover:text-brand-accent"
               >
                 ✕
               </button>
@@ -134,7 +136,7 @@ export const Porjects: React.FC = () => {
             <Image
               src={selectedProject.image}
               alt={selectedProject.title}
-              className="mx-auto mb-4 rounded-lg border"
+              className="border-brand-accent/20 mx-auto mb-4 border"
               width={300}
             />
             <p className="mb-4">{getDescription(selectedProject)}</p>
@@ -143,7 +145,7 @@ export const Porjects: React.FC = () => {
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                className="brand-button-primary"
               >
                 {t.projects.visitProject}
               </Link>

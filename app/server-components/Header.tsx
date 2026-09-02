@@ -22,26 +22,40 @@ export const Header = () => {
   };
 
   const navLinks = [
-    { href: localePath("/articles"), label: t.nav.articles, match: "/articles" },
+    {
+      href: localePath("/articles"),
+      label: t.nav.articles,
+      match: "/articles",
+    },
     { href: localePath("/now"), label: t.nav.now, match: "/now" },
     { href: localePath("/about"), label: t.nav.about, match: "/about" },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-brand-tan bg-brand-cream/90 backdrop-blur-md dark:border-brand-dark-border dark:bg-brand-dark-bg/90">
+      <header className="border-brand-accent/20 bg-brand-dark-bg/80 sticky top-0 z-50 border-b backdrop-blur-xl">
         <div className="brand-container">
-          <div className="flex h-14 items-center justify-between gap-4">
-            <Link href={localePath("/")} className="group flex shrink-0 items-center gap-2">
-              <Image
-                className="rounded-full"
-                src="/deta.png"
-                alt="profile image"
-                width={28}
-                height={28}
-              />
-              <span className="whitespace-nowrap text-sm font-semibold text-brand-text-primary dark:text-brand-dark-text">
-                Deta Utama
+          <div className="flex h-16 items-center justify-between gap-4">
+            <Link
+              href={localePath("/")}
+              className="group flex shrink-0 items-center gap-3"
+            >
+              <span className="border-brand-accent/60 bg-brand-accent/10 relative grid h-9 w-9 rotate-45 place-items-center border transition group-hover:border-brand-accent group-hover:shadow-[0_0_20px_rgba(111,226,255,0.35)]">
+                <Image
+                  className="-rotate-45 rounded-full"
+                  src="/deta.png"
+                  alt="profile image"
+                  width={27}
+                  height={27}
+                />
+              </span>
+              <span>
+                <span className="block whitespace-nowrap font-mono text-xs font-bold uppercase tracking-[0.16em] text-brand-text-primary">
+                  Deta Utama
+                </span>
+                <span className="hidden font-mono text-[8px] uppercase tracking-[0.18em] text-brand-accent sm:block">
+                  Personal archive / online
+                </span>
               </span>
             </Link>
 
@@ -50,10 +64,8 @@ export const Header = () => {
                 <Link
                   key={href}
                   href={href}
-                  className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
-                    isActive(match)
-                      ? "bg-brand-accent/10 text-brand-accent"
-                      : "text-brand-text-secondary hover:bg-brand-tan hover:text-brand-text-primary dark:text-brand-dark-text/70 dark:hover:bg-brand-dark-surface dark:hover:text-brand-dark-text"
+                  className={`brand-nav-link ${
+                    isActive(match) ? "brand-nav-link-active" : ""
                   }`}
                 >
                   {label}
@@ -64,10 +76,15 @@ export const Header = () => {
             <div className="flex items-center gap-2">
               <Link
                 href={localePath("/search")}
-                className="rounded-full p-2 text-brand-text-secondary transition-colors duration-200 hover:bg-brand-tan hover:text-brand-text-primary dark:text-brand-dark-text/70 dark:hover:bg-brand-dark-surface dark:hover:text-brand-dark-text"
+                className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 grid h-9 w-9 place-items-center border text-brand-text-secondary transition hover:text-brand-accent"
                 aria-label="Search"
               >
-                <svg className="h-4.5 w-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="h-4.5 w-4.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -84,8 +101,8 @@ export const Header = () => {
       </header>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/20 bg-brand-cream/80 shadow-[0_-4px_16px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden dark:border-white/10 dark:bg-brand-dark-bg/70 dark:shadow-[0_-4px_16px_rgba(0,0,0,0.3)]">
-        <div className="flex items-center justify-around bg-gradient-to-t from-brand-cream/10 to-transparent py-2 dark:from-white/5 dark:to-transparent">
+      <nav className="border-brand-accent/25 bg-brand-dark-bg/90 fixed bottom-0 left-0 right-0 z-50 border-t shadow-[0_-10px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden">
+        <div className="flex items-center justify-around py-2">
           <Link
             href={localePath("/articles")}
             className={`flex flex-col items-center px-3 py-1 transition-colors ${

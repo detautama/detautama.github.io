@@ -87,7 +87,8 @@ export default function AchievementsPage() {
 
   return (
     <div className="min-h-screen bg-transparent p-6">
-      <h1 className="text-center text-2xl font-bold md:text-3xl">
+      <span className="hud-label">Achievement records</span>
+      <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em] md:text-5xl">
         My Achievements
       </h1>
       <div className="mb-5" />
@@ -101,10 +102,10 @@ export default function AchievementsPage() {
           <button
             key={index}
             onClick={() => toggleTag(tag)}
-            className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs ${
+            className={`brand-badge flex items-center gap-1 ${
               selectedTags.includes(tag)
-                ? "bg-blue-600 text-white"
-                : "bg-blue-100 text-blue-900"
+                ? "border-brand-accent bg-brand-accent text-brand-dark-bg"
+                : ""
             }`}
           >
             <span>{getTagEmoji(tag)}</span>
@@ -116,7 +117,7 @@ export default function AchievementsPage() {
         {filteredAchievements.map((ach) => (
           <div
             key={ach.title}
-            className="flex flex-col justify-between rounded-2xl border border-white p-4 shadow-lg"
+            className="brand-card flex flex-col justify-between p-4"
           >
             <div>
               <div className="relative h-52 w-full">
@@ -125,7 +126,7 @@ export default function AchievementsPage() {
                   alt={ach.title}
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-xl"
+                  className="border-brand-accent/20 border"
                 />
               </div>
               <h2 className="mt-4 text-xl font-semibold">{ach.title}</h2>
@@ -134,10 +135,7 @@ export default function AchievementsPage() {
             </div>
             <div className="mt-3 flex flex-wrap gap-2">
               {ach.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="flex items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-900"
-                >
+                <span key={tag} className="brand-badge flex items-center gap-1">
                   <span>{getTagEmoji(tag)}</span>
                   {tag}
                 </span>

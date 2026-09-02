@@ -21,7 +21,7 @@ export function LanguageToggle() {
   return (
     <Link
       href={getAlternateUrl()}
-      className="group flex items-center gap-2 rounded-lg bg-brand-tan p-2 transition-all duration-200 hover:bg-brand-forest hover:text-white dark:bg-brand-dark-surface dark:hover:bg-brand-dark-border"
+      className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 hover:bg-brand-accent/10 group flex h-9 items-center gap-1.5 border px-2.5 transition"
       aria-label="Change Language"
     >
       <span className="text-xs font-bold uppercase text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text">

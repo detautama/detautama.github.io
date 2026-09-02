@@ -18,7 +18,10 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen">
-      <h1 className="text-center text-2xl font-bold md:text-3xl">Gallery</h1>
+      <span className="hud-label">Visual memory bank</span>
+      <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em] md:text-5xl">
+        Gallery
+      </h1>
       <div className="mb-5" />
       <p className="text-center md:text-left">
         {`This is Celuk, my home. A small village in Bali that I love dearly. These photos are moments I've captured over the years. The people, the celebrations, the quiet mornings. Just everyday life in a place that means everything to me.`}
@@ -27,7 +30,7 @@ export default function GalleryPage() {
 
       {galleryData.map((section) => (
         <section key={section.year} className="mx-auto max-w-6xl px-4 pb-12">
-          <h2 className="mb-4 border-b border-gray-300 text-2xl font-semibold">
+          <h2 className="border-brand-accent/25 mb-4 border-b pb-2 font-mono text-2xl font-semibold text-brand-accent">
             {section.year}
           </h2>
           <div className="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3">
@@ -36,7 +39,7 @@ export default function GalleryPage() {
                 key={index}
                 src={src}
                 alt={`Celuk ${section.year} - ${index + 1}`}
-                className="w-full cursor-pointer rounded-xl shadow-md transition-transform duration-200 hover:scale-[1.02]"
+                className="border-brand-accent/20 hover:border-brand-accent/60 w-full cursor-pointer border shadow-md transition duration-200 hover:scale-[1.02]"
                 onClick={() => setSelectedImage(src)}
                 width={800}
                 height={800}
@@ -54,7 +57,7 @@ export default function GalleryPage() {
           <Image
             src={selectedImage}
             alt="Selected"
-            className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg"
+            className="border-brand-accent/40 max-h-[90%] max-w-[90%] border shadow-lg"
             width={800}
             height={800}
           />

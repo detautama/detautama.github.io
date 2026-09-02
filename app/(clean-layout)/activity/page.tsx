@@ -11,7 +11,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <h1 className="text-center text-2xl font-bold">Activity</h1>
+      <span className="hud-label">Activity stream</span>
+      <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em]">
+        Activity
+      </h1>
       <div className="mb-5" />
       <p>
         A personal feed of things I find interesting, tools I explore, and
@@ -19,7 +22,7 @@ export default function Page() {
       </p>
       <div className="mb-5" />
       {activities.length === 0 ? (
-        <div className="py-16 text-center text-brand-text-secondary dark:text-brand-dark-text/50">
+        <div className="dark:text-brand-dark-text/50 py-16 text-center text-brand-text-secondary">
           <p>No activities yet. Check back soon.</p>
         </div>
       ) : (

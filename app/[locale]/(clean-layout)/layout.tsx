@@ -15,10 +15,12 @@ export default function CleanLocaleLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="site-shell">
       <Header />
-      <main className="brand-container min-h-screen py-8 pb-32 md:pb-8">
-        <div className="mx-auto max-w-prose">{children}</div>
+      <main className="brand-container min-h-screen py-10 pb-32 md:pb-12">
+        <div className="sao-panel mx-auto max-w-prose p-5 sm:p-8 md:p-10">
+          {children}
+        </div>
       </main>
       <TranslatedFooter />
     </div>

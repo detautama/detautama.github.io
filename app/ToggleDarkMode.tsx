@@ -22,7 +22,7 @@ export function ToggleDarkMode() {
   if (!mounted) {
     return (
       <button
-        className="rounded-lg bg-brand-tan p-2 dark:bg-brand-dark-surface"
+        className="border-brand-accent/20 bg-brand-accent/5 grid h-9 w-9 place-items-center border"
         aria-label="Toggle Dark Mode"
       >
         <div className="h-5 w-5" />
@@ -32,7 +32,7 @@ export function ToggleDarkMode() {
 
   return (
     <button
-      className="group rounded-lg bg-brand-tan p-2 transition-all duration-200 hover:bg-brand-forest hover:text-white dark:bg-brand-dark-surface dark:hover:bg-brand-dark-border"
+      className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 hover:bg-brand-accent/10 group grid h-9 w-9 place-items-center border transition"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle Dark Mode"
     >

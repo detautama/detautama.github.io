@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="site-shell">
       <Header />
       <main className="brand-container min-h-screen py-8 pb-32 md:pb-8">
         {children}

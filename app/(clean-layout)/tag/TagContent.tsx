@@ -15,8 +15,9 @@ interface TagContentProps {
 
 export function TagContent({ articlesByLocale }: TagContentProps) {
   const { locale, localePath } = useLocale();
-  const allArticlesData = articlesByLocale[locale as keyof typeof articlesByLocale];
-  
+  const allArticlesData =
+    articlesByLocale[locale as keyof typeof articlesByLocale];
+
   // Flatten all tags from current locale articles
   const allTags = allArticlesData.flatMap((article) => article.tags);
   const uniqueTags = [...new Set(allTags)].sort();
@@ -52,7 +53,8 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold">
+      <span className="hud-label">Taxonomy index</span>
+      <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em]">
         Tags ({uniqueTags.length})
       </h1>
       <div className="mb-5" />
@@ -75,7 +77,7 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
         <div
           key={tag}
           id={tag}
-          className={`-mx-4 rounded-lg p-4 transition-all duration-500 ${
+          className={`-mx-4 p-4 transition-all duration-500 ${
             activeTag === tag
               ? "bg-brand-accent/15 dark:bg-brand-accent/10"
               : ""
@@ -97,7 +99,6 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
                 <div key={article.id}>
                   <article>
                     <Link href={localePath(`/articles/${article.id}`)}>
-
                       <h3 className="mb-1 text-base hover:text-brand-accent dark:hover:text-brand-accent">
                         {article.title}
                       </h3>
