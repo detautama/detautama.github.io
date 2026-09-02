@@ -11,7 +11,7 @@ export function TranslatedFooter() {
     pathname === "/articles" || pathname === "/en/articles";
   const isArticleDetail =
     pathname.startsWith("/articles/") || pathname.startsWith("/en/articles/");
-  const isEditorialPage = ["/about", "/projects", "/now"].some(
+  const isEditorialPage = ["/about", "/projects", "/now", "/tag"].some(
     (route) => pathname === route || pathname === `/en${route}`
   );
 

@@ -1,117 +1,125 @@
 "use client";
 
 import { Link } from "next-view-transitions";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArticleData } from "../../lib/articles";
 import { useLocale } from "../../lib/LocaleContext";
 import { getTagEmoji } from "../../lib/tagEmoji";
+import { OrganicBackground } from "../../components/OrganicBackground";
+import { EditorialNav } from "../../components/EditorialNav";
+import { EditorialReveal } from "../../components/EditorialReveal";
 
 interface TagContentProps {
-  articlesByLocale: {
-    id: ArticleData[];
-    en: ArticleData[];
+  readonly articlesByLocale: {
+    readonly id: ArticleData[];
+    readonly en: ArticleData[];
   };
 }
 
 export function TagContent({ articlesByLocale }: TagContentProps) {
   const { locale, localePath } = useLocale();
-  const allArticlesData =
-    articlesByLocale[locale as keyof typeof articlesByLocale];
-
-  // Flatten all tags from current locale articles
-  const allTags = allArticlesData.flatMap((article) => article.tags);
-  const uniqueTags = [...new Set(allTags)].sort();
-
+  const articles = articlesByLocale[locale];
+  const uniqueTags = [
+    ...new Set(articles.flatMap((article) => article.tags)),
+  ].sort();
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const highlightTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    // Get hash from URL on mount and when hash changes
-    const handleHashChange = () => {
-      const hash = globalThis.location.hash.slice(1); // Remove #
-      if (hash) {
-        setActiveTag(hash);
-        // Remove highlight after 2 seconds
-        setTimeout(() => setActiveTag(null), 2000);
-      }
-    };
-
-    // Check initial hash
-    handleHashChange();
-
-    // Listen for hash changes
-    globalThis.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      globalThis.removeEventListener("hashchange", handleHashChange);
-    };
+  const highlightTag = useCallback((tag: string) => {
+    if (highlightTimeout.current) clearTimeout(highlightTimeout.current);
+    setActiveTag(tag);
+    highlightTimeout.current = setTimeout(() => setActiveTag(null), 1800);
   }, []);
 
-  const handleTagClick = (tag: string) => {
-    setActiveTag(tag);
-    setTimeout(() => setActiveTag(null), 2000);
-  };
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = decodeURIComponent(globalThis.location.hash.slice(1));
+      if (hash) highlightTag(hash);
+    };
+
+    handleHashChange();
+    globalThis.addEventListener("hashchange", handleHashChange);
+    return () => {
+      globalThis.removeEventListener("hashchange", handleHashChange);
+      if (highlightTimeout.current) clearTimeout(highlightTimeout.current);
+    };
+  }, [highlightTag]);
+
+  const copy =
+    locale === "id"
+      ? {
+          title: "Topik.",
+          intro: `${uniqueTags.length} topik yang menghubungkan catatan tentang teknologi, pekerjaan, keluarga, dan hidup sehari-hari.`,
+          index: "Jelajahi topik",
+          entries: "tulisan",
+        }
+      : {
+          title: "Topics.",
+          intro: `${uniqueTags.length} threads connecting notes on technology, work, family, and everyday life.`,
+          index: "Explore topics",
+          entries: "entries",
+        };
 
   return (
-    <>
-      <span className="hud-label">Taxonomy index</span>
-      <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em]">
-        Tags ({uniqueTags.length})
-      </h1>
-      <div className="mb-5" />
-      <div className="flex flex-wrap gap-2">
-        {uniqueTags.map((tag) => (
-          <Link
-            key={tag}
-            href={localePath(`/tag/#${tag}`)}
-            onClick={() => handleTagClick(tag)}
-            className="brand-badge flex gap-1 transition-colors hover:bg-brand-forest hover:text-white"
-          >
-            <span>{getTagEmoji(tag)}</span>
-            {tag}
-          </Link>
-        ))}
-      </div>
-      <div className="mb-5" />
-      <hr className="pb-4" />
-      {uniqueTags.map((tag) => (
-        <div
-          key={tag}
-          id={tag}
-          className={`-mx-4 p-4 transition-all duration-500 ${
-            activeTag === tag
-              ? "bg-brand-accent/15 dark:bg-brand-accent/10"
-              : ""
-          }`}
-        >
-          <p className="text-2xl font-bold">
-            {tag} (
-            {
-              allArticlesData.filter((article) => article.tags.includes(tag))
-                .length
-            }
-            )
-          </p>
-          <div className="mb-5" />
-          <div className="flex flex-wrap gap-4">
-            {allArticlesData
-              .filter((article) => article.tags.includes(tag))
-              .map((article) => (
-                <div key={article.id}>
-                  <article>
-                    <Link href={localePath(`/articles/${article.id}`)}>
-                      <h3 className="mb-1 text-base hover:text-brand-accent dark:hover:text-brand-accent">
-                        {article.title}
-                      </h3>
+    <div className="nagare-home nagare-editorial-page nagare-tag-page">
+      <OrganicBackground />
+      <EditorialNav />
+      <main className="nagare-editorial-main">
+        <header className="nagare-editorial-hero nagare-tag-hero">
+          <h1>{copy.title}</h1>
+          <div className="nagare-editorial-intro">{copy.intro}</div>
+        </header>
+
+        <nav className="nagare-tag-index" aria-label={copy.index}>
+          {uniqueTags.map((tag) => (
+            <Link
+              key={tag}
+              href={localePath(`/tag/#${encodeURIComponent(tag)}`)}
+              onClick={() => highlightTag(tag)}
+            >
+              <span>{getTagEmoji(tag)}</span>
+              {tag}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="nagare-tag-groups">
+          {uniqueTags.map((tag, index) => {
+            const taggedArticles = articles.filter((article) =>
+              article.tags.includes(tag)
+            );
+            return (
+              <EditorialReveal
+                key={tag}
+                className={`nagare-tag-group ${activeTag === tag ? "is-highlighted" : ""}`}
+              >
+                <header id={tag}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h2>
+                    <i>{getTagEmoji(tag)}</i>
+                    {tag}
+                  </h2>
+                  <p>
+                    {taggedArticles.length} {copy.entries}
+                  </p>
+                </header>
+                <div>
+                  {taggedArticles.map((article) => (
+                    <Link
+                      key={article.id}
+                      href={localePath(`/articles/${article.id}`)}
+                    >
+                      <time>{article.date}</time>
+                      <strong>{article.title}</strong>
+                      <span>↗</span>
                     </Link>
-                  </article>
+                  ))}
                 </div>
-              ))}
-          </div>
-          <div className="mb-5" />
-          <hr />
-          <div className="mb-5" />
+              </EditorialReveal>
+            );
+          })}
         </div>
-      ))}
-    </>
+      </main>
+    </div>
   );
 }
