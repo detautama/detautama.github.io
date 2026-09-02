@@ -542,7 +542,7 @@
   letter-spacing: -0.065em;
   line-height: 0.78;
   opacity: 0;
-  animation: nagareUnblur 1.8s ease-out 0.35s forwards;
+  animation: nagareTitleIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
 }
 
 .nagare-intro {
@@ -843,6 +843,17 @@
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+  }
+}
+
+@keyframes nagareTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
