@@ -6,6 +6,8 @@ import { Header } from "../server-components/Header";
 export function ConditionalHeader() {
   const pathname = usePathname();
   const isHome = pathname === "/" || pathname === "/id" || pathname === "/en";
-  if (isHome) return null;
+  const isArticlesIndex =
+    pathname === "/articles" || pathname === "/en/articles";
+  if (isHome || isArticlesIndex) return null;
   return <Header />;
 }

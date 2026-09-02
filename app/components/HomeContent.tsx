@@ -6,6 +6,7 @@ import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
 import { LanguageToggle } from "./LanguageToggle";
 import { ToggleDarkMode } from "../ToggleDarkMode";
+import { OrganicBackground } from "./OrganicBackground";
 
 interface HomeContentProps {
   readonly articlesByLocale: {
@@ -78,17 +79,6 @@ const profileCopy = {
     scroll: "Scroll to explore",
   },
 } as const;
-
-function OrganicBackground() {
-  return (
-    <div className="nagare-background" aria-hidden="true">
-      <span className="nagare-blob nagare-blob-one" />
-      <span className="nagare-blob nagare-blob-two" />
-      <span className="nagare-blob nagare-blob-three" />
-      <span className="nagare-noise" />
-    </div>
-  );
-}
 
 export default function HomeContent({
   articlesByLocale,

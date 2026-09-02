@@ -7,8 +7,10 @@ export function TranslatedFooter() {
   const { t } = useLocale();
   const pathname = usePathname();
   const isHome = pathname === "/" || pathname === "/id" || pathname === "/en";
+  const isArticlesIndex =
+    pathname === "/articles" || pathname === "/en/articles";
 
-  if (isHome) {
+  if (isHome || isArticlesIndex) {
     return (
       <footer className="nagare-footer">
         <p>{t.footer.text}</p>
