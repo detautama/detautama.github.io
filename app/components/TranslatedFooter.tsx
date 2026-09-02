@@ -9,8 +9,10 @@ export function TranslatedFooter() {
   const isHome = pathname === "/" || pathname === "/id" || pathname === "/en";
   const isArticlesIndex =
     pathname === "/articles" || pathname === "/en/articles";
+  const isArticleDetail =
+    pathname.startsWith("/articles/") || pathname.startsWith("/en/articles/");
 
-  if (isHome || isArticlesIndex) {
+  if (isHome || isArticlesIndex || isArticleDetail) {
     return (
       <footer className="nagare-footer">
         <p>{t.footer.text}</p>
