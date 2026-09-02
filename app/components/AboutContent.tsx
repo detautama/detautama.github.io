@@ -3,198 +3,122 @@
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { useLocale } from "../lib/LocaleContext";
+import { OrganicBackground } from "./OrganicBackground";
+import { EditorialNav } from "./EditorialNav";
+import { EditorialReveal } from "./EditorialReveal";
+
+const copy = {
+  id: {
+    title: "Manusia di balik layar.",
+    intro:
+      "Aku Deta—web developer, suami, ayah, dan seseorang yang terus belajar menemukan keseimbangan di Bali.",
+    imageAlt: "Deta di Bali",
+    storyTitle: "Menulis untuk memahami.",
+    story: [
+      "Blog ini lahir dari kebutuhan sederhana: tempat untuk menata pikiran. Bagiku, menulis bukan hanya cara berbagi, tetapi cara memahami—entah itu baris kode yang rumit, seni menjadi orang tua, atau refleksi dari kayuhan sepeda pagi.",
+      "Sebagian besar hariku ditemani TypeScript dan React. Di luar terminal, aku tertarik pada produktivitas yang sehat, kesehatan mental di tempat kerja, dan Stoikisme yang membantu menjaga perspektif.",
+    ],
+    lifeTitle: "Hadir untuk hal yang penting.",
+    life: [
+      "Menjadi ayah mengubah caraku melihat work-life integrity. Aku semakin percaya bahwa pekerjaan yang baik seharusnya memberi ruang untuk benar-benar hadir bersama keluarga.",
+      "Aku lulus sebagai lulusan terbaik STIKI Indonesia pada 2019. Rasa penasaran pada programming dimulai sejak SMA ketika mencoba membuat game Pac-Man sederhana—dan belum berhenti sejak itu.",
+    ],
+    bali: "Kalau kamu ke Bali, cobalah lawar—campuran sayuran, kelapa, dan rempah yang selalu terasa seperti rumah.",
+    contactTitle: "Punya cerita untuk dibagikan?",
+    contactBody:
+      "Aku selalu senang berbicara tentang teknologi, menjadi orang tua, bersepeda, atau kehidupan di Bali.",
+    contact: "Kirim email",
+  },
+  en: {
+    title: "The human behind the screen.",
+    intro:
+      "I’m Deta—a web developer, husband, father, and someone continually learning to find balance in Bali.",
+    imageAlt: "Deta in Bali",
+    storyTitle: "Writing to understand.",
+    story: [
+      "This blog began with a simple need: a place to arrange my thoughts. Writing is not only how I share, but how I understand—whether it is a complex line of code, the art of parenting, or a reflection from a morning bike ride.",
+      "Most of my days involve TypeScript and React. Away from the terminal, I care about healthy productivity, mental health at work, and Stoicism as a way to keep perspective.",
+    ],
+    lifeTitle: "Being present for what matters.",
+    life: [
+      "Becoming a father changed how I see work-life integrity. I increasingly believe that good work should leave room to be genuinely present with family.",
+      "I graduated as STIKI Indonesia’s valedictorian in 2019. My curiosity for programming began in high school with an attempt to build a small Pac-Man game—and it has not stopped since.",
+    ],
+    bali: "If you visit Bali, try lawar—a mix of vegetables, coconut, and spices that always tastes like home.",
+    contactTitle: "Have a story to share?",
+    contactBody:
+      "I’m always happy to talk about technology, parenting, cycling, or life in Bali.",
+    contact: "Send an email",
+  },
+} as const;
 
 export default function AboutContent() {
   const { locale } = useLocale();
+  const content = copy[locale];
 
-  if (locale === "en") {
-    return (
-      <div className="animate-in font-serif text-lg leading-relaxed text-brand-text-primary dark:text-brand-dark-text">
-        <span className="hud-label">User profile // deta</span>
-        <h1 className="mb-8 mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em] text-brand-text-primary sm:text-5xl">
-          Hi, I&apos;m Deta.
-        </h1>
+  return (
+    <div className="nagare-home nagare-editorial-page">
+      <OrganicBackground />
+      <EditorialNav />
+      <main className="nagare-editorial-main">
+        <header className="nagare-editorial-hero">
+          <h1>{content.title}</h1>
+          <div className="nagare-editorial-intro">{content.intro}</div>
+        </header>
 
-        <div className="sao-panel mb-10 overflow-hidden p-1">
+        <EditorialReveal className="nagare-about-portrait">
           <Image
-            className="w-full transition-transform duration-500 hover:scale-105"
             src="/about.jpg"
-            alt="Deta in Bali"
-            width={900}
-            height={450}
+            alt={content.imageAlt}
+            width={1400}
+            height={800}
             priority
           />
-        </div>
+          <span>Bali, Indonesia</span>
+        </EditorialReveal>
 
-        <div className="space-y-6">
-          <p className="text-xl font-medium leading-normal sm:text-2xl">
-            I&apos;m a web developer, a husband, a father, and someone trying to
-            find balance in Bali, Indonesia.
-          </p>
+        <EditorialReveal className="nagare-editorial-split">
+          <div className="nagare-editorial-heading">
+            <h2>{content.storyTitle}</h2>
+          </div>
+          <div className="nagare-editorial-copy">
+            {content.story.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </EditorialReveal>
 
-          <p>
-            This blog was born from a simple need: a place to organize my
-            thoughts. For some, writing is a way to share. For me, writing is a
-            way to
-            <em> understand</em>. Whether it&apos;s about complex lines of code,
-            the art of being a parent, or just reflections from a morning bike
-            ride.
-          </p>
-
-          <h2 className="pt-4 font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text">
-            Beyond Code
-          </h2>
-
-          <p>
-            While I spend most of my days with TypeScript and React, my mind
-            often wanders far from the terminal. I am deeply interested in
-            topics like <strong>healthy productivity</strong>,
-            <strong>mental health in the workplace</strong>, and the philosophy
-            of
-            <strong>Stoicism</strong> which helps me stay calm amidst the hustle
-            and bustle of the IT world.
-          </p>
-
-          <p>
-            The last two years of my life have been dominated by the most
-            challenging yet most rewarding role: being a father. This experience
-            has changed how I see <em>work-life integrity</em>
-            and the importance of truly being &quot;present&quot; for my family.
-          </p>
-
-          <h2 className="pt-4 font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text">
-            Background
-          </h2>
-
-          <p>
-            I graduated as the valedictorian from STIKI Indonesia in 2019. My
-            interest in programming started in high school when I tried to make
-            a simple Pac-Man game. Since then, my curiosity has never really
-            stopped.
-          </p>
-
-          <p>
-            Oh, and I&apos;m a <em>food enthusiast</em>! If you come to Bali, I
-            highly recommend{" "}
-            <Link
-              href="https://en.wikipedia.org/wiki/Lawar"
-              className="text-brand-accent hover:underline"
-            >
-              lawar
-            </Link>{" "}
-            — a traditional Balinese dish made from a mixture of vegetables,
-            coconut, and authentic spices.
-          </p>
-
-          <div className="mt-12 border-t border-brand-tan pt-8">
-            <p className="text-sm text-brand-text-secondary">
-              Want to discuss something or just say hi? Send an email to{" "}
-              <a
-                href="mailto:detautama11@gmail.com"
-                className="text-brand-accent hover:underline"
+        <EditorialReveal className="nagare-editorial-split">
+          <div className="nagare-editorial-heading">
+            <h2>{content.lifeTitle}</h2>
+          </div>
+          <div className="nagare-editorial-copy">
+            {content.life.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p>
+              {content.bali}{" "}
+              <Link
+                href={
+                  locale === "id"
+                    ? "https://id.wikipedia.org/wiki/Lawar"
+                    : "https://en.wikipedia.org/wiki/Lawar"
+                }
               >
-                detautama11@gmail.com
-              </a>
-              .
+                {locale === "id" ? "Tentang lawar ↗" : "About lawar ↗"}
+              </Link>
             </p>
           </div>
-        </div>
-      </div>
-    );
-  }
+        </EditorialReveal>
 
-  // Fallback to Indonesian
-  return (
-    <div className="animate-in font-serif text-lg leading-relaxed text-brand-text-primary dark:text-brand-dark-text">
-      <span className="hud-label">User profile // deta</span>
-      <h1 className="mb-8 mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em] text-brand-text-primary sm:text-5xl">
-        Halo, aku Deta.
-      </h1>
-
-      <div className="sao-panel mb-10 overflow-hidden p-1">
-        <Image
-          className="w-full transition-transform duration-500 hover:scale-105"
-          src="/about.jpg"
-          alt="Deta in Bali"
-          width={900}
-          height={450}
-          priority
-        />
-      </div>
-
-      <div className="space-y-6">
-        <p className="text-xl font-medium leading-normal sm:text-2xl">
-          Aku adalah seorang web developer, seorang suami, seorang ayah, dan
-          seseorang yang mencoba menemukan keseimbangan di Bali, Indonesia.
-        </p>
-
-        <p>
-          Blog ini lahir dari kebutuhan sederhana: tempat untuk menata pikiran.
-          Bagi sebagian orang, menulis adalah cara berbagi. Bagiku, menulis
-          adalah cara untuk
-          <em> memahami</em>. Entah itu tentang baris kode yang rumit, seni
-          menjadi orang tua, atau sekadar refleksi dari kayuhan sepeda di pagi
-          hari.
-        </p>
-
-        <h2 className="pt-4 font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text">
-          Di Luar Kode
-        </h2>
-
-        <p>
-          Meskipun aku menghabiskan sebagian besar hariku dengan TypeScript dan
-          React, pikiranku sering berkelana jauh dari terminal. Aku sangat
-          tertarik pada topik
-          <strong> produktivitas yang sehat</strong>,{" "}
-          <strong>kesehatan mental di lingkungan kerja</strong>, serta filosofi{" "}
-          <strong>Stoikisme</strong> yang membantuku tetap tenang di tengah
-          hiruk-pikuk dunia IT.
-        </p>
-
-        <p>
-          Dua tahun terakhir hidupku didominasi oleh peran paling menantang
-          sekaligus paling membahagiakan: menjadi seorang ayah. Pengalaman ini
-          mengubah caraku melihat <em>work-life integrity</em> dan pentingnya
-          benar-benar &quot;hadir&quot; untuk keluarga.
-        </p>
-
-        <h2 className="pt-4 font-display text-2xl font-bold text-brand-text-primary dark:text-brand-dark-text">
-          Latar Belakang
-        </h2>
-
-        <p>
-          Aku lulus sebagai lulusan terbaik dari STIKI Indonesia tahun 2019.
-          Ketertarikanku pada pemrograman dimulai sejak SMA saat mencoba membuat
-          game Pac-Man sederhana. Sejak saat itu, rasa penasaranku tidak pernah
-          benar-benar berhenti.
-        </p>
-
-        <p>
-          Oh, dan aku adalah seorang <em>food enthusiast</em>! Jika kamu ke
-          Bali, aku sangat merekomendasikan{" "}
-          <Link
-            href="https://id.wikipedia.org/wiki/Lawar"
-            className="text-brand-accent hover:underline"
-          >
-            lawar
-          </Link>{" "}
-          — kuliner khas Bali yang menggunakan campuran sayuran, kelapa, dan
-          bumbu rempah yang autentik.
-        </p>
-
-        <div className="mt-12 border-t border-brand-tan pt-8">
-          <p className="text-sm text-brand-text-secondary">
-            Ingin berdiskusi atau sekadar menyapa? Kirim email ke{" "}
-            <a
-              href="mailto:detautama11@gmail.com"
-              className="text-brand-accent hover:underline"
-            >
-              detautama11@gmail.com
-            </a>
-            .
-          </p>
-        </div>
-      </div>
+        <EditorialReveal className="nagare-editorial-contact">
+          <h2>{content.contactTitle}</h2>
+          <div>
+            <p>{content.contactBody}</p>
+            <a href="mailto:detautama11@gmail.com">{content.contact} ↗</a>
+          </div>
+        </EditorialReveal>
+      </main>
     </div>
   );
 }

@@ -97,55 +97,51 @@ export const Porjects: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {projects.map((project) => (
+      <div className="nagare-project-grid">
+        {projects.map((project, index) => (
           <button
             key={project.title}
-            className="brand-card hover:border-brand-accent/60 flex cursor-pointer flex-col items-center justify-center gap-4 p-4 text-left transition"
+            className="nagare-project-card"
             onClick={() => setSelectedProject(project)}
           >
-            <Image
-              src={project.image}
-              alt={project.title}
-              className="border-brand-accent/20 border"
-              width={300}
-            />
-            <h2 className="text-center font-bold">{project.title}</h2>
-            <p className="line-clamp-4 text-center">
-              {getDescription(project)}
-            </p>
+            <div className="nagare-project-image">
+              <Image src={project.image} alt={project.title} />
+            </div>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h2>{project.title}</h2>
+            <p>{getDescription(project)}</p>
+            <i>↗</i>
           </button>
         ))}
       </div>
 
       {/* Project Detail Dialog */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-          <div className="sao-panel max-h-[90vh] w-full max-w-2xl overflow-y-auto p-6">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="w-full text-center text-2xl font-bold">
-                {selectedProject.title}
-              </h2>
+        <div
+          className="nagare-project-modal"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="nagare-project-dialog"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div>
+              <h2>{selectedProject.title}</h2>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="text-brand-text-secondary hover:text-brand-accent"
+                aria-label="Close"
               >
                 ✕
               </button>
             </div>
-            <Image
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="border-brand-accent/20 mx-auto mb-4 border"
-              width={300}
-            />
-            <p className="mb-4">{getDescription(selectedProject)}</p>
+            <Image src={selectedProject.image} alt={selectedProject.title} />
+            <p>{getDescription(selectedProject)}</p>
             {selectedProject.link && (
               <Link
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="brand-button-primary"
+                className="nagare-project-link"
               >
                 {t.projects.visitProject}
               </Link>

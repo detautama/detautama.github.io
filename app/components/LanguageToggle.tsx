@@ -21,14 +21,14 @@ export function LanguageToggle() {
   return (
     <Link
       href={getAlternateUrl()}
-      className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 hover:bg-brand-accent/10 group flex h-9 items-center gap-1.5 border px-2.5 transition"
+      className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 hover:bg-brand-accent/10 flex h-9 items-center gap-1.5 border px-2.5 text-brand-text-secondary transition-colors hover:text-brand-text-primary dark:text-brand-dark-text dark:hover:text-white"
       aria-label="Change Language"
     >
-      <span className="text-xs font-bold uppercase text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text">
+      <span className="text-xs font-bold uppercase text-current">
         {locale === "id" ? "ID" : "EN"}
       </span>
       <svg
-        className="h-4 w-4 text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text"
+        className="h-4 w-4 text-current"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

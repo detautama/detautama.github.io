@@ -11,8 +11,11 @@ export function TranslatedFooter() {
     pathname === "/articles" || pathname === "/en/articles";
   const isArticleDetail =
     pathname.startsWith("/articles/") || pathname.startsWith("/en/articles/");
+  const isEditorialPage = ["/about", "/projects", "/now"].some(
+    (route) => pathname === route || pathname === `/en${route}`
+  );
 
-  if (isHome || isArticlesIndex || isArticleDetail) {
+  if (isHome || isArticlesIndex || isArticleDetail || isEditorialPage) {
     return (
       <footer className="nagare-footer">
         <p>{t.footer.text}</p>

@@ -25,22 +25,18 @@ const profileCopy = {
         <em> teknologi</em>, <em>kehidupan</em>, dan hal-hal kecil di antaranya.
       </>
     ),
-    aboutLabel: "Tentang aku",
     aboutTitle: "Membuat sesuatu, lalu mencatat apa yang kupelajari.",
     aboutBody: [
       "Aku tinggal di Bali dan menghabiskan banyak waktu membangun produk web dengan TypeScript dan React. Blog ini adalah tempatku memperlambat pikiran—untuk memahami pekerjaan, keluarga, kesehatan mental, dan hidup sehari-hari dengan lebih jernih.",
       "Ketika tidak di depan layar, biasanya aku sedang bersepeda, menghabiskan waktu bersama keluarga, atau memikirkan kenapa hal sederhana sering memberi pelajaran paling panjang.",
     ],
     aboutCta: "Lebih jauh tentang aku",
-    writingLabel: "Tulisan terbaru",
     writingTitle: "Catatan dari perjalanan.",
     writingCta: "Lihat semua tulisan",
-    nowLabel: "Sekarang",
     nowTitle: "Apa yang sedang berjalan.",
     nowBody:
       "Membangun aplikasi, terus belajar menjadi ayah yang hadir, dan membuktikan bahwa perjalanan 12 km ke kantor tidak selalu membutuhkan motor.",
     nowCta: "Baca halaman sekarang",
-    connectLabel: "Terhubung",
     connectTitle: "Mari bertukar cerita.",
     connectBody:
       "Punya ide, pertanyaan, rekomendasi jalur sepeda, atau sekadar ingin menyapa? Kotak masukku selalu terbuka.",
@@ -56,22 +52,18 @@ const profileCopy = {
         <em> technology</em>, <em>life</em>, and the small things in between.
       </>
     ),
-    aboutLabel: "About me",
     aboutTitle: "Making things, then writing down what they teach me.",
     aboutBody: [
       "I live in Bali and spend much of my time building web products with TypeScript and React. This blog is where I slow my thoughts down—to understand work, family, mental health, and everyday life with a little more clarity.",
       "Away from the screen, I am usually cycling, spending time with my family, or wondering why the simplest moments often leave the longest lessons.",
     ],
     aboutCta: "More about me",
-    writingLabel: "Latest writing",
     writingTitle: "Notes from the journey.",
     writingCta: "Explore all writing",
-    nowLabel: "Now",
     nowTitle: "What is in motion.",
     nowBody:
       "Building apps, learning to be a present father, and proving that a 12 km commute does not always require a motorbike.",
     nowCta: "Read the now page",
-    connectLabel: "Connect",
     connectTitle: "Let’s exchange stories.",
     connectBody:
       "Have an idea, a question, a cycling route recommendation, or simply want to say hello? My inbox is always open.",
@@ -152,7 +144,6 @@ export default function HomeContent({
 
         <section id="about" className="nagare-section">
           <div className="nagare-section-heading">
-            <p>{copy.aboutLabel}</p>
             <h2>{copy.aboutTitle}</h2>
           </div>
           <div className="nagare-section-content nagare-copy-block">
@@ -167,7 +158,6 @@ export default function HomeContent({
 
         <section className="nagare-section">
           <div className="nagare-section-heading">
-            <p>{copy.writingLabel}</p>
             <h2>{copy.writingTitle}</h2>
           </div>
           <div className="nagare-section-content">
@@ -200,7 +190,6 @@ export default function HomeContent({
 
         <section className="nagare-section nagare-now-section">
           <div className="nagare-section-heading">
-            <p>{copy.nowLabel}</p>
             <h2>{copy.nowTitle}</h2>
           </div>
           <div className="nagare-section-content nagare-now-content">
@@ -224,7 +213,6 @@ export default function HomeContent({
 
         <section className="nagare-section nagare-connect-section">
           <div className="nagare-section-heading">
-            <p>{copy.connectLabel}</p>
             <h2>{copy.connectTitle}</h2>
           </div>
           <div className="nagare-section-content nagare-connect-content">

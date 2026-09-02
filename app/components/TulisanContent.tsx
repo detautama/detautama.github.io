@@ -19,7 +19,6 @@ interface TulisanContentProps {
 
 const archiveCopy = {
   id: {
-    eyebrow: "Arsip tulisan",
     title: "Catatan.",
     subtitle:
       "Kumpulan pelajaran dari kode, pekerjaan, keluarga, dan perjalanan kecil sehari-hari.",
@@ -30,7 +29,6 @@ const archiveCopy = {
     search: "Cari arsip",
   },
   en: {
-    eyebrow: "Writing archive",
     title: "Notes.",
     subtitle:
       "Lessons gathered from code, work, family, and the small journeys of everyday life.",
@@ -116,7 +114,6 @@ export default function TulisanContent({
       <main className="nagare-archive-main">
         <header className="nagare-archive-hero">
           <div>
-            <p className="nagare-archive-eyebrow">{copy.eyebrow}</p>
             <h1>{copy.title}</h1>
           </div>
           <div className="nagare-archive-intro">
