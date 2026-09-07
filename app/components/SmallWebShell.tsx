@@ -126,9 +126,6 @@ export function SmallWebShell({
           </Link>
 
           <div className="small-web-tools">
-            <p>
-              <span className="small-web-status-dot" /> {copy.status}
-            </p>
             <div>
               <LanguageToggle />
               <ToggleDarkMode />
@@ -232,7 +229,6 @@ export function SmallWebShell({
 
         <footer className="small-web-footer">
           <span>© {new Date().getFullYear()} Deta Utama</span>
-          <span>✿ {copy.madeWith} ✿</span>
           <a href="#top">↑ top</a>
         </footer>
       </div>

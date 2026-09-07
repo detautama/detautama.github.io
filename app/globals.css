@@ -2703,7 +2703,7 @@
   margin-top: 0.2rem;
   color: var(--web-coral);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.48rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -2748,7 +2748,7 @@
   gap: 0.4rem;
   color: var(--web-muted);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.43rem;
+  font-size: 0.63rem;
   line-height: 1.35;
   text-transform: uppercase;
 }
@@ -2759,7 +2759,7 @@
 
 .small-web-cycling-stats strong {
   color: var(--web-coral);
-  font-size: 0.58rem;
+  font-size: 0.8rem;
 }
 
 .small-web-green-card {
@@ -2828,7 +2828,7 @@
   margin-top: 0.2rem;
   color: var(--web-coral);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.48rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -2840,7 +2840,7 @@
   margin-top: 0.85rem;
   color: var(--web-muted);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.43rem;
+  font-size: 0.63rem;
   line-height: 1.35;
   text-transform: uppercase;
 }
@@ -2851,7 +2851,7 @@
 
 .small-web-green-stats strong {
   color: var(--web-coral);
-  font-size: 0.58rem;
+  font-size: 0.8rem;
 }
 
 .small-web-plate-card {
@@ -3498,18 +3498,10 @@
     transform: none;
   }
 
-  .small-web-cycling-stats {
-    font-size: 0.52rem;
-  }
-
   .small-web-green-card {
     width: 100%;
     padding: 1rem;
     transform: none;
-  }
-
-  .small-web-green-stats {
-    font-size: 0.52rem;
   }
 
   .small-web-plate-card {
@@ -3561,10 +3553,6 @@
     width: 1.2rem;
     height: 1.2rem;
     font-size: 0.82rem;
-  }
-
-  .small-web-sidebar nav a:last-child {
-    grid-column: 1 / -1;
   }
 
   .small-web-sidebar-widget {
