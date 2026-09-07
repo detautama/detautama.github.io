@@ -97,6 +97,9 @@ export function SmallWebShell({
     { key: "tags", label: copy.nav.tags, href: "/tag", icon: "#" },
   ];
 
+  const now = new Date();
+  const plateDate = `${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getFullYear()).slice(-2)}`;
+
   return (
     <div className="small-web-home" id="top">
       <div className="small-web-wallpaper" aria-hidden="true" />
@@ -159,10 +162,19 @@ export function SmallWebShell({
                 </div>
               </div>
 
-              <div className="small-web-mini-badge" aria-label={copy.madeWith}>
-                <span>✦ HANDCODED ✦</span>
-                <strong>BALI / WEB</strong>
-              </div>
+              <section
+                className="small-web-plate-card"
+                aria-label="DK Bali license plate"
+              >
+                <div className="small-web-plate-main">
+                  <span>DK</span>
+                  <span>1</span>
+                  <span>DAD</span>
+                </div>
+                <div className="small-web-plate-footer">
+                  <span>{plateDate}</span>
+                </div>
+              </section>
 
               <section className="small-web-cycling-card">
                 <header>

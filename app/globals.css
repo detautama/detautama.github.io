@@ -2626,30 +2626,6 @@
   font-size: 0.55rem;
 }
 
-.small-web-mini-badge {
-  display: flex;
-  max-width: 9.5rem;
-  flex-direction: column;
-  margin: 2.25rem auto 0;
-  padding: 0.35rem 0.5rem;
-  border: 2px ridge var(--web-lilac);
-  color: #194856;
-  background: #d5eff6;
-  font-family: var(--font-geist-mono), monospace;
-  text-align: center;
-  transform: rotate(1.5deg);
-}
-
-.small-web-mini-badge span {
-  font-size: 0.48rem;
-  letter-spacing: 0.08em;
-}
-
-.small-web-mini-badge strong {
-  font-size: 0.7rem;
-  letter-spacing: 0.09em;
-}
-
 .small-web-cycling-card {
   position: relative;
   margin-top: 2rem;
@@ -2876,6 +2852,43 @@
 .small-web-green-stats strong {
   color: var(--web-coral);
   font-size: 0.58rem;
+}
+
+.small-web-plate-card {
+  margin-top: 2rem;
+  padding: 0.45rem 0.6rem 0.35rem;
+  border: 2px solid #f5fbf7;
+  border-radius: 4px;
+  background: #17181a;
+  box-shadow:
+    inset 0 0 0 1px #000,
+    3px 3px 0 color-mix(in srgb, var(--web-plum) 45%, transparent);
+  transform: rotate(-0.4deg);
+}
+
+.small-web-plate-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+  color: #f5fbf7;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.small-web-plate-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(245, 251, 247, 0.35);
+  color: rgba(245, 251, 247, 0.75);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.4rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .small-web-content {
@@ -3477,10 +3490,6 @@
     border-top: 0;
   }
 
-  .small-web-mini-badge {
-    flex: 0 0 auto;
-    margin: 0;
-  }
 
   .small-web-cycling-card {
     width: 100%;
@@ -3501,6 +3510,11 @@
 
   .small-web-green-stats {
     font-size: 0.52rem;
+  }
+
+  .small-web-plate-card {
+    width: 100%;
+    transform: none;
   }
 }
 
@@ -3561,10 +3575,6 @@
   .small-web-profile-card img {
     width: 3.25rem;
     height: 3.25rem;
-  }
-
-  .small-web-mini-badge {
-    max-width: 8.5rem;
   }
 
   .small-web-content {

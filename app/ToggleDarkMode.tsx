@@ -32,17 +32,12 @@ export function ToggleDarkMode() {
 
   return (
     <button
-      className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 hover:bg-brand-accent/10 group grid h-9 w-9 place-items-center border transition"
+      className="border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/60 hover:bg-brand-accent/10 grid h-9 w-9 place-items-center border text-brand-text-secondary transition hover:text-brand-accent"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle Dark Mode"
     >
       {theme === "dark" ? (
-        <svg
-          className="h-5 w-5 text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -51,12 +46,7 @@ export function ToggleDarkMode() {
           />
         </svg>
       ) : (
-        <svg
-          className="h-5 w-5 text-brand-text-secondary transition-colors group-hover:text-white dark:text-brand-dark-text"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
