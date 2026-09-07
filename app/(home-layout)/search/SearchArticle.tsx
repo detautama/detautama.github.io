@@ -6,6 +6,16 @@ import { Link } from "next-view-transitions";
 import { useSearch } from "./useSearch";
 import { useLocale } from "../../lib/LocaleContext";
 import { getTagEmoji } from "../../lib/tagEmoji";
+import { SmallWebShell } from "../../components/SmallWebShell";
+
+const pageCopy = {
+  id: {
+    intro: "Ketik kata kunci untuk menyusuri seluruh tulisan di arsip ini.",
+  },
+  en: {
+    intro: "Type a keyword to comb through every entry in this archive.",
+  },
+} as const;
 
 export const Search: React.FC<{
   articlesByLocale: {
@@ -16,62 +26,73 @@ export const Search: React.FC<{
   const { locale, t, localePath } = useLocale();
   const articles =
     props.articlesByLocale[locale as keyof typeof props.articlesByLocale];
+  const copy = pageCopy[locale];
 
   const { result, highlightedText, search, highlightText } =
     useSearch(articles);
 
   return (
-    <div className="brand-container animate-in py-8">
-      <span className="hud-label">Archive search protocol</span>
-      <h1 className="mb-8 mt-4 font-display text-4xl font-bold uppercase tracking-[-0.06em] text-brand-text-primary">
-        {t.search.title}
-      </h1>
-      <form className="mb-8">
-        <input
-          type="text"
-          placeholder={t.search.placeholder}
-          className="border-brand-accent/30 bg-brand-dark-surface/70 focus:ring-brand-accent/20 w-full border p-4 font-mono text-sm text-brand-text-primary placeholder-brand-text-secondary transition-all focus:border-brand-accent focus:outline-none focus:ring-2"
-          onChange={search}
-        />
-      </form>
-      <div className="mb-4">
-        <p className="dark:text-brand-dark-text/70 text-brand-text-secondary">
-          {result.length > 0
-            ? t.search.result(result.length)
-            : t.search.noResult}
+    <SmallWebShell
+      activeSection="articles"
+      contentClassName="small-web-search-content"
+    >
+      <header className="small-web-page-header">
+        <h1>{t.search.title}</h1>
+        <div className="small-web-rule" />
+        <div className="small-web-page-intro">
+          <p>{copy.intro}</p>
+        </div>
+      </header>
+
+      <section className="small-web-section small-web-search-section">
+        <form className="small-web-search-box" role="search">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="text"
+            placeholder={t.search.placeholder}
+            onChange={search}
+          />
+        </form>
+
+        <p className="small-web-search-status">
+          {highlightedText !== "" &&
+            (result.length > 0
+              ? t.search.result(result.length)
+              : t.search.noResult)}
         </p>
-      </div>
-      <div className="space-y-6">
-        {result.map(({ id, title, content, date, tags }) => (
-          <Link
-            href={localePath(`/articles/${id}`)}
-            key={id}
-            className="group block"
-          >
-            <article className="brand-article-card">
-              <h3 className="mb-2 text-lg font-semibold text-brand-text-primary transition-colors group-hover:text-brand-accent dark:text-brand-dark-text">
-                {highlightText(title, highlightedText)}
-              </h3>
-              <p className="dark:text-brand-dark-text/80 mb-3 line-clamp-2 text-brand-text-secondary">
-                {highlightText(content, highlightedText)}
-              </p>
-              <div className="flex items-center gap-3 text-sm">
-                <time className="dark:text-brand-dark-text/70 text-brand-text-secondary">
-                  {date}
-                </time>
-                <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <span key={tag} className="brand-badge flex gap-1">
-                      <span>{getTagEmoji(tag)}</span>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          </Link>
-        ))}
-      </div>
-    </div>
+
+        {result.length > 0 && (
+          <div className="small-web-posts">
+            {result.map((article, index) => (
+              <Link
+                href={localePath(`/articles/${article.id}`)}
+                key={article.id}
+                className="small-web-post small-web-search-result"
+              >
+                <span className="small-web-post-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="small-web-post-copy">
+                  <span>
+                    {article.date} ·{" "}
+                    {article.tags
+                      .slice(0, 2)
+                      .map((tag) => `${getTagEmoji(tag)} ${tag}`)
+                      .join(" / ")}
+                  </span>
+                  <strong>
+                    {highlightText(article.title, highlightedText)}
+                  </strong>
+                  <small>
+                    {highlightText(article.content, highlightedText)}
+                  </small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+        )}
+      </section>
+    </SmallWebShell>
   );
 };

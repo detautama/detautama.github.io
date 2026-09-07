@@ -5,9 +5,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArticleData } from "../../lib/articles";
 import { useLocale } from "../../lib/LocaleContext";
 import { getTagEmoji } from "../../lib/tagEmoji";
-import { OrganicBackground } from "../../components/OrganicBackground";
-import { EditorialNav } from "../../components/EditorialNav";
 import { EditorialReveal } from "../../components/EditorialReveal";
+import { SmallWebShell } from "../../components/SmallWebShell";
 
 interface TagContentProps {
   readonly articlesByLocale: {
@@ -51,26 +50,45 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
           title: "Topik.",
           intro: `${uniqueTags.length} topik yang menghubungkan catatan tentang teknologi, pekerjaan, keluarga, dan hidup sehari-hari.`,
           index: "Jelajahi topik",
+          indexNote: "Pilih sebuah label untuk melompat ke raknya",
           entries: "tulisan",
         }
       : {
           title: "Topics.",
           intro: `${uniqueTags.length} threads connecting notes on technology, work, family, and everyday life.`,
           index: "Explore topics",
+          indexNote: "Choose a label to jump to its shelf",
           entries: "entries",
         };
 
   return (
-    <div className="nagare-home nagare-editorial-page nagare-tag-page">
-      <OrganicBackground />
-      <EditorialNav />
-      <main className="nagare-editorial-main">
-        <header className="nagare-editorial-hero nagare-tag-hero">
-          <h1>{copy.title}</h1>
-          <div className="nagare-editorial-intro">{copy.intro}</div>
+    <SmallWebShell
+      activeSection="tags"
+      contentClassName="small-web-tags-content"
+    >
+      <header className="small-web-page-header">
+        <h1>{copy.title}</h1>
+        <div className="small-web-rule" />
+        <div className="small-web-page-intro">
+          <p>{copy.intro}</p>
+          <span>{uniqueTags.length} tags</span>
+        </div>
+      </header>
+
+      <section className="small-web-section small-web-tag-index-section">
+        <header className="small-web-section-heading">
+          <div>
+            <span className="small-web-section-icon" aria-hidden="true">
+              #
+            </span>
+            <div>
+              <h2>{copy.index}</h2>
+              <p>{copy.indexNote}</p>
+            </div>
+          </div>
         </header>
 
-        <nav className="nagare-tag-index" aria-label={copy.index}>
+        <nav className="small-web-tag-index" aria-label={copy.index}>
           {uniqueTags.map((tag) => (
             <Link
               key={tag}
@@ -82,44 +100,44 @@ export function TagContent({ articlesByLocale }: TagContentProps) {
             </Link>
           ))}
         </nav>
+      </section>
 
-        <div className="nagare-tag-groups">
-          {uniqueTags.map((tag, index) => {
-            const taggedArticles = articles.filter((article) =>
-              article.tags.includes(tag)
-            );
-            return (
-              <EditorialReveal
-                key={tag}
-                className={`nagare-tag-group ${activeTag === tag ? "is-highlighted" : ""}`}
-              >
-                <header id={tag}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <h2>
-                    <i>{getTagEmoji(tag)}</i>
-                    {tag}
-                  </h2>
-                  <p>
-                    {taggedArticles.length} {copy.entries}
-                  </p>
-                </header>
-                <div>
-                  {taggedArticles.map((article) => (
-                    <Link
-                      key={article.id}
-                      href={localePath(`/articles/${article.id}`)}
-                    >
-                      <time>{article.date}</time>
-                      <strong>{article.title}</strong>
-                      <span>↗</span>
-                    </Link>
-                  ))}
-                </div>
-              </EditorialReveal>
-            );
-          })}
-        </div>
-      </main>
-    </div>
+      <div className="small-web-tag-groups">
+        {uniqueTags.map((tag, index) => {
+          const taggedArticles = articles.filter((article) =>
+            article.tags.includes(tag)
+          );
+          return (
+            <EditorialReveal
+              key={tag}
+              className={`small-web-tag-group ${activeTag === tag ? "is-highlighted" : ""}`}
+            >
+              <header id={tag}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h2>
+                  <i>{getTagEmoji(tag)}</i>
+                  {tag}
+                </h2>
+                <p>
+                  {taggedArticles.length} {copy.entries}
+                </p>
+              </header>
+              <div>
+                {taggedArticles.map((article) => (
+                  <Link
+                    key={article.id}
+                    href={localePath(`/articles/${article.id}`)}
+                  >
+                    <time>{article.date}</time>
+                    <strong>{article.title}</strong>
+                    <span>↗</span>
+                  </Link>
+                ))}
+              </div>
+            </EditorialReveal>
+          );
+        })}
+      </div>
+    </SmallWebShell>
   );
 }

@@ -97,14 +97,14 @@ export const Porjects: React.FC = () => {
 
   return (
     <>
-      <div className="nagare-project-grid">
+      <div className="nagare-project-grid small-web-project-grid">
         {projects.map((project, index) => (
           <button
             key={project.title}
-            className="nagare-project-card"
+            className="nagare-project-card small-web-project-card"
             onClick={() => setSelectedProject(project)}
           >
-            <div className="nagare-project-image">
+            <div className="nagare-project-image small-web-project-image">
               <Image src={project.image} alt={project.title} />
             </div>
             <span>{String(index + 1).padStart(2, "0")}</span>
@@ -118,11 +118,11 @@ export const Porjects: React.FC = () => {
       {/* Project Detail Dialog */}
       {selectedProject && (
         <div
-          className="nagare-project-modal"
+          className="nagare-project-modal small-web-project-modal"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="nagare-project-dialog"
+            className="nagare-project-dialog small-web-project-dialog"
             onClick={(event) => event.stopPropagation()}
           >
             <div>
@@ -141,7 +141,7 @@ export const Porjects: React.FC = () => {
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nagare-project-link"
+                className="nagare-project-link small-web-project-link"
               >
                 {t.projects.visitProject}
               </Link>

@@ -1,14 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Link } from "next-view-transitions";
+import Comment from "../(clean-layout)/articles/[articleId]/Comment";
+import { MarkdownRenderer } from "../MarkdownRenderer";
 import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
-import { MarkdownRenderer } from "../MarkdownRenderer";
-import Comment from "../(clean-layout)/articles/[articleId]/Comment";
-import { LanguageToggle } from "./LanguageToggle";
-import { OrganicBackground } from "./OrganicBackground";
-import { ToggleDarkMode } from "../ToggleDarkMode";
+import { SmallWebShell } from "./SmallWebShell";
 
 interface ArticleContentProps {
   readonly articleId: string;
@@ -24,7 +22,9 @@ interface ArticleContentProps {
 }
 
 export default function ArticleContent({
+  articleId,
   articlesByLocale,
+  hasImage,
   relatedArticlesByLocale,
 }: Readonly<ArticleContentProps>) {
   const { locale, t, localePath } = useLocale();
@@ -35,80 +35,57 @@ export default function ArticleContent({
     1,
     Math.ceil(articleData.content.trim().split(/\s+/).length / 220)
   );
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [isContentVisible, setIsContentVisible] = useState(false);
-
-  useEffect(() => {
-    const content = contentRef.current;
-    if (!content) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setIsContentVisible(true);
-        observer.disconnect();
-      },
-      { rootMargin: "0px 0px -40% 0px", threshold: 0 }
-    );
-
-    observer.observe(content);
-    return () => observer.disconnect();
-  }, []);
 
   const copy =
     locale === "id"
       ? {
-          back: "Kembali ke arsip",
+          back: "Kembali ke semua tulisan",
           reading: `${readingMinutes} menit baca`,
-          comments: "Percakapan",
+          related: "Baca selanjutnya",
+          relatedNote: "Catatan lain yang mungkin kamu suka",
+          comments: "Kotak percakapan",
+          commentsNote: "Tinggalkan jejak sebelum pulang",
         }
       : {
-          back: "Back to archive",
+          back: "Back to all writing",
           reading: `${readingMinutes} min read`,
-          comments: "Conversation",
+          related: "Read next",
+          relatedNote: "More notes you might enjoy",
+          comments: "Conversation box",
+          commentsNote: "Leave a little trace before you go",
         };
 
   return (
-    <div className="nagare-home nagare-article-page">
-      <OrganicBackground />
-
-      <nav className="nagare-nav" aria-label="Article navigation">
-        <Link href={localePath("/")} className="nagare-mark">
-          DU
-        </Link>
-        <div className="nagare-nav-links">
-          <Link href={localePath("/")}>
-            {locale === "id" ? "Beranda" : "Home"}
-          </Link>
-          <Link href={localePath("/articles")}>{t.nav.articles}</Link>
-          <Link href={localePath("/now")}>{t.nav.now}</Link>
-          <LanguageToggle />
-          <ToggleDarkMode />
-        </div>
-      </nav>
-
-      <main className="nagare-article-main">
-        <header className="nagare-article-header">
-          <Link href={localePath("/articles")} className="nagare-article-back">
+    <SmallWebShell
+      activeSection="articles"
+      contentClassName="small-web-article-content"
+    >
+      <article>
+        <header className="small-web-article-header">
+          <Link
+            href={localePath("/articles")}
+            className="small-web-article-back"
+          >
             ← {copy.back}
           </Link>
           <h1>{articleData.title}</h1>
-          <p className="nagare-article-description">
+          <p className="small-web-article-description">
             {articleData.description}
           </p>
-          <div className="nagare-article-meta">
+          <div className="small-web-article-meta">
             <time>{articleData.date}</time>
             <span>{copy.reading}</span>
             {articleData.tags.map((tag) => (
               <Link href={localePath(`/tag/#${tag}`)} key={tag}>
-                {tag}
+                #{tag}
               </Link>
             ))}
           </div>
         </header>
 
         {isLanguageMissing && (
-          <div className="nagare-article-notice">
+          <div className="small-web-article-notice">
+            <span aria-hidden="true">☞</span>
             <strong>
               {t.article.onlyAvailable}{" "}
               {locale === "id" ? "English" : "Bahasa Indonesia"}
@@ -116,44 +93,75 @@ export default function ArticleContent({
           </div>
         )}
 
-        <div
-          ref={contentRef}
-          className={`nagare-reading-layout nagare-article-content-reveal ${
-            isContentVisible ? "is-visible" : ""
-          }`}
-        >
-          <article className="nagare-prose prose prose-lg max-w-none dark:prose-invert">
-            <MarkdownRenderer>{articleData.content}</MarkdownRenderer>
-          </article>
-        </div>
-
-        {relatedArticles.length > 0 && (
-          <section className="nagare-related-section">
-            <p className="nagare-archive-section-label">
-              {t.article.relatedArticles}
-            </p>
-            <div className="nagare-related-grid">
-              {relatedArticles.map(({ id, title, description, date }) => (
-                <Link
-                  key={id}
-                  href={localePath(`/articles/${id}`)}
-                  className="nagare-related-entry"
-                >
-                  <time>{date}</time>
-                  <h2>{title}</h2>
-                  <p>{description}</p>
-                  <span>↗</span>
-                </Link>
-              ))}
-            </div>
-          </section>
+        {hasImage && (
+          <figure className="small-web-article-cover">
+            <Image
+              src={`/og-images/${articleId}.png`}
+              alt=""
+              width={1200}
+              height={630}
+              priority
+            />
+            <figcaption>archive image · {articleData.date}</figcaption>
+          </figure>
         )}
 
-        <section className="nagare-comments-section">
-          <p className="nagare-archive-section-label">{copy.comments}</p>
-          <Comment />
+        <div className="small-web-reading-paper">
+          <div className="small-web-paper-pin" aria-hidden="true" />
+          <div className="small-web-article-prose nagare-prose prose prose-lg max-w-none dark:prose-invert">
+            <MarkdownRenderer>{articleData.content}</MarkdownRenderer>
+          </div>
+        </div>
+      </article>
+
+      {relatedArticles.length > 0 && (
+        <section className="small-web-section small-web-related-section">
+          <header className="small-web-section-heading">
+            <div>
+              <span className="small-web-section-icon" aria-hidden="true">
+                ↗
+              </span>
+              <div>
+                <h2>{copy.related}</h2>
+                <p>{copy.relatedNote}</p>
+              </div>
+            </div>
+          </header>
+          <div className="small-web-featured-grid small-web-related-grid">
+            {relatedArticles.map(({ id, title, description, date }) => (
+              <Link
+                key={id}
+                href={localePath(`/articles/${id}`)}
+                className="small-web-featured-card"
+              >
+                <time>{date}</time>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <span className="small-web-featured-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+            ))}
+          </div>
         </section>
-      </main>
-    </div>
+      )}
+
+      <section className="small-web-section small-web-comments-section">
+        <header className="small-web-section-heading">
+          <div>
+            <span className="small-web-section-icon" aria-hidden="true">
+              ✉
+            </span>
+            <div>
+              <h2>{copy.comments}</h2>
+              <p>{copy.commentsNote}</p>
+            </div>
+          </div>
+        </header>
+        <div className="small-web-comments-box">
+          <Comment />
+        </div>
+      </section>
+    </SmallWebShell>
   );
 }

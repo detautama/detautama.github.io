@@ -2,9 +2,8 @@
 
 import { Link } from "next-view-transitions";
 import { useLocale } from "../lib/LocaleContext";
-import { OrganicBackground } from "./OrganicBackground";
-import { EditorialNav } from "./EditorialNav";
 import { EditorialReveal } from "./EditorialReveal";
+import { SmallWebShell } from "./SmallWebShell";
 
 const nowCopy = {
   id: {
@@ -13,6 +12,7 @@ const nowCopy = {
       "Catatan hidup yang sedang berlangsung—pekerjaan, hal-hal kecil, dan pertanyaan yang belum selesai.",
     updated: "Diperbarui Juni 2026 · Denpasar, Bali",
     note: "Terinspirasi dari gerakan /now",
+    sectionNote: "Potongan hidup yang sedang berjalan",
     sections: [
       {
         number: "01",
@@ -41,6 +41,7 @@ const nowCopy = {
       },
     ],
     contact: "Kirim rekomendasi atau sekadar menyapa",
+    contactNote: "Kotak suratku selalu terbuka",
   },
   en: {
     title: "Now.",
@@ -48,6 +49,7 @@ const nowCopy = {
       "Notes from a life in progress—work, small pleasures, and questions that remain unfinished.",
     updated: "Updated June 2026 · Denpasar, Bali",
     note: "Inspired by the /now movement",
+    sectionNote: "Fragments from a life in progress",
     sections: [
       {
         number: "01",
@@ -76,6 +78,7 @@ const nowCopy = {
       },
     ],
     contact: "Send a recommendation or simply say hello",
+    contactNote: "My mailbox is always open",
   },
 } as const;
 
@@ -84,26 +87,39 @@ export default function NowContent() {
   const copy = nowCopy[locale];
 
   return (
-    <div className="nagare-home nagare-editorial-page nagare-now-page">
-      <OrganicBackground />
-      <EditorialNav />
-      <main className="nagare-editorial-main">
-        <header className="nagare-editorial-hero">
-          <h1>{copy.title}</h1>
-          <div className="nagare-editorial-intro">{copy.intro}</div>
-          <div className="nagare-now-meta">
-            <span>{copy.updated}</span>
-            <Link href="https://nownownow.com/about">{copy.note} ↗</Link>
+    <SmallWebShell activeSection="now" contentClassName="small-web-now-content">
+      <header className="small-web-page-header">
+        <h1>{copy.title}</h1>
+        <div className="small-web-rule" />
+        <div className="small-web-page-intro">
+          <p>{copy.intro}</p>
+          <span>{copy.updated}</span>
+        </div>
+        <div className="small-web-archive-actions small-web-now-actions">
+          <Link href="https://nownownow.com/about">↗ {copy.note}</Link>
+        </div>
+      </header>
+
+      <section className="small-web-section">
+        <header className="small-web-section-heading">
+          <div>
+            <span className="small-web-section-icon" aria-hidden="true">
+              ◷
+            </span>
+            <div>
+              <h2>{copy.title}</h2>
+              <p>{copy.sectionNote}</p>
+            </div>
           </div>
         </header>
 
-        <div className="nagare-now-list">
+        <div className="small-web-journal-list">
           {copy.sections.map((section) => (
             <EditorialReveal
-              className="nagare-now-section"
+              className="small-web-journal-card"
               key={section.number}
             >
-              <span>{section.number}</span>
+              <span className="small-web-journal-number">{section.number}</span>
               <h2>{section.title}</h2>
               <ul>
                 {section.items.map((item) => (
@@ -113,14 +129,18 @@ export default function NowContent() {
             </EditorialReveal>
           ))}
         </div>
+      </section>
 
-        <EditorialReveal className="nagare-editorial-contact">
-          <h2>{copy.contact}.</h2>
-          <div>
-            <a href="mailto:detautama11@gmail.com">detautama11@gmail.com ↗</a>
-          </div>
-        </EditorialReveal>
-      </main>
-    </div>
+      <EditorialReveal className="small-web-contact-card">
+        <span className="small-web-contact-icon" aria-hidden="true">
+          ✉
+        </span>
+        <div>
+          <p className="small-web-box-kicker">{copy.contactNote}</p>
+          <h2>{copy.contact}</h2>
+          <a href="mailto:detautama11@gmail.com">detautama11@gmail.com ↗</a>
+        </div>
+      </EditorialReveal>
+    </SmallWebShell>
   );
 }

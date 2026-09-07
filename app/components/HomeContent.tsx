@@ -1,12 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
 import { Link } from "next-view-transitions";
 import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
-import { LanguageToggle } from "./LanguageToggle";
-import { ToggleDarkMode } from "../ToggleDarkMode";
-import { OrganicBackground } from "./OrganicBackground";
+import { SmallWebShell } from "./SmallWebShell";
 
 interface HomeContentProps {
   readonly articlesByLocale: {
@@ -17,215 +14,137 @@ interface HomeContentProps {
 
 const profileCopy = {
   id: {
-    greeting: "Halo, aku",
-    name: "Deta.",
-    intro: (
-      <>
-        Seorang developer, suami, ayah, dan pesepeda yang menulis tentang
-        <em> teknologi</em>, <em>kehidupan</em>, dan hal-hal kecil di antaranya.
-      </>
-    ),
-    aboutTitle: "Membuat sesuatu, lalu mencatat apa yang kupelajari.",
-    aboutBody: [
-      "Aku tinggal di Bali dan menghabiskan banyak waktu membangun produk web dengan TypeScript dan React. Blog ini adalah tempatku memperlambat pikiran—untuk memahami pekerjaan, keluarga, kesehatan mental, dan hidup sehari-hari dengan lebih jernih.",
-      "Ketika tidak di depan layar, biasanya aku sedang bersepeda, menghabiskan waktu bersama keluarga, atau memikirkan kenapa hal sederhana sering memberi pelajaran paling panjang.",
-    ],
-    aboutCta: "Lebih jauh tentang aku",
-    writingTitle: "Catatan dari perjalanan.",
-    writingCta: "Lihat semua tulisan",
-    nowTitle: "Apa yang sedang berjalan.",
+    title: "Halo, aku Deta!",
+    intro:
+      "Developer, suami, ayah, dan pesepeda dari Bali. Di sini aku merawat catatan tentang teknologi, kehidupan, dan hal-hal kecil di antaranya.",
+    noteTitle: "Tentang tempat ini",
+    noteBody:
+      "Blog ini adalah rumah digital yang kubangun sendiri—tanpa algoritma, tanpa infinite scroll, dan tanpa tuntutan untuk selalu terlihat sibuk.",
+    noteCta: "Kenalan lebih jauh",
+    latest: "Catatan terbaru",
+    allWriting: "Buka semua tulisan",
+    nowTitle: "Sedang apa sekarang?",
     nowBody:
-      "Membangun aplikasi, terus belajar menjadi ayah yang hadir, dan membuktikan bahwa perjalanan 12 km ke kantor tidak selalu membutuhkan motor.",
+      "Membangun aplikasi, belajar menjadi ayah yang hadir, dan menikmati perjalanan 12 km ke kantor dengan sepeda.",
     nowCta: "Baca halaman sekarang",
-    connectTitle: "Mari bertukar cerita.",
-    connectBody:
-      "Punya ide, pertanyaan, rekomendasi jalur sepeda, atau sekadar ingin menyapa? Kotak masukku selalu terbuka.",
-    email: "Kirim email",
-    scroll: "Gulir untuk menjelajah",
+    deskTitle: "Di atas mejaku",
+    deskItems: ["React Native", "Kotlin", "Tailwind CSS"],
+    shoutTitle: "Kotak pesan",
+    shoutBody:
+      "Punya ide, rekomendasi jalur sepeda, atau sekadar ingin menyapa?",
+    shoutCta: "Kirim surat elektronik",
   },
   en: {
-    greeting: "Hello, I’m",
-    name: "Deta.",
-    intro: (
-      <>
-        A developer, husband, father, and cyclist writing about
-        <em> technology</em>, <em>life</em>, and the small things in between.
-      </>
-    ),
-    aboutTitle: "Making things, then writing down what they teach me.",
-    aboutBody: [
-      "I live in Bali and spend much of my time building web products with TypeScript and React. This blog is where I slow my thoughts down—to understand work, family, mental health, and everyday life with a little more clarity.",
-      "Away from the screen, I am usually cycling, spending time with my family, or wondering why the simplest moments often leave the longest lessons.",
-    ],
-    aboutCta: "More about me",
-    writingTitle: "Notes from the journey.",
-    writingCta: "Explore all writing",
-    nowTitle: "What is in motion.",
+    title: "Hello, I’m Deta!",
+    intro:
+      "A developer, husband, father, and cyclist from Bali. This is where I keep notes about technology, life, and the small things in between.",
+    noteTitle: "About this place",
+    noteBody:
+      "This blog is a digital home I built myself—without algorithms, infinite scroll, or the pressure to always look busy.",
+    noteCta: "Get to know me",
+    latest: "Latest notes",
+    allWriting: "Open the full archive",
+    nowTitle: "What is happening now?",
     nowBody:
-      "Building apps, learning to be a present father, and proving that a 12 km commute does not always require a motorbike.",
+      "Building apps, learning to be a present father, and enjoying the 12 km ride to work on my bicycle.",
     nowCta: "Read the now page",
-    connectTitle: "Let’s exchange stories.",
-    connectBody:
-      "Have an idea, a question, a cycling route recommendation, or simply want to say hello? My inbox is always open.",
-    email: "Send an email",
-    scroll: "Scroll to explore",
+    deskTitle: "On my desk",
+    deskItems: ["React Native", "Kotlin", "Tailwind CSS"],
+    shoutTitle: "Message box",
+    shoutBody: "Have an idea, a cycling route, or simply want to say hello?",
+    shoutCta: "Send electronic mail",
   },
 } as const;
 
 export default function HomeContent({
   articlesByLocale,
 }: Readonly<HomeContentProps>) {
-  const { locale, t, localePath } = useLocale();
+  const { locale, localePath } = useLocale();
   const copy = profileCopy[locale];
   const latestPosts = articlesByLocale[locale].slice(0, 4);
 
-  useEffect(() => {
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>(".nagare-section")
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.6,
-        rootMargin: "0px",
-      }
-    );
-
-    for (const section of sections) {
-      section.classList.add("nagare-reveal-ready");
-    }
-
-    const frame = requestAnimationFrame(() => {
-      for (const section of sections) observer.observe(section);
-    });
-
-    return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <div className="nagare-home">
-      <OrganicBackground />
-
-      <nav className="nagare-nav" aria-label="Homepage navigation">
-        <Link href={localePath("/")} className="nagare-mark">
-          DU
-        </Link>
-        <div className="nagare-nav-links">
-          <Link href={localePath("/articles")}>{t.nav.articles}</Link>
-          <Link href={localePath("/now")}>{t.nav.now}</Link>
-          <Link href={localePath("/about")}>{t.nav.about}</Link>
-          <LanguageToggle />
-          <ToggleDarkMode />
+    <SmallWebShell activeSection="home">
+      <section className="small-web-welcome">
+        <h1>{copy.title}</h1>
+        <div className="small-web-rule" />
+        <div className="small-web-intro-grid">
+          <p className="small-web-lead">{copy.intro}</p>
+          <div className="small-web-note">
+            <span aria-hidden="true">☼</span>
+            <div>
+              <h2>{copy.noteTitle}</h2>
+              <p>{copy.noteBody}</p>
+              <Link href={localePath("/about")}>{copy.noteCta} →</Link>
+            </div>
+          </div>
         </div>
-      </nav>
+      </section>
 
-      <main className="nagare-main">
-        <section className="nagare-hero">
-          <div className="nagare-hero-copy">
-            <p className="nagare-greeting">{copy.greeting}</p>
-            <h1>{copy.name}</h1>
-            <p className="nagare-intro">{copy.intro}</p>
-          </div>
-          <a href="#about" className="nagare-scroll-indicator">
-            <span>{copy.scroll}</span>
-            <i />
-          </a>
-        </section>
-
-        <section id="about" className="nagare-section">
-          <div className="nagare-section-heading">
-            <h2>{copy.aboutTitle}</h2>
-          </div>
-          <div className="nagare-section-content nagare-copy-block">
-            {copy.aboutBody.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <Link href={localePath("/about")} className="nagare-text-link">
-              {copy.aboutCta} <span>↗</span>
-            </Link>
-          </div>
-        </section>
-
-        <section className="nagare-section">
-          <div className="nagare-section-heading">
-            <h2>{copy.writingTitle}</h2>
-          </div>
-          <div className="nagare-section-content">
-            <div className="nagare-post-list">
-              {latestPosts.map((article, index) => (
-                <Link
-                  key={article.id}
-                  href={localePath(`/articles/${article.id}`)}
-                  className="nagare-post-row"
-                >
-                  <span className="nagare-post-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="nagare-post-copy">
-                    <span className="nagare-post-meta">
-                      {article.date} · {article.tags.slice(0, 2).join(" / ")}
-                    </span>
-                    <strong>{article.title}</strong>
-                    <span>{article.description}</span>
-                  </span>
-                  <span className="nagare-post-arrow">↗</span>
-                </Link>
-              ))}
+      <section className="small-web-section">
+        <header className="small-web-section-heading">
+          <div>
+            <span className="small-web-section-icon" aria-hidden="true">
+              ✎
+            </span>
+            <div>
+              <h2>{copy.latest}</h2>
             </div>
-            <Link href={localePath("/articles")} className="nagare-text-link">
-              {copy.writingCta} <span>↗</span>
-            </Link>
           </div>
-        </section>
+          <Link href={localePath("/articles")}>{copy.allWriting} →</Link>
+        </header>
 
-        <section className="nagare-section nagare-now-section">
-          <div className="nagare-section-heading">
-            <h2>{copy.nowTitle}</h2>
-          </div>
-          <div className="nagare-section-content nagare-now-content">
-            <p>{copy.nowBody}</p>
-            <div className="nagare-now-metrics">
-              <span>
-                <strong>12</strong> km / trip
-              </span>
-              <span>
-                <strong>60</strong> cycling days
-              </span>
-              <span>
-                <strong>01</strong> growing family
-              </span>
-            </div>
-            <Link href={localePath("/now")} className="nagare-text-link">
-              {copy.nowCta} <span>↗</span>
-            </Link>
-          </div>
-        </section>
-
-        <section className="nagare-section nagare-connect-section">
-          <div className="nagare-section-heading">
-            <h2>{copy.connectTitle}</h2>
-          </div>
-          <div className="nagare-section-content nagare-connect-content">
-            <p>{copy.connectBody}</p>
-            <a
-              href="mailto:detautama11@gmail.com"
-              className="nagare-email-link"
+        <div className="small-web-posts">
+          {latestPosts.map((article, index) => (
+            <Link
+              key={article.id}
+              href={localePath(`/articles/${article.id}`)}
+              className="small-web-post"
             >
-              {copy.email} <span>↗</span>
-            </a>
-          </div>
-        </section>
-      </main>
-    </div>
+              <span className="small-web-post-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="small-web-post-copy">
+                <span>
+                  {article.date} · {article.tags.slice(0, 2).join(" / ")}
+                </span>
+                <strong>{article.title}</strong>
+                <small>{article.description}</small>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="small-web-bottom-grid">
+        <article className="small-web-box small-web-now-box">
+          <span className="small-web-box-tape" aria-hidden="true" />
+          <p className="small-web-box-kicker">/now</p>
+          <h2>{copy.nowTitle}</h2>
+          <p>{copy.nowBody}</p>
+          <Link href={localePath("/now")}>{copy.nowCta} →</Link>
+        </article>
+
+        <article className="small-web-box small-web-desk-box">
+          <p className="small-web-box-kicker">desk.log</p>
+          <h2>{copy.deskTitle}</h2>
+          <ul>
+            {copy.deskItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+
+        <article className="small-web-box small-web-message-box">
+          <span aria-hidden="true" className="small-web-envelope">
+            ✉
+          </span>
+          <h2>{copy.shoutTitle}</h2>
+          <p>{copy.shoutBody}</p>
+          <a href="mailto:detautama11@gmail.com">{copy.shoutCta} →</a>
+        </article>
+      </section>
+    </SmallWebShell>
   );
 }

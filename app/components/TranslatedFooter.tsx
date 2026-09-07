@@ -15,7 +15,9 @@ export function TranslatedFooter() {
     (route) => pathname === route || pathname === `/en${route}`
   );
 
-  if (isHome || isArticlesIndex || isArticleDetail || isEditorialPage) {
+  if (isHome || isArticlesIndex || isArticleDetail) return null;
+
+  if (isEditorialPage) {
     return (
       <footer className="nagare-footer">
         <p>{t.footer.text}</p>

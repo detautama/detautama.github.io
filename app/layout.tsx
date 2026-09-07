@@ -53,7 +53,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} antialiased`}
         >
-          <ThemeProvider attribute="class" defaultTheme="dark">
+          <ThemeProvider attribute="class" defaultTheme="light">
             <LocaleProvider initialLocale="id">
               {children}
               <ScrollToTop />

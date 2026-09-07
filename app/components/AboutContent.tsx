@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { useLocale } from "../lib/LocaleContext";
-import { OrganicBackground } from "./OrganicBackground";
-import { EditorialNav } from "./EditorialNav";
 import { EditorialReveal } from "./EditorialReveal";
+import { SmallWebShell } from "./SmallWebShell";
 
 const copy = {
   id: {
@@ -28,6 +27,7 @@ const copy = {
     contactBody:
       "Aku selalu senang berbicara tentang teknologi, menjadi orang tua, bersepeda, atau kehidupan di Bali.",
     contact: "Kirim email",
+    portraitNote: "Sebuah wajah dari Bali",
   },
   en: {
     title: "The human behind the screen.",
@@ -49,6 +49,7 @@ const copy = {
     contactBody:
       "I’m always happy to talk about technology, parenting, cycling, or life in Bali.",
     contact: "Send an email",
+    portraitNote: "A face from Bali",
   },
 } as const;
 
@@ -57,16 +58,21 @@ export default function AboutContent() {
   const content = copy[locale];
 
   return (
-    <div className="nagare-home nagare-editorial-page">
-      <OrganicBackground />
-      <EditorialNav />
-      <main className="nagare-editorial-main">
-        <header className="nagare-editorial-hero">
-          <h1>{content.title}</h1>
-          <div className="nagare-editorial-intro">{content.intro}</div>
-        </header>
+    <SmallWebShell
+      activeSection="about"
+      contentClassName="small-web-about-content"
+    >
+      <header className="small-web-page-header">
+        <h1>{content.title}</h1>
+        <div className="small-web-rule" />
+        <div className="small-web-page-intro">
+          <p>{content.intro}</p>
+          <span>Denpasar · UTC+8</span>
+        </div>
+      </header>
 
-        <EditorialReveal className="nagare-about-portrait">
+      <EditorialReveal className="small-web-about-portrait">
+        <div>
           <Image
             src="/about.jpg"
             alt={content.imageAlt}
@@ -74,25 +80,29 @@ export default function AboutContent() {
             height={800}
             priority
           />
-          <span>Bali, Indonesia</span>
-        </EditorialReveal>
+          <span>{content.portraitNote} · Bali, Indonesia</span>
+        </div>
+      </EditorialReveal>
 
-        <EditorialReveal className="nagare-editorial-split">
-          <div className="nagare-editorial-heading">
+      <div className="small-web-about-stories">
+        <EditorialReveal className="small-web-story-card">
+          <div className="small-web-story-heading">
+            <span aria-hidden="true">01</span>
             <h2>{content.storyTitle}</h2>
           </div>
-          <div className="nagare-editorial-copy">
+          <div className="small-web-story-copy">
             {content.story.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </EditorialReveal>
 
-        <EditorialReveal className="nagare-editorial-split">
-          <div className="nagare-editorial-heading">
+        <EditorialReveal className="small-web-story-card">
+          <div className="small-web-story-heading">
+            <span aria-hidden="true">02</span>
             <h2>{content.lifeTitle}</h2>
           </div>
-          <div className="nagare-editorial-copy">
+          <div className="small-web-story-copy">
             {content.life.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -110,15 +120,18 @@ export default function AboutContent() {
             </p>
           </div>
         </EditorialReveal>
+      </div>
 
-        <EditorialReveal className="nagare-editorial-contact">
-          <h2>{content.contactTitle}</h2>
-          <div>
-            <p>{content.contactBody}</p>
-            <a href="mailto:detautama11@gmail.com">{content.contact} ↗</a>
-          </div>
-        </EditorialReveal>
-      </main>
-    </div>
+      <EditorialReveal className="small-web-contact-card">
+        <span className="small-web-contact-icon" aria-hidden="true">
+          ✉
+        </span>
+        <div>
+          <p className="small-web-box-kicker">{content.contactTitle}</p>
+          <h2>{content.contactBody}</h2>
+          <a href="mailto:detautama11@gmail.com">{content.contact} ↗</a>
+        </div>
+      </EditorialReveal>
+    </SmallWebShell>
   );
 }
