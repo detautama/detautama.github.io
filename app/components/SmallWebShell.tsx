@@ -175,7 +175,9 @@ export function SmallWebShell({
 
               <section className="small-web-cycling-card">
                 <header>
-                  <span aria-hidden="true">🚲</span>
+                  <span aria-hidden="true">
+                    <Image src="/pixel-bike.png" alt="" width={22} height={22} />
+                  </span>
                   <div>
                     <strong>{copy.cyclingTitle}</strong>
                     <small>{copy.cyclingGoal}</small>
@@ -204,7 +206,9 @@ export function SmallWebShell({
 
               <section className="small-web-green-card">
                 <header>
-                  <span aria-hidden="true">🌱</span>
+                  <span aria-hidden="true">
+                    <Image src="/pixel-leaf.png" alt="" width={22} height={22} />
+                  </span>
                   <div>
                     <strong>{copy.greenTitle}</strong>
                     <small>{copy.greenGoal}</small>

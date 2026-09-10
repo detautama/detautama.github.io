@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Link } from "next-view-transitions";
 import { ArticleData } from "../lib/articles";
 import { useLocale } from "../lib/LocaleContext";
@@ -71,7 +72,13 @@ export default function HomeContent({
         <div className="small-web-intro-grid">
           <p className="small-web-lead">{copy.intro}</p>
           <div className="small-web-note">
-            <span aria-hidden="true">☼</span>
+            <Image
+              src="/pixel-hand.png"
+              alt=""
+              width={28}
+              height={28}
+              aria-hidden="true"
+            />
             <div>
               <h2>{copy.noteTitle}</h2>
               <p>{copy.noteBody}</p>
